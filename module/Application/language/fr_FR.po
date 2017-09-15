@@ -1,0 +1,697 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: atnightandintransportation\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-05 20:32-0700\n"
+"PO-Revision-Date: 2015-10-15 23:08+0200\n"
+"Last-Translator: Romuald GEBLEUX\n"
+"Language-Team: me & myself\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Skeleton Application"
+msgstr ""
+
+#: ../view/layout/layout.phtml:36
+msgid "Accueil"
+msgstr ""
+
+#: ../view/layout/layout.phtml:50
+msgid "Tous droits réservés."
+msgstr ""
+
+#: ../view/application/index/index.phtml:2
+#, php-format
+msgid "Bienvenue dans le %sZend Framework 2%s"
+msgstr ""
+
+#: ../view/error/index.phtml:1
+msgid "Une erreur est survenue"
+msgstr ""
+
+#: ../view/error/index.phtml:8
+msgid "Informations complémentaires"
+msgstr ""
+
+#: ../view/error/index.phtml:11 ../view/error/index.phtml:35
+msgid "Fichier"
+msgstr ""
+
+#: ../view/error/index.phtml:15 ../view/error/index.phtml:39
+msgid "Message"
+msgstr ""
+
+#: ../view/error/index.phtml:19 ../view/error/index.phtml:43
+#: ../view/error/404.phtml:55
+msgid "Pile d'exécution"
+msgstr ""
+
+#: ../view/error/index.phtml:29
+msgid "Exceptions précédentes"
+msgstr ""
+
+#: ../view/error/index.phtml:58
+msgid "Aucune exception disponible"
+msgstr ""
+
+#: ../view/error/404.phtml:1
+msgid "Une erreur 404 est survenue"
+msgstr ""
+
+#: ../view/error/404.phtml:10
+msgid "Le contrôleur demandé n'a pas pu dispatcher la requête."
+msgstr ""
+
+#: ../view/error/404.phtml:13
+msgid "Le contrôleur demandé ne correspond pas à une classe existante de contrôleur."
+msgstr ""
+
+#: ../view/error/404.phtml:16
+msgid "Le contrôleur demandé n'est pas dispatchable."
+msgstr ""
+
+#: ../view/error/404.phtml:19
+msgid "L'URL demandée n'a pas pu trouver de route correspondante."
+msgstr ""
+
+#: ../view/error/404.phtml:22
+msgid "Nous ne pouvons pas déterminer pour le moment pourquoi une 404 a été générée."
+msgstr ""
+
+#: ../view/error/404.phtml:34
+msgid "Contrôleur"
+msgstr ""
+
+#: ../view/error/404.phtml:41
+#, php-format
+msgid "résout en %s"
+msgstr ""
+
+#: ../view/error/404.phtml:51
+msgid "Exception"
+msgstr ""
+
+msgid "Mon Site"
+msgstr ""
+
+msgid "Rubriques"
+msgstr ""
+
+msgid "Sous-Rubriques"
+msgstr ""
+
+msgid "Contenus"
+msgstr ""
+
+msgid "Galeries"
+msgstr ""
+
+msgid "Blog"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Commentaires"
+msgstr ""
+
+msgid "Fichiers"
+msgstr ""
+
+msgid "Déconnexion"
+msgstr ""
+
+msgid "&Ecirc;tes vous sûr de vous déconnecter ?"
+msgstr ""
+
+msgid "Ajouter"
+msgstr ""
+
+msgid "Modifier"
+msgstr ""
+
+msgid "Non"
+msgstr ""
+
+msgid "Oui"
+msgstr ""
+
+msgid "Auteur"
+msgstr ""
+
+msgid "Autre texte ligne 1"
+msgstr ""
+
+msgid "Themes abordés"
+msgstr ""
+
+msgid "Autre texte ligne 2"
+msgstr ""
+
+msgid "Autre texte ligne 3"
+msgstr ""
+
+msgid "Ajouter un contenu de type blog"
+msgstr ""
+
+msgid "Sélectionner une sous-rubrique"
+msgstr ""
+
+msgid "Traitement en cours..."
+msgstr ""
+
+msgid "Rechercher"
+msgstr ""
+
+msgid "Afficher"
+msgstr ""
+
+msgid "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments"
+msgstr ""
+
+msgid "Affichage de l'&eacute;lement"
+msgstr ""
+
+msgid "sur"
+msgstr ""
+
+msgid "&eacute;l&eacute;ments"
+msgstr ""
+
+msgid "filtr&eacute; de"
+msgstr ""
+
+msgid "&eacute;l&eacute;ments au total"
+msgstr ""
+
+msgid "Chargement en cours"
+msgstr ""
+
+msgid "Aucun &eacute;l&eacute;ment &agrave; afficher"
+msgstr ""
+
+msgid "Aucune donnée disponible dans le tableau"
+msgstr ""
+
+msgid "Premier"
+msgstr ""
+
+msgid "Pr&eacute;c&eacute;dent"
+msgstr ""
+
+msgid "Suivant"
+msgstr ""
+
+msgid "Dernier"
+msgstr ""
+
+msgid "activer pour trier la colonne par ordre croissant"
+msgstr ""
+
+msgid "activer pour trier la colonne par ordre décroissant"
+msgstr ""
+
+msgid "Vous devez choisir une rubrique"
+msgstr ""
+
+msgid "La position doit être vide ou être un nombre"
+msgstr ""
+
+msgid "Vignette"
+msgstr ""
+
+msgid "Chemin image"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Meta Donn&eacute;es"
+msgstr ""
+
+msgid "type de fichier"
+msgstr ""
+
+msgid "Supprimer un contenu de type blog"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer le contenu"
+msgstr ""
+
+msgid "Modifier le contenu de type blog"
+msgstr ""
+
+msgid "Titre"
+msgstr ""
+
+msgid "Sous-Titre"
+msgstr ""
+
+msgid "Position"
+msgstr ""
+
+msgid "Sélectionner une rubrique"
+msgstr ""
+
+msgid "Ajouter un contenu"
+msgstr ""
+
+msgid "Supprimer un contenu"
+msgstr ""
+
+msgid "Modifier le contenu"
+msgstr ""
+
+msgid "Mes contenus"
+msgstr ""
+
+msgid "Rubrique"
+msgstr ""
+
+msgid "Sous-Rubrique"
+msgstr ""
+
+msgid "Libellé"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "Supprimer"
+msgstr ""
+
+msgid "Ajouter un contenu de type galerie"
+msgstr ""
+
+msgid "Supprimer un contenu de type galerie"
+msgstr ""
+
+msgid "Modifier le contenu de type galerie"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image 2"
+msgstr ""
+
+msgid "utilisateur"
+msgstr ""
+
+msgid "Utilisateur"
+msgstr ""
+
+msgid "saisir les caractères"
+msgstr ""
+
+msgid "mot de passe"
+msgstr ""
+
+msgid "Mot de passe"
+msgstr ""
+
+msgid "Vérification"
+msgstr ""
+
+msgid "Valider"
+msgstr ""
+
+msgid "Le fichier doit avoir l'extension"
+msgstr ""
+
+msgid "Ajouter une image à la bibliothèque"
+msgstr ""
+
+msgid "Courte description"
+msgstr ""
+
+msgid "Meta data"
+msgstr ""
+
+msgid "Ajouter un fichier"
+msgstr ""
+
+msgid "Supprimer un fichier de la bibliothèque"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer ce fichier"
+msgstr ""
+
+msgid "Modifier les données associées au fichier"
+msgstr ""
+
+msgid "Mes Fichiers"
+msgstr ""
+
+msgid "Aperçu"
+msgstr ""
+
+msgid "Nom du fichier"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+# Message
+msgid "Ajouter un Message"
+msgstr ""
+
+msgid "Supprimer un message"
+msgstr ""
+
+msgid "Modifier un Message"
+msgstr ""
+
+msgid "Mes messages"
+msgstr ""
+
+msgid "Ligne 1"
+msgstr ""
+
+msgid "Ligne 2"
+msgstr ""
+
+msgid "Ligne 3"
+msgstr ""
+
+msgid "Sélectionner le type de message"
+msgstr ""
+
+msgid "Contenu du message"
+msgstr ""
+
+# Commentaire
+msgid "Mes commentaires"
+msgstr ""
+
+msgid "Modifier un Commentaire"
+msgstr ""
+
+msgid "Sélectionner un contenu"
+msgstr ""
+
+msgid "Supprimer un commentaire"
+msgstr ""
+
+msgid "Ajouter un Commentaire"
+msgstr ""
+
+msgid "Ajouter un commentaire"
+msgstr ""
+
+msgid "Contenu du commentaire"
+msgstr ""
+
+msgid "Nom"
+msgstr ""
+
+msgid "Entreprise"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Autre"
+msgstr ""
+
+msgid "Sélectionner un statut"
+msgstr ""
+
+msgid "validé"
+msgstr ""
+
+msgid "non validé"
+msgstr ""
+
+# Rubrique
+msgid "Mes rubriques"
+msgstr ""
+
+msgid "Modifier la rubrique"
+msgstr ""
+
+msgid "modifier"
+msgstr ""
+
+msgid "&Ecirc;tes vous sûr de modifier la méta ?"
+msgstr ""
+
+msgid "supprimer"
+msgstr ""
+
+msgid "&Ecirc;tes vous sûr de supprimer la méta ?"
+msgstr ""
+
+msgid "Opération effectuée"
+msgstr ""
+
+msgid "Un problème est survenu, veuillez recommencer svp."
+msgstr ""
+
+msgid "Cl&eacute;"
+msgstr ""
+
+msgid "Valeur"
+msgstr ""
+
+msgid "Supprimer une rubrique"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer la rubrique"
+msgstr ""
+
+msgid "Ajouter une nouvelle rubrique"
+msgstr ""
+
+msgid "Ajouter une rubrique"
+msgstr ""
+
+msgid "Ajouter une m&eacute;ta"
+msgstr ""
+
+msgid "Meta clé"
+msgstr ""
+
+msgid "Meta valeur"
+msgstr ""
+
+msgid "Un problème est survenu, veuillez recommencer"
+msgstr ""
+
+msgid "Mes sous rubriques"
+msgstr ""
+
+# Sous rubrique
+msgid "Ajouter une sous-rubrique"
+msgstr ""
+
+msgid "Modifier la sous-rubrique"
+msgstr ""
+
+msgid "Rubrique associée"
+msgstr ""
+
+msgid "Supprimer une sous-rubrique"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer la sous-rubrique"
+msgstr ""
+
+msgid "Mes contenus de type Blog"
+msgstr ""
+
+msgid "Ajouter du contenu"
+msgstr ""
+
+msgid "Mes contenus de type galerie"
+msgstr ""
+
+msgid "Ajouter du contenu de type blog"
+msgstr ""
+
+msgid "Modèle de blog"
+msgstr ""
+
+msgid "At night and in transportation"
+msgstr ""
+
+msgid "Ajouter un message"
+msgstr ""
+
+msgid "Autre ligne"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer ce message"
+msgstr ""
+
+# Loginmgmt
+msgid "Mes utilisateurs"
+msgstr ""
+
+msgid "Modifier le login"
+msgstr ""
+
+msgid "Si aucun mot de passe n'est saisi alors le mot de passe actuel est conservé"
+msgstr ""
+
+msgid "Le nouveau mot de passe doit avoir 5 caractères"
+msgstr ""
+
+msgid "Ajouter un nouvel utilisateur"
+msgstr ""
+
+msgid "Sélectionner un rôle"
+msgstr ""
+
+msgid "Site public"
+msgstr ""
+
+msgid "Utilisateur Back Office"
+msgstr ""
+
+msgid "Administrateur"
+msgstr ""
+
+msgid "La taille minimum du nom est de 3 caractères minimum"
+msgstr ""
+
+msgid "La taille du nom ne doit pas dépasser 128 caractères"
+msgstr ""
+
+msgid "Vous devez saisir un nom"
+msgstr ""
+
+msgid "La taille minimum du mot de passe est de 5 caractères"
+msgstr ""
+
+msgid "La taille du mot de passe ne doit pas dépasser 128 caractères"
+msgstr ""
+
+msgid "Vous devez saisir un mot de passe de 5 caractères minimum"
+msgstr ""
+
+msgid "La taille ne doit pas dépasser 128 caractères"
+msgstr ""
+
+msgid "Vous devez choisir un rôle"
+msgstr ""
+
+msgid "L'email est invalide"
+msgstr ""
+
+msgid "La date n'est pas valide"
+msgstr ""
+
+msgid "Vous devez saisir une date"
+msgstr ""
+
+msgid "La taille ne doit pas dépasser 256 caractères"
+msgstr ""
+
+msgid "La position doit être vide ou doit être un nombre"
+msgstr ""
+
+msgid "Vous devez choisir une sous-rubrique"
+msgstr ""
+
+msgid "Veuillez recommencer le nom d'utilisateur et/ou le mot de passe sont incorrects"
+msgstr ""
+
+msgid "Veuillez contacter l'administrateur du site svp."
+msgstr ""
+
+msgid "Veuillez rafraichir la page et recommencer svp."
+msgstr ""
+
+msgid "Un utilisateur existe déjà avec ce nom, veuillez en choisir un autre"
+msgstr ""
+
+msgid "Le fichier est introuvable"
+msgstr ""
+
+msgid "La taille du fichier est supérieur à 5 Mo"
+msgstr ""
+
+msgid "Aucun fichier n'est sélectionné"
+msgstr ""
+
+msgid "Vous devez choisir un contenu"
+msgstr ""
+
+msgid "La taille minimum du libell&eacute; est de 1 caractère"
+msgstr ""
+
+msgid "La taille du libell&eacute; doit pas dépasser 128 caractères"
+msgstr ""
+
+msgid "Ajouter un utilisateur"
+msgstr ""
+
+msgid "Ajouter un lien vers un contenu"
+msgstr ""
+
+msgid "Vous devez choisir le contenu"
+msgstr ""
+
+msgid "Vous devez choisir la rubrique de destination"
+msgstr ""
+
+msgid "Vous devez choisir la sous-rubrique de destination"
+msgstr ""
+
+msgid "Choisir la sous-rubrique où apparaîtra le lien"
+msgstr ""
+
+msgid "Supprimer un lien"
+msgstr ""
+
+msgid "Etes-vous sûr de vouloir supprimer ce lien"
+msgstr ""
+
+msgid "Modifier un lien vers un contenu"
+msgstr ""
+
+msgid "Mes contenus liés à d'autres pages"
+msgstr ""
+
+msgid "Mes pages"
+msgstr ""
+
+msgid "Modifier la disposition de la page"
+msgstr ""
+
+msgid "Créer un lien"
+msgstr ""
+
+msgid "Choisir un contenu"
+msgstr ""
+
+msgid "Lien vers la rubrique"
+msgstr ""
+
+msgid "Contenu"
+msgstr ""
+
+msgid "Rubrique<br>et sous-rubrique d'origine"
+msgstr ""
+
+msgid "Lien créé vers la Rubrique<br>et la sous-rubrique"
+msgstr ""
+
+msgid "Titre et sous-titre du contenu à lier"
+msgstr ""
+
+msgid "Liens"
+msgstr ""
+
+msgid "Type de Contenus"
+msgstr ""
+
+msgid "Disposition"
+msgstr ""
