@@ -193,10 +193,6 @@ php composer.phar install
 More information on composer:
 https://getcomposer.org/download/
 
-- manual installation
-You can download a zip version of the project at :
-https://bitbucket.org/rongeb/at-night-and-in-transportation-cms/downloads
-
 Login to connect to the back-office :
 user : anit_admin
 password : anit_admin
