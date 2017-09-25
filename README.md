@@ -1,4 +1,4 @@
-ANIT - CMS
+At night and in transportation - CMS
 ====================================
 
 Introduction
@@ -181,17 +181,26 @@ If yout want to contribute, you are welcome.
 Installation
 ------------
 - git (https://git-scm.com/):
-You can clone the project with git or you can download the project.
-git clone https://rongeb@bitbucket.org/rongeb/at-night-and-in-transportation-cms.git
+You can clone the project :
+git clone https://github.com/rongeb/anit_cms_for_zf3.git
 
 dependencies :
-In the project you have zend 3. It works with php >= 5.6
-If you want to use a more recent version of zend framework, you have to use composer.
+The project is build on top of zend framework 3. It works with php >= 5.6.
+If you want to use a newer version of zend framework, you have to use composer.
 You have to modify the composer.json file and remove composer.lock files
 With the command line, you go to the root folder of the project and you type :
 php composer.phar install
 More information on composer:
 https://getcomposer.org/download/
+
+Git :
+You can find the the clone project here :
+https://github.com/rongeb/anit_cms_for_zf3.git
+
+Composer :
+composer require atnightandintransportation/cms 
+or
+php composer.phar require atnightandintransportation/cms
 
 Login to connect to the back-office :
 user : anit_admin
