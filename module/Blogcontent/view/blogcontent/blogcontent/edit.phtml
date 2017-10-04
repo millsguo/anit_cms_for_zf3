@@ -36,6 +36,10 @@ $this->headTitle($title);
     div#tableSort_length label{
        display: inline;
     }
+
+    input[name=blogdate]{
+        display: block;
+    }
     
 </style>
 <script type="text/javascript" src="<?php echo $this->basePath() . '/js/tinymce/tinymce.min.js'; ?>"></script>
@@ -225,6 +229,20 @@ $this->headTitle($title);
                 bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
             }
         });
+
+        $('.form_datetime').datetimepicker({
+            //language:  'fr',
+            //AAAA-MM-JJ HH:MM:SS
+            format:"yyyy-mm-dd hh:ii:ss",
+            weekStart: 1,
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1
+        });
+
     });
 </script>
 
@@ -258,7 +276,16 @@ echo '<div>' . $this->formRow($form->get('imagepath')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath2')) . '</div>';
 echo '<div>' . $this->formRow($form->get('themes')) . '</div>';
 echo '<div>' . $this->formRow($form->get('author')) . '</div>';
-echo '<div>' . $this->formRow($form->get('blogdate')) . '</div>';
+
+echo '<div class="control-group">';
+echo '<div class="controls input-append date form_datetime" data-date="" data-link-field="dtp_input1">';
+echo '<div>'. $this->formRow($form->get('blogdate')).'</div>';
+echo '<span class="add-on"><i class="icon-remove"></i></span>';
+echo '<span class="add-on"><i class="icon-th"></i></span>';
+echo '</div>';
+echo '<input type="hidden" id="dtp_input1" value="" /><br/>';
+echo '</div>';
+
 echo '<div>' . $this->formRow($form->get('text1')) . '</div>';
 echo '<div>' . $this->formRow($form->get('text2')) . '</div>';
 echo '<div>' . $this->formRow($form->get('text3')) . '</div>';

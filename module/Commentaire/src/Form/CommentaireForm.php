@@ -159,7 +159,7 @@ class CommentaireForm extends Form {
                 'type' => 'text'
             ),
             'options' => array(
-                'label' => 'Date format AAAA-MM-JJ HH:MM:SS',
+                'label' => 'Date format yyyy-mm-dd hh:ii:ss',
             )
         ));
 
