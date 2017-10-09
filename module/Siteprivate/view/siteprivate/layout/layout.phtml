@@ -25,7 +25,7 @@
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/bootbox/bootbox.min.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/datatable/media/js/jquery.dataTables.min.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/jssha/sha512.js'; ?>"></script>
-
+        <script type="text/javascript" src="<?php echo $this->basePath() . '/js/bootstrap-password/bootstrap-show-password.js'; ?>"></script>
         <link href="<?php echo $this->basePath() . "/js/datatable/media/css/jquery.dataTables.min.css"; ?>" rel='stylesheet'/>
     </head>
     <body>
@@ -107,6 +107,22 @@
                             //alert('toto');
                         }
                     }]);
+            });
+
+            $(function () {
+                $('#pwdconfirmIdTag').password()
+                    .on('show.bs.password',function (e) {
+                    console.log('show');
+                }).on('hide.bs.password', function (e) {
+                    console.log('hide');
+                });
+
+                $('#pwdIdTag').password()
+                    .on('show.bs.password',function (e) {
+                        console.log('show');
+                    }).on('hide.bs.password', function (e) {
+                    console.log('hide');
+                });
             });
         </script>
     </body>

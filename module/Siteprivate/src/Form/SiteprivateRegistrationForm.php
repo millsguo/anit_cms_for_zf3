@@ -22,7 +22,7 @@ class SiteprivateRegistrationForm extends PrivatespaceloginForm {
         $this->add(array(
             'name' => 'pwdconfirm',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'id' => 'pwdconfirmIdTag'
             ),
             'options' => array(

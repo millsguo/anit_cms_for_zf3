@@ -5,11 +5,12 @@ Introduction
 ------------
  
 Welcome to the repository of "Anit - CMS".
-In 2013 I decide to learn Zend Framework.
+In 2013 I decide to learn Zend Framework 2.
 In order to learn the basics of this framework, I have the project to develop my own cms.
 At the beginning, It was really basic but step by step I've added more features.
 Finally I share my work because I think it is not a prototype anymore but people or company can use it as a cms.
 I add more features step by step in order to fit most demanding needs for building a web site. 
+The cms runs on Zend Framework 3. 
 
 
 Principles of the cms
@@ -17,14 +18,15 @@ Principles of the cms
 
 Intro
 -----
-I worked for many companies to develop their own back-office for their web sites but often it was almost impossible to re-use it. 
-So I thought to a solution in order to create customizable web sites easily. 
+I worked for many companies in order to develop their own back-office for their web sites.
+But unfortunately they did not designed their back-office to have common modules or components able to be used for their other web sites or web application. 
+So I decided to design a solution in order to create customizable web sites easily.
 
 Benefits
 --------
 Modularity and Scalability:
-On the back-end side, you can easily add features through zend modules or through your own library.
-On the front-end side, you can think your web page as blocks, blocks that have their own blocks.
+Thanks to ZF3, on the back-end side, you can easily add features through zend modules or through your own php library.
+On the front-end side, you have to think your web page as blocks, blocks that have their own blocks.
 By this way you can stay focused on the UI.
 
 Maintainability :
@@ -47,7 +49,7 @@ Let's talk about the principles of the cms :
 - Page (Module : Rubrique): it's a web page, the main container.
 
 - Section (Module : Sous-Rubrique) : a page has one or many sections. 
-a section does not represent a section tag in html, it's represents a piece of your page.
+a section does not represent a section tag in html, it represents a piece of your page.
 
 - Content (Module : Contenu, Galerie, Blogcontent) : a section has one or many contents.
 I have divided content in three types :
@@ -80,15 +82,15 @@ You have by default three roles :
 - MyAcl (Module : MyAcl) : In this module you can manage role and url allowed by role.
 The role is stored in a session (configuration is in the Application module)
 
-- Pagearrangement (Module : Pagearrangement) : It allows to see the hierarchy of a page.
-You can change the position of sections and contents
+- Pagearrangement (Module : Pagearrangement) : It allows to see the hierarchy of the elements (sections, contents) of a page.
+You can change the position of sections and contents.
 By clicking on a button you can go to the form that you allow to update the selected element.
 It is very useful to have an overview of your page
 That's the object sent by the controller to the view.
 
 - Links (Module Linktocontenu) : It allows to create a link of a content into another page.
 In fact it's more than a link, you can customize the appearance of your link by adding an image, html, title... 
-For example, you want to create a shortcut to an article of your blog in your index page, you can easily customize the link in order to fit the design of your page
+For example, you want to create a shortcut to an article of your blog in your index page, you can easily customize the link in order to fit the design of your page.
 
 - Privatespace : It allows to declare an extranet in addition to your public web site.
 
@@ -96,7 +98,7 @@ For example, you want to create a shortcut to an article of your blog in your in
 
 - Siteprivate : 
     It allows to :
-        - manage the display of the pages that are related to a private space (Extranet).
+        - manage the display of the pages related to a private space (Extranet).
         - manage the subscription of a new user 
         - manage the case of a user who forgot his password.
         - manage comment's form 
@@ -104,11 +106,11 @@ For example, you want to create a shortcut to an article of your blog in your in
 
 - Sitepublic :
     It allows to :
-        - manage the display of the pages that are related to your public web site.
+        - manage the display of the pages related to your public web site.
         - manage comment's form
         - manage contact's form
  
-- Pagews :  It contains web services. It gives you pagearrangement data related to a page (public or private)
+- Pagews :  It contains web services. It gives you pagearrangement object related to a page (public or private)
 
 
 Position
@@ -145,13 +147,12 @@ You declare your library in composer.json file. In order to validate your change
 Internationalization
 --------------------
 The default language enabled is the english language.
-Now I have to say that I have developed in french. So the native language is french and strings are translated in english.
+Now I must confess I have developed in french. So the native language is french and strings are translated in english.
 In fact, I didn't think I will share this project. 
-That explain why you have modules name with french words.
+It explains why you have modules name with french words.
 For the ui of the back-office, if you want to translate to another language, you have to create
 and edit a new po file with a po editor.
-The method to translate a string is ... translate('string'). If you want to add a translate method outside views and controllers
-you need to use the method translate in ExtLib located in the vendor folder.
+The method to translate a string is ... translate('string'). If you want to add a translate method outside views and controllers, you need to use the method translate in ExtLib located in the vendor folder.
 You also have to download the js file that contains the translation of tiny mce in your language.
 http://www.tinymce.com/i18n/
 
@@ -193,24 +194,24 @@ php composer.phar install
 More information on composer:
 https://getcomposer.org/download/
 
-Git :
+- Github :
 You can find the the clone project here :
 https://github.com/rongeb/anit_cms_for_zf3.git
 
-Composer :
+- Composer :
 composer require atnightandintransportation/cms 
 or
 php composer.phar require atnightandintransportation/cms
 
-Login to connect to the back-office :
+- Login to connect to the back-office :
 user : anit_admin
 password : anit_admin
 
-Login to connect to the extranet :
+- Login to connect to the extranet :
 user : anit_private@anit.org
 password : anit_private@anit.org
 
-Requirement
+- Requirement
 MySql 5 or above
 php >= 5.6 for zend framework 3
 

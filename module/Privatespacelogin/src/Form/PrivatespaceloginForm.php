@@ -52,7 +52,7 @@ class PrivatespaceloginForm extends Form {
         $this->add(array(
             'name' => 'pwd',
             'attributes' => array(
-                'type' => 'text',
+                'type' => 'password',
                 'id' => 'pwdIdTag'
             ),
             'options' => array(
