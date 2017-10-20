@@ -15,7 +15,7 @@
         echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $linkico))
                 ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
                 ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
-                ->prependStylesheet($this->basePath(). '/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')
+                //->prependStylesheet($this->basePath(). '/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')
                 //->prependStylesheet($this->basePath() . '/css/style.css')
         ?>
 
@@ -122,19 +122,20 @@
                     var html = "";
                     var page = "";
                     //
+                    
                     for(var i=0;i<datalength;i++){
                         page = data['data'][i]["filename"];
                         page = page.substring(0, page.length-6);
                         //console.log(page);
                         for (var j in data['data'][i]){
-                            if(j=="spaceId" && data['data'][i][j] >-1 && page == "updatecontactinformation"){
-                                html+='<div><a href="'+updatecontactinformation+'/'+page+'" >'+data['data'][i]['libelle']+'</a></div>';
+                            if(j==="spaceId" && data['data'][i][j] >-1 && page == "updatecontactinformation"){
+                                html+='<div><a href="'+updatecontactinformation+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
                             }
-                            if(j=="spaceId" && data['data'][i][j] >-1 && page != "updatecontactinformation"){
-                                html+='<div><a href="'+displayPrivatePageUrl+'/'+page+'" >'+data['data'][i]['libelle']+'</a></div>';
+                            if(j==="spaceId" && data['data'][i][j] >-1 && page != "updatecontactinformation" ){
+                                html+='<div><a href="'+displayPrivatePageUrl+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
                             }
-                            else if(j=="spaceId" && data['data'][i][j] == -1){
-                                html+='<div><a href="'+displayPublicPageUrl+'/'+'displaypublicpage/'+page+'" >'+data['data'][i]['libelle']+'</a></div>';
+                            else if(j==="spaceId" && data['data'][i][j] == -1){
+                                html+='<div><a href="'+displayPublicPageUrl+'/'+'displaypublicpage/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
                             }
                         }
                     }
