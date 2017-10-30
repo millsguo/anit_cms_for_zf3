@@ -1,10 +1,10 @@
 {
-  "name": "atnightandintransportation/cms",
-  "description": "cms based on ZF2",
+  "name": "anit-cms-for-zf3",
+  "description": "cms build on top of ZF3",
   "license": "BSD-3-Clause",
   "keywords": [
     "framework",
-    "zf2",
+    "zf3",
     "cms"
   ],
   "homepage": "http://romgeb.fr/",
@@ -31,7 +31,11 @@
       "Rubrique\\": "module/Rubrique/src/",
       "Siteprivate\\": "module/Siteprivate/src/",
       "Sitepublic\\": "module/Sitepublic/src/",
-      "Sousrubrique\\": "module/Sousrubrique/src/"
+      "Sousrubrique\\": "module/Sousrubrique/src/",
+      "Confmgmt\\":"module/Confmgmt/src/",
+      "Device\\":"module/Device/src/",
+      "Pushnotif\\":"module/Pushnotif/src/",
+      "Mobileuploadmgmt\\":"module/Mobileuploadmgmt/src/"
     }
   },
   "require": {

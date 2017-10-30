@@ -42,6 +42,7 @@ return array(
         'Confmgmt',
         'Device',
         'Pushnotif',
+        'Mobileuploadmgmt',
         'Pagews'
     ),
     // These are various options for the listeners attached to the ModuleManager

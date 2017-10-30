@@ -4,7 +4,7 @@ namespace Pushnotif\Notification;
 
 class Push {
 
-    private $apiUrl_Androide = 'https://android.googleapis.com/gcm/send';
+    private $apiUrl_Android = 'https://android.googleapis.com/gcm/send';
     private $apiUrl_iOS = 'ssl://gateway.push.apple.com:2195';
     private $ioscertFolder = "public/ioscert/";
     /**
@@ -24,7 +24,7 @@ class Push {
 
         // Connexion Curl
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $this->apiUrl_Androide);
+        curl_setopt($curl, CURLOPT_URL, $this->apiUrl_Android);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $curl_headers);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -66,9 +66,4 @@ class Push {
         return $iosresult . $body;
         return true;
     }
-
-    public function sendPush($PushObj) {
-        
-    }
-
 }
