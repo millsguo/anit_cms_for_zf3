@@ -53,31 +53,25 @@ class CommentaireController extends AbstractActionController {
             
             if ($form->isValid()) {
                 /* Save commentaire from filled form -> must add image path */
-                //$commentaire = array();
                 $commentaire = new Commentaire();
                 $filterData = new Utils();
                 
                 $contenuDao = new ContenuDao();
                 
-                //$commentaire->setCommentaireId();
                 $commentaire->setCommentaireStatut($filterData->stripTags_replaceHtmlChar_trim($request->getPost('statusList'), true, false, true));
                 $commentaire->setContenuId($filterData->stripTags_replaceHtmlChar_trim($request->getPost('contenusList'), true, false, true));
                 
-                $contenu = new Contenu();
                 $contenu = $contenuDao->getContenu($commentaire->getContenuId());
                 
                 $commentaire->setType($contenu->getType());
                 
                 $commentaire->setDate($filterData->stripTags_replaceHtmlChar_trim($request->getPost('timestamp'), true, false, true));
-                //$commentaire->setId($_id);
                 $commentaire->setMessage($filterData->stripTags_replaceHtmlChar_trim($request->getPost('msg'), true, false, true));
-                //$commentaire->setRang($_rang);
                 $commentaire->setRow1($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row1'), true, false, true));
                 $commentaire->setRow2($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row2'), true, false, true));
                 $commentaire->setRow3($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row3'), true, false, true));
                 $commentaire->setRow4($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row4'), true, false, true));
-                //$commentaire->setType($filterData->stripTags_replaceHtmlChar_trim($request->getPost('typeList'), true, true, true));
-                
+
                 $commentaireDao->saveCommentaire($commentaire);
                 
                 //flush cash
@@ -163,11 +157,8 @@ class CommentaireController extends AbstractActionController {
                 $contenu = $contenuDao->getContenu($commentaire->getContenuId());
                 
                 $commentaire->setType($contenu->getType());
-                
                 $commentaire->setDate($filterData->stripTags_replaceHtmlChar_trim($request->getPost('timestamp'), true, false, true));
-                //$commentaire->setId($_id);
                 $commentaire->setMessage($filterData->stripTags_replaceHtmlChar_trim($request->getPost('msg'), true, false, true));
-                //$commentaire->setRang($_rang);
                 $commentaire->setRow1($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row1'), true, false, true));
                 $commentaire->setRow2($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row2'), true, false, true));
                 $commentaire->setRow3($filterData->stripTags_replaceHtmlChar_trim($request->getPost('row3'), true, false, true));

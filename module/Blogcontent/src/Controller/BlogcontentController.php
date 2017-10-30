@@ -45,7 +45,6 @@ class BlogcontentController extends AbstractActionController {
     public function addAction() {
 
         $form = new BlogcontentForm();
-        //$this->translator=$this->getServiceLocator()->get('translator');
         $form->get('submitbutton')->setAttribute('value', $this->translator->translate('Ajouter'));
         $blogContentDao = new BlogcontentDao();
         $rubriqueDao = new RubriqueDao();
@@ -55,7 +54,6 @@ class BlogcontentController extends AbstractActionController {
         $allFichiers = array();
 
         //get cache
-        //$cache = $this->getServiceLocator()->get('CacheDataListener');
         $result = $this->cache->getCacheDataItem(CacheKeys::$CacheKeyFichiersAll);
 
         //if there's no cache for images so get data from db and set cache
@@ -78,12 +76,10 @@ class BlogcontentController extends AbstractActionController {
 
             if ($form->isValid()) {
 
-                //$contenu = array();
                 $contenu = new Blogcontent();
                 $filterData = new Utils();
 
                 $contenu->setSousRubrique($sousrubriqueDao->getSousrubrique($filterData->stripTags_replaceHtmlChar_trim($request->getPost('sousrubriquesList'), true, true, true)));
-                //$contenu->setId();
                 $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), true, false, true));
                 $contenu->setRang($filterData->stripTags_replaceHtmlChar_trim($request->getPost('position'), true, false, true));
                 $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), false, true, true));
@@ -98,7 +94,6 @@ class BlogcontentController extends AbstractActionController {
                 $contenu->setText2($filterData->stripTags_replaceHtmlChar_trim($request->getPost('text2'), true, false, true));
                 $contenu->setText3($filterData->stripTags_replaceHtmlChar_trim($request->getPost('text3'), true, false, true));
 
-                //$contenu2 = Blogcontent::fromArray($contenu);
                 $blogContentDao->saveBlogContent($contenu);
 
                 //flush cash
@@ -198,7 +193,6 @@ class BlogcontentController extends AbstractActionController {
             //$form->setUseInputFilterDefaults(false);
             if ($form->isValid()) {
 
-                //$contenu = array();
                 $contenu = new Blogcontent();
                 $filterData = new Utils();
 
