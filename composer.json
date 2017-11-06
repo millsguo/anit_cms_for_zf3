@@ -1,6 +1,6 @@
-{
-  "name": "anit-cms-for-zf3",
-  "description": "cms build on top of ZF3",
+
+  "name": "atnigntandintransportation/cms",
+  "description": "cms build on top of zf3",
   "license": "BSD-3-Clause",
   "keywords": [
     "framework",

@@ -56,8 +56,6 @@ class FichiersController extends AbstractActionController {
                 'fichiers' => $result['fichiers']
             ));
         }
-        
-        
     }
 
     // Add content to this method:
@@ -98,7 +96,7 @@ class FichiersController extends AbstractActionController {
                 // Tester si le fichier n'est pas trop gros < 10Mo
                 if ($_FILES['newfichier']['size'] >= 10483760) {
 
-                    $error = $this->translator->translate("La taille du fichier est supérieur Ã  5 Mo");
+                    $error = $this->translator->translate("La taille du fichier est supérieur à 10 Mo");
                     //print_r($error);
                     //exit;
                     return new ViewModel(array(
