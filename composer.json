@@ -1,10 +1,10 @@
 {
-  "name": "atnightandintransportation/cms",
-  "description": "cms based on ZF2",
+  "name": "atnigntandintransportation/cms",
+  "description": "cms build on top of zf3",
   "license": "BSD-3-Clause",
   "keywords": [
     "framework",
-    "zf2",
+    "zf3",
     "cms"
   ],
   "homepage": "http://romgeb.fr/",
