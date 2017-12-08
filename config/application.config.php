@@ -39,9 +39,6 @@ return array(
         'Privatespace',
         'Privatespacelogin',
         'Siteprivate',
-        'Confmgmt',
-        'Device',
-        'Pushnotif',
         'Pagews'
     ),
     // These are various options for the listeners attached to the ModuleManager
