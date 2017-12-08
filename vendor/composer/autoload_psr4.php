@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'Zend\\XmlRpc\\' => array($vendorDir . '/zendframework/zend-xmlrpc/src'),
     'Zend\\Xml2Json\\' => array($vendorDir . '/zendframework/zend-xml2json/src'),
     'Zend\\View\\' => array($vendorDir . '/zendframework/zend-view/src'),
@@ -71,11 +71,12 @@ return array(
     'Zend\\Barcode\\' => array($vendorDir . '/zendframework/zend-barcode/src'),
     'Zend\\Authentication\\' => array($vendorDir . '/zendframework/zend-authentication/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Uploadmgmt\\' => array($baseDir . '/module/Uploadmgmt/src'),
     'Sousrubrique\\' => array($baseDir . '/module/Sousrubrique/src'),
     'Sitepublic\\' => array($baseDir . '/module/Sitepublic/src'),
     'Siteprivate\\' => array($baseDir . '/module/Siteprivate/src'),
     'Rubrique\\' => array($baseDir . '/module/Rubrique/src'),
+    'Pushnotif\\' => array($baseDir . '/module/Pushnotif/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
@@ -94,8 +95,10 @@ return array(
     'Fichiers\\' => array($baseDir . '/module/Fichiers/src'),
     'ExtLib\\' => array($vendorDir . '/ExtLib/library'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
+    'Device\\' => array($baseDir . '/module/Device/src'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Contenu\\' => array($baseDir . '/module/Contenu/src'),
+    'Confmgmt\\' => array($baseDir . '/module/Confmgmt/src'),
     'Commentaire\\' => array($baseDir . '/module/Commentaire/src'),
     'Blogcontent\\' => array($baseDir . '/module/Blogcontent/src'),
     'Blog\\' => array($baseDir . '/module/Blog/src'),

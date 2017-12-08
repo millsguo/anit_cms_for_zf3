@@ -2,14 +2,14 @@
 
 namespace Pagews;
 
-use Pagews\Controller\PagewsController;
+use Pagews\Controller\MobilewsController;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return array(
     'controllers' => array(
         'factories' => array(
-            PagewsController::class => InvokableFactory::class,
+            MobilewsController::class => InvokableFactory::class,
         ),
     ),
     // The following section is new and should be added to your file
@@ -24,7 +24,7 @@ return array(
                         //'id' => '[0-9]+',
                         'id' => '[a-zA-Z0-9_-]*[.]{0,1}[a-zA-Z]*',),
                     'defaults' => array(
-                        'controller' => PagewsController::class,
+                        'controller' => MobilewsController::class,
                     ),
                     //'cache'      => true),
                 ),

@@ -53,13 +53,13 @@ class MyAclPlugin extends AbstractPlugin
         $acl->addResource('privatespacelogincontroller'); // privatespace module
         $acl->addResource('siteprivatecontroller'); // privatespace module
         $acl->addResource('pagewscontroller'); // privatespace module
+        $acl->addResource('mobilewscontroller'); // authentication and upload ws
+        $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
 	# end RESOURCES ########################################
 		
 	################ PERMISSIONS #######################
 		
         // Application -------------------------->
-        //$acl->allow('user', 'indexcontroller', 'index:index');
-        //$acl->allow('user', 'indexcontroller', 'profile:index');
         $acl->allow('anonymous', 'indexcontroller', NULL);
        
         // Contenu -------------------------->
@@ -112,6 +112,12 @@ class MyAclPlugin extends AbstractPlugin
         
         // pagews -------------------------->
         $acl->allow('anonymous', 'pagewscontroller', NULL);
+
+        // mobilews -------------------------->
+        $acl->allow('anonymous', 'mobilewscontroller', NULL);
+
+        // uploadmgmtcontroller -------------------------->
+        $acl->allow('anonymous', 'uploadmgmtcontroller', NULL);
         
         // siteprivate -------------------------->
         $acl->allow('anonymous', 'siteprivatecontroller', array('index','auth','registration','forgottenpassword', 'changepassword','displayregistrationstate'));
@@ -142,7 +148,7 @@ class MyAclPlugin extends AbstractPlugin
                 //var_dump($role);
                 //var_dump($acl->isAllowed($role, $controllerName2, $actionName));
                 //exit;
-        //It Doesn't check module's name, that mean controller name has to be unique in the project
+        //It Doesn't check module's name, it means that the controller name has to be unique in the project
         //For this cms, the controller name is the module's name + Action suffix
         if ( !$acl->isAllowed($role, $controllerName2, $actionName)){
             $router = $e->getRouter();

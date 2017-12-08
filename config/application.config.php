@@ -39,11 +39,12 @@ return array(
         'Privatespace',
         'Privatespacelogin',
         'Siteprivate',
-        'Confmgmt',
-        'Device',
-        'Pushnotif',
-        'Mobileuploadmgmt',
-        'Pagews'
+        //'Confmgmt',
+        //'Device',
+        //'Pushnotif',
+        'Uploadmgmt',
+        'Pagews',
+        'Mobilews'
     ),
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(

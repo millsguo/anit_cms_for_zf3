@@ -15,7 +15,6 @@ use Rubrique\Model\MetaDao;
 use Sousrubrique\Model\Sousrubriquedao;
 use Commentaire\Model\Commentaire;
 use Commentaire\Model\CommentaireDao;
-use Linktocontenu\Model\LinktocontenuDao;
 use Privatespacelogin\Model\PrivatespaceloginDao;
 use Privatespacelogin\Model\Privatespacelogin;
 use Commentaire\Model\StatusComment;
@@ -101,7 +100,7 @@ class SiteprivateController extends AbstractActionController
             $form->setInputFilter(new IndexLoginInputFilter());
 
             $form->setData($request->getPost());
-            // $this->translator = $this->getServiceLocator()->get('translator');
+
             if ($form->isValid()) {
 
                 $privatespaceloginDao = new PrivatespaceloginDao();
