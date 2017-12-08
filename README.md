@@ -103,12 +103,14 @@ For example, you want to create a shortcut to an article of your blog in your in
         - manage the case of a user who forgot his password.
         - manage comment's form 
         - manage contact's form
+    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module i view/siteprivate/Siteprivate
 
 - Sitepublic :
     It allows to :
         - manage the display of the pages related to your public web site.
         - manage comment's form
         - manage contact's form
+    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module in view/sitepublic/sitepublic
  
 - Pagews :  It contains web services. It gives you pagearrangement object related to a page (public or private)
 
@@ -202,6 +204,14 @@ https://github.com/rongeb/anit_cms_for_zf3.git
 composer require atnightandintransportation/cms 
 or
 php composer.phar require atnightandintransportation/cms
+
+- urls of the applications
+You can find the url of the module in their config folder in the module.config.php
+These are relative url usefull to start :
+     * backoffice login : /backofficeaccess
+     * public web page : /sitepublic/displaypublicpage/your page without phtml extension
+     * extranet login : /siteprivate?myspace=token of your private space (you will find the token in the database)
+     * extranet web page : /siteprivate/displayprivatepage/your page without phtml extension
 
 - Login to connect to the back-office :
 user : anit_admin
