@@ -3,6 +3,7 @@ namespace Blogcontent;
 
 
 use Blogcontent\Controller\BlogcontentControllerFactory;
+use Zend\Router\Http\Segment;
 
 return array(
 	'controllers' => array(
@@ -14,7 +15,7 @@ return array(
 	'router' => array(
 		'routes' => array(
 			'Blogcontent' => array(
-				'type' => 'segment',
+				'type' => Segment::class,
 				'options' => array(
 					'route' => '/blogcontent[/:action][/:id]',
 					'constraints' => array(

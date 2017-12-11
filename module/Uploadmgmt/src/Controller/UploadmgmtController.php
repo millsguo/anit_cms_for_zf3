@@ -7,6 +7,8 @@ use Uploadmgmt\Model\Photosmgmt;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
+use Zend\Mvc\I18n\Translator;
+use Application\Factory\CacheDataListener;
 
 class UploadmgmtController extends AbstractActionController
 {
@@ -15,16 +17,13 @@ class UploadmgmtController extends AbstractActionController
 
     protected $translator;
     protected $cache;
-/*
+
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
-        echo 'test1';
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
-        echo 'test2';
-        //exit;
     }
-*/
+
     public function indexAction()
     {
 

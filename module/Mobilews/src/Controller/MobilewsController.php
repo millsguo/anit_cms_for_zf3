@@ -9,14 +9,25 @@ use Zend\View\Model\JsonModel;
 use Rubrique\Model\RubriqueDao;
 use Uploadmgmt\Model\Uploadmgmtdao;
 use Siteprivate\Model\SiteprivateDao;
-use Uploadmgmt\Fileupload;
+use Uploadmgmt\Model\Fileupload;
 use ExtLib\Utils;
 use ExtLib\MCrypt;
 use Privatespacelogin\Model\PrivatespaceloginDao;
 use ExtLib\FileManager;
+use Zend\Mvc\I18n\Translator;
+use Application\Factory\CacheDataListener;
 
 class MobilewsController extends AbstractActionController
 {
+
+    private $cache;
+    private $translator;
+
+    public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
+    {
+        $this->cache = $cacheDataListener;
+        $this->translator = $translator;
+    }
     /**
      * @return JsonModel
      *
@@ -31,15 +42,18 @@ class MobilewsController extends AbstractActionController
         $request = $this->getRequest();
 
         if ($request->isPost()) {
+
             $siteprivateDao = new SiteprivateDao();
             $rubriqueDao = new RubriqueDao();
-            $utils = new Utils();
+
             $mcrypt = new MCrypt();
             $privatespaceloginDao = new PrivatespaceloginDao();
 
             //token has to be provided
             $mySpaceToken = $request->getPost('token');
+            $utils = new Utils();
             $decypted = json_decode($mcrypt->decrypt($mySpaceToken));
+
             $page = $rubriqueDao->getRubriqueBySpaceToken($mySpaceToken, "object");
             $email = $utils->stripTags_replaceHtmlChar_trim($request->getPost('username'), true, true, false);
             $pwd = $utils->stripTags_replaceHtmlChar_trim($request->getPost('password'), true, true, false);
@@ -90,13 +104,13 @@ class MobilewsController extends AbstractActionController
                     'error' => $error
                 ));
             }
-        } else {
+        }
+        else {
             $error = $this->translator->translate('Veuillez rafraichir la page et recommencer svp.');
             $this->response->setStatusCode(500);
             return new JsonModel(array(
                 'error' => $error
             ));
-
         }
     }
 
@@ -117,13 +131,15 @@ class MobilewsController extends AbstractActionController
      */
     public function uploadfileAction()
     {
+
+        echo "uploadfileAction";
+
         $uploadmgmtdao = new Uploadmgmtdao();
         $filesDao = new Fichiersdao();
         $request = $this->getRequest();
 
         if ($request->isPost()) {
 
-            /** File * */
             $outils = new FileManager();
 
             if ($_FILES['newfile']['name'] != "") {

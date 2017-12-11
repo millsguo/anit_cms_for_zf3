@@ -9,7 +9,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return array(
     'controllers' => array(
         'factories' => array(
-            UploadmgmtController::class => InvokableFactory::class),
+            UploadmgmtController::class => UploadmgmtControllerFactory::class),
     ),
     // The following section is new and should be added to your file
     'router' => array(

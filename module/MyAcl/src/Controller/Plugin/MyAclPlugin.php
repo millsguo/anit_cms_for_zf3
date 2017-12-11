@@ -121,7 +121,7 @@ class MyAclPlugin extends AbstractPlugin
         
         // siteprivate -------------------------->
         $acl->allow('anonymous', 'siteprivatecontroller', array('index','auth','registration','forgottenpassword', 'changepassword','displayregistrationstate'));
-	$acl->allow('guest', 'siteprivatecontroller', array('updatecontactinformation','changepassword','displayprivatepage','logout','addcommentajax','contactajax'));
+	    $acl->allow('guest', 'siteprivatecontroller', array('updatecontactinformation','changepassword','displayprivatepage','logout','addcommentajax','contactajax'));
 
         
 	

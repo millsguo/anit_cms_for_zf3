@@ -13,7 +13,8 @@ class Uploadmgmtdao extends AnitmobDao {
     "p.filesupload_lat as lat, p.filesupload_lng as lng";
 
     public function getPhoto($idPhoto = 0) {
-        $requete = $this->dbGateway->prepare('SELECT '. $this::$fields .' FROM filesupload p WHERE filesupload_id=' . abs((int) $idPhoto)) or die(print_r($this->dbGateway->error_info()));
+        $requete = $this->dbGateway->prepare('SELECT '. $this::$fields .' FROM filesupload p WHERE filesupload_id=' . abs((int) $idPhoto))
+        or die(print_r($this->dbGateway->error_info()));
         $requete->execute();
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
         //die('<pre>'.print_r($requete2,true).'</pre>');
@@ -21,7 +22,7 @@ class Uploadmgmtdao extends AnitmobDao {
     }
 
     public function getPhotoWaitStatus() {
-        $requete = $this->dbGateway->prepare('SELECT '.$this::$fields.' FROM filesupload p WHERE p.filesupload_status=0 ORDER BY p.Date DESC')
+        $requete = $this->dbGateway->prepare('SELECT '.$this::$fields.' FROM filesupload p WHERE p.filesupload_status=0 ORDER BY p.filesupload_date DESC')
         or die(print_r($this->dbGateway->error_info()));
         $requete->execute();
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
@@ -29,7 +30,8 @@ class Uploadmgmtdao extends AnitmobDao {
     }
 
     public function getPhotoValidateStatus() {
-        $requete = $this->dbGateway->prepare('SELECT '.$this::$fields.' filesupload p WHERE p.filesupload_status=1 ORDER BY p.Date DESC') or die(print_r($this->dbGateway->error_info()));
+        $requete = $this->dbGateway->prepare('SELECT '.$this::$fields.' FROM filesupload p WHERE p.filesupload_status=1 ORDER BY p.filesupload_date DESC')
+        or die(print_r($this->dbGateway->error_info()));
         $requete->execute();
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
         return $requete2;

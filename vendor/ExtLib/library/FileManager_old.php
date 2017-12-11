@@ -2,7 +2,7 @@
 namespace ExtLib;
 //ini_set('display_errors', 1);
 
-final class FileManager
+final class FileManager_old
 {
 	public function extractExtension($fichier)
 	{

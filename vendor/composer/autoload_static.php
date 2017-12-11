@@ -104,7 +104,6 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         ),
         'P' => 
         array (
-            'Pushnotif\\' => 10,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
@@ -116,6 +115,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'M' => 
         array (
             'MyAcl\\' => 6,
+            'Mobilews\\' => 9,
             'Message\\' => 8,
         ),
         'L' => 
@@ -144,13 +144,11 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
-            'Device\\' => 7,
             'DeepCopy\\' => 9,
         ),
         'C' => 
         array (
             'Contenu\\' => 8,
-            'Confmgmt\\' => 9,
             'Commentaire\\' => 12,
         ),
         'B' => 
@@ -447,10 +445,6 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         array (
             0 => __DIR__ . '/../..' . '/module/Rubrique/src',
         ),
-        'Pushnotif\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Pushnotif/src',
-        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -482,6 +476,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'MyAcl\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/MyAcl/src',
+        ),
+        'Mobilews\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Mobilews/src',
         ),
         'Message\\' => 
         array (
@@ -523,10 +521,6 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
-        'Device\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Device/src',
-        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -534,10 +528,6 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'Contenu\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/Contenu/src',
-        ),
-        'Confmgmt\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/module/Confmgmt/src',
         ),
         'Commentaire\\' => 
         array (
@@ -703,7 +693,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
-        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
+        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XML.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
         'PHPUnit_Framework_MockObject_BadMethodCallException' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Exception/BadMethodCallException.php',
         'PHPUnit_Framework_MockObject_Builder_Identity' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/Builder/Identity.php',

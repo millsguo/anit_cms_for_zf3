@@ -39,9 +39,6 @@ return array(
         'Privatespace',
         'Privatespacelogin',
         'Siteprivate',
-        //'Confmgmt',
-        //'Device',
-        //'Pushnotif',
         'Uploadmgmt',
         'Pagews',
         'Mobilews'
