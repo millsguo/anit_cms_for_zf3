@@ -7,23 +7,28 @@ namespace Fichiers\Model;
 use Fichiers\Model\Fichiers;
 use Application\DBConnection\ParentDao;
 
-class Fichiersdao extends ParentDao{
+class Fichiersdao extends ParentDao
+{
 
-    public function __construct() {
-       
-       parent::__construct(); 
-        
+    public function __construct()
+    {
+
+        parent::__construct();
+
     }
 
-    public function getAllFichiers($dataType) {
+    private static $fields = "fichiers_id, fichiers_chemin, fichiers_nom, fichiers_type, fichiers_libelle, fichiers_meta, fichiers_thumbnailpath, fichiers_thumbnail";
+
+    public function getAllFichiers($dataType)
+    {
 
         $count = 0;
 
         $requete = $this->dbGateway->prepare("
-		SELECT *
+		SELECT " . self::$fields . " 
 		FROM fichiers
 		ORDER BY fichiers_nom
-		")or die(print_r($this->dbGateway->error_info()));
+		") or die(print_r($this->dbGateway->error_info()));
 
         $requete->execute();
 
@@ -32,34 +37,33 @@ class Fichiersdao extends ParentDao{
             if ($dataType == "object") {
                 //Put result in an array of objects
                 $arrayOfFichierstep = array();
-                
+
                 foreach ($requete2 as $key => $value) {
-                    
+
                     $arrayOfFichierstep[$count] = Fichiers::fromArray($value);
 
                     $count++;
                 }
-                 
-            }    
-                //print_r($arrayOfFichierstep2);
-                return $arrayOfFichierstep;
-            } 
-        
-        elseif ($dataType == "array") {
-                return $requete2;
+
             }
+            //print_r($arrayOfFichierstep2);
+            return $arrayOfFichierstep;
+        } elseif ($dataType == "array") {
+            return $requete2;
+        }
     }
 
-    public function getFichiers($id) {
+    public function getFichiers($id)
+    {
 
-        $id = (int) $id;
+        $id = (int)$id;
         $result = array();
 
         $requete = $this->dbGateway->prepare("
-		SELECT * 
+		SELECT " . self::$fields . "
 		FROM fichiers
 		WHERE fichiers_id = :id
-		")or die(print_r($this->dbGateway->error_info()));
+		") or die(print_r($this->dbGateway->error_info()));
 
         $requete->execute(array(
             'id' => $id
@@ -72,9 +76,10 @@ class Fichiersdao extends ParentDao{
         return $fichiers;
     }
 
-    public function saveFichiers(Fichiers $fichiers) {
+    public function saveFichiers(Fichiers $fichiers)
+    {
 
-        $id = (int) $fichiers->getId();
+        $id = (int)$fichiers->getId();
 
         if ($id > 0) {
 
@@ -83,7 +88,7 @@ class Fichiersdao extends ParentDao{
 				SET fichiers_libelle 	= :fichiers_libelle,
                                 fichiers_meta           = :fichiers_meta
 				WHERE fichiers_id 	= :id
-			")or die(print_r($this->dbGateway->errors_info()));
+			") or die(print_r($this->dbGateway->errors_info()));
 
             $requete->execute(array(
                 'fichiers_libelle' => $fichiers->getLibelle(),
@@ -94,7 +99,7 @@ class Fichiersdao extends ParentDao{
             //print_r($fichiers);
             //exit;
             $requete = $this->dbGateway->prepare("INSERT into fichiers(fichiers_chemin, fichiers_nom, fichiers_type, fichiers_libelle, fichiers_meta, fichiers_thumbnail, fichiers_thumbnailpath) 
-					values(:fichiers_chemin, :fichiers_nom, :fichiers_type, :fichiers_libelle, :fichiers_meta, :fichiers_thumbnail, :fichiers_thumbnailpath)")or die(print_r($this->dbGateway->error_info()));
+					values(:fichiers_chemin, :fichiers_nom, :fichiers_type, :fichiers_libelle, :fichiers_meta, :fichiers_thumbnail, :fichiers_thumbnailpath)") or die(print_r($this->dbGateway->error_info()));
 
             $requete->execute(array(
                 'fichiers_chemin' => $fichiers->getChemin(),
@@ -108,12 +113,13 @@ class Fichiersdao extends ParentDao{
         }
     }
 
-    public function deleteFichiers($id) {
+    public function deleteFichiers($id)
+    {
 
-        $id = (int) $id;
+        $id = (int)$id;
         $requete = $this->dbGateway->prepare("
 		DELETE FROM fichiers WHERE fichiers_id = :id
-		")or die(print_r($this->dbGateway->error_info()));
+		") or die(print_r($this->dbGateway->error_info()));
 
         $isDeleted = $requete->execute(array(
             'id' => $id
@@ -122,28 +128,30 @@ class Fichiersdao extends ParentDao{
         //exit;
         return $isDeleted;
     }
-    
-    public function deleteFichiersByFilename($filename) {
+
+    public function deleteFichiersByFilename($filename)
+    {
         $requete = $this->dbGateway->prepare("
 		DELETE FROM fichiers WHERE fichiers_nom = :filename
-		")or die(print_r($this->dbGateway->error_info()));
+		") or die(print_r($this->dbGateway->error_info()));
 
         $isDeleted = $requete->execute(array(
-             'filename' => $filename
+            'filename' => $filename
         ));
         //print_r($isDeleted);
         //exit;
         return $isDeleted;
     }
-    
-    public function getFichiersByFilename($filename) {
+
+    public function getFichiersByFilename($filename)
+    {
 
         $requete = $this->dbGateway->prepare("
-		SELECT * 
+		SELECT " . self::$fields ." 
 		FROM fichiers
 		WHERE fichiers_nom = :filename
                 LIMIT 1
-		")or die(print_r($this->dbGateway->error_info()));
+		") or die(print_r($this->dbGateway->error_info()));
 
         $requete->execute(array(
             'filename' => $filename
@@ -155,9 +163,10 @@ class Fichiersdao extends ParentDao{
 
         return $fichiers;
     }
-    
-    public function saveFichiersFilename(Fichiers $fichiers) {
-        $id = (int) $fichiers->getId();
+
+    public function saveFichiersFilename(Fichiers $fichiers)
+    {
+        $id = (int)$fichiers->getId();
         $result = false;
         if ($id > 0) {
 
@@ -165,8 +174,8 @@ class Fichiersdao extends ParentDao{
 				UPDATE fichiers 
 				SET fichiers_nom 	= :fichiers_nom
                                 WHERE fichiers_id 	= :id
-			")or die(print_r($this->dbGateway->errors_info()));
-            
+			") or die(print_r($this->dbGateway->errors_info()));
+
             $requete->bindParam(':id', $id, \PDO::PARAM_INT);
             $requete->bindParam(':fichiers_nom', $fichiers->getNom(), \PDO::PARAM_STR);
             $result = $requete->execute();

@@ -12,8 +12,8 @@ use Application\Factory\CacheDataListener;
 
 class UploadmgmtController extends AbstractActionController
 {
-    protected $path = 'public/uploadedfilesbank/';
-    protected $paththumbnails = 'public/uploadedfilesbank/thumbnails/';
+    public static $path = 'public/uploadedfilesbank/';
+    public static $paththumbnails = 'public/uploadedfilesbank/thumbnails/';
 
     protected $translator;
     protected $cache;

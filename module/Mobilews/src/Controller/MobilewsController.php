@@ -4,6 +4,7 @@ namespace Mobilews\Controller;
 
 use Fichiers\Model\Fichiers;
 use Fichiers\Model\Fichiersdao;
+use Uploadmgmt\Controller\UploadmgmtController;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
 use Rubrique\Model\RubriqueDao;
@@ -16,15 +17,21 @@ use Privatespacelogin\Model\PrivatespaceloginDao;
 use ExtLib\FileManager;
 use Zend\Mvc\I18n\Translator;
 use Application\Factory\CacheDataListener;
+use Fichiers\Model\FilesCategories;
 
 class MobilewsController extends AbstractActionController
 {
 
     private $cache;
     private $translator;
+    protected $path;
+    protected $paththumbnails = 'public/uploadedfilesbank/thumbnails/';
+    protected $savepath = 'public/uploadedfilesbank/';
 
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
+        $this->path  = UploadmgmtController::$path;
+        $this->paththumbnails = UploadmgmtController::$paththumbnails;
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
@@ -106,7 +113,7 @@ class MobilewsController extends AbstractActionController
             }
         }
         else {
-            $error = $this->translator->translate('Veuillez rafraichir la page et recommencer svp.');
+            $error = $this->translator->translate('Ce n\'est pas une requête POST');
             $this->response->setStatusCode(500);
             return new JsonModel(array(
                 'error' => $error
@@ -131,16 +138,13 @@ class MobilewsController extends AbstractActionController
      */
     public function uploadfileAction()
     {
-
-        echo "uploadfileAction";
-
-        $uploadmgmtdao = new Uploadmgmtdao();
-        $filesDao = new Fichiersdao();
         $request = $this->getRequest();
-
         if ($request->isPost()) {
 
             $outils = new FileManager();
+            $uploadmgmtdao = new Uploadmgmtdao();
+            $filesDao = new Uploadmgmtdao();
+            $savethumbnailpath = 'img';
 
             if ($_FILES['newfile']['name'] != "") {
 
@@ -156,6 +160,7 @@ class MobilewsController extends AbstractActionController
                     ));
                 }
 
+
                 // Test file size
                 if ($_FILES['newfile']['size'] >= 10483760) {
 
@@ -167,7 +172,6 @@ class MobilewsController extends AbstractActionController
                 }
 
                 if (in_array(strtolower($extension), FilesCategories::$listeextension) == false) {
-
                     $error = $this->translator->translate("Le fichier doit avoir l\'extension") . " 'jpg','jpeg', 'png', 'bmp', 'doc', 'docx', 'rtf', 'txt', 'xls', 'xlsx', 
                     'ppt', 'pptx', 'pdf', 'epub', 'odt', 'ods', 'mp4', 'mkv', 'ogv', 'mp3', 'wav', 'ogg', 'gz', 'zip', 'tar'";
                     $this->response->setStatusCode(500);
@@ -175,63 +179,60 @@ class MobilewsController extends AbstractActionController
                         'error' => $error
                     ));
                 } else {
-
                     $utils = new Utils();
                     $resultUpload = array();
                     $fichieruploaded = '';
                     $thumbnailfilename = '';
+
                     //By default if a file already exists, it will be renamed
                     if (in_array(strtolower($extension), FilesCategories::$imgList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbname = "thumb" . $_FILES['newfile']['name'];
                         //a thumbnail is created only if it is a jpeg or a png image
                         if (in_array(strtolower($extension), array('jpg', 'jpeg', 'png')) == true) {
-                            $thumbnailfilename = $outils->reduit_fichier($resultUpload["filename"][1], $thumbname, 150, 200, $this->path, $this->path, ""); //Redimensionnement vignette
+                            $thumbnailfilename = $outils->reduit_fichier($resultUpload["filename"][1], $thumbname, 150, 200, $this->path, $this->paththumbnails, ""); //create thumbnail
                         }
-                        $this->savethumbnailpath = $this->savepath;
+                        $savethumbnailpath = $this->savepath;
                     } elseif (in_array(strtolower($extension), FilesCategories::$wordList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$wordImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$documentList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$documentImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$excelList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$excelImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$audioList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$audioImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$videoList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$videoImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$presentationList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$presentationImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     } elseif (in_array(strtolower($extension), FilesCategories::$archiveList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfile'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
                         $thumbnailfilename = FilesCategories::$archiveImg;
-                        $this->savethumbnailpath = 'img/';
+                        $savethumbnailpath = 'img/';
                     }
 
                     if ($resultUpload["filename"][0] == true) {
 
-                        //if ($resultUpload["deleteExisting"][0] == true) {
-                        //    $filesDao->deleteFichiersByFilename($resultUpload["deleteExisting"][1]);
-                        //}
                         if ($resultUpload["renameExisting"][0] == true) {
-                            $file = new Fichiers();
-                            $file = $filesDao->getFichiersByFilename($resultUpload["filename"][1]);
-                            $file->setNom($resultUpload["renameExisting"][1]);
-                            $filesDao->saveFichiersFilename($file);
+                            $file = $filesDao->getFileByFilename($resultUpload["filename"][1]);
+                            $file->setName($resultUpload["renameExisting"][1]);
+                            $filesDao->saveFileupload($file);
                         }
 
                         $fileuploaded = $resultUpload["filename"][1];
+
                         $file = new Fileupload();
 
                         $file->setType($extension);
@@ -240,17 +241,18 @@ class MobilewsController extends AbstractActionController
                         $file->setName($fileuploaded);
                         $file->setPath($this->savepath);
                         $file->setThumbnail($thumbnailfilename);
-                        $file->setThumbnailpath($this->savethumbnailpath);
+                        $file->setThumbnailpath($savethumbnailpath);
                         $file->setComment($utils->stripTags_replaceHtmlChar_trim($request->getPost('comment'), true, true, true));
                         $file->setAuthor($utils->stripTags_replaceHtmlChar_trim($request->getPost('author'), true, true, true));
-                        $file->setDate(time());
                         $file->setEmail($utils->stripTags_replaceHtmlChar_trim($request->getPost('email'), true, true, true));
                         $file->setUserid($utils->stripTags_replaceHtmlChar_trim($request->getPost('userid'), true, true, true));
                         $file->setLat($utils->stripTags_replaceHtmlChar_trim($request->getPost('lat'), true, true, true));
                         $file->setLng($utils->stripTags_replaceHtmlChar_trim($request->getPost('lng'), true, true, true));
-                        $status = int($request->getPost('status'));
 
-                        if($status<0 && $status >2){
+                        $status = $request->getPost('status');
+                        $file->setStatus($status);
+
+                        if((int)$status<0 && (int)$status >2){
                             $this->response->setStatusCode(500);
                             return new JsonModel(array(
                                 'error' => $this->translator->translate("Le statut envoyé n'est pas correct")
@@ -282,6 +284,12 @@ class MobilewsController extends AbstractActionController
                     'error' => $error
                 ));
             }
+        } else {
+            $error = $this->translator->translate('Ce n\'est pas une requête POST');
+            $this->response->setStatusCode(500);
+            return new JsonModel(array(
+                'error' => $error
+            ));
         }
     }
 
