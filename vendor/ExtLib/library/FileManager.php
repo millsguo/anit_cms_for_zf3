@@ -67,38 +67,38 @@ final class FileManager
     }
 
     //fonction d'upload de fichier
-    function uploadfiles($fichier, $chemin, $newNameF, $actionFileExists)
+    function uploadfiles($file, $path, $newNameF, $actionFileExists)
     {
-
         $newNameFichier = array(false, "");
         $deleteExisting = array(false, "");
         $renameExisting = array(false, "");
 
-        if ($fichier['name'] != "") {
+        if ($file['name'] != "") {
             //global $newNameFichier;
             if (empty($newNameF)) {
-                $newNameFichier[1] = $this->formatNameFile($fichier['name']);
+                $newNameFichier[1] = $this->formatNameFile($file['name']);
             } else {
                 $newNameFichier[1] = $newNameF;
             }
 
             $newNameFichier[1] = strtolower($newNameFichier[1]);
 
-            if (file_exists($chemin . $newNameFichier[1])) {
+            if (file_exists($path . $newNameFichier[1])) {
 
                 if ($actionFileExists == self::$deleteExistingFile) {
-                    $deleteExisting[0] = @unlink($chemin . $newNameFichier[1]);
+                    $deleteExisting[0] = @unlink($path . $newNameFichier[1]);
                     $deleteExisting[1] = $newNameFichier[1];
 
                 } elseif ($actionFileExists == self::$renameUploadedFile) {
                     $newNameFichier[1] = time() . "_" . $newNameFichier[1]; //Si un autre fichier du meme nom existe, on renomme
                 } elseif ($actionFileExists == self::$renameExistingFile) {
-                    $renameExisting[0] = @rename($chemin . $newNameFichier[1], $chemin . time() . "_" . $newNameFichier[1]);
+                    $renameExisting[0] = @rename($path . $newNameFichier[1], $path . time() . "_" . $newNameFichier[1]);
                     $renameExisting[1] = time() . "_" . $newNameFichier[1];
+
                 }
             }
 
-            $newNameFichier[0] = @copy($fichier['tmp_name'], $chemin . $newNameFichier[1]);
+            $newNameFichier[0] = @copy($file['tmp_name'], $path . $newNameFichier[1]);
         }
 
         return array("filename" => $newNameFichier, "deleteExisting" => $deleteExisting[0], "renameExisting" => $renameExisting);
@@ -106,7 +106,7 @@ final class FileManager
 
     // Fonction de modification de fichier
     //$newName est le nom à donner au fichier uploadé
-    function updatefiles($fichier, $old_fichier, $chemin, $newName)
+    function updatefiles($fichier, $old_fichier, $path, $newName)
     {
         $newNameFichier = "";
 

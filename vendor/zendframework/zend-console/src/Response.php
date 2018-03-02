@@ -1,84 +1,13 @@
-<?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
-
-namespace Zend\Console;
-
-use Zend\Stdlib\Message;
-use Zend\Stdlib\ResponseInterface;
-
-class Response extends Message implements ResponseInterface
-{
-    /**
-     * @var bool
-     */
-    protected $contentSent = false;
-
-    /**
-     * Check if content was sent
-     *
-     * @return bool
-     * @deprecated
-     */
-    public function contentSent()
-    {
-        return $this->contentSent;
-    }
-
-    /**
-     * Set the error level that will be returned to shell.
-     *
-     * @param int   $errorLevel
-     * @return Response
-     */
-    public function setErrorLevel($errorLevel)
-    {
-        if (is_string($errorLevel) && !ctype_digit($errorLevel)) {
-            return $this;
-        }
-
-        $this->setMetadata('errorLevel', $errorLevel);
-        return $this;
-    }
-
-    /**
-     * Get response error level that will be returned to shell.
-     *
-     * @return int|0
-     */
-    public function getErrorLevel()
-    {
-        return $this->getMetadata('errorLevel', 0);
-    }
-
-    /**
-     * Send content
-     *
-     * @return Response
-     * @deprecated
-     */
-    public function sendContent()
-    {
-        if ($this->contentSent()) {
-            return $this;
-        }
-        echo $this->getContent();
-        $this->contentSent = true;
-        return $this;
-    }
-
-    /**
-     * @deprecated
-     */
-    public function send()
-    {
-        $this->sendContent();
-        $errorLevel = (int) $this->getMetadata('errorLevel', 0);
-        exit($errorLevel);
-    }
-}
+nfo                  DISM   API: PID=8620 TID=8428 DismApi.dll:                                            - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 DismApi.dll: <----- Starting DismApi.dll session -----> - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 DismApi.dll:                                            - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 DismApi.dll: Version 10.0.16299.15 - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 DismApi.dll: Parent process command line: C:\WINDOWS\system32\cleanmgr.exe /autoclean /d C: - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Enter DismInitializeInternal - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Input parameters: LogLevel: 2, LogFilePath: (null), ScratchDirectory: (null) - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   Initialized Panther logging at C:\WINDOWS\Logs\DISM\dism.log
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Initialized GlobalConfig - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Initialized SessionTable - DismInitializeInternal
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Lookup in table by path failed for: DummyPath-2BA51B78-C7F7-4910-B99D-BB7345357CDC - CTransactionalImageTable::LookupImagePath
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=8428 Waiting for m_pInternalThread to start - CCommandThread::Start
+2018-02-11 15:28:24, Info                  DISM   API: PID=8620 TID=10720 Enter CCommandThread::Comma

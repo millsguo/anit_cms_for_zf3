@@ -11,10 +11,12 @@
         <!-- Le styles -->
         <?php
         //Problem with chrome and favicon that disturb session management : https://pritisolanki.wordpress.com/tag/zend-framework-session-problem-in-chrome/
-        $linkico = "http://localhost:10088/mobiletools/public/atnightintrain.ico";
+        $linkico = "http://localhost/mobiletools/public/atnightintrain.ico";
         echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $linkico))
                 ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
                 ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                ->prependStylesheet($this->basePath() . '/css/font-awesome.min.css')
+                ->prependStylesheet($this->basePath() . '/css/uploadmgmt.css');
                 //->prependStylesheet($this->basePath(). '/js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css')
                 //->prependStylesheet($this->basePath() . '/css/style.css')
         ?>
@@ -27,6 +29,8 @@
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/datatable/media/js/jquery.dataTables.min.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/jssha/sha512.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo $this->basePath() . '/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->basePath() . '/js/admin.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->basePath() . '/js/jquery-image-loader-min.js'; ?>"></script>
 
         <link href="<?php echo $this->basePath() . "/js/datatable/media/css/jquery.dataTables.min.css"; ?>" rel='stylesheet'/>
 

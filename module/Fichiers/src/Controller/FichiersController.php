@@ -125,7 +125,8 @@ class FichiersController extends AbstractActionController
 
                     if (in_array(strtolower($extension), FilesCategories::$imgList) == true) {
                         $resultUpload = $outils->uploadfiles($_FILES['newfichier'], $this->path, "", FileManager::$renameExistingFile); //envoi du fichier original
-                        $thumbname = "thumb" . $_FILES['newfichier']['name'];
+                        $thumbname = "thumb";
+                        $thumbname= $outils->formatNameFile($_FILES['newfichier']['name']);
                         //a thumbnail can be made only for a jpeg or a png image
                         if (in_array(strtolower($extension), array('jpg', 'jpeg', 'png')) == true) {
                             $thumbnailfilename = $outils->reduit_fichier($resultUpload["filename"][1], $thumbname, 150, 200, $this->path, $this->path, ""); //Redimensionnement vignette

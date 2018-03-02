@@ -1,270 +1,313 @@
-<?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/zf2 for the canonical source repository
- * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
-
-namespace Zend\Db\Sql\Predicate;
-
-use Zend\Db\Sql\Exception;
-use Zend\Db\Sql\AbstractExpression;
-
-class Operator extends AbstractExpression implements PredicateInterface
-{
-    const OPERATOR_EQUAL_TO                  = '=';
-    const OP_EQ                              = '=';
-
-    const OPERATOR_NOT_EQUAL_TO              = '!=';
-    const OP_NE                              = '!=';
-
-    const OPERATOR_LESS_THAN                 = '<';
-    const OP_LT                              = '<';
-
-    const OPERATOR_LESS_THAN_OR_EQUAL_TO     = '<=';
-    const OP_LTE                             = '<=';
-
-    const OPERATOR_GREATER_THAN              = '>';
-    const OP_GT                              = '>';
-
-    const OPERATOR_GREATER_THAN_OR_EQUAL_TO  = '>=';
-    const OP_GTE                             = '>=';
-
-    /**
-     * {@inheritDoc}
-     */
-    protected $allowedTypes  = [
-        self::TYPE_IDENTIFIER,
-        self::TYPE_VALUE,
-    ];
-
-    /**
-     * @var int|float|bool|string
-     */
-    protected $left;
-
-    /**
-     * @var int|float|bool|string
-     */
-    protected $right;
-
-    /**
-     * @var string
-     */
-    protected $leftType = self::TYPE_IDENTIFIER;
-
-    /**
-     * @var string
-     */
-    protected $rightType = self::TYPE_VALUE;
-
-    /**
-     * @var string
-     */
-    protected $operator = self::OPERATOR_EQUAL_TO;
-
-    /**
-     * Constructor
-     *
-     * @param int|float|bool|string $left
-     * @param string $operator
-     * @param int|float|bool|string $right
-     * @param string $leftType TYPE_IDENTIFIER or TYPE_VALUE by default TYPE_IDENTIFIER {@see allowedTypes}
-     * @param string $rightType TYPE_IDENTIFIER or TYPE_VALUE by default TYPE_VALUE {@see allowedTypes}
-     */
-    public function __construct(
-        $left = null,
-        $operator = self::OPERATOR_EQUAL_TO,
-        $right = null,
-        $leftType = self::TYPE_IDENTIFIER,
-        $rightType = self::TYPE_VALUE
-    ) {
-        if ($left !== null) {
-            $this->setLeft($left);
-        }
-
-        if ($operator !== self::OPERATOR_EQUAL_TO) {
-            $this->setOperator($operator);
-        }
-
-        if ($right !== null) {
-            $this->setRight($right);
-        }
-
-        if ($leftType !== self::TYPE_IDENTIFIER) {
-            $this->setLeftType($leftType);
-        }
-
-        if ($rightType !== self::TYPE_VALUE) {
-            $this->setRightType($rightType);
-        }
-    }
-
-    /**
-     * Set left side of operator
-     *
-     * @param  int|float|bool|string $left
-     *
-     * @return self Provides a fluent interface
-     */
-    public function setLeft($left)
-    {
-        $this->left = $left;
-
-        if (is_array($left)) {
-            $left = $this->normalizeArgument($left, $this->leftType);
-            $this->leftType = $left[1];
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get left side of operator
-     *
-     * @return int|float|bool|string
-     */
-    public function getLeft()
-    {
-        return $this->left;
-    }
-
-    /**
-     * Set parameter type for left side of operator
-     *
-     * @param  string $type TYPE_IDENTIFIER or TYPE_VALUE {@see allowedTypes}
-     *
-     * @return self Provides a fluent interface
-     *
-     * @throws Exception\InvalidArgumentException
-     */
-    public function setLeftType($type)
-    {
-        if (! in_array($type, $this->allowedTypes)) {
-            throw new Exception\InvalidArgumentException(sprintf(
-                'Invalid type "%s" provided; must be of type "%s" or "%s"',
-                $type,
-                __CLASS__ . '::TYPE_IDENTIFIER',
-                __CLASS__ . '::TYPE_VALUE'
-            ));
-        }
-
-        $this->leftType = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get parameter type on left side of operator
-     *
-     * @return string
-     */
-    public function getLeftType()
-    {
-        return $this->leftType;
-    }
-
-    /**
-     * Set operator string
-     *
-     * @param  string $operator
-     * @return self Provides a fluent interface
-     */
-    public function setOperator($operator)
-    {
-        $this->operator = $operator;
-
-        return $this;
-    }
-
-    /**
-     * Get operator string
-     *
-     * @return string
-     */
-    public function getOperator()
-    {
-        return $this->operator;
-    }
-
-    /**
-     * Set right side of operator
-     *
-     * @param  int|float|bool|string $right
-     *
-     * @return self Provides a fluent interface
-     */
-    public function setRight($right)
-    {
-        $this->right = $right;
-
-        if (is_array($right)) {
-            $right = $this->normalizeArgument($right, $this->rightType);
-            $this->rightType = $right[1];
-        }
-
-        return $this;
-    }
-
-    /**
-     * Get right side of operator
-     *
-     * @return int|float|bool|string
-     */
-    public function getRight()
-    {
-        return $this->right;
-    }
-
-    /**
-     * Set parameter type for right side of operator
-     *
-     * @param  string $type TYPE_IDENTIFIER or TYPE_VALUE {@see allowedTypes}
-     * @return self Provides a fluent interface
-     * @throws Exception\InvalidArgumentException
-     */
-    public function setRightType($type)
-    {
-        if (! in_array($type, $this->allowedTypes)) {
-            throw new Exception\InvalidArgumentException(sprintf(
-                'Invalid type "%s" provided; must be of type "%s" or "%s"',
-                $type,
-                __CLASS__ . '::TYPE_IDENTIFIER',
-                __CLASS__ . '::TYPE_VALUE'
-            ));
-        }
-
-        $this->rightType = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get parameter type on right side of operator
-     *
-     * @return string
-     */
-    public function getRightType()
-    {
-        return $this->rightType;
-    }
-
-    /**
-     * Get predicate parts for where statement
-     *
-     * @return array
-     */
-    public function getExpressionData()
-    {
-        list($values[], $types[]) = $this->normalizeArgument($this->left, $this->leftType);
-        list($values[], $types[]) = $this->normalizeArgument($this->right, $this->rightType);
-
-        return [[
-            '%s ' . $this->operator . ' %s',
-            $values,
-            $types
-        ]];
-    }
-}
+;
+ height: 85px;
+ -ms-grid-rows: 40px 1fr
+ }
+ .inPlaceDetailsItemName
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column: 1
+ }
+ .musicPage .win-vertical .inPlaceDetailsItemName, .collectionVideoGallery .inPlaceDetailsItemName
+ {
+ margin-top: 15px;
+ padding-right: 10px
+ }
+ .inPlaceDetailsItemDurationStatus
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column: 2;
+ display: -ms-grid
+ }
+ .musicPage .win-vertical .inPlaceDetailsItemDurationStatus, .collectionVideoGallery .inPlaceDetailsItemDurationStatus
+ {
+ margin-top: 15px
+ }
+ .inPlaceDetailsItemStatus
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column: 1
+ }
+ .inPlaceDetailsItemDuration
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column: 2
+ }
+ .inPlaceDetailsHorizontalRule
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column-span: 2;
+ border-top: 1px solid
+ }
+ .inPlaceDetailsItemInfo
+ {
+ -ms-grid-row: 2;
+ -ms-grid-column-span: 2
+ }
+ .inPlaceDetailsItemActions
+ {
+ -ms-grid-row: 2;
+ -ms-grid-column-span: 2;
+ clear: left
+ }
+ .inPlaceDetailsItemActions>div .win-template
+ {
+ -ms-flex: 1 auto
+ }
+ .inPlaceDetailsItemActionButton
+ {
+ float: left;
+ width: 208px;
+ height: 50px;
+ padding: 10px 10px 10px 10px;
+ margin: 1px 1px 1px 1px;
+ text-align: left;
+ border: 0 solid;
+ cursor: pointer;
+ white-space: normal
+ }
+ .musicPage .win-vertical .inPlaceDetailsItemActionButton, .collectionVideoGallery .inPlaceDetailsItemActionButton
+ {
+ width: calc( 50% - 1px );
+ margin-top: 0;
+ margin-right: 1px;
+ margin-bottom: 0;
+ margin-left: 0;
+ padding-left: 15px
+ }
+ .inlineDetailsExtrasList .win-listview, .inlineDetailsExtrasList .win-surface
+ {
+ width: 100%;
+ margin: 0;
+ height: auto;
+ padding: 0;
+ position: relative;
+ overflow: visible
+ }
+ .inlineDetailsExtrasList .win-item
+ {
+ margin: 0;
+ padding-bottom: 10px;
+ width: 100%;
+ height: 50px
+ }
+ .inlineDetailsGameExtra
+ {
+ height: 100%;
+ width: 100%;
+ padding-top: 10px
+ }
+ .inlineDetailsGameExtraMetadataLine
+ {
+ clear: left;
+ width: 100%;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden
+ }
+ .inlineDetailsGameExtraTitle
+ {
+ position: relative;
+ left: 4px;
+ height: 50px
+ }
+ .inlineStreamingStatusArea
+ {
+ display: -ms-grid;
+ -ms-grid-rows: 1fr;
+ -ms-grid-columns: auto 1fr;
+ padding-bottom: 10px
+ }
+ .inlineStreamingText
+ {
+ -ms-grid-row: 1;
+ -ms-grid-column: 2
+ }
+ .gameInlineDetailsPanelFragmentContainer.panelFragmentContainer, .movieInlineDetailsPanelFragmentContainer.panelFragmentContainer, .musicInlineDetailsPanelFragmentContainer.panelFragmentContainer, .tvInlineDetailsPanelFragmentContainer.panelFragmentContainer
+ {
+ width: calc(100% - 35px);
+ height: calc(100% - 30px);
+ top: 5px;
+ left: 15px;
+ margin-left: 0
+ }
+ .gameInlineDetailsPanelFragmentContainer.panelFragmentContainer.panelFragmentLoading, .movieInlineDetailsPanelFragmentContainer.panelFragmentContainer.panelFragmentLoading, .musicInlineDetailsPanelFragmentContainer.panelFragmentContainer.panelFragmentLoading, .tvInlineDetailsPanelFragmentContainer.panelFragmentContainer.panelFragmentLoading
+ {
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0
+ }
+ .contentNotificationListWrapper
+ {
+ margin-left: -5px
+ }
+ .contentNotificationListWrapper .label
+ {
+ margin-left: 12px
+ }
+ .popOver
+ {
+ display: -ms-grid;
+ width: 730px;
+ height: 530px;
+ -ms-grid-columns: 255px 475px;
+ -ms-grid-rows: 1fr
+ }
+ @media screen and (min-height: 1080px){
+ .dashboardPanel.socialMiniProfile .popOver.friend
+ {
+ height: 675px
+ }
+ }
+ .popOver.tv
+ {
+ overflow: hidden
+ }
+ .popOver .leftColumn
+ {
+ display: -ms-grid;
+ -ms-grid-columns: 20px 1fr 20px;
+ -ms-grid-rows: 20px auto 4px 1fr 20px
+ }
+ .album .leftColumn
+ {
+ -ms-grid-rows: 20px auto 4px 1fr auto 20px
+ }
+ .popOver .rightColumn
+ {
+ display: -ms-grid;
+ -ms-grid-columns: 30px 1fr 50px;
+ -ms-grid-column: 2;
+ -ms-grid-rows: 20px auto auto 16px 1fr 22px
+ }
+ .popOver .rightColumnBackground
+ {
+ -ms-grid-column: 2
+ }
+ .popOver.friend .rightColumn
+ {
+ -ms-grid-columns: 25px 1fr 50px;
+ -ms-grid-rows: 20px auto auto 16px 1fr 22px
+ }
+ .popOver.playlist .rightColumn
+ {
+ -ms-grid-rows: 20px auto auto 10px 1fr 22px
+ }
+ .popOver.album .rightColumn
+ {
+ -ms-grid-rows: 20px auto 10px auto auto 12px 1fr 30px
+ }
+ .popOver.artist .rightColumn
+ {
+ -ms-grid-rows: 20px auto 10px auto auto 10px auto 0 1fr 30px
+ }
+ .popOver .actions
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 4;
+ overflow-x: visible;
+ overflow-y: auto;
+ -ms-grid-column-span: 2;
+ display: -ms-grid;
+ -ms-grid-columns: 1fr 20px;
+ -ms-grid-row-span: 2;
+ margin: 0 -2px
+ }
+ .musicSubscriptionLink
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 5
+ }
+ .musicSubscriptionLink>button
+ {
+ width: 100%
+ }
+ .musicSubscriptionLink .actionLinkLabel
+ {
+ width: 100%
+ }
+ html[dir=ltr] .musicSubscriptionLink .actionLinkLabel
+ {
+ text-align: left
+ }
+ html[dir=rtl] .musicSubscriptionLink .actionLinkLabel
+ {
+ text-align: right
+ }
+ .popOverContainer .overlayContent>div
+ {
+ display: -ms-grid;
+ -ms-grid-columns: 1fr;
+ -ms-grid-rows: 1fr
+ }
+ .popOver .titleContainer
+ {
+ -ms-grid-row: 2;
+ -ms-grid-column: 2;
+ margin: 0 2px
+ }
+ .popOver .titleContainer .secondaryText
+ {
+ margin: 4px 0
+ }
+ .popOver .activityTitleContainer
+ {
+ display: -ms-grid;
+ -ms-grid-columns: 46px 354px;
+ -ms-grid-rows: 1fr
+ }
+ .popOver .activityTitleContainer .activityBackButton button.iconButton.win-command
+ {
+ -ms-grid-rows: 0 1fr 0
+ }
+ .popOver .activityTitleContainer .activityBackButton
+ {
+ -ms-grid-column: 1;
+ -ms-grid-row: 1
+ }
+ .popOver .activityTitleContainer .metaData1
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 1
+ }
+ .popOver .activityTitleContainer .metaData2
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 2
+ }
+ .popOver .activityTitleContainer .metaData3
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 3
+ }
+ .popOver .episodeTitleContainer
+ {
+ display: -ms-grid;
+ -ms-grid-columns: 46px 354px;
+ -ms-grid-rows: 1fr
+ }
+ .popOver .episodeTitleContainer .episodeBackButton
+ {
+ -ms-grid-column: 1;
+ -ms-grid-row: 1
+ }
+ .popOver .episodeTitleContainer .episodeBackButton button.iconButton.win-command
+ {
+ -ms-grid-rows: 0 1fr 0
+ }
+ .popOver .episodeTitleContainer .metadata1
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 1
+ }
+ .popOver .episodeTitleContainer .metadata2
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 2
+ }
+ .popOver .episodeTitleContainer .metadata3
+ {
+ -ms-grid-column: 2;
+ -ms-grid-row: 3
+ }
+ .popOver .episodeTitl

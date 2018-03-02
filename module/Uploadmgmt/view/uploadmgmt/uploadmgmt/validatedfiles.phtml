@@ -5,6 +5,40 @@ $this->headTitle($title);
 <script type="text/javascript">
     $(document).ready(function () {
 
+        $("#tableSort").dataTable({
+            language: {
+                processing: "<?php echo $this->translate('Traitement en cours...'); ?>",
+                search: "<?php echo $this->translate('Rechercher'); ?>&nbsp; ",
+                lengthMenu: "<?php echo $this->translate('Afficher') . '_MENU_ ' . $this->translate('&eacute;l&eacute;ments'); ?>",
+                info: "<?php echo $this->translate('Affichage de l\'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments') ?>",
+                infoEmpty: "<?php echo $this->translate('Affichage de l\'&eacute;lement') . ' 0 &agrave; 0 ' . $this->translate('sur') . ' 0 ' . $this->translate('&eacute;l&eacute;ments') ?>",
+                infoFiltered: "(<?php echo $this->translate('filtr&eacute; de ') . '_MAX_ ' . $this->translate('&eacute;l&eacute;ments au total'); ?>)",
+                infoPostFix: "",
+                loadingRecords: "<?php echo $this->translate('Chargement en cours'); ?>...",
+                zeroRecords: "<?php echo $this->translate('Aucun &eacute;l&eacute;ment &agrave; afficher'); ?>",
+                emptyTable: "<?php echo $this->translate('Aucune donnée disponible dans le tableau'); ?>",
+                paginate: {
+                    first: "<?php echo $this->translate('Premier'); ?>",
+                    previous: "<?php echo $this->translate('Pr&eacute;c&eacute;dent') ?>",
+                    next: "<?php echo $this->translate('Suivant') ?>",
+                    last: "<?php echo $this->translate('Dernier') ?>"
+                },
+                aria: {
+                    sortAscending: ": <?php echo $this->translate('activer pour trier la colonne par ordre croissant'); ?>",
+                    sortDescending: ": <?php echo $this->translate('activer pour trier la colonne par ordre décroissant'); ?>"
+                }
+            },
+            "aoColumnDefs": [
+                {'bSortable': false, 'aTargets': [0, 4]}
+            ]
+
+        });
+
+        $('#tableSort').on('draw.dt', function () {
+            $("img.imgAsync").off("click");
+            modalDisplayPhoto();
+        });
+
         $('.btnBackToOrigImage').on("click", function () {
             var id = $(this).attr("data-id");
             $.ajax({
@@ -12,8 +46,6 @@ $this->headTitle($title);
                 url: '<?php echo $this->url('Uploadmgmt', array('action' => 'backtooriginal')); ?>/' + id,
                 dataType: 'json',
                 success: function (data) {
-
-                    //window.location.reload(true);
                     if (data['state'] == "ok") {
 
                         loadImages();
@@ -42,7 +74,12 @@ $this->headTitle($title);
 
         loadImages();
 
-        $(".photoFull").on("click", function () {
+        modalDisplayPhoto();
+
+    });
+
+    function modalDisplayPhoto() {
+        $("img.imgAsync").on("click", function () {
             var image = $(this).attr("data-imagesrc");
             var idImage = "idImage";
             bootbox.dialog('<img class="img-responsive" src="' + image + '" id="' + idImage + '"/>', [{
@@ -50,8 +87,6 @@ $this->headTitle($title);
                 "class": "btn-success",
                 "keyboard": true,
                 "callback": function () {
-
-
                 }
             }]);
 
@@ -83,7 +118,7 @@ $this->headTitle($title);
 
         });
 
-    });
+    }
 
     function loadImages() {
         $('.imgAsync').loadImages({
@@ -98,7 +133,6 @@ $this->headTitle($title);
             dataAttr: 'src'
         });
     }
-
 
     function dialogInfo(isOk, message, btnLabel) {
 
@@ -116,7 +150,6 @@ $this->headTitle($title);
             }
         }]);
 
-
         $('.bootbox').css('background-color', 'white');
         $('.bootbox').css('width', '300px');
         $('.bootbox').css('min-height', '120px');
@@ -126,90 +159,111 @@ $this->headTitle($title);
     }
 </script>
 
-
-<!-- Photos Beneficiaire -->
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12"><h1 class="page-header"><?php echo $title; ?></h1></div>
     </div>
 
-    <?php
-    foreach ($photos as $ph) :
-//die('<pre>'.print_r($ph,true).'</pre>');
-        ?>
-        <div class="col-xs-3 col-lg-2 text-center" style="padding-top:15px;padding-bottom:15px">
-            <a href="#" data-toggle="modal" data-target="#modalPhoto<?php echo $ph['id']; ?>">
-                <img width="100" height="99" class="img<?php echo $ph['id']; ?> imgAsync"
-                     data-src="<?php echo $this->basePath() . $ph['path'] . $ph['thumbnailpath'] . $ph['thumbnail'] . '?' . time(); ?>">
-            </a>
-        </div>
-    <?php endforeach; ?>
+    <table class="tablesorter table table-bordered table-striped hasFilters" id="tableSort" role="grid">
+        <thead>
+        <tr>
+            <th width="1"><?php echo $this->translate('Fichier'); ?></th>
+            <th width="1"><?php echo $this->translate('Date'); ?> </th>
+            <th><?php echo $this->translate('Auteur'); ?></th>
+            <th><?php echo $this->translate('Commentaire'); ?></th>
+            <th><?php echo $this->translate('Type'); ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($photos as $ph) :
+            //die('<pre>'.print_r($ph,true).'</pre>');
+            ?>
+            <tr>
+                <td><img width="170" height="168" class="img<?php echo $ph['id']; ?> imgAsync"
+                         data-src="<?php echo $this->basePath() . '/' . $ph['thumbnailpath'] . $ph['thumbnail'] . '?' . time(); ?>"
+                        <?php
+                        $imageTypes = ['jpg', 'jpeg', 'png', 'bmp', 'gif', 'svg'];
+                        if (in_array($ph['type'], $imageTypes)) {
+                            echo 'data-imagesrc="' . $this->basePath() . '/' . $ph['path'] . $ph['name'] . '?' . time() . '"';
+                        } ?>/>
+
+                </td>
+                <td><?php echo $ph['creationdate'] ?></td>
+                <td><?php echo $ph['author']; ?></td>
+                <td><?php echo $ph['comment']; ?></td>
+                <td><?php echo $ph['type']; ?></td>
+
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 
     <?php
     foreach ($photos as $ph) :
-//die('<pre>'.print_r($ph,true).'</pre>');
         ?>
-        <div class="modal fade" id="modalPhoto<?php echo $ph['id']; ?>" tabindex="-1" role="dialog"
+        <div class="modal hide fade" id="modalPhoto<?php echo $ph['id']; ?>" tabindex="-1" role="dialog"
              aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title"><?php echo $this->translate('Fichiers'); ?></h4>
-                    </div>
-                    <div class="modal-body row">
-                        <div class="col-lg-5">
-                            <img width="170" height="168"
-                                 class="img<?php echo $ph['id']; ?> imgAsync photoFull img-responsive"
-                                 data-src="<?php echo $this->basePath(); ?>/filesbank/thumbnails/<?php echo $ph['Vignette'] . '?' . time(); ?>"
-                                 data-imagesrc="<?php echo $this->basePath(); ?>/filesbank/<?php echo $ph['Image'] . '?' . time(); ?>"><br>
-                            <a data-img="img<?php echo $ph['id']; ?>"
-                               href="<?php echo $this->url('Uploadmgmt', array('action' => 'rotateright', 'id' => $ph['id'])); ?>"
-                               class="ajaxRotate btn btn-warning btn-circle"><i class="fa fa-rotate-right"></i></a>
-                            <a data-img="img<?php echo $ph['id']; ?>"
-                               href="<?php echo $this->url('Uploadmgmt', array('action' => 'rotateleft', 'id' => $ph['id'])); ?> ?>"
-                               class="ajaxRotate btn btn-warning btn-circle"><i class="fa fa-rotate-left"></i></a>
-                        </div>
-                        <div class="col-lg-7">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><?php echo $this->translate('Photo') ?></h4>
+            </div>
+            <div class="modal-body">
 
-                            <form method="post"
-                                  action="<?php print($this->url('Uploadmgmt', array('action' => 'update', 'id' => $ph['id']))); ?>">
-                                <p><strong><?php echo $this->translate('Auteur'); ?>
-                                        :</strong> <?php echo $ph['author']; ?></p>
-                                <p><strong><?php echo $this->translate('Identifiant'); ?>
-                                        :</strong> <?php echo $ph['userId']; ?></p>
-                                <p><strong><?php echo $this->translate('email'); ?>
-                                        :</strong> <?php echo $ph['email']; ?></p>
-                                <p><strong><?php echo $this->translate('date'); ?>
-                                        :</strong> <?php echo $ph['creationDate']; ?></p>
-                                <p><strong><?php echo $this->translate('GPS'); ?>:</strong> <?php echo $ph['lat']; ?>
-                                    / <?php echo $ph['lng']; ?></p>
-                                <p><strong><?php echo $this->translate('Commenter'); ?>:</strong><br>
-                                    <textarea name="commenter" rows="8"
-                                              class="form-control"><?php echo $ph['comment']; ?></textarea>
-                                </p>
-                                <p style="float:right;width:24%;">
-                                    <input type="hidden" name="status" value="<?php echo $ph['status']; ?>">
-                                    <input type="button" name="submitbutton"
-                                           value="<?php echo $this->translate('Valider'); ?>"
-                                           style="font-size: 14px;width:100%;height:62px;"
-                                           class="submitbutton btn btn-lg btn-success">
-                                </p>
-                                <button data-id="<?php echo $ph['id']; ?>"
-                                        style="float:right; margin-right:3%;font-size: 14px;width:41%;height:62px;"
-                                        type="button" class="btnBackToOrigImage btn btn-lg btn-default">Retour
-                                    &agrave;<br>l'image d'origine
-                                </button>
-                                <button style="float:right; margin-right:3%;font-size: 14px;width:28%;height:62px;"
-                                        type="button" class="btn btn-lg btn-default" data-dismiss="modal">Fermer<br>la
-                                    fen&ecirc;tre
-                                </button>
-                                <p class="clearboth"></p>
-                            </form>
-                        </div>
-                        <p class="clearboth"></p>
-                    </div>
-                </div>
+                <img width="170" height="168" class="img<?php echo $ph['id']; ?> imgAsync"
+                     data-src="<?php echo $this->basePath(); ?>/uploadedfilesbank/thumbnails/<?php echo $ph['thumbnail'] . '?' . time(); ?>"
+                    <?php if (in_array($ph['type'], $imageTypes)) {
+                        echo 'data-imagesrc="' . $this->basePath() . '/uploadedfilesbank/' . $ph['name'] . '?' . time() . '"';
+                    } ?>>
+                <br>
+                <span data-img="img<?php echo $ph['id']; ?>"
+                      data-action="<?php echo $this->url('Uploadmgmt', array('action' => 'rotateright', 'id' => $ph['id'])); ?>"
+                      class="ajaxRotate btn btn-warning btn-circle"><i class="fa fa-rotate-right"></i></span>
+                <span data-img="img<?php echo $ph['id']; ?>"
+                      data-action="<?php echo $this->url('Uploadmgmt', array('action' => 'rotateleft', 'id' => $ph['id'])); ?>"
+                      class="ajaxRotate btn btn-warning btn-circle"><i class="fa fa-rotate-left"></i></span>
+
+                <form method="post"
+                      action="<?php echo $this->url('Uploadmgmt', array('action' => 'update', 'id' => $ph['id'])); ?>"
+                      id="validatePhotoForm">
+                    <p><strong><?php echo $this->translate('Auteur') ?>
+                            :</strong> <?php echo $ph['author']; ?></p>
+                    <p><strong><?php echo $this->translate('Id utilisateur') ?>
+                            :</strong> <?php echo $ph['userid']; ?></p>
+                    <p><strong><?php echo $this->translate('Email') ?>
+                            :</strong> <?php echo $ph['email']; ?></p>
+                    <p><strong><?php echo $this->translate('Date') ?>e
+                            :</strong> <?php echo $ph['creationDate']; ?></p>
+                    <p><strong><?php echo $this->translate('GPS') ?> :</strong> <?php echo $ph['lat']; ?>
+                        / <?php echo $ph['lng']; ?></p>
+                    <p><strong><?php echo $this->translate('Commentaire') ?> :</strong><br>
+                        <textarea name="commenter" rows="8"
+                                  class="form-control"><?php echo $ph['comment']; ?></textarea>
+                    </p>
+
+                    <p style="float:right;width:24%;">
+                        <input type="hidden" name="status" value="<?php echo $ph['status']; ?>">
+                        <input type="button" name="submitbutton" value="Valider"
+                               style="font-size: 14px;width:100%;height:62px;"
+                               class="submitbutton btn btn-lg btn-success">
+                    </p>
+
+                    <button data-photoId="<?php echo $ph['id']; ?>"
+                            style="float:right; margin-right:3%;font-size: 14px;width:41%;height:62px;"
+                            type="button"
+                            class="btnBackToOrigImage btn btn-lg btn-default"><?php echo $this->translate('Retour &agrave'); ?>
+                        <br>
+                        <?php echo $this->translate("l'image d'origine"); ?>
+                    </button>
+                    <button style="float:right; margin-right:3%;font-size: 14px;width:28%;height:62px;"
+                            type="button" class="btn btn-lg btn-default"
+                            data-dismiss="modal"><?php echo $this->translate('Fermer'); ?><br>
+                        <?php echo $this->translate('la fen&ecirc;tre'); ?>
+                    </button>
+                    <p class="clearboth"></p>
+                </form>
+
+                <p class="clearboth"></p>
             </div>
         </div>
     <?php endforeach; ?>

@@ -2,6 +2,11 @@
 
 namespace Uploadmgmt\Model;
 
+use ExtLib\FileManager;
+use ExtLib\Utils;
+use Mobilews\Controller\MobilewsController;
+use Uploadmgmt\Controller\UploadmgmtController;
+
 class Photosmgmt
 {
 
@@ -9,38 +14,35 @@ class Photosmgmt
     protected $libelle;
     protected $rang;
     protected $rubrique;
-    protected $etat = array(
-        'wait' => '0',
-        'validate' => '1',
-        'delete' => '2'
-    );
+
+    protected $publicPath = 'public/';
+    protected $util;
 
     public function __construct()
     {
-
+        $util = new Utils();
     }
 
     public function photoRotate($idPhoto, $angle)
     {
-
-        $phPath = 'public/filesbank/';
-        $viPath = 'public/filesbank/thumbnails/';
-
         $Photosmgmtdao = new Uploadmgmtdao();
         $photo = $Photosmgmtdao->getPhoto($idPhoto);
-        $phName = $photo['Image'];
-        $viName = $photo['Vignette'];
-
+        $phName = $photo['name'];
+        $phPath = $this->publicPath . '/' . $photo['path'];
+        $viPath = $this->publicPath . '/' . $photo['thumbnailpath'];
+        $viName = $photo['thumbnail'];
+        $imagePh = null;
+        $imageVi = null;
         $info = getimagesize($phPath . $phName);
 
-        if ($info['mime'] == 'image/jpeg') {
+        if (strcasecmp($info['mime'], 'image/jpeg') == 0) {
             $imagePh = imagecreatefromjpeg($phPath . $phName);
             $imageVi = imagecreatefromjpeg($viPath . $viName);
-        } elseif ($info['mime'] == 'image/png') {
+        } elseif (strcasecmp($info['mime'], 'image/png') == 0) {
             $imagePh = imagecreatefrompng($phPath . $phName);
             $imageVi = imagecreatefrompng($viPath . $viName);
         } else {
-            die('erreur format de fichier');
+            return false;
         }
 
         $rotatePh = imagerotate($imagePh, $angle, 0);
@@ -64,47 +66,30 @@ class Photosmgmt
             $filter->filter($viPath . $viName);
         }
 
-        // Enregistrement de l'image.
-        if ($info['mime'] == 'image/jpeg') {
+        // save the picture in the folder
+        if (strcasecmp($info['mime'], 'image/jpeg') == 0) {
             imagejpeg($rotatePh, $phPath . $phName, 100);
             imagejpeg($rotateVi, $viPath . $viName, 100);
         }
-        if ($info['mime'] == 'image/png') {
-            imagepng($rotatePh, $phPath . $phName, 100);
-            imagepng($rotateVi, $viPath . $viName, 100);
+        if (strcasecmp($info['mime'], 'image/png') == 0) {
+            imagepng($rotatePh, $phPath . $phName, 9);
+            imagepng($rotateVi, $viPath . $viName, 9);
         }
     }
 
-    public function photoChangeEtat($idPhoto, $statusName)
+    public function photoBackToOriginal($photo)
     {
-        //die('<p>'.__FILE__.'('.__LINE__.')</p><pre>'.print_r($statusName,true).'</pre>');
-        $statusId = 0;
-        $idPhoto = (int)$idPhoto;
-        if ($idPhoto < 1) {
-            return false;
-        }
-        if (!isset($this->etat[$statusName])) {
-            return false;
-        }
-        $statusId = $this->etat[$statusName];
-        $Photosmgmtdao = new Uploadmgmtdao();
-        $Photosmgmtdao->setEtat($idPhoto, $statusId);
-        return true;
-    }
-
-    public function photoBackToOriginal($phName, $viName)
-    {
-
         try {
-
-            $phPath = 'public/filesbank/';
-            $viPath = 'public/filesbank/thumbnails/';
+            $phName = $photo['name'];
+            $phPath = $this->publicPath . '/' . $photo['path'];
+            $viPath = $this->publicPath . '/' . $photo['thumbnailpath'];
+            $viName = $photo['thumbnail'];
 
             $phOri = $phPath . substr($phName, 0, strrpos($phName, '.')) . '.Ori' . substr($phName, strrpos($phName, '.'));
 
             if (is_file($phOri)) {
 
-                $this->deletePhoto($phPath . $phName);
+                $this->deleteFile($phPath . $phName);
 
                 $filter = new \Zend\Filter\File\Rename(array(
                     "target" => $phPath . $phName,
@@ -114,12 +99,11 @@ class Photosmgmt
                 $filterTxt = $filter->filter($phOri);
             }
 
-
             $viOri = $viPath . substr($viName, 0, strrpos($viName, '.')) . '.Ori' . substr($viName, strrpos($viName, '.'));
 
             if (is_file($viOri)) {
 
-                $this->deletePhoto($viPath . $viName);
+                $this->deleteFile($viPath . $viName);
 
                 $filter = new \Zend\Filter\File\Rename(array(
                     "target" => $viPath . $viName,
@@ -129,21 +113,26 @@ class Photosmgmt
                 $filterTxt = $filter->filter($viOri);
             }
 
-            return array("state" => "ok",
+            return array("status" => "ok",
                 "error" => "none");
         } catch (\Exception $e) {
-            return array("state" => "ko",
+            return array("status" => "ko",
                 "error" => $e);
         }
     }
 
-    private function deletePhoto($pathToFile)
+    public function deleteFile($pathToFile)
     {
         if (is_file($pathToFile)) {
-            $unlinkTxt = unlink($pathToFile);
-            return $unlinkTxt;
+            return @unlink($pathToFile);
             //var_dump($unlinkTxt);
         }
+    }
+
+    public function deleteOriTypePhoto($path, $filename)
+    {
+        $oriFilePath = $path . substr($filename, 0, strrpos($filename, '.')) . '.Ori' . substr($filename, strrpos($filename, '.'));
+        $this->deleteFile($oriFilePath);
     }
 
 }

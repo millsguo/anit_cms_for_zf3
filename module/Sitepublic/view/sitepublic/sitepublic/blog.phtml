@@ -14,16 +14,16 @@ foreach ($metas as $meta) {
 }
 ?>
 <style>
-    div#divcontactcaptcha pre{
-        width:200px;
+    div#divcontactcaptcha pre {
+        width: 200px;
         text-align: center;
         font-size: 7px;
         line-height: 7px;
-        padding:0px 9.5px 0px 9.5px;
+        padding: 0px 9.5px 0px 9.5px;
     }
 
-    div#divcontactcaptcha legend{
-        width:200px;
+    div#divcontactcaptcha legend {
+        width: 200px;
         font-size: 14px;
         font-weight: normal;
         line-height: 20px;
@@ -33,124 +33,131 @@ foreach ($metas as $meta) {
         margin-bottom: 0px;
     }
 
-    #contactsweethoney{
-        display:none;
+    #contactsweethoney {
+        display: none;
     }
-    span{
-        width:150px;
+
+    span {
+        width: 150px;
     }
-    div label{
-        width:150px;
+
+    div label {
+        width: 150px;
     }
 </style>
-        <div class="container">
-            <!-- Contact Section -->
+<div class="container">
+    <!-- Contact Section -->
 
-            <div>
-                <?php
-                //$countSections = 0;
-                foreach ($pageContents as $key => $value) {
-                    if (stripos($key, "page") > -1) {
-                        //Do nothing in this example
-                    } elseif (stripos($key, "section") > -1 && (int) $value->getRang() > -1) {
-                        //if position is below 0, it means the content won't be displayed
-                        echo '<hr><br>';
-                    } elseif (stripos($key, "content") > -1 && (int) $value->getRang() > -1) {
-                        //if position is below 0, it means the content won't be displayed
-                        if (strcmp($value->getType(), 'content') == 0) {
-                            //put the value that you want
-                            echo $value->getTitre() . '<br>';
-                            echo $value->getSousTitre() . '<br>';
-                            echo $value->getContenuHtml();
-                            ?>
+    <div>
+        <?php
+        //$countSections = 0;
+        foreach ($pageContents as $key => $value) {
+        if (stripos($key, "page") > -1) {
+            //Do nothing in this example
+        } elseif (stripos($key, "section") > -1 && (int)$value->getRang() > -1) {
+            //if position is below 0, it means the content won't be displayed
+            echo '<hr><br>';
+        }
+        elseif (stripos($key, "content") > -1 && (int)$value->getRang() > -1) {
+        //if position is below 0, it means the content won't be displayed
+        if (strcmp($value->getType(), 'content') == 0) {
+            //put the value that you want
+            echo $value->getTitre() . '<br>';
+            echo $value->getSousTitre() . '<br>';
+            echo $value->getContenuHtml();
+            ?>
 
-                            <?php
-                        } elseif (strcmp($value->getType(), 'gallery') == 0) {
-                            echo $value->getTitre() . '<br>';
-                            echo $value->getSousTitre() . '<br>';
-                            echo $value->getContenuHtml();
-                            
-                        } elseif (strcmp($value->getType(), 'blog') == 0) {
-                            echo $value->getTitre() . '<br>';
-                            echo $value->getSousTitre() . '<br>';
-                            echo $value->getContenuHtml();
-                            ?>   
-                            <fieldset>
-                                <h3><?php echo $this->translate('Envoyer un commentaire'); ?></h3>
+            <?php
+        } elseif (strcmp($value->getType(), 'gallery') == 0) {
+            echo $value->getTitre() . '<br>';
+            echo $value->getSousTitre() . '<br>';
+            echo $value->getContenuHtml();
+
+        }
+        elseif (strcmp($value->getType(), 'blog') == 0) {
+        echo $value->getTitre() . '<br>';
+        echo $value->getSousTitre() . '<br>';
+        echo $value->getContenuHtml();
+        ?>
+        <fieldset>
+            <h3><?php echo $this->translate('Envoyer un commentaire'); ?></h3>
             <?php
             $commentForm = $this->commentForm;
             $commentForm->prepare();
             echo $this->form()->openTag($commentForm);
             ?>
 
-                                <?php echo $this->formHidden($commentForm->get('contactcontenuid')); ?>
+            <?php echo $this->formHidden($commentForm->get('contactcontenuid')); ?>
 
-                                <label><?php echo $this->translate('Nom'); ?></label>
-                                <div class="row margin-bottom-20">
-                                    <div class="col-md-7 col-md-offset-0">
-            <?php echo $this->formText($commentForm->get('contactnom')); ?>
-                                    </div>                
-                                </div>
-                                <label><?php echo $this->translate('Entreprise'); ?></label>
-                                <div class="row margin-bottom-20">
-                                    <div class="col-md-7 col-md-offset-0">
-            <?php echo $this->formText($commentForm->get('contactentreprise')); ?>
-                                    </div>                
-                                </div>
-                                <label><?php echo $this->translate('Email'); ?></label>
-                                <div class="row margin-bottom-20">
-                                    <div class="col-md-7 col-md-offset-0">
-            <?php echo $this->formText($commentForm->get('contactemail')); ?>
-                                    </div>                
-                                </div>
+            <label><?php echo $this->translate('Nom'); ?></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <?php echo $this->formText($commentForm->get('contactnom')); ?>
+                </div>
+            </div>
+            <label><?php echo $this->translate('Entreprise'); ?></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <?php echo $this->formText($commentForm->get('contactentreprise')); ?>
+                </div>
+            </div>
+            <label><?php echo $this->translate('Email'); ?></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-7 col-md-offset-0">
+                    <?php echo $this->formText($commentForm->get('contactemail')); ?>
+                </div>
+            </div>
 
-                                <label><?php echo $this->translate('Message'); ?></label>
-                                <div class="row margin-bottom-20">
-                                    <div class="col-md-11 col-md-offset-0">
-            <?php echo $this->formTextarea($commentForm->get('contacttext')); ?>
-                                    </div>                
-                                </div>
+            <label><?php echo $this->translate('Message'); ?></label>
+            <div class="row margin-bottom-20">
+                <div class="col-md-11 col-md-offset-0">
+                    <?php echo $this->formTextarea($commentForm->get('contacttext')); ?>
+                </div>
+            </div>
 
-                                <label><?php echo $this->translate('Vérification'); ?></label>
-                                <div class="row margin-bottom-20">
-                                    <div id="divcontactcaptcha" class="col-md-11 col-md-offset-0">
-            <?php echo $this->formCaptcha($commentForm->get('contactcaptcha')); ?>
-                                    </div>                
-                                </div>
+            <label><?php echo $this->translate('Vérification'); ?></label>
+            <div class="row margin-bottom-20">
+                <div id="divcontactcaptcha" class="col-md-11 col-md-offset-0">
+                    <?php echo $this->formCaptcha($commentForm->get('contactcaptcha')); ?>
+                </div>
+            </div>
             <?php
             echo $this->formHidden($commentForm->get('contactprevent'));
             echo $this->formText($commentForm->get('contactsweethoney'));
             ?>
 
-                                <p><?php echo $this->formButton($commentForm->get('submitbutton')); ?>&nbsp;&nbsp;&nbsp;<img id="ajaxloader" src="<?php echo $this->basePath() . '/img/ajax-loader.gif'; ?>" style="display:none;"/><p id="formerrormsg"></p></p>
+            <p><?php echo $this->formButton($commentForm->get('submitbutton')); ?>&nbsp;&nbsp;&nbsp;<img id="ajaxloader"
+                                                                                                         src="<?php echo $this->basePath() . '/img/ajax-loader.gif'; ?>"
+                                                                                                         style="display:none;"/>
+            <p id="formerrormsg"></p></p>
 
 
             <?php echo $this->form()->closeTag(); ?>
 
-                        </div>
-                    </fieldset>
-            <?php
-            //}
-        } elseif (strcmp($value->getType(), 'linktocontenu') == 0) {
-            echo $value->getTitre() . '<br>';
-            echo $value->getSousTitre() . '<br>';
-            echo $value->getContenuHtml();
-        }
+    </div>
+    </fieldset>
+    <?php
+    //}
+    } elseif (strcmp($value->getType(), 'linktocontenu') == 0) {
+        echo $value->getTitre() . '<br>';
+        echo $value->getSousTitre() . '<br>';
+        echo $value->getContenuHtml();
     }
-}
-?>
+    }
+    }
+    ?>
+
+</div>
+<hr>
+<section>
+    <div id="mypage">
 
     </div>
-    <hr>
-    <section>
-        <div id="mypage">
+</section>
 
-        </div>
-    </section>
+<footer>
 
-    <footer>
-
-    </footer>
+</footer>
 </div> <!-- /container -->
 <?php echo $this->inlineScript() ?>
 <script>
@@ -195,22 +202,22 @@ foreach ($metas as $meta) {
             var counterror = 0;
 
             if ($.trim(nom) == "") {
-                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir un nom'"); ?> + '</span><br/>');
+                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir un nom'"); ?> +'</span><br/>');
                 counterror++;
             }
 
             if ($.trim(emailaddress) == "") {
-                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir une adresse courriel'"); ?> + '</span><br/>');
+                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir une adresse courriel'"); ?> +'</span><br/>');
                 counterror++;
             }
 
             if (verif.test(emailaddress) == false) {
-                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'L\'adresse courriel est incorrect. Veuillez recommencer svp.'"); ?> + '</span><br/>');
+                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'L\'adresse courriel est incorrect. Veuillez recommencer svp.'"); ?> +'</span><br/>');
                 counterror++;
             }
 
             if ($.trim(message) == "") {
-                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir un message'"); ?> + '</span><br/>');
+                $('#formerrormsg').append('<span style="color:red;">' +<?php echo $this->translate("'Vous devez saisir un message'"); ?> +'</span><br/>');
                 counterror++;
             }
 

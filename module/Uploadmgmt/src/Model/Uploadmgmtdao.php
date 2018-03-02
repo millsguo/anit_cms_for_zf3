@@ -2,19 +2,20 @@
 
 namespace Uploadmgmt\Model;
 
-use Application\DBConnection\Anitmobdao;
+use Application\DBConnection\ParentDao;
+use Uploadmgmt\Model\FileuploadStatus;
 use Uploadmgmt\Model\Fileupload;
 
-class Uploadmgmtdao extends AnitmobDao
+class Uploadmgmtdao extends ParentDao
 {
     private static $fields = "p.filesupload_id as id, p.filesupload_name as name, p.filesupload_path as path, p.filesupload_type as type," .
     "p.filesupload_comment as comment, p.filesupload_status as status, p.filesupload_thumbnail as thumbnail, p.filesupload_thumbnailpath as thumbnailpath," .
     "p.filesupload_author as author, p.filesupload_userid as userid, p.filesupload_email as email, p.filesupload_date as creationdate," .
     "p.filesupload_lat as lat, p.filesupload_lng as lng";
 
-    public function getPhoto($idPhoto = 0)
+    public function getPhoto($idFile = 0)
     {
-        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE filesupload_id=' . abs((int)$idPhoto))
+        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE filesupload_id=' . abs((int)$idFile))
         or die(print_r($this->dbGateway->error_info()));
         $query->execute();
         return $query->fetch(\PDO::FETCH_ASSOC);
@@ -22,7 +23,7 @@ class Uploadmgmtdao extends AnitmobDao
 
     public function getPhotoWaitStatus()
     {
-        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=0 ORDER BY p.filesupload_date DESC')
+        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=\'' . FileuploadStatus::$WAITING . '\' ORDER BY p.filesupload_date DESC')
         or die(print_r($this->dbGateway->error_info()));
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
@@ -30,71 +31,42 @@ class Uploadmgmtdao extends AnitmobDao
 
     public function getPhotoValidateStatus()
     {
-        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=1 ORDER BY p.filesupload_date DESC')
+        $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=\'' . FileuploadStatus::$VALIDATED . '\' ORDER BY p.filesupload_date DESC')
         or die(print_r($this->dbGateway->error_info()));
         $query->execute();
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    /*
-        public function setStatus($idPhoto = 0, $status = 0) {
-            $status = abs((int) $status);
-            $idPhoto = abs((int) $idPhoto);
-            if ($status < 1) {
-                die('Status non autorisé ' . __LINE__);
-            }
-            if ($idPhoto < 1) {
-                die('numero de photo invalide ' . __LINE__);
-            }
-            $sql = 'UPDATE filesupload SET filesupload_status=' . $status . ' WHERE filesupload_id=' . $idPhoto;
-            $query = $this->dbGateway->prepare($sql) or die(print_r($this->dbGateway->error_info()));
-            $reqIsOK = $query->execute();
-            return $reqIsOK;
-        }
-    */
-    public function updateComment($idPhoto = 0, $params = array())
+
+    public function updateStatus($idFile = 0, $status)
     {
-        $idPhoto = abs((int)$idPhoto);
-        if ($idPhoto < 1) {
-            die(json_encode(array('error' => $this->translate('numero de photo invalide ' . __LINE__))));
+        //return false;
+        $idFile = (int)$idFile;
+        $sql = 'UPDATE filesupload SET filesupload_status=\'' . $status . '\' WHERE filesupload_id=' . $idFile;
+        $query = $this->dbGateway->prepare($sql) or die(print_r($this->dbGateway->error_info()));
+        $reqIsOK = $query->execute();
+        return (bool)$reqIsOK;
+    }
+
+    public function updateComment($idFile = 0, $params = array())
+    {
+        $idFile = abs((int)$idFile);
+        if ($idFile < 1) {// not really a good practice -> TODO: manage the error in the controller
+            die(json_encode(array('error' => $this->translate('numéro de photo invalide ' . __LINE__))));
         }
         $sql = 'UPDATE filesupload SET filesupload_comment=:commenter WHERE filesupload_id=:idPhoto';
         $query = $this->dbGateway->prepare($sql) or die(print_r($this->dbGateway->error_info()));
         $reqIsOK = $query->execute(array(
             'commenter' => $params['commenter'],
-            'idPhoto' => $idPhoto
+            'idPhoto' => $idFile
         ));
         return $reqIsOK;
-    }
-
-    public function getAllPhotos($sqlpart, $start)
-    {
-        $sql = "SELECT " . $this::$fields
-            . " FROM filesupload p where p.filesupload_status=1 " . $sqlpart
-            . " ORDER BY p.fileupload_date DESC "
-            . " LIMIT " . $start . ", 30";
-
-        $query = $this->dbGateway->prepare($sql) or die(print_r($this->dbGateway->error_info()));
-        $reqIsOK = $query->execute();
-
-        if ($reqIsOK) {
-
-            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-
-            if (count($result) > 0) {
-                return $result;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
     }
 
     public function getFileByFilename(string $filename)
     {
         $query = $this->dbGateway->prepare("
-		SELECT " . self::$fields ." 
+		SELECT " . self::$fields . " 
 		FROM filesupload p
 		WHERE p.filesupload_name = :filename
         LIMIT 1
@@ -118,7 +90,6 @@ class Uploadmgmtdao extends AnitmobDao
     public function saveFileupload(Fileupload $fileupload)
     {
         $id = (int)$fileupload->getId();
-
         if ($id > 0) {
             $query = $this->dbGateway->prepare("
 				UPDATE filesupload 
@@ -133,7 +104,6 @@ class Uploadmgmtdao extends AnitmobDao
                 'id' => $fileupload->getId()
             ));
         } else {
-            //print_r($fileupload);
             $query = $this->dbGateway->prepare("INSERT INTO filesupload(
             filesupload_name, filesupload_type, filesupload_comment,
             filesupload_status, filesupload_thumbnail,
@@ -154,7 +124,7 @@ class Uploadmgmtdao extends AnitmobDao
                     "type" => $fileupload->getType(),
                     "comment" => $fileupload->getComment(),
                     "status" => $fileupload->getStatus(),
-                    "filedate" => $fileupload->getDate(),
+                    "filedate" => date("Y-m-d H:i:s"),
                     "thumbnail" => $fileupload->getThumbnail(),
                     "thumbnailpath" => $fileupload->getThumbnailpath(),
                     "author" => $fileupload->getAuthor(),
@@ -164,52 +134,8 @@ class Uploadmgmtdao extends AnitmobDao
                     "lng" => $fileupload->getLng()
                 )
             );
-            //exit;
-            $isOk = false;
-            if ($reqIsOK && $query->fetchColumn() > 0) {
-                $isOk = true;
-            }
-            return $isOk;
+            //print_r($query->errorInfo());
+            return (bool)$reqIsOK;
         }
     }
-
-    /*
-     * public function saveFichiers(Fichiers $fichiers)
-    {
-
-        $id = (int)$fichiers->getId();
-
-        if ($id > 0) {
-
-            $query = $this->dbGateway->prepare("
-				UPDATE fichiers
-				SET fichiers_libelle 	= :fichiers_libelle,
-                                fichiers_meta           = :fichiers_meta
-				WHERE fichiers_id 	= :id
-			") or die(print_r($this->dbGateway->errors_info()));
-
-            $query->execute(array(
-                'fichiers_libelle' => $fichiers->getLibelle(),
-                'fichiers_meta' => $fichiers->getMetaData(),
-                'id' => $fichiers->getId()
-            ));
-        } else {
-            //print_r($fichiers);
-            //exit;
-            $query = $this->dbGateway->prepare("INSERT into fichiers(fichiers_chemin, fichiers_nom, fichiers_type, fichiers_libelle, fichiers_meta, fichiers_thumbnail, fichiers_thumbnailpath)
-					values(:fichiers_chemin, :fichiers_nom, :fichiers_type, :fichiers_libelle, :fichiers_meta, :fichiers_thumbnail, :fichiers_thumbnailpath)") or die(print_r($this->dbGateway->error_info()));
-
-            $query->execute(array(
-                'fichiers_chemin' => $fichiers->getChemin(),
-                'fichiers_nom' => $fichiers->getNom(),
-                'fichiers_type' => $fichiers->getType(),
-                'fichiers_libelle' => $fichiers->getLibelle(),
-                'fichiers_meta' => $fichiers->getMetaData(),
-                'fichiers_thumbnail' => $fichiers->getThumbnail(),
-                'fichiers_thumbnailpath' => $fichiers->getThumbnailpath()
-            ));
-        }
-    }
-     */
-
 }
