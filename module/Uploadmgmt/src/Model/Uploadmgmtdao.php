@@ -51,16 +51,13 @@ class Uploadmgmtdao extends ParentDao
     public function updateComment($idFile = 0, $params = array())
     {
         $idFile = abs((int)$idFile);
-        if ($idFile < 1) {// not really a good practice -> TODO: manage the error in the controller
-            die(json_encode(array('error' => $this->translate('numéro de photo invalide ' . __LINE__))));
-        }
         $sql = 'UPDATE filesupload SET filesupload_comment=:commenter WHERE filesupload_id=:idPhoto';
         $query = $this->dbGateway->prepare($sql) or die(print_r($this->dbGateway->error_info()));
         $reqIsOK = $query->execute(array(
             'commenter' => $params['commenter'],
             'idPhoto' => $idFile
         ));
-        return $reqIsOK;
+        return (bool)$reqIsOK;
     }
 
     public function getFileByFilename(string $filename)
