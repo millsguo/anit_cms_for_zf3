@@ -86,6 +86,16 @@
                                     
                                 </ul>
                              </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <?php echo $this->translate('Fichiers utilisateurs'); ?>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->url('Uploadmgmt') ?>"><?php echo $this->translate('&Agrave; valider'); ?></a></li>
+                                    <li><a href="<?php echo $this->url('Uploadmgmt', array('action' => 'validatedfiles')) ?>"><?php echo $this->translate('Validés'); ?></a></li>
+                                </ul>
+                            </li>
                             <?php
                             $session = new \Zend\Session\Container('myacl');
                             $role = $session->role;

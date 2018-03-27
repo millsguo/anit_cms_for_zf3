@@ -25,6 +25,8 @@ use Siteprivate\Form\SiteprivateContactForm;
 use Siteprivate\Form\SiteprivateContactInputFilter;
 use Siteprivate\Form\SiteprivateupdateInfoInputFilter;
 use Siteprivate\Form\SiteprivateUpdateInfoForm;
+use Siteprivate\Form\SiteprivateFileuploadForm;
+use Siteprivate\Form\SiteprivateFileuploadInputFilter;
 use Siteprivate\EmailConfig\EmailCommentConfig;
 use Siteprivate\EmailConfig\EmailContactConfig;
 use Siteprivate\EmailConfig\EmailRegistrationConfig;
@@ -37,6 +39,7 @@ use Siteprivate\EmailConfig\EmailForgottenPasswordConfig;
 use Siteprivate\Form\SiteprivateForgottenPasswordInputFilter;
 use Siteprivate\Form\SiteprivateNewPasswordForm;
 use Siteprivate\Form\SiteprivateNewPasswordInputFilter;
+use Uploadmgmt\Model\FileuploadStatus;
 use Zend\Mvc\Controller\AbstractActionController;
 use Message\Model\MessageDao;
 use Message\Model\Message as EmailSent;
@@ -172,6 +175,7 @@ class SiteprivateController extends AbstractActionController
         $rubriqueDao = new RubriqueDao();
         $contactForm = null;
         $commentForm = null;
+        $fileuploadForm = null;
         $loginaccess = new \Zend\Session\Container('myacl');
         $page = $this->params()->fromRoute('page');
         $phtmlFile = "";
@@ -212,7 +216,7 @@ class SiteprivateController extends AbstractActionController
             $metas = $metaDao->getAllMetasByRubrique($idrub, "object");
 
             //get all data to display the page with a pageArrangement object 
-            //that have all the objects (page, section(s), content(s)...) sorted
+            //which have all the objects (page, section(s), content(s)...) sorted
             $pageContents = $pageArrangementDao->getPage($idrub, "asc", "object");
             $pageContentsJSON = $pageArrangementDao->getPage($idrub, "asc", "json");
             //get comments
@@ -226,6 +230,9 @@ class SiteprivateController extends AbstractActionController
             if ($configuration['hasMessageForm']) {
                 $commentForm = new SiteprivateCommentForm();
                 $commentForm->get('contactcontenuid')->setAttribute('value', $configuration['contactcontenuid']);
+            }
+            if ($configuration['hasFileuploadForm']) {
+                $fileuploadForm = $this->setFileuploadForm($sessionData);
             }
 
             $phtmlFile = $configuration['phtmlFile'];
@@ -249,6 +256,7 @@ class SiteprivateController extends AbstractActionController
                 'navigation' => $allPagesBySpace, //if you need it in the body or if you don't want to use header
                 'contactForm' => $contactForm,
                 'commentForm' => $commentForm,
+                'fileuploadForm' => $fileuploadForm,
                 'metas' => $metas,
                 'pageContents' => $pageContents,
                 'pageContentsJSON' => $pageContentsJSON,
@@ -268,6 +276,9 @@ class SiteprivateController extends AbstractActionController
                 $commentForm = new SiteprivateCommentForm();
                 $commentForm->get('contactcontenuid')->setAttribute('value', $configuration['contactcontenuid']);
             }
+            if ($configuration['hasFileuploadForm']) {
+                $fileuploadForm = $this->setFileuploadForm($sessionData);
+            }
             $phtmlFile = $configuration['phtmlFile'];
 
             $viewModel = new ViewModel(array(
@@ -275,6 +286,7 @@ class SiteprivateController extends AbstractActionController
                 'navigation' => $result['navigation'], //if you need it in the body or if you don't want to use header
                 'contactForm' => $contactForm,
                 'commentForm' => $commentForm,
+                'fileuploadForm' => $fileuploadForm,
                 'metas' => $result['metas'],
                 'pageContents' => $result['pageContents'],
                 'pageContentsJSON' => $result['pageContentsJSON'],
@@ -292,6 +304,7 @@ class SiteprivateController extends AbstractActionController
         $configuration = array();
         $configuration['hasMessageForm'] = false;
         $configuration['hasContactForm'] = false;
+        $configuration['hasFileuploadForm'] = false;
         //set forms
         foreach ($pageContents as $key => $value) {
             if (stripos($key, "page") > -1) {
@@ -303,6 +316,9 @@ class SiteprivateController extends AbstractActionController
                 }
                 if ((bool)$value->getHasContactForm()) {
                     $configuration['hasContactForm'] = true;
+                }
+                if ((bool)$value->gethasFileuploadForm()) {
+                    $configuration['hasFileuploadForm'] = true;
                 }
             }// set contenuId for commentForm
             // We consider the first id of a blog content even if we have many contents of this type
@@ -636,7 +652,7 @@ class SiteprivateController extends AbstractActionController
         $spaceId = 0;
         $sessionData = json_decode($mcrypt->decrypt($loginaccess->userdata));
 
-        if((empty($page) || strcasecmp($page, 'index') == 0)){
+        if ((empty($page) || strcasecmp($page, 'index') == 0)) {
             $page = 'index';
         }
 
@@ -974,4 +990,22 @@ class SiteprivateController extends AbstractActionController
         );
     }
 
+    private function setFileuploadForm($sessionData)
+    {
+        $fileuploadForm = new SiteprivateFileuploadForm();
+        $privatespaceloginDao = new PrivatespaceloginDao();
+        $login = $privatespaceloginDao->getLogin($sessionData->loginId);
+        $fileuploadForm->get('author')->setAttribute('value', $login->getFirstname() . ' ' . $login->getLastname());
+        // useless right now...
+        $fileuploadForm->get('userid')->setAttribute('value', $login->getEmail());
+        /// redundant for now.
+        $fileuploadForm->get('email')->setAttribute('value', $login->getEmail());
+        // default status of a document is 'waiting'. it needs to be validate before publishing
+        $fileuploadForm->get('status')->setAttribute('value', FileuploadStatus::$WAITING);
+        // TODO get latitude and longitude if it is a picture
+        $fileuploadForm->get('lat')->setAttribute('value', '0');
+        $fileuploadForm->get('lng')->setAttribute('value', '0');
+
+        return $fileuploadForm;
+    }
 }

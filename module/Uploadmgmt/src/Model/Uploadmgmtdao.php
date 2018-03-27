@@ -131,7 +131,6 @@ class Uploadmgmtdao extends ParentDao
                     "lng" => $fileupload->getLng()
                 )
             );
-            //print_r($query->errorInfo());
             return (bool)$reqIsOK;
         }
     }

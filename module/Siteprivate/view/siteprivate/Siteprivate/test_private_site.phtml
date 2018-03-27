@@ -75,33 +75,33 @@ foreach ($metas as $meta) {
                                         <div class="row margin-bottom-20">
                                             <div class="col-md-7 col-md-offset-0">
                                                 <?php echo $this->formText($form->get('contactnom')); ?>
-                                            </div>                
+                                            </div>
                                         </div>
                                         <label><?php echo $this->translate('Entreprise'); ?></label>
                                         <div class="row margin-bottom-20">
                                             <div class="col-md-7 col-md-offset-0">
                                                 <?php echo $this->formText($form->get('contactentreprise')); ?>
-                                            </div>                
+                                            </div>
                                         </div>
                                         <label><?php echo $this->translate('Email'); ?></label>
                                         <div class="row margin-bottom-20">
                                             <div class="col-md-7 col-md-offset-0">
                                                 <?php echo $this->formText($form->get('contactemail')); ?>
-                                            </div>                
+                                            </div>
                                         </div>
 
                                         <label><?php echo $this->translate('Message'); ?></label>
                                         <div class="row margin-bottom-20">
                                             <div class="col-md-11 col-md-offset-0">
                                                 <?php echo $this->formTextarea($form->get('contacttext')); ?>
-                                            </div>                
+                                            </div>
                                         </div>
 
                                         <label><?php echo $this->translate('Vérification'); ?></label>
                                         <div class="row margin-bottom-20">
                                             <div class="col-md-11 col-md-offset-0 divcaptcha">
                                                 <?php echo $this->formCaptcha($form->get('contactcaptcha')); ?>
-                                            </div>                
+                                            </div>
                                         </div>
                                         <?php
                                         echo $this->formHidden($form->get('contactprevent'));
@@ -112,7 +112,7 @@ foreach ($metas as $meta) {
 
                                         <div id="contact-formerrormsg" class="row margin-bottom-20 col-md-11">
 
-                                        </div>    
+                                        </div>
                                         <?php echo $this->form()->closeTag(); ?>
                                     </fieldset>
                                     <?php

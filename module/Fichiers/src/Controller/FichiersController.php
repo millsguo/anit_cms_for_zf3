@@ -6,7 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Fichiers\Model\Fichiers;
 use Fichiers\Model\FilesCategories;
-use Fichiers\Form\FichiersForm;
+use Fichiers\Form\SiteprivateFileuploadForm;
 use Fichiers\Form\Fichiersinputfilter as InputFilter;
 use Fichiers\Model\Fichiersdao;
 use ExtLib\FileManager;
@@ -61,7 +61,7 @@ class FichiersController extends AbstractActionController
     public function addAction()
     {
 
-        $form = new FichiersForm();
+        $form = new SiteprivateFileuploadForm();
         $fichiersDao = new Fichiersdao();
         $savethumbnailpath = 'img';
         //$this->translator=$this->getServiceLocator()->get('translator');
@@ -221,7 +221,7 @@ class FichiersController extends AbstractActionController
     public function editAction()
     {
 
-        $form = new FichiersForm();
+        $form = new SiteprivateFileuploadForm();
         $fichiersDao = new Fichiersdao();
 
         // $this->translator=$this->getServiceLocator()->get('translator');

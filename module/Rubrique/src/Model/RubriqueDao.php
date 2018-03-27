@@ -13,7 +13,7 @@ class RubriqueDao extends ParentDao {
 
     public function getFirstRubrique($dataType) {
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
 		ORDER BY rang
                 LIMIT 1
@@ -35,7 +35,7 @@ class RubriqueDao extends ParentDao {
 
     public function getFirstRubriqueBySpace($spaceId, $dataType) {
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
                 WHERE spaceId = :spaceid 
 		ORDER BY rang
@@ -60,7 +60,7 @@ class RubriqueDao extends ParentDao {
 
     public function getRubriqueBySpaceToken($token, $dataType) {
         $requete = $this->dbGateway->prepare("
-		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm
+		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, rub.fileuploadForm
                 FROM rubrique rub
                 JOIN space s on s.space_id = rub.spaceId
                 WHERE s.space_token = :token 
@@ -85,7 +85,7 @@ class RubriqueDao extends ParentDao {
 
     public function getRubriqueByFilename($filename, $dataType) {
         $requete = $this->dbGateway->prepare("
-		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm
+		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, rub.fileuploadForm
                 FROM rubrique rub
                 WHERE rub.filename = :filename 
                 LIMIT 1
@@ -108,7 +108,7 @@ class RubriqueDao extends ParentDao {
 
     public function getPrivateRubriqueByFilename($filename, $dataType) {
         $requete = $this->dbGateway->prepare("
-		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm
+		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, fileuploadForm
                 FROM rubrique rub
                 WHERE rub.filename = :filename AND rub.spaceId > 0
                 LIMIT 1
@@ -134,7 +134,7 @@ class RubriqueDao extends ParentDao {
         $count = 0;
 
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
 		ORDER BY spaceId, rang
 		")or die(print_r($this->dbGateway->error_info()));
@@ -167,7 +167,7 @@ class RubriqueDao extends ParentDao {
         $count = 0;
 
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm 
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
                 WHERE spaceId = :spaceId AND rang > -1
 		ORDER BY rang
@@ -203,7 +203,7 @@ class RubriqueDao extends ParentDao {
         $count = 0;
 
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm 
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
                 WHERE spaceId > -1
 		ORDER BY spaceId, rang
@@ -238,7 +238,7 @@ class RubriqueDao extends ParentDao {
         $id = (int) $id;
 
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
 		FROM rubrique
 		WHERE id = :id
 		")or die(print_r($this->dbGateway->error_info()));
@@ -256,7 +256,7 @@ class RubriqueDao extends ParentDao {
     public function getRubriqueByRang($rank, $dataType) {
 
         $requete = $this->dbGateway->prepare("
-		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
 		FROM rubrique
 		WHERE rang = :rank
                 LIMIT 1
@@ -285,7 +285,7 @@ class RubriqueDao extends ParentDao {
             $requete = $this->dbGateway->prepare("
 				UPDATE rubrique 
                                 SET libelle= :libelle, rang= :rang, scope = :scope, spaceId = :spaceId, filename = :filename, 
-                                contactForm = :contactForm, messageForm = :messageForm, updateForm = :updateForm
+                                contactForm = :contactForm, messageForm = :messageForm, updateForm = :updateForm, fileuploadForm=:fileuploadForm
                                 WHERE id = :id
 			")or die(print_r($this->dbGateway->errors_info()));
 
@@ -298,11 +298,12 @@ class RubriqueDao extends ParentDao {
                 'filename' => $rubrique->getFilename(),
                 'contactForm' => $rubrique->getHasContactForm(),
                 'messageForm' => $rubrique->getHasMessageForm(),
-                'updateForm' => $rubrique->getHasUpdateForm()
+                'updateForm' => $rubrique->getHasUpdateForm(),
+                'fileuploadForm' => $rubrique->gethasFileuploadForm()
             ));
         } else {
-            $requete = $this->dbGateway->prepare("INSERT into rubrique(libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm) 
-					values(:libelle, :rang, :scope, :spaceId, :filename, :contactForm, :messageForm, :updateForm)")or die(print_r($this->dbGateway->error_info()));
+            $requete = $this->dbGateway->prepare("INSERT into rubrique(libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm) 
+					values(:libelle, :rang, :scope, :spaceId, :filename, :contactForm, :messageForm, :updateForm, :fileuploadForm)")or die(print_r($this->dbGateway->error_info()));
 
             $requete->execute(array(
                 'libelle' => $rubrique->getLibelle(),
@@ -312,7 +313,8 @@ class RubriqueDao extends ParentDao {
                 'filename' => $rubrique->getFilename(),
                 'contactForm' => $rubrique->getHasContactForm(),
                 'messageForm' => $rubrique->getHasMessageForm(),
-                'updateForm' => $rubrique->getHasUpdateForm()
+                'updateForm' => $rubrique->getHasUpdateForm(),
+                'fileuploadForm' => $rubrique->gethasFileuploadForm()
             ));
 
             $id = $this->dbGateway->lastInsertId();

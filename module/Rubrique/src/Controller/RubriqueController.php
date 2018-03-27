@@ -97,7 +97,6 @@ class RubriqueController extends AbstractActionController {
         $rubriqueDao = new RubriqueDao();
         $metaDao = new MetaDao();
         //$path = BASE_PATH . "/module/Siteprivate/view/siteprivate/siteprivate/";
-        // $this->translator = $this->getServiceLocator()->get('translator');
 
         $id = (int) $this->params()->fromRoute('id', 0);
 
@@ -128,6 +127,7 @@ class RubriqueController extends AbstractActionController {
         $form->get('contactForm')->setAttribute('value', (int) $rubrique->getHasContactForm());
         $form->get('messageForm')->setAttribute('value', (int) $rubrique->getHasMessageForm());
         $form->get('updateForm')->setAttribute('value', (int) $rubrique->getHasUpdateForm());
+        $form->get('fileuploadForm')->setAttribute('value', (int) $rubrique->gethasFileuploadForm());
         $form->get('submit')->setAttribute('value', $this->translator->translate('Modifier'));
 
         $metaForm = new MetaForm();
@@ -195,12 +195,8 @@ class RubriqueController extends AbstractActionController {
 
     public function deleteAction() {
 
-        //$this->getServiceLocator()->get('CacheListener')->getCacheService()->flush();
-
         $rubriqueDao = new RubriqueDao();
         $fileManager = new FileManager();
-
-        // $this->translator = $this->getServiceLocator()->get('translator');
 
         $id = (int) $this->params()->fromRoute('id', 0);
 
@@ -246,7 +242,6 @@ class RubriqueController extends AbstractActionController {
 
         if ($request->isPost()) {
 
-            //$form->setInputFilter($rubrique->getInputFilter());
             $form->setInputFilter(new MetaInputFilter());
 
             $form->setData($request->getPost());
