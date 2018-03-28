@@ -9,33 +9,36 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use ExtLib\Utils;
 use Privatespace\Model\PrivatespaceDao;
 
-class RubriqueForm extends Form {
+class RubriqueForm extends Form
+{
 
     private $translator;
-    
-    protected function getSpaces() {
-        
+
+    protected function getSpaces()
+    {
+
         $spaceDao = new PrivatespaceDao();
         $spaces = $spaceDao->getAllSpaces("array");
 
         $spaceArray = array();
-        $spaceArray['-1'] = 'Sélectionner un Espace'; 
-        
+        $spaceArray['-1'] = 'Sélectionner un Espace';
+
         foreach ($spaces as $value) {
             $spaceArray[$value['space_id']] = $value['space_name'];
         }
 
         return $spaceArray;
     }
-    
-    public function __construct($name = null) {
+
+    public function __construct($name = null)
+    {
         // we want to ignore the name passed
         parent::__construct('rubrique');
         //$this->setHydrator(new ClassMethods);
         $this->setAttribute('method', 'post');
-        
+
         $this->translator = new Utils();
-        
+
         $this->add(array(
             'name' => 'id',
             'attributes' => array(
@@ -60,7 +63,7 @@ class RubriqueForm extends Form {
                 'label' => $this->translator->translate('Position'),
             ),
         ));
-        
+
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'scope',
@@ -69,10 +72,10 @@ class RubriqueForm extends Form {
                 'class' => 'scopeClass'
             ),
             'options' => array(
-                'value_options' => array('public' =>$this->translator->translate('public'), 'private'=>$this->translator->translate("privé"))
+                'value_options' => array('public' => $this->translator->translate('public'), 'private' => $this->translator->translate("privé"))
             ),
         ));
-        
+
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'contactForm',
@@ -81,10 +84,10 @@ class RubriqueForm extends Form {
                 'class' => 'hasContactFormClass'
             ),
             'options' => array(
-                'value_options' => array(1 =>$this->translator->translate('Oui'), 0=>$this->translator->translate("Non"))
+                'value_options' => array(1 => $this->translator->translate('Oui'), 0 => $this->translator->translate("Non"))
             ),
         ));
-        
+
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'messageForm',
@@ -93,10 +96,10 @@ class RubriqueForm extends Form {
                 'class' => 'hasMessageFormClass'
             ),
             'options' => array(
-                'value_options' => array(1 =>$this->translator->translate('Oui'), 0=>$this->translator->translate("Non"))
+                'value_options' => array(1 => $this->translator->translate('Oui'), 0 => $this->translator->translate("Non"))
             ),
         ));
-        
+
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'updateForm',
@@ -105,10 +108,22 @@ class RubriqueForm extends Form {
                 'class' => 'hasUpdateFormClass'
             ),
             'options' => array(
-                'value_options' => array(1 =>$this->translator->translate('Oui'), 0=>$this->translator->translate("Non"))
+                'value_options' => array(1 => $this->translator->translate('Oui'), 0 => $this->translator->translate("Non"))
             ),
         ));
-        
+
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'fileuploadForm',
+            'attributes' => array(
+                'id' => 'fileuploadFormId',
+                'class' => 'fileuploadFormClass'
+            ),
+            'options' => array(
+                'value_options' => array(1 => $this->translator->translate('Oui'), 0 => $this->translator->translate("Non"))
+            ),
+        ));
+
         $this->add(array(
             'type' => 'Zend\Form\Element\Select',
             'name' => 'spaceId',
@@ -119,12 +134,12 @@ class RubriqueForm extends Form {
             'options' => array(
                 //'label' => 'Choisir la rubrique',
                 //'empty_option' => $this->translator->translate('Sélectionner un Espace'),
-                
+
                 //'class' => 'input-medium',
                 'value_options' => $this->getSpaces()
             ),
         ));
-        
+
         $this->add(array(
             'name' => 'filename',
             'attributes' => array(
@@ -132,7 +147,7 @@ class RubriqueForm extends Form {
                 'id' => 'filenameId'
             ),
             'options' => array(
-                'label' => $this->translator->translate('nom du fichier phtml associé'),
+                'label' => $this->translator->translate('nom du fichier phtml associé, ajouter .phtml (ex: mapage.phtml)'),
             ),
         ));
 

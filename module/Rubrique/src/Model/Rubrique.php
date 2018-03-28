@@ -14,6 +14,7 @@ class Rubrique {
     protected $hasContactForm;
     protected $hasMessageForm;
     protected $hasUpdateForm;
+    protected $hasFileuploadForm;
 
     public function __construct() {
         
@@ -56,6 +57,9 @@ class Rubrique {
         }
         if (isset($data['updateForm'])) {
             $this->setHasUpdateForm($data['updateForm']);
+        }
+        if (isset($data['fileuploadForm'])) {
+            $this->setHasFileuploadForm($data['fileuploadForm']);
         }
     }
 
@@ -129,6 +133,14 @@ class Rubrique {
     
     public function getHasUpdateForm(){
         return $this->hasUpdateForm;
+    }
+
+    public function setHasFileuploadForm($_hasFileuploadForm){
+        $this->hasFileuploadForm = $_hasFileuploadForm;
+    }
+
+    public function gethasFileuploadForm(){
+        return $this->hasFileuploadForm;
     }
     
     // Add the following method:

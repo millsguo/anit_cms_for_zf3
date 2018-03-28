@@ -6,7 +6,8 @@
     "php",
     "zf3",
     "cms",
-    "content management"
+    "content management system",
+    "zend framework 3"
   ],
   "homepage": "http://romgeb.fr/",
   "prefer-stable": true,
@@ -27,16 +28,18 @@
       "MyAcl\\": "module/MyAcl/src/",
       "Pagearrangement\\": "module/Pagearrangement/src/",
       "Pagews\\": "module/Pagews/src/",
+      "Mobilews\\":"module/Mobilews/src/",
       "Privatespace\\": "module/Privatespace/src/",
       "Privatespacelogin\\": "module/Privatespacelogin/src/",
       "Rubrique\\": "module/Rubrique/src/",
       "Siteprivate\\": "module/Siteprivate/src/",
       "Sitepublic\\": "module/Sitepublic/src/",
-      "Sousrubrique\\": "module/Sousrubrique/src/"
+      "Sousrubrique\\": "module/Sousrubrique/src/",
+      "Uploadmgmt\\":"module/Uploadmgmt/src/"
     }
   },
   "require": {
-    "zendframework/zend-component-installer": "^1.0",
-    "zendframework/zendframework": "^3.0"
+    "zendframework/zend-component-installer": "1.1",
+    "zendframework/zendframework": "3.0"
   }
 }

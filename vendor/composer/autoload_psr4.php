@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/type-resolver/src', $vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src'),
     'Zend\\XmlRpc\\' => array($vendorDir . '/zendframework/zend-xmlrpc/src'),
     'Zend\\Xml2Json\\' => array($vendorDir . '/zendframework/zend-xml2json/src'),
     'Zend\\View\\' => array($vendorDir . '/zendframework/zend-view/src'),
@@ -71,7 +71,7 @@ return array(
     'Zend\\Barcode\\' => array($vendorDir . '/zendframework/zend-barcode/src'),
     'Zend\\Authentication\\' => array($vendorDir . '/zendframework/zend-authentication/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
-    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Uploadmgmt\\' => array($baseDir . '/module/Uploadmgmt/src'),
     'Sousrubrique\\' => array($baseDir . '/module/Sousrubrique/src'),
     'Sitepublic\\' => array($baseDir . '/module/Sitepublic/src'),
     'Siteprivate\\' => array($baseDir . '/module/Siteprivate/src'),
@@ -84,6 +84,7 @@ return array(
     'Pagews\\' => array($baseDir . '/module/Pagews/src'),
     'Pagearrangement\\' => array($baseDir . '/module/Pagearrangement/src'),
     'MyAcl\\' => array($baseDir . '/module/MyAcl/src'),
+    'Mobilews\\' => array($baseDir . '/module/Mobilews/src'),
     'Message\\' => array($baseDir . '/module/Message/src'),
     'Loginmgmt\\' => array($baseDir . '/module/Loginmgmt/src'),
     'Login\\' => array($baseDir . '/module/Login/src'),

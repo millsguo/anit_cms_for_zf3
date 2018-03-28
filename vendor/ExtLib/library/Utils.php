@@ -3,9 +3,11 @@
 //ini_set('display_errors', 1);
 namespace ExtLib;
 
-final class Utils {
+final class Utils
+{
 
-    public function tri_par_cle($tableauEnArrivee, $indexTableau) {
+    public function tri_par_cle($tableauEnArrivee, $indexTableau)
+    {
 
         $tableauTriIntermediaire = array();
 
@@ -26,31 +28,32 @@ final class Utils {
 
         return $TableauEnSortie;
     }
-    
+
     /**
-     * 
+     *
      * @param type $str : string to filter
      * @param type bool $striptag : strip_tag
      * @param type bool $htmlChar : replace html char
      * @param type bool $trim : trim
      * @return filterer $string
      */
-    public function stripTags_replaceHtmlChar_trim($str, $striptag, $htmlChar, $trim) {
-        
-        if($trim){
+    public function stripTags_replaceHtmlChar_trim($str, $striptag, $htmlChar, $trim)
+    {
+
+        if ($trim) {
             //variable pour indiquer les caractères à retirer	                         
             $echap = array("\n", "\r");
             //Retirer les caractères spécifiés dans $echap
             $str = str_replace($echap, " ", $str);
             $str = trim($str);
         }
-        
-        if($striptag){
+
+        if ($striptag) {
             //Retirer les balises HTML du texte
             $str = strip_tags($str);
         }
-        
-        if($htmlChar){
+
+        if ($htmlChar) {
             //Remplacer les caractères sous format HTML et les remplacer  
             $str = html_entity_decode($str);
             $str = str_replace('&rsquo;', "'", $str);
@@ -117,7 +120,8 @@ final class Utils {
         return $str;
     }
 
-    function date_fr($format, $timestamp = false) {
+    function date_fr($format, $timestamp = false)
+    {
 
         if (!$timestamp)
             $date_en = date($format);
@@ -154,27 +158,29 @@ final class Utils {
 
         return $date_fr;
     }
-    
+
     //For php version < 5.40 to unescape unicode, 
     //http://stackoverflow.com/questions/16498286/why-does-the-php-json-encode-function-convert-utf-8-strings-to-hexadecimal-entit
-    function raw_json_encode($input) {
+    function raw_json_encode($input)
+    {
 
         return preg_replace_callback(
             '/\\\\u([0-9a-zA-Z]{4})/',
             function ($matches) {
-                return mb_convert_encoding(pack('H*',$matches[1]),'UTF-8','UTF-16');
+                return mb_convert_encoding(pack('H*', $matches[1]), 'UTF-8', 'UTF-16');
             },
             json_encode($input)
         );
 
     }
-    
+
     /**
      *
      * hack to translate label in form class
      *       */
-    function translate($str) { 
-        return $str; 
+    function translate($str)
+    {
+        return $str;
     }
 
 }

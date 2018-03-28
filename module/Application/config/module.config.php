@@ -144,6 +144,7 @@ return array(
         'Sitepublic' => 'sitepublic/layout',
         'Privatespace' => 'layout/layout',
         'Privatespaceloginmgmt' => 'layout/layout',
+        'Uploadmgmt' => 'layout/layout',
         'Siteprivate' => 'privatespacelogin/layout'
     )
 

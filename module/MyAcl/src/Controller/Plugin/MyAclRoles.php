@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: RomualdG
- * Date: 11/09/2017
- * Time: 07:59
- */
-
 namespace MyAcl\Controller\Plugin;
 
 
