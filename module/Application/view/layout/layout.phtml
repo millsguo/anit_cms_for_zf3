@@ -49,8 +49,17 @@
                         <!--<ul class="nav">-->
                         <ul class="nav">
                             <li><a class="brand" style="background: url('<?php echo $this->basePath().'/img/atnightintrain32.jpg';?>') no-repeat scroll transparent; margin-left: 0;padding: 8px 5px 12px 40px;" href="<?php echo $this->url('Sitepublic') ?>"><?php echo $this->translate('Mon Site'); ?></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <?php echo $this->translate('Espace privé'); ?>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->url('privatespace') ?>"><?php echo $this->translate('Privatespace'); ?></a></li>
+                                    <li><a href="<?php echo $this->url('privatespacelogin') ?>"><?php echo $this->translate('Privatespaceloginmgmt'); ?></a></li>
+                                </ul>
+                            </li>
                             <li><a href="<?php echo $this->url('rubrique') ?>"><?php echo $this->translate('Rubriques'); ?></a></li>
-                            <li><a href="<?php echo $this->url('Pagearrangement') ?>"><?php echo $this->translate('Disposition'); ?></a></li>
                             <li><a href="<?php echo $this->url('Sousrubrique') ?>"><?php echo $this->translate('Sous-Rubriques'); ?></a></li>
                             <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -64,16 +73,7 @@
                                     <li><a href="<?php echo $this->url('Linktocontenu') ?>"><?php echo $this->translate('Liens'); ?></a></li>
                                 </ul>
                             </li>
-                             <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <?php echo $this->translate('Espace privé'); ?>
-                                        <b class="caret"></b>
-                                    </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="<?php echo $this->url('privatespace') ?>"><?php echo $this->translate('Privatespace'); ?></a></li>
-                                    <li><a href="<?php echo $this->url('privatespacelogin') ?>"><?php echo $this->translate('Privatespaceloginmgmt'); ?></a></li>
-                                </ul>
-                             </li>
+                            <li><a href="<?php echo $this->url('Pagearrangement') ?>"><?php echo $this->translate('Disposition'); ?></a></li>
                             <li><a href="<?php echo $this->url('Message') ?>"><?php echo $this->translate('Messages'); ?></a></li>
                             <li><a href="<?php echo $this->url('Commentaire') ?>"><?php echo $this->translate('Commentaires'); ?></a></li>
                             <li><a href="<?php echo $this->url('Fichiers') ?>"><?php echo $this->translate('Fichiers'); ?></a></li>

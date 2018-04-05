@@ -16,7 +16,7 @@ class CommentaireDao extends ParentDao{
         $count = 0;
 
         $requete = $this->dbGateway->prepare("
-		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid, m.commentaire_commentaireid
+		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
 		FROM commentaire m
 		ORDER BY commentaire_contenuid, m.commentaire_date desc  
 		")or die(print_r($this->dbGateway->error_info()));
@@ -66,7 +66,7 @@ class CommentaireDao extends ParentDao{
     public function getCommentairesByType($type, $status, $size,$dataType) {
 
         $requete = $this->dbGateway->prepare("
-		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid, m.commentaire_commentaireid
+		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
 		FROM commentaire m
 		WHERE m.commentaire_type = :type AND m.commentaire_status = :status
 		ORDER BY m.commentaire_type, m.commentaire_position
@@ -102,7 +102,7 @@ class CommentaireDao extends ParentDao{
     public function getCommentairesByRubrique($rubriqueid, $status, $dataType) {
 
         $requete = $this->dbGateway->prepare("
-		SELECT com.commentaire_id, com.commentaire_msg, com.commentaire_row1, com.commentaire_row2, com.commentaire_row3, com.commentaire_row4, com.commentaire_position, com.commentaire_type, com.commentaire_date, com.commentaire_status, com.commentaire_contenuid, com.commentaire_commentaireid
+		SELECT com.commentaire_id, com.commentaire_msg, com.commentaire_row1, com.commentaire_row2, com.commentaire_row3, com.commentaire_row4, com.commentaire_position, com.commentaire_type, com.commentaire_date, com.commentaire_status, com.commentaire_contenuid
 		FROM rubrique r
                 LEFT JOIN sousrubrique sr on sr.rubriques_id = r.id
                 LEFT JOIN contenu c on c.sousrubriques_id = sr.id
@@ -141,7 +141,7 @@ class CommentaireDao extends ParentDao{
 
 
         $requete = $this->dbGateway->prepare("
-		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid, m.commentaire_commentaireid
+		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
 		FROM commentaire m
 		WHERE m.commentaire_contenuid = :contenuid AND commentaire_status = :status
 		ORDER BY m.commentaire_contenuid, m.commentaire_date DESC
@@ -210,9 +210,6 @@ class CommentaireDao extends ParentDao{
         if (!(bool)($commentaire->getContenuId())) {
             $commentaire->setContenuId(0);
         }
-        if (!(bool)($commentaire->getCommentaireId())) {
-            $commentaire->setCommentaireId(0);
-        }
         
         if ($id > 0) {
 
@@ -243,7 +240,7 @@ class CommentaireDao extends ParentDao{
                 'datemsg' => $commentaire->getDate()
             ));
 
-            return info;
+            return $info;
         } else {
             
             $requete = $this->dbGateway->prepare("INSERT into commentaire("
@@ -265,7 +262,8 @@ class CommentaireDao extends ParentDao{
                     . ":typeMsg, "
                     . ":datemsg, "
                     . ":status, "
-                    . ":contenuid)")or die(print_r($this->dbGateway->error_info()));
+                    . ":contenuid)")
+                    or die(print_r($this->dbGateway->error_info()));
                  
             $info = $requete->execute(array(
                 'rowa' => $commentaire->getRow1(),
@@ -276,7 +274,7 @@ class CommentaireDao extends ParentDao{
                 'typeMsg' => $commentaire->getType(),
                 'status' => $commentaire->getCommentaireStatut(),
                 'contenuid' => $commentaire->getContenuId(),
-                'datemsg' => $commentaire->getDate() 
+                'datemsg' => $commentaire->getDate()
             ));
 
             return $info;

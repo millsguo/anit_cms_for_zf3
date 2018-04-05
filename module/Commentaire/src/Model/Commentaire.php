@@ -8,8 +8,7 @@ class Commentaire extends Message {
 
     protected $idContenu;
     protected $commentaireStatut;
-    protected $relatedCommentId;
-    
+
     //heriter la classe de message et ajouter statut et idcontenu
 
     public function __construct() {
@@ -66,10 +65,7 @@ class Commentaire extends Message {
         if (isset($data['commentaire_status'])) {
             $this->setCommentaireStatut($data['commentaire_status']);
         }
-        if (isset($data['commentaire_commentaireid'])) {
-            $this->setCommentaireId($data['commentaire_commentaireid']);
-        }
-         
+
     }
     
     protected function exchangeForm($data) {
@@ -80,9 +76,6 @@ class Commentaire extends Message {
         }
         if (isset($data['commentaire_status'])) {
             $this->setCommentaireStatut($data['commentaire_status']);
-        }
-        if (isset($data['commentaire_commentaireid'])) {
-            $this->setCommentaireId($data['commentaire_commentaireid']);
         }
         if (isset($data['commentaire_type'])) {
             $this->setType($data['commentaire_type']);
@@ -103,15 +96,7 @@ class Commentaire extends Message {
     public function getCommentaireStatut() {
         return $this->commentaireStatut;
     }
-    
-    public function setCommentaireId($_relatedCommentId) {
-        $this->relatedCommentId = $_relatedCommentId;
-    }
 
-    public function getCommentaireId() {
-        return $this->relatedCommentId;
-    }
-    
     // Add the following method:
     public function getArrayCopy() {
         return get_object_vars($this);

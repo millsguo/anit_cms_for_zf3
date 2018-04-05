@@ -101,9 +101,7 @@ class UploadmgmtController extends AbstractActionController
         if(strcmp($file['status'], FileuploadStatus::$VALIDATED)===0){
             $status = FileuploadStatus::$OBSOLETE;
         }
-
         if ($fileuploadmgmtdao->updateStatus($idFile, $status)) {
-
             if(in_array(strtolower($file['type']), FilesCategories::$imgList)){
                 $photosmgmt->deleteFile($this->publicPath . $file['path'] . '/' . $file['name']);
                 $photosmgmt->deleteFile($this->publicPath . $file['thumbnailpath'] . '/' . $file['thumbnail']);

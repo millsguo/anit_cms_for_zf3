@@ -16,7 +16,20 @@ $(function () {
             error: function (error) {
                 console.log(error);
             }
-
         });
     });
+
+    $('.filepathBtn').on('click', function(){
+        //create an attribute data-filepath
+        var filepathTxtAttr = $(this).attr('data-clipboard');
+        copyToClipboard(filepathTxtAttr);
+    });
+
+    function copyToClipboard(text) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(text).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
 });

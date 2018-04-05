@@ -219,14 +219,6 @@ $this->headTitle($title);
     </table>
 
     <?php
-    if (empty($photos)) {
-        echo '<p style="color:green">';
-        echo $this->translate('Tous les fichiers sont validées');
-        echo '</p>';
-    }
-    ?>
-
-    <?php
     foreach ($photos as $ph) :
 //die('<pre>'.print_r($ph,true).'</pre>');
         ?>

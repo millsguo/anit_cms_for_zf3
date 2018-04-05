@@ -5,38 +5,41 @@ $this->headTitle($title);
 ?>
 
 <style>
-    div label{
-        width:150px;
+    div label {
+        width: 150px;
     }
 
-    div input[type="submit"], #submitbutton{
-        width:80px;
-        height:40px;
+    div input[type="submit"], #submitbutton {
+        width: 80px;
+        height: 40px;
     }
 
-    #contentText{
-        width:700px;
-        height:350px;
+    #contentText {
+        width: 700px;
+        height: 350px;
     }
-    .dataTables_filter{
-        
+
+    .dataTables_filter {
+
         margin-right: 10%;
     }
-    form ul{
+
+    form ul {
         display: none;
-        
+
     }
-    .imgView{
-        cursor: pointer; 
+
+    .imgView {
+        cursor: pointer;
     }
-    
-    img.imgpreview{
-       display:block;
-       margin: auto; 
-    } 
-    
-    div#tableSort_length label{
-       display: inline;
+
+    img.imgpreview {
+        display: block;
+        margin: auto;
+    }
+
+    div#tableSort_length label {
+        display: inline;
     }
 
 </style>
@@ -53,12 +56,12 @@ $this->headTitle($title);
             "importcss"
         ],
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright",
-        content_css : ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
-                      "<?php echo $this->basePath() . '/assets/css/app.css';?>", 
-                      "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
-                      "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
-                      "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
-        });
+        content_css: ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
+            "<?php echo $this->basePath() . '/assets/css/app.css';?>",
+            "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
+            "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
+            "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
+    });
 
 
     function getSousrub(id) {
@@ -116,8 +119,8 @@ $this->headTitle($title);
                 },
             },
             "aoColumnDefs": [
-                    {'bSortable': false, 'aTargets': [0]}
-                ]
+                {'bSortable': false, 'aTargets': [0]}
+            ]
         });
 
         $('#rubriqueSelectIdTag').change(function () {
@@ -126,67 +129,66 @@ $this->headTitle($title);
             //console.log(sousrub);
             getSousrub(sousrub);
         });
-        
-        
-        $('#submitbutton').on('click',function () {
+
+
+        $('#submitbutton').on('click', function () {
             //alert('submit');
             soumettreajout();
         });
-        
-         $('#tableSort').on( 'draw.dt', function () {
+
+        $('#tableSort').on('draw.dt', function () {
             $("img.imgView").off("click");
             $("img.imgView").on("click", function () {
                 var linkToImg = $(this).attr("data-img");
                 var extension = $(this).attr("data-filetype");
-                if(extension == 'jpg' || extension == 'jpeg'
+                if (extension == 'jpg' || extension == 'jpeg'
                     || extension == 'png' || extension == 'bmp'
-                    || extension == 'gif' || extension == 'svg'){       
-                    bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
+                    || extension == 'gif' || extension == 'svg') {
+                    bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
                 }
             });
-        });   
-           
+        });
+
 
         $("img.imgView").on("click", function () {
             var linkToImg = $(this).attr("data-img");
             var extension = $(this).attr("data-filetype");
-            if(extension == 'jpg' || extension == 'jpeg'
-               || extension == 'png' || extension == 'bmp'
-               || extension == 'gif' || extension == 'svg'){       
-                bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
+            if (extension == 'jpg' || extension == 'jpeg'
+                || extension == 'png' || extension == 'bmp'
+                || extension == 'gif' || extension == 'svg') {
+                bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
             }
         });
 
-        
+
     });
-    
-    
-    function soumettreajout(){
-        
-        if (validajout()){
+
+
+    function soumettreajout() {
+
+        if (validajout()) {
             document.contenuform.submit();
         }
     }
 
 
-    function validajout(){
-        
+    function validajout() {
+
         var rub = document.contenuform.rubriquesList.value;
         var sousrub = document.contenuform.sousrubriquesList.value;
         var position = document.contenuform.position.value;
-        
+
         var isPosition = isNaN($.trim(position));
         //console.log(rub);
         //console.log(rub+' '+sousrub+' '+position+' '+isPosition);
-        
+
         if ($.trim(rub) == "") {
             document.contenuform.rubriquesList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir une rubrique'); ?>');
             return false;
         }
 
-        if ($.trim(sousrub) == "")
-        {
+        if ($.trim(sousrub) == "") {
             document.contenuform.sousrubriquesList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir une sous-rubrique'); ?>');
             return false;
@@ -201,7 +203,7 @@ $this->headTitle($title);
 
         return true;
     }
-    
+
 </script>
 
 <h1><?php echo $this->escapeHtml($title); ?></h1>
@@ -213,8 +215,8 @@ $form->prepare();
 if (is_array($error)) {
     foreach ($error as $value) {
         //var_dump($error);
-        
-        foreach($value as $message){
+
+        foreach ($value as $message) {
             //print_r($error);
             echo '<div style="color:red;">' . $message . '</div>';
         }
@@ -229,8 +231,8 @@ echo '<div>' . $this->formRow($form->get('soustitre')) . '</div>';
 echo '<div>' . $this->formRow($form->get('position')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath2')) . '</div>';
-echo '<div><div>'.$this->translate('Rubrique').'</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
-echo '<div><div>'.$this->translate('Sous-Rubrique').'</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
+echo '<div><div>' . $this->translate('Rubrique') . '</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
+echo '<div><div>' . $this->translate('Sous-Rubrique') . '</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
 echo '<div>&nbsp;</div>';
 echo '<div id="contentText">' . $this->formTextarea($form->get('contenu')) . '</div>';
 echo '<div>' . $this->formButton($form->get('submitbutton')) . '</div>';
@@ -243,28 +245,35 @@ echo '<tr><th class="thheader" style="cursor:default;text-align:center;">' . $th
 echo '<th class="thheader" style="cursor:pointer;text-align:center;">' . $this->translate('Chemin image') . '</th>';
 echo '<th style="text-align:center; cursor:pointer;" class="thheader">' . $this->translate('Description') . '</th>';
 echo '<th style="width:20%; text-align:center; line-height:20px; cursor:pointer;" class="thheader" align="center">' . $this->translate('Meta Donn&eacute;es') . '</th>';
-echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('type de fichier') . '</th></tr>';
-//echo '<th style="cursor:default;">copier le lien</th></tr>';
-//echo '<tr><th class="thheader" style="cursor:pointer;">Chemin image</th><th style="cursor:pointer;">type de fichier</th></tr>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('type de fichier') . '</th>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('Copier le lien') . '</th></tr>';
 echo '</thead><tbody>';
 
 
 foreach ($fichiers as $fichier) :
-?>
-        <tr><td style="width:10%; text-align:center; line-height:40px;"><img class="imgView" data-filetype="<?php echo $fichier->getType(); ?>" data-img="<?php 
-                echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>" src="<?php
-                echo $this->basePath() . '/' . $fichier->getThumbnailpath().'/'.$fichier->getThumbnail(); 
-                
-                
-            ?>" width=40 height=40 /></td>
+    ?>
+    <tr>
+        <td style="width:10%; text-align:center; line-height:40px;"><img class="imgView"
+                                                                         data-filetype="<?php echo $fichier->getType(); ?>"
+                                                                         data-img="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"
+                                                                         src="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getThumbnailpath() . '/' . $fichier->getThumbnail();
 
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin().$fichier->getNom()); ?></td>
+
+                                                                         ?>" width=40 height=40/></td>
+
+        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin() . $fichier->getNom()); ?></td>
         <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getLibelle()); ?></td>
         <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getMetaData()); ?></td>
         <td style="width:20%; text-align:center; line-height:40px;"> <?php echo $fichier->getType() ?> </td>
-   
-</tr>
-<?php endforeach; 
+        <td style="width:10%; text-align:center; line-height:40px;">
+            <button class="filepathBtn"
+                    data-clipboard="<?php echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"><?php echo $this->translate("Copier le lien"); ?></button>
+        </td>
+
+    </tr>
+<?php endforeach;
 
 echo '</tbody></table></div>';
 //echo "Zend engine version: " . zend_version();

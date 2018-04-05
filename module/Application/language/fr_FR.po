@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-05 20:32-0700\n"
-"PO-Revision-Date: 2015-10-15 23:08+0200\n"
+"POT-Creation-Date: 2018-04-05 18:57+0200\n"
+"PO-Revision-Date: 2018-04-05 18:57+0200\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: me & myself\n"
 "Language: fr_FR\n"
@@ -11,687 +11,2573 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: translate\n"
-"X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.8.5\n"
-"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-SearchPath-0: .\n"
 
-msgid "Skeleton Application"
-msgstr ""
-
-#: ../view/layout/layout.phtml:36
-msgid "Accueil"
-msgstr ""
-
-#: ../view/layout/layout.phtml:50
-msgid "Tous droits réservés."
-msgstr ""
-
-#: ../view/application/index/index.phtml:2
-#, php-format
-msgid "Bienvenue dans le %sZend Framework 2%s"
-msgstr ""
-
-#: ../view/error/index.phtml:1
-msgid "Une erreur est survenue"
-msgstr ""
-
-#: ../view/error/index.phtml:8
-msgid "Informations complémentaires"
-msgstr ""
-
-#: ../view/error/index.phtml:11 ../view/error/index.phtml:35
-msgid "Fichier"
-msgstr ""
-
-#: ../view/error/index.phtml:15 ../view/error/index.phtml:39
-msgid "Message"
-msgstr ""
-
-#: ../view/error/index.phtml:19 ../view/error/index.phtml:43
-#: ../view/error/404.phtml:55
-msgid "Pile d'exécution"
-msgstr ""
-
-#: ../view/error/index.phtml:29
-msgid "Exceptions précédentes"
-msgstr ""
-
-#: ../view/error/index.phtml:58
-msgid "Aucune exception disponible"
-msgstr ""
-
-#: ../view/error/404.phtml:1
-msgid "Une erreur 404 est survenue"
-msgstr ""
-
-#: ../view/error/404.phtml:10
-msgid "Le contrôleur demandé n'a pas pu dispatcher la requête."
-msgstr ""
-
-#: ../view/error/404.phtml:13
-msgid "Le contrôleur demandé ne correspond pas à une classe existante de contrôleur."
-msgstr ""
-
-#: ../view/error/404.phtml:16
-msgid "Le contrôleur demandé n'est pas dispatchable."
-msgstr ""
-
-#: ../view/error/404.phtml:19
-msgid "L'URL demandée n'a pas pu trouver de route correspondante."
-msgstr ""
-
-#: ../view/error/404.phtml:22
-msgid "Nous ne pouvons pas déterminer pour le moment pourquoi une 404 a été générée."
-msgstr ""
-
-#: ../view/error/404.phtml:34
-msgid "Contrôleur"
-msgstr ""
-
-#: ../view/error/404.phtml:41
-#, php-format
-msgid "résout en %s"
-msgstr ""
-
-#: ../view/error/404.phtml:51
-msgid "Exception"
-msgstr ""
-
-msgid "Mon Site"
-msgstr ""
-
-msgid "Rubriques"
-msgstr ""
-
-msgid "Sous-Rubriques"
-msgstr ""
-
-msgid "Contenus"
-msgstr ""
-
-msgid "Galeries"
-msgstr ""
-
-msgid "Blog"
-msgstr ""
-
-msgid "Messages"
-msgstr ""
-
-msgid "Commentaires"
-msgstr ""
-
-msgid "Fichiers"
-msgstr ""
-
-msgid "Déconnexion"
-msgstr ""
-
-msgid "&Ecirc;tes vous sûr de vous déconnecter ?"
-msgstr ""
-
+#: Blogcontent/src/Controller/BlogcontentController.php:48
+#: Commentaire/src/Controller/CommentaireController.php:44
+#: Contenu/src/Controller/ContenuController.php:48
+#: Contenu/src/Controller/ContenuController.php:170
+#: Fichiers/src/Controller/FichiersController.php:70
+#: Galerie/src/Controller/GalerieController.php:56
+#: Galerie/src/Controller/GalerieController.php:176
+#: Linktocontenu/src/Controller/LinktocontenuController.php:49
+#: Linktocontenu/src/Controller/LinktocontenuController.php:149
+#: Linktocontenu/src/Controller/LinktocontenuController.php:302
+#: Message/src/Controller/MessageController.php:46
+#: Privatespace/src/Controller/PrivatespaceController.php:41
+#: Privatespacelogin/src/Controller/PrivatespaceloginController.php:61
+#: Rubrique/src/Controller/RubriqueController.php:47
+#: Siteprivate/src/Controller/SiteprivateController.php:541
+#: Sousrubrique/src/Controller/SousrubriqueController.php:48
 msgid "Ajouter"
 msgstr ""
 
+#: Blogcontent/src/Controller/BlogcontentController.php:125
+#: Commentaire/src/Controller/CommentaireController.php:106
+#: Fichiers/src/Controller/FichiersController.php:229
+#: Message/src/Controller/MessageController.php:99
+#: Privatespace/src/Controller/PrivatespaceController.php:107
+#: Privatespacelogin/src/Controller/PrivatespaceloginController.php:196
+#: Rubrique/src/Controller/RubriqueController.php:131
+#: Sousrubrique/src/Controller/SousrubriqueController.php:120
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:61
+#: Commentaire/view/commentaire/commentaire/index.phtml:66
+#: Contenu/view/contenu/contenu/index.phtml:63
+#: Fichiers/view/fichiers/fichiers/index.phtml:131
+#: Galerie/view/galerie/galerie/index.phtml:61
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:67
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:79
+#: Message/view/message/message/index.phtml:65
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:63
+#: Privatespace/view/privatespace/privatespace/index.phtml:63
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:64
+#: Rubrique/view/rubrique/rubrique/edit.phtml:133
+#: Rubrique/view/rubrique/rubrique/edit.phtml:384
+#: Rubrique/view/rubrique/rubrique/index.phtml:67
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:64
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:63
 msgid "Modifier"
 msgstr ""
 
+#: Blogcontent/src/Controller/BlogcontentController.php:256
+#: Commentaire/src/Controller/CommentaireController.php:212
+#: Contenu/src/Controller/ContenuController.php:235
+#: Fichiers/src/Controller/FichiersController.php:290
+#: Galerie/src/Controller/GalerieController.php:247
+#: Linktocontenu/src/Controller/LinktocontenuController.php:359
+#: Loginmgmt/src/Controller/LoginmgmtController.php:203
+#: Message/src/Controller/MessageController.php:194
+#: Privatespace/src/Controller/PrivatespaceController.php:161
+#: Privatespacelogin/src/Controller/PrivatespaceloginController.php:231
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:206
+#: Rubrique/src/Controller/RubriqueController.php:213
+#: Rubrique/src/Form/RubriqueForm.php:87 Rubrique/src/Form/RubriqueForm.php:99
+#: Rubrique/src/Form/RubriqueForm.php:111
+#: Rubrique/src/Form/RubriqueForm.php:123
+#: Sousrubrique/src/Controller/SousrubriqueController.php:178
+#: Application/view/layout/layout.phtml:187
+#: Blogcontent/view/blogcontent/blogcontent/delete.phtml:21
+#: Commentaire/view/commentaire/commentaire/delete.phtml:22
+#: Contenu/view/contenu/contenu/delete.phtml:21
+#: Fichiers/view/fichiers/fichiers/delete.phtml:21
+#: Galerie/view/galerie/galerie/delete.phtml:21
+#: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:21
+#: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:21
+#: Message/view/message/message/delete.phtml:22
+#: Privatespace/view/privatespace/privatespace/delete.phtml:21
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:21
+#: Rubrique/view/rubrique/rubrique/delete.phtml:21
+#: Rubrique/view/rubrique/rubrique/edit.phtml:199
+#: Rubrique/view/rubrique/rubrique/edit.phtml:266
+#: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:105
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:179
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:177
+#: Siteprivate/view/siteprivate/layout/layout.phtml:104
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:179
+#: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:21
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:118
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:148
 msgid "Non"
 msgstr ""
 
+#: Blogcontent/src/Controller/BlogcontentController.php:258
+#: Commentaire/src/Controller/CommentaireController.php:214
+#: Contenu/src/Controller/ContenuController.php:237
+#: Fichiers/src/Controller/FichiersController.php:292
+#: Galerie/src/Controller/GalerieController.php:249
+#: Linktocontenu/src/Controller/LinktocontenuController.php:361
+#: Loginmgmt/src/Controller/LoginmgmtController.php:205
+#: Message/src/Controller/MessageController.php:196
+#: Privatespace/src/Controller/PrivatespaceController.php:163
+#: Privatespacelogin/src/Controller/PrivatespaceloginController.php:235
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:206
+#: Rubrique/src/Controller/RubriqueController.php:215
+#: Rubrique/src/Form/RubriqueForm.php:87 Rubrique/src/Form/RubriqueForm.php:99
+#: Rubrique/src/Form/RubriqueForm.php:111
+#: Rubrique/src/Form/RubriqueForm.php:123
+#: Sousrubrique/src/Controller/SousrubriqueController.php:180
+#: Application/view/layout/layout.phtml:168
+#: Blogcontent/view/blogcontent/blogcontent/delete.phtml:20
+#: Commentaire/view/commentaire/commentaire/delete.phtml:21
+#: Contenu/view/contenu/contenu/delete.phtml:20
+#: Fichiers/view/fichiers/fichiers/delete.phtml:20
+#: Galerie/view/galerie/galerie/delete.phtml:20
+#: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:20
+#: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:20
+#: Message/view/message/message/delete.phtml:21
+#: Privatespace/view/privatespace/privatespace/delete.phtml:20
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:20
+#: Rubrique/view/rubrique/rubrique/delete.phtml:20
+#: Rubrique/view/rubrique/rubrique/edit.phtml:173
+#: Rubrique/view/rubrique/rubrique/edit.phtml:238
+#: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:86
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:160
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:158
+#: Siteprivate/view/siteprivate/layout/layout.phtml:85
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:160
+#: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:20
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:97
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:127
 msgid "Oui"
 msgstr ""
 
-msgid "Auteur"
-msgstr ""
-
-msgid "Autre texte ligne 1"
-msgstr ""
-
+#: Blogcontent/src/Form/BlogcontentForm.php:61
 msgid "Themes abordés"
 msgstr ""
 
+#: Blogcontent/src/Form/BlogcontentForm.php:71
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:175
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:255
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:169
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:245
+msgid "Auteur"
+msgstr ""
+
+#: Blogcontent/src/Form/BlogcontentForm.php:91
+msgid "Autre texte ligne 1"
+msgstr ""
+
+#: Blogcontent/src/Form/BlogcontentForm.php:101
 msgid "Autre texte ligne 2"
 msgstr ""
 
+#: Blogcontent/src/Form/BlogcontentForm.php:111
 msgid "Autre texte ligne 3"
 msgstr ""
 
-msgid "Ajouter un contenu de type blog"
-msgstr ""
-
-msgid "Sélectionner une sous-rubrique"
-msgstr ""
-
-msgid "Traitement en cours..."
-msgstr ""
-
-msgid "Rechercher"
-msgstr ""
-
-msgid "Afficher"
-msgstr ""
-
-msgid "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments"
-msgstr ""
-
-msgid "Affichage de l'&eacute;lement"
-msgstr ""
-
-msgid "sur"
-msgstr ""
-
-msgid "&eacute;l&eacute;ments"
-msgstr ""
-
-msgid "filtr&eacute; de"
-msgstr ""
-
-msgid "&eacute;l&eacute;ments au total"
-msgstr ""
-
-msgid "Chargement en cours"
-msgstr ""
-
-msgid "Aucun &eacute;l&eacute;ment &agrave; afficher"
-msgstr ""
-
-msgid "Aucune donnée disponible dans le tableau"
-msgstr ""
-
-msgid "Premier"
-msgstr ""
-
-msgid "Pr&eacute;c&eacute;dent"
-msgstr ""
-
-msgid "Suivant"
-msgstr ""
-
-msgid "Dernier"
-msgstr ""
-
-msgid "activer pour trier la colonne par ordre croissant"
-msgstr ""
-
-msgid "activer pour trier la colonne par ordre décroissant"
-msgstr ""
-
-msgid "Vous devez choisir une rubrique"
-msgstr ""
-
-msgid "La position doit être vide ou être un nombre"
-msgstr ""
-
-msgid "Vignette"
-msgstr ""
-
-msgid "Chemin image"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Meta Donn&eacute;es"
-msgstr ""
-
-msgid "type de fichier"
-msgstr ""
-
-msgid "Supprimer un contenu de type blog"
-msgstr ""
-
-msgid "Etes-vous sûr de vouloir supprimer le contenu"
-msgstr ""
-
-msgid "Modifier le contenu de type blog"
-msgstr ""
-
-msgid "Titre"
-msgstr ""
-
-msgid "Sous-Titre"
-msgstr ""
-
-msgid "Position"
-msgstr ""
-
-msgid "Sélectionner une rubrique"
-msgstr ""
-
-msgid "Ajouter un contenu"
-msgstr ""
-
-msgid "Supprimer un contenu"
-msgstr ""
-
-msgid "Modifier le contenu"
-msgstr ""
-
-msgid "Mes contenus"
-msgstr ""
-
-msgid "Rubrique"
-msgstr ""
-
-msgid "Sous-Rubrique"
-msgstr ""
-
-msgid "Libellé"
-msgstr ""
-
-msgid "Actions"
-msgstr ""
-
-msgid "Supprimer"
-msgstr ""
-
-msgid "Ajouter un contenu de type galerie"
-msgstr ""
-
-msgid "Supprimer un contenu de type galerie"
-msgstr ""
-
-msgid "Modifier le contenu de type galerie"
-msgstr ""
-
-msgid "Image"
-msgstr ""
-
-msgid "Image 2"
-msgstr ""
-
-msgid "utilisateur"
-msgstr ""
-
-msgid "Utilisateur"
-msgstr ""
-
-msgid "saisir les caractères"
-msgstr ""
-
-msgid "mot de passe"
-msgstr ""
-
-msgid "Mot de passe"
-msgstr ""
-
-msgid "Vérification"
-msgstr ""
-
-msgid "Valider"
-msgstr ""
-
-msgid "Le fichier doit avoir l'extension"
-msgstr ""
-
-msgid "Ajouter une image à la bibliothèque"
-msgstr ""
-
-msgid "Courte description"
-msgstr ""
-
-msgid "Meta data"
-msgstr ""
-
-msgid "Ajouter un fichier"
-msgstr ""
-
-msgid "Supprimer un fichier de la bibliothèque"
-msgstr ""
-
-msgid "Etes-vous sûr de vouloir supprimer ce fichier"
-msgstr ""
-
-msgid "Modifier les données associées au fichier"
-msgstr ""
-
-msgid "Mes Fichiers"
-msgstr ""
-
-msgid "Aperçu"
-msgstr ""
-
-msgid "Nom du fichier"
-msgstr ""
-
-msgid "Action"
-msgstr ""
-
-# Message
-msgid "Ajouter un Message"
-msgstr ""
-
-msgid "Supprimer un message"
-msgstr ""
-
-msgid "Modifier un Message"
-msgstr ""
-
-msgid "Mes messages"
-msgstr ""
-
-msgid "Ligne 1"
-msgstr ""
-
-msgid "Ligne 2"
-msgstr ""
-
-msgid "Ligne 3"
-msgstr ""
-
-msgid "Sélectionner le type de message"
-msgstr ""
-
-msgid "Contenu du message"
-msgstr ""
-
-# Commentaire
-msgid "Mes commentaires"
-msgstr ""
-
-msgid "Modifier un Commentaire"
-msgstr ""
-
-msgid "Sélectionner un contenu"
-msgstr ""
-
-msgid "Supprimer un commentaire"
-msgstr ""
-
-msgid "Ajouter un Commentaire"
-msgstr ""
-
-msgid "Ajouter un commentaire"
-msgstr ""
-
-msgid "Contenu du commentaire"
-msgstr ""
-
-msgid "Nom"
-msgstr ""
-
-msgid "Entreprise"
-msgstr ""
-
-msgid "Email"
-msgstr ""
-
-msgid "Autre"
-msgstr ""
-
-msgid "Sélectionner un statut"
-msgstr ""
-
-msgid "validé"
-msgstr ""
-
-msgid "non validé"
-msgstr ""
-
-# Rubrique
-msgid "Mes rubriques"
-msgstr ""
-
-msgid "Modifier la rubrique"
-msgstr ""
-
-msgid "modifier"
-msgstr ""
-
-msgid "&Ecirc;tes vous sûr de modifier la méta ?"
-msgstr ""
-
-msgid "supprimer"
-msgstr ""
-
-msgid "&Ecirc;tes vous sûr de supprimer la méta ?"
-msgstr ""
-
-msgid "Opération effectuée"
-msgstr ""
-
-msgid "Un problème est survenu, veuillez recommencer svp."
-msgstr ""
-
-msgid "Cl&eacute;"
-msgstr ""
-
-msgid "Valeur"
-msgstr ""
-
-msgid "Supprimer une rubrique"
-msgstr ""
-
-msgid "Etes-vous sûr de vouloir supprimer la rubrique"
-msgstr ""
-
-msgid "Ajouter une nouvelle rubrique"
-msgstr ""
-
-msgid "Ajouter une rubrique"
-msgstr ""
-
-msgid "Ajouter une m&eacute;ta"
-msgstr ""
-
-msgid "Meta clé"
-msgstr ""
-
-msgid "Meta valeur"
-msgstr ""
-
-msgid "Un problème est survenu, veuillez recommencer"
-msgstr ""
-
-msgid "Mes sous rubriques"
-msgstr ""
-
-# Sous rubrique
-msgid "Ajouter une sous-rubrique"
-msgstr ""
-
-msgid "Modifier la sous-rubrique"
-msgstr ""
-
-msgid "Rubrique associée"
-msgstr ""
-
-msgid "Supprimer une sous-rubrique"
-msgstr ""
-
-msgid "Etes-vous sûr de vouloir supprimer la sous-rubrique"
-msgstr ""
-
-msgid "Mes contenus de type Blog"
-msgstr ""
-
-msgid "Ajouter du contenu"
-msgstr ""
-
-msgid "Mes contenus de type galerie"
-msgstr ""
-
-msgid "Ajouter du contenu de type blog"
-msgstr ""
-
-msgid "Modèle de blog"
-msgstr ""
-
-msgid "At night and in transportation"
-msgstr ""
-
-msgid "Ajouter un message"
-msgstr ""
-
-msgid "Autre ligne"
-msgstr ""
-
-msgid "Etes-vous sûr de vouloir supprimer ce message"
-msgstr ""
-
-# Loginmgmt
-msgid "Mes utilisateurs"
-msgstr ""
-
-msgid "Modifier le login"
-msgstr ""
-
-msgid "Si aucun mot de passe n'est saisi alors le mot de passe actuel est conservé"
-msgstr ""
-
-msgid "Le nouveau mot de passe doit avoir 5 caractères"
-msgstr ""
-
-msgid "Ajouter un nouvel utilisateur"
-msgstr ""
-
-msgid "Sélectionner un rôle"
-msgstr ""
-
-msgid "Site public"
-msgstr ""
-
-msgid "Utilisateur Back Office"
-msgstr ""
-
-msgid "Administrateur"
-msgstr ""
-
-msgid "La taille minimum du nom est de 3 caractères minimum"
-msgstr ""
-
-msgid "La taille du nom ne doit pas dépasser 128 caractères"
-msgstr ""
-
-msgid "Vous devez saisir un nom"
-msgstr ""
-
-msgid "La taille minimum du mot de passe est de 5 caractères"
-msgstr ""
-
-msgid "La taille du mot de passe ne doit pas dépasser 128 caractères"
-msgstr ""
-
-msgid "Vous devez saisir un mot de passe de 5 caractères minimum"
-msgstr ""
-
-msgid "La taille ne doit pas dépasser 128 caractères"
-msgstr ""
-
-msgid "Vous devez choisir un rôle"
-msgstr ""
-
-msgid "L'email est invalide"
-msgstr ""
-
-msgid "La date n'est pas valide"
-msgstr ""
-
-msgid "Vous devez saisir une date"
-msgstr ""
-
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:35
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:36
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:55
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:56
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:104
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:105
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:125
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:126
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:146
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:147
+#: Galerie/src/Form/GalerieInputFilter.php:35
+#: Galerie/src/Form/GalerieInputFilter.php:36
+#: Galerie/src/Form/GalerieInputFilter.php:56
+#: Galerie/src/Form/GalerieInputFilter.php:57
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:113
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:114
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:134
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:135
 msgid "La taille ne doit pas dépasser 256 caractères"
 msgstr ""
 
-msgid "La position doit être vide ou doit être un nombre"
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:74
+#: Commentaire/src/Form/CommentaireInputFilter.php:123
+#: Message/src/Form/MessageInputFilter.php:122
+msgid "La date n'est pas valide"
 msgstr ""
 
-msgid "Vous devez choisir une sous-rubrique"
+#: Blogcontent/src/Form/BlogcontentInputFilter.php:82
+#: Commentaire/src/Form/CommentaireInputFilter.php:131
+#: Message/src/Form/MessageInputFilter.php:130
+msgid "Vous devez saisir une date"
 msgstr ""
 
-msgid "Veuillez recommencer le nom d'utilisateur et/ou le mot de passe sont incorrects"
+#: Commentaire/src/Form/CommentaireForm.php:56
+#: Loginmgmt/src/Form/LoginmgmtForm.php:34 Message/src/Form/MessageForm.php:39
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:79
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:67
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:88
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:74
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:92
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:88
+msgid "Nom"
 msgstr ""
 
-msgid "Veuillez contacter l'administrateur du site svp."
+#: Commentaire/src/Form/CommentaireForm.php:66
+#: Message/src/Form/MessageForm.php:49
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:94
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:80
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:98
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:94
+msgid "Entreprise"
 msgstr ""
 
-msgid "Veuillez rafraichir la page et recommencer svp."
+#: Commentaire/src/Form/CommentaireForm.php:76
+#: Message/src/Form/MessageForm.php:59
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:49
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:37
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:100
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:86
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:104
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:100
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:259
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:249
+msgid "Email"
 msgstr ""
 
-msgid "Un utilisateur existe déjà avec ce nom, veuillez en choisir un autre"
+#: Commentaire/src/Form/CommentaireForm.php:86
+msgid "Autre"
 msgstr ""
 
-msgid "Le fichier est introuvable"
+#: Commentaire/src/Form/CommentaireForm.php:99
+#: Contenu/src/Form/ContenuForm.php:151
+#: Linktocontenu/src/Form/LinktocontenuForm.php:83
+#: Linktocontenu/src/Form/LinktocontenuForm.php:135
+#: Sousrubrique/src/Form/SousrubriqueForm.php:82
+msgid "Sélectionner une rubrique"
 msgstr ""
 
-msgid "La taille du fichier est supérieur à 5 Mo"
+#: Commentaire/src/Form/CommentaireForm.php:115
+#: Linktocontenu/src/Form/LinktocontenuForm.php:114
+#: Commentaire/view/commentaire/commentaire/add.phtml:91
+#: Commentaire/view/commentaire/commentaire/edit.phtml:74
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:108
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:108
+msgid "Sélectionner un contenu"
 msgstr ""
 
-msgid "Aucun fichier n'est sélectionné"
+#: Commentaire/src/Form/CommentaireForm.php:130
+msgid "Sélectionner un statut"
 msgstr ""
 
+#: Commentaire/src/Form/CommentaireForm.php:131
+msgid "non validé"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireForm.php:131
+msgid "validé"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireForm.php:174
+#: Commentaire/view/commentaire/commentaire/add.phtml:183
+#: Commentaire/view/commentaire/commentaire/edit.phtml:205
+msgid "Contenu du commentaire"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireForm.php:182
+#: Contenu/src/Form/ContenuForm.php:170 Contenu/src/Form/ContenuForm.php:173
+#: Fichiers/src/Form/FichiersForm.php:71
+#: Linktocontenu/src/Form/LinktocontenuForm.php:220
+#: Linktocontenu/src/Form/LinktocontenuForm.php:223
+#: Login/src/Form/LoginForm.php:135 Login/src/Form/LoginForm.php:140
+#: Loginmgmt/src/Form/LoginmgmtForm.php:67
+#: Loginmgmt/src/Form/LoginmgmtForm.php:71
+#: Privatespace/src/Form/PrivatespaceForm.php:44
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:223
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:227
+#: Rubrique/src/Form/MetaForm.php:62 Rubrique/src/Form/RubriqueForm.php:158
+#: Siteprivate/src/Form/SiteprivateForgottenPasswordForm.php:113
+#: Siteprivate/src/Form/SiteprivateForgottenPasswordForm.php:117
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:103
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:107
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:183
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:187
+msgid "Valider"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireInputFilter.php:41
+#: Commentaire/src/Form/CommentaireInputFilter.php:42
+#: Commentaire/src/Form/CommentaireInputFilter.php:62
+#: Commentaire/src/Form/CommentaireInputFilter.php:63
+#: Commentaire/src/Form/CommentaireInputFilter.php:83
+#: Commentaire/src/Form/CommentaireInputFilter.php:84
+#: Commentaire/src/Form/CommentaireInputFilter.php:104
+#: Commentaire/src/Form/CommentaireInputFilter.php:105
+#: Commentaire/src/Form/CommentaireInputFilter.php:170
+#: Commentaire/src/Form/CommentaireInputFilter.php:171
+#: Commentaire/src/Form/CommentaireInputFilter.php:198
+#: Commentaire/src/Form/CommentaireInputFilter.php:199
+#: Contenu/src/Form/ContenuInputFilter.php:49
+#: Contenu/src/Form/ContenuInputFilter.php:50
+#: Contenu/src/Form/ContenuInputFilter.php:74
+#: Contenu/src/Form/ContenuInputFilter.php:75
+#: Contenu/src/Form/ContenuInputFilter.php:112
+#: Contenu/src/Form/ContenuInputFilter.php:113
+#: Contenu/src/Form/ContenuInputFilter.php:140
+#: Contenu/src/Form/ContenuInputFilter.php:141
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:49
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:50
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:74
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:75
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:154
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:155
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:182
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:183
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:210
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:211
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:238
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:239
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:266
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:267
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:99
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:100
+#: Message/src/Form/MessageInputFilter.php:40
+#: Message/src/Form/MessageInputFilter.php:41
+#: Message/src/Form/MessageInputFilter.php:61
+#: Message/src/Form/MessageInputFilter.php:62
+#: Message/src/Form/MessageInputFilter.php:82
+#: Message/src/Form/MessageInputFilter.php:83
+#: Message/src/Form/MessageInputFilter.php:103
+#: Message/src/Form/MessageInputFilter.php:104
+#: Message/src/Form/MessageInputFilter.php:170
+#: Message/src/Form/MessageInputFilter.php:171
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:452
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:453
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:282
+#: Sitepublic/src/Form/SitepublicCommentInputFilter.php:42
+#: Sitepublic/src/Form/SitepublicCommentInputFilter.php:43
+#: Sitepublic/src/Form/SitepublicCommentInputFilter.php:62
+#: Sitepublic/src/Form/SitepublicCommentInputFilter.php:63
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:91
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:92
+msgid "La taille ne doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireInputFilter.php:177
+#: Contenu/src/Form/ContenuInputFilter.php:119
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:161
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:245
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:98
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:247
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:88
+#: Contenu/view/contenu/contenu/add.phtml:180
+#: Contenu/view/contenu/contenu/edit.phtml:82
+#: Galerie/view/galerie/galerie/add.phtml:187
+#: Galerie/view/galerie/galerie/edit.phtml:76
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:239
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:239
+msgid "Vous devez choisir une rubrique"
+msgstr ""
+
+#: Commentaire/src/Form/CommentaireInputFilter.php:205
 msgid "Vous devez choisir un contenu"
 msgstr ""
 
+#: Contenu/src/Form/ContenuForm.php:102
+#: Linktocontenu/src/Form/LinktocontenuForm.php:163
+msgid "Titre"
+msgstr ""
+
+#: Contenu/src/Form/ContenuForm.php:112
+#: Linktocontenu/src/Form/LinktocontenuForm.php:173
+msgid "Sous-Titre"
+msgstr ""
+
+#: Contenu/src/Form/ContenuForm.php:122
+#: Linktocontenu/src/Form/LinktocontenuForm.php:183
+#: Rubrique/src/Form/RubriqueForm.php:63
+#: Sousrubrique/src/Form/SousrubriqueForm.php:70
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:48
+#: Contenu/view/contenu/contenu/index.phtml:50
+#: Galerie/view/galerie/galerie/index.phtml:48
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:50
+#: Rubrique/view/rubrique/rubrique/index.phtml:52
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:47
+msgid "Position"
+msgstr ""
+
+#: Contenu/src/Form/ContenuForm.php:135
+#: Linktocontenu/src/Form/LinktocontenuForm.php:98
+#: Linktocontenu/src/Form/LinktocontenuForm.php:150
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:71
+#: Contenu/view/contenu/contenu/add.phtml:74
+#: Contenu/view/contenu/contenu/edit.phtml:118
+#: Galerie/view/galerie/galerie/add.phtml:80
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:74
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:74
+msgid "Sélectionner une sous-rubrique"
+msgstr ""
+
+#: Contenu/src/Form/ContenuInputFilter.php:92
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:92
+#: Message/src/Form/MessageInputFilter.php:149
+#: Rubrique/src/Form/RubriqueInputFilter.php:67
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:71
+msgid "La position doit être vide ou doit être un nombre"
+msgstr ""
+
+#: Contenu/src/Form/ContenuInputFilter.php:147
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:189
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:217
+#: Linktocontenu/src/Form/LinktocontenuInputFilter.php:273
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:253
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:94
+#: Contenu/view/contenu/contenu/add.phtml:187
+#: Contenu/view/contenu/contenu/edit.phtml:88
+#: Galerie/view/galerie/galerie/add.phtml:193
+#: Galerie/view/galerie/galerie/edit.phtml:82
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:246
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:246
+msgid "Vous devez choisir une sous-rubrique"
+msgstr ""
+
+#: Fichiers/src/Controller/FichiersController.php:90
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:196
+msgid "Le fichier est inaccessible"
+msgstr ""
+
+#: Fichiers/src/Controller/FichiersController.php:101
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:206
+msgid "La taille du fichier est supérieur à 10 Mo"
+msgstr ""
+
+#: Fichiers/src/Controller/FichiersController.php:112
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:214
+msgid "Le fichier doit avoir l\\'extension"
+msgstr ""
+
+#: Fichiers/src/Controller/FichiersController.php:197
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:291
+msgid "Une erreur est survenue sur le serveur"
+msgstr ""
+
+#: Fichiers/src/Controller/FichiersController.php:205
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:299
+msgid "Aucun fichier n'est sélectionné"
+msgstr ""
+
+#: Fichiers/src/Form/FichiersForm.php:63
+#: Siteprivate/src/Form/SiteprivateFileuploadForm.php:89
+msgid "Choisir un fichier"
+msgstr ""
+
+#: Galerie/src/Form/GalerieForm.php:62
+#: Linktocontenu/src/Form/LinktocontenuForm.php:202
+msgid "Image"
+msgstr ""
+
+#: Galerie/src/Form/GalerieForm.php:72
+#: Linktocontenu/src/Form/LinktocontenuForm.php:212
+msgid "Image 2"
+msgstr ""
+
+#: Login/src/Controller/LoginController.php:64
+#: Siteprivate/src/Controller/SiteprivateController.php:121
+msgid ""
+"Veuillez recommencer le nom d'utilisateur et/ou le mot de passe sont "
+"incorrects"
+msgstr ""
+
+#: Login/src/Controller/LoginController.php:95
+#: Siteprivate/src/Controller/SiteprivateController.php:156
+msgid "Veuillez contacter l'administrateur du site svp."
+msgstr ""
+
+#: Login/src/Controller/LoginController.php:102
+#: Siteprivate/src/Controller/SiteprivateController.php:164
+msgid "Veuillez rafraichir la page et recommencer svp."
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:49
+msgid "utilisateur"
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:52
+msgid "Utilisateur"
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:61
+msgid "mot de passe"
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:64 Loginmgmt/src/Form/LoginmgmtForm.php:44
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:59
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:34
+#: Siteprivate/src/Form/SiteprivateRegistrationForm.php:29
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:47
+msgid "Mot de passe"
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:80
+#: Siteprivate/src/Form/SiteprivateForgottenPasswordForm.php:70
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:60
+#: Siteprivate/src/Form/SiteprivateRegistrationForm.php:36
+msgid "saisir les caractères"
+msgstr ""
+
+#: Login/src/Form/LoginForm.php:83
+#: Siteprivate/src/Form/SiteprivateForgottenPasswordForm.php:73
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:63
+#: Siteprivate/src/Form/SiteprivateRegistrationForm.php:39
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:114
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:100
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:118
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:114
+msgid "Vérification"
+msgstr ""
+
+#: Loginmgmt/src/Controller/LoginmgmtController.php:76
+#: Loginmgmt/src/Controller/LoginmgmtController.php:162
+msgid "Un utilisateur existe déjà avec ce nom, veuillez en choisir un autre"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtForm.php:56
+msgid "Sélectionner un rôle"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtForm.php:57
+#: Siteprivate/view/siteprivate/layout/layout.phtml:45
+#: Sitepublic/view/sitepublic/layout/layout.phtml:45
+msgid "Site public"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtForm.php:57
+msgid "Utilisateur Back Office"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtForm.php:57
+msgid "Administrateur"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:40
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:87
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:116
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:145
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:174
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:203
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:232
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:261
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:290
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:319
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:348
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:377
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:406
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:77
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:106
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:135
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:164
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:193
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:222
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:251
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:309
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:338
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:367
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:396
+msgid "La taille minimum du nom est de 3 caractères minimum"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:41
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:88
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:117
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:146
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:175
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:204
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:233
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:262
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:291
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:320
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:349
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:378
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:407
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:78
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:107
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:136
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:165
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:194
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:223
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:252
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:310
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:339
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:368
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:397
+msgid "La taille du nom doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:42
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:89
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:118
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:147
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:176
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:205
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:234
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:263
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:292
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:321
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:350
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:379
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:408
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:79
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:108
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:137
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:166
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:195
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:224
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:253
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:311
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:340
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:369
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:398
+msgid "La taille du nom ne doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:48
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:95
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:124
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:153
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:182
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:211
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:240
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:269
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:298
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:327
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:356
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:385
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:414
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:85
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:114
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:143
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:172
+msgid "Vous devez saisir un nom"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:70
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:58
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:33
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:62
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:48
+msgid "La taille minimum du mot de passe est de 5 caractères"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:71
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:59
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:34
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:63
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:49
+msgid "La taille du mot de passe doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:72
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:60
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:35
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:64
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:50
+msgid "La taille du mot de passe ne doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:78
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:66
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:41
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:70
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:56
+msgid "Vous devez saisir un mot de passe de 5 caractères minimum"
+msgstr ""
+
+#: Loginmgmt/src/Form/LoginmgmtInputFilter.php:106
+msgid "Vous devez choisir un rôle"
+msgstr ""
+
+#: Message/src/Form/MessageForm.php:69
+msgid "Autre ligne"
+msgstr ""
+
+#: Message/src/Form/MessageForm.php:94
+msgid "Sélectionner le type de message"
+msgstr ""
+
+#: Message/src/Form/MessageForm.php:133
+#: Message/view/message/message/add.phtml:134
+#: Message/view/message/message/edit.phtml:137
+msgid "Contenu du message"
+msgstr ""
+
+#: Privatespace/src/Form/PrivatespaceForm.php:35
+#: Rubrique/src/Form/RubriqueForm.php:54
+#: Sousrubrique/src/Form/SousrubriqueForm.php:61
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:47
+#: Contenu/view/contenu/contenu/index.phtml:49
+#: Galerie/view/galerie/galerie/index.phtml:47
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:49
+#: Privatespace/view/privatespace/privatespace/index.phtml:51
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:51
+#: Rubrique/view/rubrique/rubrique/index.phtml:51
+msgid "Libellé"
+msgstr ""
+
+#: Privatespace/src/Form/PrivatespaceInputFilter.php:40
+#: Rubrique/src/Form/MetaInputFilter.php:44
+#: Rubrique/src/Form/MetaInputFilter.php:73
+#: Rubrique/src/Form/RubriqueInputFilter.php:40
+#: Rubrique/src/Form/RubriqueInputFilter.php:94
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:44
 msgid "La taille minimum du libell&eacute; est de 1 caractère"
 msgstr ""
 
+#: Privatespace/src/Form/PrivatespaceInputFilter.php:41
+#: Rubrique/src/Form/MetaInputFilter.php:45
+#: Rubrique/src/Form/MetaInputFilter.php:74
+#: Rubrique/src/Form/RubriqueInputFilter.php:41
+#: Rubrique/src/Form/RubriqueInputFilter.php:95
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:45
 msgid "La taille du libell&eacute; doit pas dépasser 128 caractères"
 msgstr ""
 
-msgid "Ajouter un utilisateur"
+#: Privatespace/src/Form/PrivatespaceInputFilter.php:42
+#: Rubrique/src/Form/MetaInputFilter.php:46
+#: Rubrique/src/Form/MetaInputFilter.php:75
+#: Rubrique/src/Form/RubriqueInputFilter.php:42
+#: Rubrique/src/Form/RubriqueInputFilter.php:96
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:46
+msgid "La taille du libell&eacute; ne doit pas dépasser 128 caractères"
 msgstr ""
 
-msgid "Ajouter un lien vers un contenu"
+#: Privatespace/src/Form/PrivatespaceInputFilter.php:48
+#: Rubrique/src/Form/MetaInputFilter.php:52
+#: Rubrique/src/Form/MetaInputFilter.php:81
+#: Rubrique/src/Form/RubriqueInputFilter.php:48
+#: Rubrique/src/Form/RubriqueInputFilter.php:102
+#: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:52
+msgid "Vous devez saisir un libell&eacute;"
 msgstr ""
 
-msgid "Vous devez choisir le contenu"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:69
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:57
+msgid "Prénom"
 msgstr ""
 
-msgid "Vous devez choisir la rubrique de destination"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:89
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:77
+msgid "Société"
 msgstr ""
 
-msgid "Vous devez choisir la sous-rubrique de destination"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:99
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:87
+msgid "Numéro de voie"
 msgstr ""
 
-msgid "Choisir la sous-rubrique où apparaîtra le lien"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:109
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:97
+msgid "Libellé de la rue ligne 1"
 msgstr ""
 
-msgid "Supprimer un lien"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:119
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:107
+msgid "Libellé de la rue ligne 2"
 msgstr ""
 
-msgid "Etes-vous sûr de vouloir supprimer ce lien"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:129
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:117
+msgid "Libellé de la rue ligne 3"
 msgstr ""
 
-msgid "Modifier un lien vers un contenu"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:139
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:127
+msgid "Code postal"
 msgstr ""
 
-msgid "Mes contenus liés à d'autres pages"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:149
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:137
+msgid "Ville"
 msgstr ""
 
-msgid "Mes pages"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:159
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:147
+msgid "Téléphone mobile"
 msgstr ""
 
-msgid "Modifier la disposition de la page"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:169
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:157
+msgid "Téléphone fixe"
 msgstr ""
 
-msgid "Créer un lien"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:179
+#: Siteprivate/src/Form/SiteprivateupdateInfoForm.php:167
+msgid "Site web"
 msgstr ""
 
-msgid "Choisir un contenu"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:191
+msgid "Sélectionner un espace privé"
 msgstr ""
 
-msgid "Lien vers la rubrique"
+#: Privatespacelogin/src/Form/PrivatespaceloginForm.php:205
+msgid "Voulez-vous valider l'inscription"
 msgstr ""
 
-msgid "Contenu"
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:38
+#: Siteprivate/src/Form/SiteprivateForgottenPasswordInputFilter.php:31
+#: Sitepublic/src/Form/SitepublicCommentInputFilter.php:81
+msgid "L'email est invalide"
 msgstr ""
 
-msgid "Rubrique<br>et sous-rubrique d'origine"
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:459
+msgid "Vous devez choisir un espace privé"
 msgstr ""
 
-msgid "Lien créé vers la Rubrique<br>et la sous-rubrique"
+#: Privatespacelogin/src/Form/PrivatespaceloginInputFilter.php:476
+msgid "Vous devez préciser si vous validez l'inscription"
 msgstr ""
 
-msgid "Titre et sous-titre du contenu à lier"
+#: Rubrique/src/Controller/RubriqueController.php:262
+#: Rubrique/src/Controller/RubriqueController.php:305
+#: Rubrique/src/Controller/RubriqueController.php:331
+msgid "Un problème est survenu, veuillez recommencer"
 msgstr ""
 
-msgid "Liens"
+#: Rubrique/src/Form/MetaForm.php:44
+msgid "Meta clé"
 msgstr ""
 
+#: Rubrique/src/Form/MetaForm.php:54
+msgid "Meta valeur"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueForm.php:75
+msgid "public"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueForm.php:75
+msgid "privé"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueForm.php:150
+msgid "nom du fichier phtml associé, ajouter .phtml (ex: mapage.phtml)"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueInputFilter.php:138
+msgid "La taille minimum du fichier est de 1 caractère"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueInputFilter.php:139
+msgid "La taille du fichier doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Rubrique/src/Form/RubriqueInputFilter.php:140
+msgid "La taille du fichier ne doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:590
+msgid "Un compte existe déjà avec cette email"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:620
+#: Siteprivate/src/Controller/SiteprivateController.php:968
+msgid "Les mots de passes saisis sont différents"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:718
+msgid "Vous ne pouvez pas modifier votre email"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:817
+msgid "Veuillez cliquer sur le lien afin d'initialiser un nouveau mot de passe"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:837
+msgid "Changer votre mot de passe "
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:899
+msgid "L'adresse email est incorrect"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:956
+msgid "Un compte existe déjà avec cet email"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateFileuploadForm.php:40
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:176
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:265
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:170
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:255
+msgid "Commentaire"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateFileuploadForm.php:97
+msgid "Envoyer"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateNewPasswordForm.php:45
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/add.phtml:53
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/edit.phtml:55
+#: Siteprivate/view/siteprivate/Siteprivate/registration.phtml:73
+#: Siteprivate/view/siteprivate/Siteprivate/updatecontactinformation.phtml:53
+msgid "Confirmer le mot de passe"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:91
+msgid "La taille du jeton est trop courte"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:92
+msgid "La taille jeton est trop longue"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:93
+msgid "Le jeton est invalide"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateNewPasswordInputFilter.php:99
+msgid "Vous devez avoir un jeton"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:201
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:230
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:259
+msgid "Vous devez saisir un nom de rue"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:280
+msgid "La taille minimum est de 3 caractères minimum"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:281
+msgid "La taille doit pas dépasser 128 caractères"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:288
+msgid "Vous devez saisir un code postal"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:317
+msgid "Vous devez saisir un nom de ville"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:346
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:375
+msgid "Vous devez saisir un numéro de téléphone"
+msgstr ""
+
+#: Siteprivate/src/Form/SiteprivateupdateInfoInputFilter.php:404
+msgid "Vous devez saisir un nom de site internet"
+msgstr ""
+
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:93
+msgid "numéro de photo invalide ou Statut non autorisé"
+msgstr ""
+
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:120
+msgid "un problème est survenue lors de la mise à jour"
+msgstr ""
+
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:138
+msgid "numéro de photo invalide "
+msgstr ""
+
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:288
+msgid "OK"
+msgstr ""
+
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:308
+msgid "Ce n'est pas une requête POST"
+msgstr ""
+
+#: Application/view/application/index/index.phtml:2
+msgid "Welcome to ANIT CMS"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:7
+msgid "CMS - at night & in transportation"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:51
+msgid "Mon Site"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:54
+msgid "Espace privé"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:58
+msgid "Privatespace"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:59
+msgid "Privatespaceloginmgmt"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:62
+msgid "Rubriques"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:63
+msgid "Sous-Rubriques"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:66
 msgid "Type de Contenus"
 msgstr ""
 
+#: Application/view/layout/layout.phtml:70
+msgid "Contenus"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:71
+msgid "Galeries"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:72
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:3
+msgid "Blog"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:73
+msgid "Liens"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:76
 msgid "Disposition"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:77
+msgid "Messages"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:78
+msgid "Commentaires"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:79
+msgid "Fichiers"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:82
+msgid "Visualisation"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:91
+msgid "Fichiers utilisateurs"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:95
+msgid "&Agrave; valider"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:96
+msgid "Validés"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:109
+#: Siteprivate/view/siteprivate/layout/layout.phtml:64
+msgid "Déconnexion"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:167
+#: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:85
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:159
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:157
+#: Siteprivate/view/siteprivate/layout/layout.phtml:84
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:159
+msgid "&Ecirc;tes vous sûr de vous déconnecter ?"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:2
+msgid "Ajouter un contenu de type blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:143
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:171
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:10
+#: Commentaire/view/commentaire/commentaire/index.phtml:10
+#: Contenu/view/contenu/contenu/add.phtml:95
+#: Contenu/view/contenu/contenu/edit.phtml:163
+#: Contenu/view/contenu/contenu/index.phtml:10
+#: Fichiers/view/fichiers/fichiers/index.phtml:22
+#: Galerie/view/galerie/galerie/add.phtml:100
+#: Galerie/view/galerie/galerie/edit.phtml:159
+#: Galerie/view/galerie/galerie/index.phtml:10
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:129
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:129
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:10
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:12
+#: Message/view/message/message/index.phtml:10
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:12
+#: Privatespace/view/privatespace/privatespace/index.phtml:12
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:12
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:12
+#: Rubrique/view/rubrique/rubrique/edit.phtml:276
+#: Rubrique/view/rubrique/rubrique/index.phtml:12
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:12
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:10
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:18
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:16
+msgid "Traitement en cours..."
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:144
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:172
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:11
+#: Commentaire/view/commentaire/commentaire/index.phtml:11
+#: Contenu/view/contenu/contenu/add.phtml:96
+#: Contenu/view/contenu/contenu/edit.phtml:164
+#: Contenu/view/contenu/contenu/index.phtml:11
+#: Fichiers/view/fichiers/fichiers/index.phtml:23
+#: Galerie/view/galerie/galerie/add.phtml:101
+#: Galerie/view/galerie/galerie/edit.phtml:160
+#: Galerie/view/galerie/galerie/index.phtml:11
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:130
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:130
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:11
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:13
+#: Message/view/message/message/index.phtml:11
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:13
+#: Privatespace/view/privatespace/privatespace/index.phtml:13
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:13
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:13
+#: Rubrique/view/rubrique/rubrique/edit.phtml:277
+#: Rubrique/view/rubrique/rubrique/index.phtml:13
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:13
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:11
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:19
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:17
+msgid "Rechercher"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:145
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:173
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:12
+#: Commentaire/view/commentaire/commentaire/index.phtml:12
+#: Contenu/view/contenu/contenu/add.phtml:97
+#: Contenu/view/contenu/contenu/edit.phtml:165
+#: Contenu/view/contenu/contenu/index.phtml:12
+#: Fichiers/view/fichiers/fichiers/index.phtml:24
+#: Galerie/view/galerie/galerie/add.phtml:102
+#: Galerie/view/galerie/galerie/edit.phtml:161
+#: Galerie/view/galerie/galerie/index.phtml:12
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:131
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:131
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:12
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
+#: Message/view/message/message/index.phtml:12
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:14
+#: Privatespace/view/privatespace/privatespace/index.phtml:14
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:14
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:14
+#: Rubrique/view/rubrique/rubrique/edit.phtml:278
+#: Rubrique/view/rubrique/rubrique/index.phtml:14
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:14
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:12
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:20
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:18
+msgid "Afficher"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:145
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:173
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:12
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
+#: Commentaire/view/commentaire/commentaire/index.phtml:12
+#: Commentaire/view/commentaire/commentaire/index.phtml:14
+#: Contenu/view/contenu/contenu/add.phtml:97
+#: Contenu/view/contenu/contenu/add.phtml:99
+#: Contenu/view/contenu/contenu/edit.phtml:165
+#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/index.phtml:12
+#: Contenu/view/contenu/contenu/index.phtml:14
+#: Fichiers/view/fichiers/fichiers/index.phtml:24
+#: Fichiers/view/fichiers/fichiers/index.phtml:26
+#: Galerie/view/galerie/galerie/add.phtml:102
+#: Galerie/view/galerie/galerie/add.phtml:104
+#: Galerie/view/galerie/galerie/edit.phtml:161
+#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/index.phtml:12
+#: Galerie/view/galerie/galerie/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:131
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:131
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:12
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Message/view/message/message/index.phtml:12
+#: Message/view/message/message/index.phtml:14
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:14
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
+#: Privatespace/view/privatespace/privatespace/index.phtml:14
+#: Privatespace/view/privatespace/privatespace/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:14
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:14
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Rubrique/view/rubrique/rubrique/edit.phtml:278
+#: Rubrique/view/rubrique/rubrique/edit.phtml:280
+#: Rubrique/view/rubrique/rubrique/index.phtml:14
+#: Rubrique/view/rubrique/rubrique/index.phtml:16
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:14
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:16
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:12
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:14
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:20
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:22
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:18
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:20
+msgid "&eacute;l&eacute;ments"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:146
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:174
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:13
+#: Commentaire/view/commentaire/commentaire/index.phtml:13
+#: Contenu/view/contenu/contenu/add.phtml:98
+#: Contenu/view/contenu/contenu/edit.phtml:166
+#: Contenu/view/contenu/contenu/index.phtml:13
+#: Fichiers/view/fichiers/fichiers/index.phtml:25
+#: Galerie/view/galerie/galerie/add.phtml:103
+#: Galerie/view/galerie/galerie/edit.phtml:162
+#: Galerie/view/galerie/galerie/index.phtml:13
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:132
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:132
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:13
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:15
+#: Message/view/message/message/index.phtml:13
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:15
+#: Privatespace/view/privatespace/privatespace/index.phtml:15
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:15
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:15
+#: Rubrique/view/rubrique/rubrique/edit.phtml:279
+#: Rubrique/view/rubrique/rubrique/index.phtml:15
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:15
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:13
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:21
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:19
+msgid ""
+"Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;"
+"l&eacute;ments"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
+#: Commentaire/view/commentaire/commentaire/index.phtml:14
+#: Contenu/view/contenu/contenu/add.phtml:99
+#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/index.phtml:14
+#: Fichiers/view/fichiers/fichiers/index.phtml:26
+#: Galerie/view/galerie/galerie/add.phtml:104
+#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Message/view/message/message/index.phtml:14
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
+#: Privatespace/view/privatespace/privatespace/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Rubrique/view/rubrique/rubrique/edit.phtml:280
+#: Rubrique/view/rubrique/rubrique/index.phtml:16
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:16
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:14
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:22
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:20
+msgid "Affichage de l'&eacute;lement"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
+#: Commentaire/view/commentaire/commentaire/index.phtml:14
+#: Contenu/view/contenu/contenu/add.phtml:99
+#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/index.phtml:14
+#: Fichiers/view/fichiers/fichiers/index.phtml:26
+#: Galerie/view/galerie/galerie/add.phtml:104
+#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Message/view/message/message/index.phtml:14
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
+#: Privatespace/view/privatespace/privatespace/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Rubrique/view/rubrique/rubrique/edit.phtml:280
+#: Rubrique/view/rubrique/rubrique/index.phtml:16
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:16
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:14
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:22
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:20
+msgid "sur"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Commentaire/view/commentaire/commentaire/index.phtml:15
+#: Contenu/view/contenu/contenu/add.phtml:100
+#: Contenu/view/contenu/contenu/edit.phtml:168
+#: Contenu/view/contenu/contenu/index.phtml:15
+#: Fichiers/view/fichiers/fichiers/index.phtml:27
+#: Galerie/view/galerie/galerie/add.phtml:105
+#: Galerie/view/galerie/galerie/edit.phtml:164
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:134
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
+#: Message/view/message/message/index.phtml:15
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
+#: Privatespace/view/privatespace/privatespace/index.phtml:17
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:17
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:17
+#: Rubrique/view/rubrique/rubrique/index.phtml:17
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:17
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:15
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:23
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:21
+msgid "filtr&eacute; de "
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Commentaire/view/commentaire/commentaire/index.phtml:15
+#: Contenu/view/contenu/contenu/add.phtml:100
+#: Contenu/view/contenu/contenu/edit.phtml:168
+#: Contenu/view/contenu/contenu/index.phtml:15
+#: Fichiers/view/fichiers/fichiers/index.phtml:27
+#: Galerie/view/galerie/galerie/add.phtml:105
+#: Galerie/view/galerie/galerie/edit.phtml:164
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:134
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
+#: Message/view/message/message/index.phtml:15
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
+#: Privatespace/view/privatespace/privatespace/index.phtml:17
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:17
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:17
+#: Rubrique/view/rubrique/rubrique/index.phtml:17
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:17
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:15
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:23
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:21
+msgid "&eacute;l&eacute;ments au total"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:150
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:178
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:17
+#: Commentaire/view/commentaire/commentaire/index.phtml:17
+#: Contenu/view/contenu/contenu/add.phtml:102
+#: Contenu/view/contenu/contenu/edit.phtml:170
+#: Contenu/view/contenu/contenu/index.phtml:17
+#: Fichiers/view/fichiers/fichiers/index.phtml:29
+#: Galerie/view/galerie/galerie/add.phtml:107
+#: Galerie/view/galerie/galerie/edit.phtml:166
+#: Galerie/view/galerie/galerie/index.phtml:17
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:136
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:136
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:17
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:19
+#: Message/view/message/message/index.phtml:17
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:19
+#: Privatespace/view/privatespace/privatespace/index.phtml:19
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:19
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:19
+#: Rubrique/view/rubrique/rubrique/edit.phtml:283
+#: Rubrique/view/rubrique/rubrique/index.phtml:19
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:19
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:17
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:25
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:23
+msgid "Chargement en cours"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:151
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:179
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:18
+#: Commentaire/view/commentaire/commentaire/index.phtml:18
+#: Contenu/view/contenu/contenu/add.phtml:103
+#: Contenu/view/contenu/contenu/edit.phtml:171
+#: Contenu/view/contenu/contenu/index.phtml:18
+#: Fichiers/view/fichiers/fichiers/index.phtml:30
+#: Galerie/view/galerie/galerie/add.phtml:108
+#: Galerie/view/galerie/galerie/edit.phtml:167
+#: Galerie/view/galerie/galerie/index.phtml:18
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:137
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:18
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:20
+#: Message/view/message/message/index.phtml:18
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:20
+#: Privatespace/view/privatespace/privatespace/index.phtml:20
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:20
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:20
+#: Rubrique/view/rubrique/rubrique/edit.phtml:284
+#: Rubrique/view/rubrique/rubrique/index.phtml:20
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:20
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:18
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:26
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:24
+msgid "Aucun &eacute;l&eacute;ment &agrave; afficher"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:152
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:180
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:19
+#: Commentaire/view/commentaire/commentaire/index.phtml:19
+#: Contenu/view/contenu/contenu/add.phtml:104
+#: Contenu/view/contenu/contenu/edit.phtml:172
+#: Contenu/view/contenu/contenu/index.phtml:19
+#: Fichiers/view/fichiers/fichiers/index.phtml:31
+#: Galerie/view/galerie/galerie/add.phtml:109
+#: Galerie/view/galerie/galerie/edit.phtml:168
+#: Galerie/view/galerie/galerie/index.phtml:19
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:138
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:138
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:19
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:21
+#: Message/view/message/message/index.phtml:19
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:21
+#: Privatespace/view/privatespace/privatespace/index.phtml:21
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:21
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:21
+#: Rubrique/view/rubrique/rubrique/edit.phtml:285
+#: Rubrique/view/rubrique/rubrique/index.phtml:21
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:21
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:19
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:27
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:25
+msgid "Aucune donnée disponible dans le tableau"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:154
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:182
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:21
+#: Commentaire/view/commentaire/commentaire/index.phtml:21
+#: Contenu/view/contenu/contenu/add.phtml:106
+#: Contenu/view/contenu/contenu/edit.phtml:174
+#: Contenu/view/contenu/contenu/index.phtml:21
+#: Fichiers/view/fichiers/fichiers/index.phtml:33
+#: Galerie/view/galerie/galerie/add.phtml:111
+#: Galerie/view/galerie/galerie/edit.phtml:170
+#: Galerie/view/galerie/galerie/index.phtml:21
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:140
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:140
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:21
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:23
+#: Message/view/message/message/index.phtml:21
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:23
+#: Privatespace/view/privatespace/privatespace/index.phtml:23
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:23
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:23
+#: Rubrique/view/rubrique/rubrique/edit.phtml:287
+#: Rubrique/view/rubrique/rubrique/index.phtml:23
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:23
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:21
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:29
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:27
+msgid "Premier"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:155
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:183
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:22
+#: Commentaire/view/commentaire/commentaire/index.phtml:22
+#: Contenu/view/contenu/contenu/add.phtml:107
+#: Contenu/view/contenu/contenu/edit.phtml:175
+#: Contenu/view/contenu/contenu/index.phtml:22
+#: Fichiers/view/fichiers/fichiers/index.phtml:34
+#: Galerie/view/galerie/galerie/add.phtml:112
+#: Galerie/view/galerie/galerie/edit.phtml:171
+#: Galerie/view/galerie/galerie/index.phtml:22
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:141
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:141
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:22
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:24
+#: Message/view/message/message/index.phtml:22
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:24
+#: Privatespace/view/privatespace/privatespace/index.phtml:24
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:24
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:24
+#: Rubrique/view/rubrique/rubrique/edit.phtml:288
+#: Rubrique/view/rubrique/rubrique/index.phtml:24
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:24
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:22
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:30
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:28
+msgid "Pr&eacute;c&eacute;dent"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:156
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:184
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:23
+#: Commentaire/view/commentaire/commentaire/index.phtml:23
+#: Contenu/view/contenu/contenu/add.phtml:108
+#: Contenu/view/contenu/contenu/edit.phtml:176
+#: Contenu/view/contenu/contenu/index.phtml:23
+#: Fichiers/view/fichiers/fichiers/index.phtml:35
+#: Galerie/view/galerie/galerie/add.phtml:113
+#: Galerie/view/galerie/galerie/edit.phtml:172
+#: Galerie/view/galerie/galerie/index.phtml:23
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:142
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:142
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:23
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:25
+#: Message/view/message/message/index.phtml:23
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:25
+#: Privatespace/view/privatespace/privatespace/index.phtml:25
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:25
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:25
+#: Rubrique/view/rubrique/rubrique/edit.phtml:289
+#: Rubrique/view/rubrique/rubrique/index.phtml:25
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:25
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:23
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:31
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:29
+msgid "Suivant"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:157
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:185
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:24
+#: Commentaire/view/commentaire/commentaire/index.phtml:24
+#: Contenu/view/contenu/contenu/add.phtml:109
+#: Contenu/view/contenu/contenu/edit.phtml:177
+#: Contenu/view/contenu/contenu/index.phtml:24
+#: Fichiers/view/fichiers/fichiers/index.phtml:36
+#: Galerie/view/galerie/galerie/add.phtml:114
+#: Galerie/view/galerie/galerie/edit.phtml:173
+#: Galerie/view/galerie/galerie/index.phtml:24
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:143
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:143
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:24
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:26
+#: Message/view/message/message/index.phtml:24
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:26
+#: Privatespace/view/privatespace/privatespace/index.phtml:26
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:26
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:26
+#: Rubrique/view/rubrique/rubrique/edit.phtml:290
+#: Rubrique/view/rubrique/rubrique/index.phtml:26
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:26
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:24
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:32
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:30
+msgid "Dernier"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:160
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:188
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:27
+#: Commentaire/view/commentaire/commentaire/index.phtml:27
+#: Contenu/view/contenu/contenu/add.phtml:112
+#: Contenu/view/contenu/contenu/edit.phtml:180
+#: Contenu/view/contenu/contenu/index.phtml:27
+#: Fichiers/view/fichiers/fichiers/index.phtml:39
+#: Galerie/view/galerie/galerie/add.phtml:117
+#: Galerie/view/galerie/galerie/edit.phtml:176
+#: Galerie/view/galerie/galerie/index.phtml:27
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:146
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:146
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:27
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:29
+#: Message/view/message/message/index.phtml:27
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:29
+#: Privatespace/view/privatespace/privatespace/index.phtml:29
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:29
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:29
+#: Rubrique/view/rubrique/rubrique/edit.phtml:293
+#: Rubrique/view/rubrique/rubrique/index.phtml:29
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:29
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:27
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:35
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:33
+msgid "activer pour trier la colonne par ordre croissant"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:161
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:189
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:28
+#: Commentaire/view/commentaire/commentaire/index.phtml:28
+#: Contenu/view/contenu/contenu/add.phtml:113
+#: Contenu/view/contenu/contenu/edit.phtml:181
+#: Contenu/view/contenu/contenu/index.phtml:28
+#: Fichiers/view/fichiers/fichiers/index.phtml:40
+#: Galerie/view/galerie/galerie/add.phtml:118
+#: Galerie/view/galerie/galerie/edit.phtml:177
+#: Galerie/view/galerie/galerie/index.phtml:28
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:147
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:147
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:28
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:30
+#: Message/view/message/message/index.phtml:28
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:30
+#: Privatespace/view/privatespace/privatespace/index.phtml:30
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:30
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:30
+#: Rubrique/view/rubrique/rubrique/edit.phtml:294
+#: Rubrique/view/rubrique/rubrique/index.phtml:30
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:30
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:28
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:36
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:34
+msgid "activer pour trier la colonne par ordre décroissant"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:260
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:101
+#: Contenu/view/contenu/contenu/add.phtml:194
+#: Contenu/view/contenu/contenu/edit.phtml:95
+#: Galerie/view/galerie/galerie/add.phtml:200
+#: Galerie/view/galerie/galerie/edit.phtml:89
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:273
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:273
+msgid "La position doit être vide ou être un nombre"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:310
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:293
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:45
+#: Contenu/view/contenu/contenu/add.phtml:226
+#: Contenu/view/contenu/contenu/edit.phtml:255
+#: Contenu/view/contenu/contenu/index.phtml:47
+#: Galerie/view/galerie/galerie/add.phtml:234
+#: Galerie/view/galerie/galerie/edit.phtml:254
+#: Galerie/view/galerie/galerie/index.phtml:45
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:302
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:302
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:45
+msgid "Rubrique"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:311
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:294
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:46
+#: Contenu/view/contenu/contenu/add.phtml:227
+#: Contenu/view/contenu/contenu/edit.phtml:256
+#: Contenu/view/contenu/contenu/index.phtml:48
+#: Galerie/view/galerie/galerie/add.phtml:235
+#: Galerie/view/galerie/galerie/edit.phtml:255
+#: Galerie/view/galerie/galerie/index.phtml:46
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:303
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:303
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:46
+msgid "Sous-Rubrique"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:313
+msgid "Modèle de blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:321
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:305
+#: Contenu/view/contenu/contenu/add.phtml:236
+#: Contenu/view/contenu/contenu/edit.phtml:268
+#: Galerie/view/galerie/galerie/add.phtml:244
+#: Galerie/view/galerie/galerie/edit.phtml:266
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:321
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:321
+msgid "Vignette"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:322
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:306
+#: Contenu/view/contenu/contenu/add.phtml:237
+#: Contenu/view/contenu/contenu/edit.phtml:269
+#: Galerie/view/galerie/galerie/add.phtml:245
+#: Galerie/view/galerie/galerie/edit.phtml:267
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:322
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:322
+msgid "Chemin image"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:323
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:307
+#: Contenu/view/contenu/contenu/add.phtml:238
+#: Contenu/view/contenu/contenu/edit.phtml:270
+#: Fichiers/view/fichiers/fichiers/index.phtml:107
+#: Galerie/view/galerie/galerie/add.phtml:246
+#: Galerie/view/galerie/galerie/edit.phtml:268
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:323
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:323
+msgid "Description"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:324
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:308
+#: Contenu/view/contenu/contenu/add.phtml:239
+#: Contenu/view/contenu/contenu/edit.phtml:271
+#: Fichiers/view/fichiers/fichiers/index.phtml:108
+#: Galerie/view/galerie/galerie/add.phtml:247
+#: Galerie/view/galerie/galerie/edit.phtml:269
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:324
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:324
+msgid "Meta Donn&eacute;es"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:325
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:309
+#: Contenu/view/contenu/contenu/edit.phtml:272
+#: Galerie/view/galerie/galerie/add.phtml:248
+#: Galerie/view/galerie/galerie/edit.phtml:270
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:325
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:325
+msgid "type de fichier"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:326
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:345
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:310
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:333
+#: Contenu/view/contenu/contenu/add.phtml:241
+#: Contenu/view/contenu/contenu/add.phtml:261
+#: Contenu/view/contenu/contenu/edit.phtml:273
+#: Contenu/view/contenu/contenu/edit.phtml:296
+#: Galerie/view/galerie/galerie/add.phtml:249
+#: Galerie/view/galerie/galerie/add.phtml:272
+#: Galerie/view/galerie/galerie/edit.phtml:271
+#: Galerie/view/galerie/galerie/edit.phtml:294
+msgid "Copier le lien"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/delete.phtml:3
+msgid "Supprimer un contenu de type blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/delete.phtml:8
+msgid "Etes-vous sûr de vouloir supprimer le contenu"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:3
+msgid "Modifier le contenu de type blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:126
+msgid "Sélectionner une sous-rubrique</option>"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:176
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:15
+#: Galerie/view/galerie/galerie/index.phtml:15
+#: Rubrique/view/rubrique/rubrique/edit.phtml:281
+msgid "(filtr&eacute; de "
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:176
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:15
+#: Galerie/view/galerie/galerie/index.phtml:15
+#: Rubrique/view/rubrique/rubrique/edit.phtml:281
+msgid "&eacute;l&eacute;ments au total)"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:2
+msgid "Mes contenus de type Blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:39
+msgid "Ajouter du contenu de type blog"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:49
+#: Commentaire/view/commentaire/commentaire/index.phtml:53
+#: Contenu/view/contenu/contenu/index.phtml:51
+#: Galerie/view/galerie/galerie/index.phtml:49
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:51
+#: Message/view/message/message/index.phtml:52
+msgid "Actions"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/index.phtml:63
+#: Commentaire/view/commentaire/commentaire/index.phtml:68
+#: Contenu/view/contenu/contenu/index.phtml:65
+#: Fichiers/view/fichiers/fichiers/index.phtml:133
+#: Galerie/view/galerie/galerie/index.phtml:63
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:69
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:82
+#: Message/view/message/message/index.phtml:67
+#: Privatespace/view/privatespace/privatespace/index.phtml:66
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:67
+#: Rubrique/view/rubrique/rubrique/edit.phtml:135
+#: Rubrique/view/rubrique/rubrique/edit.phtml:387
+#: Rubrique/view/rubrique/rubrique/index.phtml:70
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:67
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:66
+msgid "Supprimer"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/add.phtml:3
+msgid "Ajouter un Commentaire"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/delete.phtml:3
+msgid "Supprimer un commentaire"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer ce commentaire"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/edit.phtml:3
+msgid "Modifier un Commentaire"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:2
+msgid "Mes commentaires"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:42
+msgid "Ajouter un commentaire"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:48
+#: Message/view/message/message/index.phtml:47
+msgid "Ligne 1"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:49
+#: Message/view/message/message/index.phtml:48
+msgid "Ligne 2"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:50
+#: Message/view/message/message/index.phtml:49
+msgid "Ligne 3"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:51
+#: Message/view/message/message/index.phtml:50
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:177
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:171
+msgid "Type"
+msgstr ""
+
+#: Commentaire/view/commentaire/commentaire/index.phtml:52
+#: Message/view/message/message/index.phtml:51
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:173
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:261
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:167
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:251
+msgid "Date"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/add.phtml:2
+msgid "Ajouter un contenu"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/add.phtml:240
+msgid "Type de fichier"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/delete.phtml:3
+msgid "Supprimer un contenu"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/delete.phtml:8
+msgid "&Ecirc;tes-vous s&Ucirc;r de vouloir supprimer le contenu"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/edit.phtml:3
+msgid "Modifier le contenu"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/index.phtml:2
+msgid "Mes contenus"
+msgstr ""
+
+#: Contenu/view/contenu/contenu/index.phtml:41
+#: Galerie/view/galerie/galerie/index.phtml:39
+msgid "Ajouter du contenu"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/add.phtml:3
+msgid "Ajouter une image à la bibliothèque"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/add.phtml:17
+msgid "Le fichier doit avoir l'extension"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/add.phtml:31
+#: Fichiers/view/fichiers/fichiers/edit.phtml:26
+msgid "Courte description"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/add.phtml:33
+#: Fichiers/view/fichiers/fichiers/edit.phtml:28
+msgid "Meta data"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/add.phtml:35
+#: Fichiers/view/fichiers/fichiers/index.phtml:99
+msgid "Ajouter un fichier"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/delete.phtml:3
+msgid "Supprimer un fichier de la bibliothèque"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer ce fichier"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/edit.phtml:2
+msgid "Modifier les données associées au fichier"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/index.phtml:3
+msgid "Mes Fichiers"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/index.phtml:105
+msgid "Aperçu"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/index.phtml:106
+msgid "Nom du fichier"
+msgstr ""
+
+#: Fichiers/view/fichiers/fichiers/index.phtml:109
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:51
+#: Privatespace/view/privatespace/privatespace/index.phtml:52
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:52
+#: Rubrique/view/rubrique/rubrique/edit.phtml:373
+#: Rubrique/view/rubrique/rubrique/index.phtml:54
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:48
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:178
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:172
+msgid "Action"
+msgstr ""
+
+#: Galerie/view/galerie/galerie/add.phtml:3
+msgid "Ajouter un contenu de type galerie"
+msgstr ""
+
+#: Galerie/view/galerie/galerie/delete.phtml:3
+msgid "Supprimer un contenu de type galerie"
+msgstr ""
+
+#: Galerie/view/galerie/galerie/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer le contenu"
+msgstr ""
+
+#: Galerie/view/galerie/galerie/edit.phtml:3
+msgid "Modifier le contenu de type galerie"
+msgstr ""
+
+#: Galerie/view/galerie/galerie/index.phtml:2
+msgid "Mes contenus de type galerie"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:2
+msgid "Ajouter un lien vers un contenu"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:253
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:253
+msgid "Vous devez choisir le contenu"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:259
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:259
+msgid "Vous devez choisir la rubrique de destination"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:266
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:266
+msgid "Vous devez choisir la sous-rubrique de destination"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:301
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:301
+msgid "Choisir un contenu"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:304
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:304
+msgid "Contenu"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:305
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:305
+msgid "Choisir la sous-rubrique où apparaîtra le lien"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:306
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:306
+msgid "Lien vers la rubrique"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:307
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:307
+msgid "Lien vers la sous-Rubrique"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:3
+msgid "Supprimer un lien"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:8
+msgid "Etes-vous sûr de vouloir supprimer ce lien"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:2
+msgid "Modifier un lien vers un contenu"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:2
+msgid "Mes contenus liés à d'autres pages"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:41
+msgid "Créer un lien"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:47
+msgid "Rubrique<br>et sous-rubrique d'origine"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:48
+msgid "Lien créé vers la Rubrique<br>et la sous-rubrique"
+msgstr ""
+
+#: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:49
+msgid "Titre et sous-titre du contenu à lier"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:2
+#: Siteprivate/view/siteprivate/error/404.phtml:2
+msgid "A 404 error occurred"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:11
+#: Siteprivate/view/siteprivate/error/404.phtml:11
+msgid "The requested controller was unable to dispatch the request."
+msgstr ""
+
+#: Login/view/login/error/404.phtml:14
+#: Siteprivate/view/siteprivate/error/404.phtml:14
+msgid ""
+"The requested controller could not be mapped to an existing controller class."
+msgstr ""
+
+#: Login/view/login/error/404.phtml:17
+#: Siteprivate/view/siteprivate/error/404.phtml:17
+msgid "The requested controller was not dispatchable."
+msgstr ""
+
+#: Login/view/login/error/404.phtml:20
+#: Siteprivate/view/siteprivate/error/404.phtml:20
+msgid "The requested URL could not be matched by routing."
+msgstr ""
+
+#: Login/view/login/error/404.phtml:23
+#: Siteprivate/view/siteprivate/error/404.phtml:23
+msgid "We cannot determine at this time why a 404 was generated."
+msgstr ""
+
+#: Login/view/login/error/404.phtml:35
+#: Siteprivate/view/siteprivate/error/404.phtml:35
+msgid "Controller"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:42
+#: Siteprivate/view/siteprivate/error/404.phtml:42
+#, php-format
+msgid "resolves to %s"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:54 Login/view/login/error/index.phtml:9
+#: Siteprivate/view/siteprivate/error/404.phtml:54
+#: Siteprivate/view/siteprivate/error/index.phtml:9
+msgid "Additional information"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:57 Login/view/login/error/404.phtml:81
+#: Login/view/login/error/index.phtml:12 Login/view/login/error/index.phtml:36
+#: Siteprivate/view/siteprivate/error/404.phtml:57
+#: Siteprivate/view/siteprivate/error/404.phtml:81
+#: Siteprivate/view/siteprivate/error/index.phtml:12
+#: Siteprivate/view/siteprivate/error/index.phtml:36
+msgid "File"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:61 Login/view/login/error/404.phtml:85
+#: Login/view/login/error/index.phtml:16 Login/view/login/error/index.phtml:40
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:107
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:93
+#: Siteprivate/view/siteprivate/error/404.phtml:61
+#: Siteprivate/view/siteprivate/error/404.phtml:85
+#: Siteprivate/view/siteprivate/error/index.phtml:16
+#: Siteprivate/view/siteprivate/error/index.phtml:40
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:111
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:107
+msgid "Message"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:65 Login/view/login/error/404.phtml:89
+#: Login/view/login/error/index.phtml:20 Login/view/login/error/index.phtml:44
+#: Siteprivate/view/siteprivate/error/404.phtml:65
+#: Siteprivate/view/siteprivate/error/404.phtml:89
+#: Siteprivate/view/siteprivate/error/index.phtml:20
+#: Siteprivate/view/siteprivate/error/index.phtml:44
+msgid "Stack trace"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:75 Login/view/login/error/index.phtml:30
+#: Siteprivate/view/siteprivate/error/404.phtml:75
+#: Siteprivate/view/siteprivate/error/index.phtml:30
+msgid "Previous exceptions"
+msgstr ""
+
+#: Login/view/login/error/404.phtml:104 Login/view/login/error/index.phtml:59
+#: Siteprivate/view/siteprivate/error/404.phtml:104
+#: Siteprivate/view/siteprivate/error/index.phtml:59
+msgid "No Exception available"
+msgstr ""
+
+#: Login/view/login/error/index.phtml:2
+#: Siteprivate/view/siteprivate/error/index.phtml:2
+msgid "An error occurred"
+msgstr ""
+
+#: Login/view/login/layout/layout.phtml:7
+#: Siteprivate/view/siteprivate/layout/layout.phtml:7
+#: Sitepublic/view/sitepublic/layout/layout.phtml:7
+msgid "At night and in transportation"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/add.phtml:3
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/add.phtml:3
+msgid "Ajouter un nouvel utilisateur"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/add.phtml:47
+#: Loginmgmt/view/loginmgmt/loginmgmt/edit.phtml:56
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/add.phtml:51
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/edit.phtml:53
+#: Siteprivate/view/siteprivate/Siteprivate/registration.phtml:71
+#: Siteprivate/view/siteprivate/Siteprivate/updatecontactinformation.phtml:51
+msgid "Le nouveau mot de passe doit avoir 5 caractères"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:3
+#: Rubrique/view/rubrique/rubrique/delete.phtml:3
+msgid "Supprimer une rubrique"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:8
+msgid "Etes-vous sûr de vouloir supprimer la rubrique"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/edit.phtml:3
+msgid "Modifier le login"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/edit.phtml:55
+msgid ""
+"Si aucun mot de passe n'est saisi alors le mot de passe actuel est conservé"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:3
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:3
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:3
+msgid "Mes utilisateurs"
+msgstr ""
+
+#: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:45
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:45
+#: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:45
+msgid "Ajouter un utilisateur"
+msgstr ""
+
+#: Message/view/message/message/add.phtml:3
+msgid "Ajouter un Message"
+msgstr ""
+
+#: Message/view/message/message/delete.phtml:3
+msgid "Supprimer un message"
+msgstr ""
+
+#: Message/view/message/message/delete.phtml:8
+msgid "Etes-vous sûr de vouloir supprimer ce message"
+msgstr ""
+
+#: Message/view/message/message/edit.phtml:3
+msgid "Modifier un Message"
+msgstr ""
+
+#: Message/view/message/message/index.phtml:2
+msgid "Mes messages"
+msgstr ""
+
+#: Message/view/message/message/index.phtml:41
+msgid "Ajouter un message"
+msgstr ""
+
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:3
+msgid "Mes pages"
+msgstr ""
+
+#: Pagearrangement/view/pagearrangement/pagearrangement/showpagecontents.phtml:3
+msgid "Modifier la disposition de la page"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/add.phtml:3
+msgid "Ajouter un espace privé"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/delete.phtml:3
+msgid "Supprimer un espace privé"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/delete.phtml:8
+msgid "Etes-vous sûr de vouloir supprimer cette espace privé ?"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/edit.phtml:3
+#: Rubrique/view/rubrique/rubrique/edit.phtml:3
+msgid "Modifier la rubrique"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/index.phtml:3
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:3
+#: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:3
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:3
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:3
+msgid "Mes espaces privés"
+msgstr ""
+
+#: Privatespace/view/privatespace/privatespace/index.phtml:44
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:44
+msgid "Ajouter un espace"
+msgstr ""
+
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/add.phtml:82
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/edit.phtml:81
+#: Siteprivate/view/siteprivate/Siteprivate/changepassword.phtml:68
+#: Siteprivate/view/siteprivate/Siteprivate/registration.phtml:105
+#: Siteprivate/view/siteprivate/Siteprivate/updatecontactinformation.phtml:78
+msgid "Les mots de passe ne sont pas identiques"
+msgstr ""
+
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:3
+msgid "Supprimer un utilisateur"
+msgstr ""
+
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer cette utilisateur"
+msgstr ""
+
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/edit.phtml:3
+msgid "Modifier un nouvel utilisateur"
+msgstr ""
+
+#: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:63
+msgid "Gérer les utilisateurs"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:3
+msgid "Ajouter une nouvelle rubrique"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:82
+#: Rubrique/view/rubrique/rubrique/edit.phtml:343
+msgid "Portée de la page"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:83
+#: Rubrique/view/rubrique/rubrique/edit.phtml:344
+msgid "Espace associée"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:84
+#: Rubrique/view/rubrique/rubrique/edit.phtml:345
+msgid "Formulaire de contact"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:85
+#: Rubrique/view/rubrique/rubrique/edit.phtml:346
+msgid "Formulaire de message"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:86
+#: Rubrique/view/rubrique/rubrique/edit.phtml:347
+msgid "Formulaire de mise à jour des informations"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/add.phtml:87
+#: Rubrique/view/rubrique/rubrique/edit.phtml:348
+msgid "Formulaire de chargement de fichier"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer la rubrique"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:166
+#: Rubrique/view/rubrique/rubrique/edit.phtml:231
+msgid "&Ecirc;tes vous sûr de modifier la méta ?"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:169
+#: Rubrique/view/rubrique/rubrique/edit.phtml:234
+msgid "&Ecirc;tes vous sûr de supprimer la méta ?"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:182
+#: Rubrique/view/rubrique/rubrique/edit.phtml:247
+msgid "Opération effectuée"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:188
+#: Rubrique/view/rubrique/rubrique/edit.phtml:255
+msgid "Un problème est survenu, veuillez recommencer svp."
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:354
+msgid "Ajouter une m&eacute;ta"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:371
+msgid "Cl&eacute;"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/edit.phtml:372
+msgid "Valeur"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/index.phtml:3
+msgid "Mes rubriques"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/index.phtml:44
+msgid "Ajouter une rubrique"
+msgstr ""
+
+#: Rubrique/view/rubrique/rubrique/index.phtml:53
+msgid "Espace"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/changepassword.phtml:3
+msgid "Changer votre mot de passe"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/changepassword.phtml:72
+msgid "Le mot de passe doit contenir 5 caractères minimum"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:3
+msgid "Votre inscription"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:28
+msgid "Votre demande a été prise en compte"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:29
+msgid "Un email vous a été envoy&eacute;"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:30
+msgid "Cliquez sur le lien envoy&eacute; pour changer de mot de passe"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:34
+msgid "Votre inscription a été prise en compte."
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:35
+msgid "Elle reste soumise à validation."
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/displayregistrationstate.phtml:36
+msgid "Vous allez &ecirc;tre redirig&eacute; vers notre site public"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/forgottenpassword.phtml:3
+msgid "Retrouver mon mot de pase"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/forgottenpassword.phtml:81
+msgid "Veuillez saisir votre addresse email"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/index.phtml:2
+msgid "Mon espace"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/registration.phtml:3
+msgid "Demande d'inscription"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:31
+msgid "Charger un document"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:79
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:83
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:79
+msgid "Envoyer un commentaire"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:227
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:205
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:227
+msgid "'Vous devez saisir un nom'"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:232
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:210
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:232
+msgid "'Vous devez saisir une adresse courriel'"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:237
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:215
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:237
+msgid "'L\\'adresse courriel est incorrect. Veuillez recommencer svp.'"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:242
+#: Sitepublic/view/sitepublic/sitepublic/blog.phtml:220
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:242
+msgid "'Vous devez saisir un message'"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:68
+msgid "Nous contacter"
+msgstr ""
+
+#: Siteprivate/view/siteprivate/Siteprivate/updatecontactinformation.phtml:5
+msgid "Modifier mes informations"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:3
+msgid "public index"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:280
+msgid "Votre commentaire a été envoyé"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:287
+msgid "Veuillez vérifier la saisie du nom"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:291
+msgid "Veuillez vérifier la saisie de l'entreprise"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:295
+msgid "Veuillez vérifier la saisie de l'email"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:299
+msgid "Veuillez vérifier la saisie du message"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:303
+msgid "Veuillez vérifier la saisie du captcha"
+msgstr ""
+
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:306
+msgid "Veuillez rafraîchir la page et recommencer"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/add.phtml:3
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:39
+msgid "Ajouter une sous-rubrique"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/add.phtml:51
+#: Sousrubrique/view/sousrubrique/sousrubrique/edit.phtml:49
+msgid "Rubrique associée"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:3
+msgid "Supprimer une sous-rubrique"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer la sous-rubrique"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/edit.phtml:2
+msgid "Modifier la sous-rubrique"
+msgstr ""
+
+#: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:2
+msgid "Mes sous rubriques"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:2
+msgid "Fichiers en attente de validation"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:67
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:73
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:64
+msgid "Une erreur est survenue"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:67
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:73
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:287
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:64
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:277
+msgid "Fermer"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:92
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:122
+msgid "&Ecirc;tes vous sûr d'effacer le fichier ?"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:94
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:124
+msgid "&Ecirc;tes vous sûr de valider le fichier ?"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:172
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:229
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:166
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:218
+msgid "Fichier"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:174
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:168
+msgid "Identifiant"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:257
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:247
+msgid "Id utilisateur"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:263
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:253
+msgid "GPS"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:280
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:270
+msgid "Retour &agrave"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:282
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:272
+msgid "l'image d'origine"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:288
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:278
+msgid "la fen&ecirc;tre"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:2
+msgid "Fichiers Validés"
+msgstr ""
+
+#: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:58
+msgid "Une erreur est survenue<br>"
 msgstr ""

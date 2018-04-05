@@ -2,6 +2,7 @@
 
 namespace Fichiers\Controller;
 
+use Fichiers\Form\FichiersForm;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Fichiers\Model\Fichiers;
@@ -61,7 +62,7 @@ class FichiersController extends AbstractActionController
     public function addAction()
     {
 
-        $form = new SiteprivateFileuploadForm();
+        $form = new FichiersForm();
         $fichiersDao = new Fichiersdao();
         $savethumbnailpath = 'img';
         //$this->translator=$this->getServiceLocator()->get('translator');
@@ -221,7 +222,7 @@ class FichiersController extends AbstractActionController
     public function editAction()
     {
 
-        $form = new SiteprivateFileuploadForm();
+        $form = new FichiersForm();
         $fichiersDao = new Fichiersdao();
 
         // $this->translator=$this->getServiceLocator()->get('translator');
@@ -300,7 +301,9 @@ class FichiersController extends AbstractActionController
                 $outils = new FileManager();
                 //fichier, chemin
                 $outils->deleteFile($fichier->getNom(), 'public/' . $fichier->getChemin());
-                $outils->deleteFile($fichier->getThumbnail(), 'public/' . $fichier->getThumbnailpath());
+                if(in_array(strtolower($fichier->getType()), FilesCategories::$imgList)){
+                    $outils->deleteFile($fichier->getThumbnail(), 'public/' . $fichier->getThumbnailpath());
+                }
             }
 
             // Redirect to list of fichiers

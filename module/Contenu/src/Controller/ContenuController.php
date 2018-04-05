@@ -86,8 +86,7 @@ class ContenuController extends AbstractActionController {
                 $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), true, false, true));
                 $contenu->setContenuHtml($request->getPost('contenu'));
                 $contenu->setType(ContenuType::$htmlcontent);
-                //var_dump($contenu);
-                //exit;
+               ;
                 $contenuDao->saveContenu($contenu);
                 
                 //flush cache
