@@ -5,12 +5,12 @@ Introduction
 ------------
  
 Welcome to the repository of "Anit - CMS".
-In 2013 I decide to learn Zend Framework 2.
+In 2013 I decide to learn Zend Framework.
 In order to learn the basics of this framework, I have the project to develop my own cms.
-At the beginning, It was really basic but step by step I've added more features.
-Finally I share my work because I think it is not a prototype anymore but people or company can use it as a cms.
+At the beginning, It was really basic but step by step I have added more features.
+Finally I share my work because I think it can be really useful for developping web sites with public or private access.
 I add more features step by step in order to fit most demanding needs for building a web site. 
-The cms runs on Zend Framework 3. 
+The cms runs now on Zend Framework 3. 
 
 
 Principles of the cms
@@ -18,49 +18,58 @@ Principles of the cms
 
 Intro
 -----
-I worked for many companies in order to develop their own back-office for their web sites.
+- I worked for many companies in order to develop their own back-office for their web sites.
 But unfortunately they did not designed their back-office to have common modules or components able to be used for their other web sites or web application. 
-So I decided to design a solution in order to create customizable web sites easily.
+- So I decided to design a solution in order to create customizable web sites easily and to have modules re-usable. 
+- The main concept is that your web page is build from blocks.
+You think and design your web page as ordered blocks. You declare your web page and its block in the cms.
+You stay focused on the design of your web page and particularly on its blocks.
+The app will take care to display (or hide)  your web page following your configuration.
+
 
 Benefits
 --------
-Modularity and Scalability:
+- Modularity and Scalability:
 Thanks to ZF3, on the back-end side, you can easily add features through zend modules or through your own php library.
 On the front-end side, you have to think your web page as blocks, blocks that have their own blocks.
 By this way you can stay focused on the UI.
 
-Maintainability :
+- Maintainability :
 You know what's going on. You have the control of the code.
 It is easily maintainable because it applies the MVC pattern flavour from Zend Framework.
 I offer a simple way to organize your cms with zend.
 
-Native features :
+- Native features :
 You have by default features like :
-Access Control List
-Files Management
-Blog
-Extranet
-...
+    - Access Control List
+    - Files Management
+    - Blog
+    - Extranet
+    - ...
 
 
 Principles
 ----------
-Let's talk about the principles of the cms :
-- Page (Module : Rubrique): it's a web page, the main container.
+Let's talk about the principles of the cms:
+- Page (Module: Rubrique): it's a web page, the main container.
 
-- Section (Module : Sous-Rubrique) : a page has one or many sections. 
+- Section (Module: Sous-Rubrique) : a page has one or many sections. 
 a section does not represent a section tag in html, it represents a piece of your page.
 
-- Content (Module : Contenu, Galerie, Blogcontent) : a section has one or many contents.
+- Content (Module: Contenu, Galerie, Blogcontent): a section has one or many contents.
 I have divided content in three types :
     - stdContent : html content that you can edit with an editor + title and subtitle
     - imgContent : std content plus images
     - blogContet : imgContent plus another fields like author, date...
-It's up to you to create a new one or just modify an existing one.
 
-- Message (Module : Message) : It's a message sent by visitors through a form
+It's up to you to create a new content type or just to modify an existing one.
 
-- Comment (Module : Commentaire) : It's a comment sent to a content
+For each content type in add or edit pages you have the list of the files uploaded.
+You have the ability to copy to clipboard the path and add it easily in your htlm editor.
+
+- Message (Module: Message): It's a message sent by visitors through a form
+
+- Comment (Module: Commentaire): It's a comment sent. It is related to a content
 
 By default messages and comments are stored in the database.
 You can also send it by email. The code have been commented in the modules.
@@ -68,51 +77,61 @@ You just have to uncomment and put values in the related configuration files (fo
 The email sending is done by smtp client but you have also the option to send emails from visitor through sendmail.
 You just have to comment smtp client code and uncomment sendmail code inside the controller.
 
-- Files (Module : Fichiers) : All the files or images included in your content are managed by this module.
+- Files (Module: Fichiers): All the files or images included in your content are managed by this module.
 If you want to add or update files of a content, you will find all the files and their link in a table
 in the management page (add or update page) of your content.
 In your content you will put the link of the file. You will find example.
 
-- Loginmgmt (Module : Loginmgmt) : You can manage back office users.
-You have by default three roles : 
-    - anonymous is the default role associated to a visitor of your public web site or blog
-    - user has access to the back-office except loginmgmt
-    - administrator has access to the back-office and to the login management module
+- Loginmgmt (Module : Loginmgmt): You can manage back office users.
+You have by default three roles: 
+    - anonymous: this is the default role associated to a visitor of your public web site or blog. Of course you do not 
+    have to declare this type of user
+    - user: has an access to the back-office except loginmgmt
+    - guest: has an access to the private space of your web site (through siteprivate feature)
+    - administrator: has an access to the back-office and to the login management module
 
-- MyAcl (Module : MyAcl) : In this module you can manage role and url allowed by role.
+- MyAcl (Module : MyAcl): In this module you can manage role and url allowed by role.
 The role is stored in a session (configuration is in the Application module)
 
-- Pagearrangement (Module : Pagearrangement) : It allows to see the hierarchy of the elements (sections, contents) of a page.
+- Pagearrangement (Module: Pagearrangement): It allows to see the hierarchy of the elements (sections, contents) of a page.
 You can change the position of sections and contents.
 By clicking on a button you can go to the form that you allow to update the selected element.
 It is very useful to have an overview of your page
 That's the object sent by the controller to the view.
 
-- Links (Module Linktocontenu) : It allows to create a link of a content into another page.
+- Links (Module: Linktocontenu): A content is related to a page but if you want to share the same content into another page,
+it allows to create a new content. it could be the perfect copy of the targeted content or you can customize it.
 In fact it's more than a link, you can customize the appearance of your link by adding an image, html, title... 
-For example, you want to create a shortcut to an article of your blog in your index page, you can easily customize the link in order to fit the design of your page.
+A use case could be that you want to create a shortcut to an article of your blog in your index page, you can easily 
+customize the content in order to fit the design of your page.
 
-- Privatespace : It allows to declare an extranet in addition to your public web site.
+- Privatespace (Module: Privatespace): It allows to declare an extranet in addition to your public web site.
 
-- Privatespacelogin : It allows to manage users of the extranet you have created.
+- Privatespacelogin (Module: Privatespacelogin): It allows to manage users of the extranet you have created.
 
-- Siteprivate : 
-    It allows to :
+- Siteprivate (Module: Siteprivate): 
+    It allows to:
         - manage the display of the pages related to a private space (Extranet).
         - manage the subscription of a new user 
         - manage the case of a user who forgot his password.
         - manage comment's form 
         - manage contact's form
-    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module i view/siteprivate/Siteprivate
-
-- Sitepublic :
-    It allows to :
+    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module in view/siteprivate/Siteprivate
+    
+    
+- Sitepublic (Module: Sitepublic):
+    It allows to:
         - manage the display of the pages related to your public web site.
         - manage comment's form
         - manage contact's form
     When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module in view/sitepublic/sitepublic
  
-- Pagews :  It contains web services. It gives you pagearrangement object related to a page (public or private)
+- Pagews (Module: Pagews):  It contains web services. It gives you pagearrangement object related to a page (public or private)
+
+- Uploadmgmt (Module: Uploadmgmt): This module allows a user of an extranet to upload files. 
+Through an admnistration pages, you can download, validate, modify or delete the documents. 
+It could be pictures, office documents, videos, compressed files.
+
 
 
 Position
@@ -213,15 +232,20 @@ These are relative url usefull to start :
      * extranet login : /siteprivate?myspace=token of your private space (you will find the token in the database)
      * extranet web page : /siteprivate/displayprivatepage/your page without phtml extension
 
-- Login to connect to the back-office :
-user : anit_admin
-password : anit_admin
+- Default login to connect to the back-office:
+    - user : anit_admin
+    - password : anit_admin
+    - url : /backofficeaccess
 
-- Login to connect to the extranet :
-user : anit_private@anit.org
-password : anit_private@anit.org
+- Default login to connect to the extranet :
+    - user : anit_private@anit.org
+    - password : anit_private@anit.org
+    - url : /siteprivate?myspace=token_of_the_privatespace_stored_in_the_space_table
 
-- Requirement
-MySql 5 or above
-php >= 5.6 for zend framework 3
+- Database
+    - The configuration of the database is located in module/Application/src/DBConnection/DBConnection.php
+    - MySql 5 or above is required
+
+- PHP
+    - php >= 5.6 for zend framework 3
 
