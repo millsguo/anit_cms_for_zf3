@@ -53,7 +53,6 @@ class SitepublicController extends AbstractActionController {
         $page = $this->params()->fromRoute('page');
         $phtmlFile = "";
         $viewModel = null;
-        // $this->cache = $this->getServiceLocator()->get('CacheDataListener');
 
         //if no rubrique filename (without extension) is in the url, the first page will be displayed
         if (empty($page) || strcasecmp($page, 'index') == 0) {
@@ -74,7 +73,7 @@ class SitepublicController extends AbstractActionController {
             $metas = $metaDao->getAllMetasByRubrique($idrub, "object");
 
             //get all data to display the page with a pageArrangement object 
-            //that have all the objects (page, section(s), content(s)...) sorted
+            //which have all the objects (page, section(s), content(s)...) sorted
             $pageContents = $pageArrangementDao->getPage($idrub, "asc", "object");
             $pageContentsJSON = $pageArrangementDao->getPage($idrub, "asc", "json");
             //get comments

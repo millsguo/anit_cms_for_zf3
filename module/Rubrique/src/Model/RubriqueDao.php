@@ -209,9 +209,7 @@ class RubriqueDao extends ParentDao {
 		ORDER BY spaceId, rang
 		")or die(print_r($this->dbGateway->error_info()));
 
-        $requete->execute(array(
-            'spaceId' => $spaceId
-        ));
+        $requete->execute();
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
