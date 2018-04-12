@@ -204,7 +204,7 @@ Installation
 ------------
 - git (https://git-scm.com/):
 You can clone the project :
-git clone https://rongeb@bitbucket.org/rongeb/anit-cms-for-zend-framework-3.git
+git clone https://github.com/rongeb/anit_cms_for_zf3.git
 
 dependencies :
 The project is build on top of zend framework 3. It works with php >= 5.6.
