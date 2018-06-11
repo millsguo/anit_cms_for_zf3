@@ -26,7 +26,7 @@ class LoginDao extends ParentDao{
 
         $number_of_rows = $requete->fetchColumn();
         //$number_of_rows = $requete->fetchColumn();
-        var_dump($number_of_rows);
+        //var_dump($number_of_rows);
         return $number_of_rows;
     }
     

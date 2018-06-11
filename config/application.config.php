@@ -1,6 +1,6 @@
 <?php
 
-return array(
+$appConfig = array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
         'Zend\Navigation',
@@ -54,14 +54,14 @@ return array(
             './vendor',
         ),
 
-    // Whether or not to enable a configuration cache.
+        // Whether or not to enable a configuration cache.
         // If enabled, the merged configuration will be cached and used in
         // subsequent requests.
         //'config_cache_enabled' => true,
         // The key used to create the configuration cache file name.
-        
+
         //'config_cache_key' => "124567890AZERTYUIOPQSDFGHJKLMWXC",
- 
+
         // Whether or not to enable a module class map cache.
         // If enabled, creates a module class map cache which will be used
         // by in future requests, to reduce the autoloading process.
@@ -70,25 +70,37 @@ return array(
 
         // The key used to create the class map cache file name.
         //'module_map_cache_key' => "AZERTYUIOPQSDFGHJKLMWXC124567890",
-         
-         
+
+
         // The path in which to cache merged configuration.
         //'cache_dir' => "./data/cache/",
-    // Whether or not to enable modules dependency checking.
-    // Enabled by default, prevents usage of modules that depend on other modules
-    // that weren't loaded.
-    // 'check_dependencies' => true,
+        // Whether or not to enable modules dependency checking.
+        // Enabled by default, prevents usage of modules that depend on other modules
+        // that weren't loaded.
+        // 'check_dependencies' => true,
     ),
-        // Used to create an own service manager. May contain one or more child arrays.
-        //'service_listener_options' => array(
-        //     array(
-        //         'service_manager' => $stringServiceManagerName,
-        //         'config_key'      => $stringConfigKey,
-        //         'interface'       => $stringOptionalInterface,
-        //         'method'          => $stringRequiredMethodName,
-        //     ),
-        // )
-        // Initial configuration with which to seed the ServiceManager.
-        // Should be compatible with Zend\ServiceManager\Config.
-        // 'service_manager' => array(),
+    // Used to create an own service manager. May contain one or more child arrays.
+    //'service_listener_options' => array(
+    //     array(
+    //         'service_manager' => $stringServiceManagerName,
+    //         'config_key'      => $stringConfigKey,
+    //         'interface'       => $stringOptionalInterface,
+    //         'method'          => $stringRequiredMethodName,
+    //     ),
+    // )
+    // Initial configuration with which to seed the ServiceManager.
+    // Should be compatible with Zend\ServiceManager\Config.
+    // 'service_manager' => array(),
 );
+
+//modify the condition depending on your environments / cache the config and the map is useful for Production mode, definitely not for dev
+if(strcasecmp(ANIT_ENVIRONMENT, 'dev') != 0){
+    $appConfig['module_listener_options']['config_cache_enabled'] = true;
+    $appConfig['module_listener_options']['config_cache_key'] = "124567890AZERTYUIOPQSDFGHJKLMWXC";
+    $appConfig['module_listener_options']['module_map_cache_enabled'] = true;
+    $appConfig['module_listener_options']['module_map_cache_key'] = 'AZERTYUIOPQSDFGHJKLMWXC124567890';
+    $appConfig['module_listener_options']['cache_dir'] = './data/cache/';
+    $appConfig['module_listener_options']['check_dependencies'] = true;
+}
+
+return $appConfig;

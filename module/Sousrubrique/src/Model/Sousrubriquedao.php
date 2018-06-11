@@ -1,15 +1,13 @@
 <?php
 
-// module/Sousrubrique/src/Sousrubrique/Model/SousrubriqueTable.php:
-
 namespace Sousrubrique\Model;
 
 use Sousrubrique\Model\Sousrubrique;
 use Application\DBConnection\ParentDao;
 use Rubrique\Model\Rubrique;
 use Rubrique\Model\RubriqueDao;
+use Sousrubrique\Model\Mapper\SousrubriqueMapper;
 
-//use Zend\Db\TableGateway\TableGateway;
 
 class Sousrubriquedao extends ParentDao{
 
@@ -32,11 +30,12 @@ class Sousrubriquedao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfSousrubriquestep1 = array();
             $arrayOfSousrubriquestep2 = array();
             if (is_array($requete2)) {
+                $sousRubriqueMapper = new SousrubriqueMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -49,7 +48,7 @@ class Sousrubriquedao extends ParentDao{
                         $arrayOfSousrubriquestep1[$count]['rang'] = $value['rang'];
                         $arrayOfSousrubriquestep1[$count]['rubrique'] = $rubrique;
 
-                        $arrayOfSousrubriquestep2[$count] = Sousrubrique::fromArray($arrayOfSousrubriquestep1[$count]);
+                        $arrayOfSousrubriquestep2[$count] = $sousRubriqueMapper->exchangeArray($arrayOfSousrubriquestep1[$count]);
 
                         $count++;
                     }
@@ -57,7 +56,7 @@ class Sousrubriquedao extends ParentDao{
             }
             //print_r($arrayOfSousrubriquestep2);
             return $arrayOfSousrubriquestep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -80,11 +79,12 @@ class Sousrubriquedao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfSousrubriquestep1 = array();
             $arrayOfSousrubriquestep2 = array();
             if (is_array($requete2)) {
+                $sousRubriqueMapper = new SousrubriqueMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -97,7 +97,7 @@ class Sousrubriquedao extends ParentDao{
                         $arrayOfSousrubriquestep1[$count]['rang'] = $value['rang'];
                         $arrayOfSousrubriquestep1[$count]['rubrique'] = $rubrique;
 
-                        $arrayOfSousrubriquestep2[$count] = Sousrubrique::fromArray($arrayOfSousrubriquestep1[$count]);
+                        $arrayOfSousrubriquestep2[$count] = $sousRubriqueMapper->exchangeArray($arrayOfSousrubriquestep1[$count]);
 
                         $count++;
                     }
@@ -105,7 +105,7 @@ class Sousrubriquedao extends ParentDao{
             }
             //print_r($arrayOfSousrubriquestep2);
             return $arrayOfSousrubriquestep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -129,11 +129,12 @@ class Sousrubriquedao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfSousrubriquestep1 = array();
             $arrayOfSousrubriquestep2 = array();
             if (is_array($requete2)) {
+                $sousRubriqueMapper = new SousrubriqueMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -146,7 +147,7 @@ class Sousrubriquedao extends ParentDao{
                         $arrayOfSousrubriquestep1[$count]['rang'] = $value['rang'];
                         $arrayOfSousrubriquestep1[$count]['rubrique'] = $rubrique;
 
-                        $arrayOfSousrubriquestep2[$count] = Sousrubrique::fromArray($arrayOfSousrubriquestep1[$count]);
+                        $arrayOfSousrubriquestep2[$count] = $sousRubriqueMapper->exchangeArray($arrayOfSousrubriquestep1[$count]);
 
                         $count++;
                     }
@@ -154,7 +155,7 @@ class Sousrubriquedao extends ParentDao{
             }
             //print_r($arrayOfSousrubriquestep2);
             return $arrayOfSousrubriquestep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -178,11 +179,12 @@ class Sousrubriquedao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfSousrubriquestep1 = array();
             $arrayOfSousrubriquestep2 = array();
             if (is_array($requete2)) {
+                $sousRubriqueMapper = new SousrubriqueMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -195,7 +197,7 @@ class Sousrubriquedao extends ParentDao{
                         $arrayOfSousrubriquestep1[$count]['rang'] = $value['rang'];
                         $arrayOfSousrubriquestep1[$count]['rubrique'] = $rubrique;
 
-                        $arrayOfSousrubriquestep2[$count] = Sousrubrique::fromArray($arrayOfSousrubriquestep1[$count]);
+                        $arrayOfSousrubriquestep2[$count] = $sousRubriqueMapper->exchangeArray($arrayOfSousrubriquestep1[$count]);
 
                         $count++;
                     }
@@ -203,7 +205,7 @@ class Sousrubriquedao extends ParentDao{
             }
             //print_r($arrayOfSousrubriquestep2);
             return $arrayOfSousrubriquestep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -214,6 +216,7 @@ class Sousrubriquedao extends ParentDao{
         $result = array();
 
         $rubriqueDao = new RubriqueDao();
+        $sousRubriqueMapper = new SousrubriqueMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT * 
@@ -234,7 +237,7 @@ class Sousrubriquedao extends ParentDao{
         $Sousrubriquestep1['rang'] = $requete2['rang'];
         $Sousrubriquestep1['rubrique'] = $rubrique;
 
-        $sousrubrique = Sousrubrique::fromArray($Sousrubriquestep1);
+        $sousrubrique = $sousRubriqueMapper->exchangeArray($Sousrubriquestep1);
         //print_r("titi".$sousrubrique);
         return $sousrubrique;
     }

@@ -18,53 +18,6 @@ class Fichiers
     {
     }
 
-    //first hydrator strategy
-    public static function fromArray($row)
-    {
-        $instance = new self();
-        $instance->exchangeArray($row);
-
-        return $instance;
-    }
-
-    /*
-    public static function fromForm($row) {
-        $instance = new self();
-        $instance->exchangeForm($row);
-        //print_r($instance);
-        //exit;
-        return $instance;
-    }
-    */
-    private function exchangeArray($data)
-    {
-
-        if (isset($data['fichiers_id'])) {
-            $this->setId($data['fichiers_id']);
-        }
-        if (isset($data['fichiers_chemin'])) {
-            $this->setChemin($data['fichiers_chemin']);
-        }
-        if (isset($data['fichiers_nom'])) {
-            $this->setNom($data['fichiers_nom']);
-        }
-        if (isset($data['fichiers_type'])) {
-            $this->setType($data['fichiers_type']);
-        }
-        if (isset($data['fichiers_libelle'])) {
-            $this->setLibelle($data['fichiers_libelle']);
-        }
-        if (isset($data['fichiers_meta'])) {
-            $this->setMetadata($data['fichiers_meta']);
-        }
-        if (isset($data['fichiers_thumbnailpath'])) {
-            $this->setThumbnailpath($data['fichiers_thumbnailpath']);
-        }
-        if (isset($data['fichiers_thumbnail'])) {
-            $this->setThumbnail($data['fichiers_thumbnail']);
-        }
-    }
-
     public function getId()
     {
         return $this->id;
@@ -143,13 +96,6 @@ class Fichiers
     public function setThumbnail($_thumbnail)
     {
         $this->thumbnail = $_thumbnail;
-    }
-
-    // Add the following method:
-
-    public function getArrayCopy()
-    {
-        return get_object_vars($this);
     }
 
 }

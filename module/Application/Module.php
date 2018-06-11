@@ -9,22 +9,41 @@ use Zend\Session\Config\SessionConfig;
 use Zend\Session\Container;
 use Zend\Session\Validator\HttpUserAgent;
 
-class Module {
+class Module
+{
 
-    public function onBootstrap(MvcEvent $e) {
-        $eventManager        = $e->getApplication()->getEventManager();
+    public function onBootstrap(MvcEvent $e)
+    {
+        $eventManager = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
-        
+
+        //modify the condition depending on your environments / display exception not a good idea in a production environment
+        if (strcasecmp(ANIT_ENVIRONMENT, 'dev')==0) {
+            //https://stackoverflow.com/questions/46969748/display-all-exception-messages-in-zend-instead-of-an-error-occurred
+            //Attach render errors
+            $eventManager->attach(MvcEvent::EVENT_RENDER_ERROR, function ($e) {
+                if ($e->getParam('exception')) {
+                    $this->displayException($e->getParam('exception')); //Custom error render function.
+                }
+            });
+            //Attach dispatch errors
+            $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function ($e) {
+                if ($e->getParam('exception')) {
+                    $this->displayException($e->getParam('exception'));//Custom error render function.
+                }
+            });
+        }
+
         // get the cache listener service
         // $e->getApplication()->getServiceManager()->get('CacheDataListener');
-        
+
         //force ssl
         //$eventManager->attach('route', array($this, 'doHttpsRedirect'));
         /*
         $translator=$e->getApplication()->getServiceManager()->get('translator');
         \Zend\Validator\AbstractValidator::setDefaultTranslator($translator); */
-        
+
         $this->initSession(array(
             'remember_me_seconds' => 10800,
             'use_cookies' => true,
@@ -34,29 +53,32 @@ class Module {
         ));
     }
 
-    public function getConfig() {
+    public function getConfig()
+    {
         return include __DIR__ . '/config/module.config.php';
     }
-/*
-    public function getAutoloaderConfig() {
-        return array(
-            'Zend\Loader\StandardAutoloader' => array(
-                'namespaces' => array(
-                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+
+    /*
+        public function getAutoloaderConfig() {
+            return array(
+                'Zend\Loader\StandardAutoloader' => array(
+                    'namespaces' => array(
+                        __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
+                    ),
                 ),
-            ),
-        );
-    }
-*/
-    public function initSession($config) {
+            );
+        }
+    */
+    public function initSession($config)
+    {
         $sessionConfig = new SessionConfig();
         $sessionConfig->setOptions($config);
         $sessionManager = new SessionManager($sessionConfig);
         $sessionManager->getValidatorChain()
-          ->attach(
-            'session.validate',
-            array(new HttpUserAgent(), 'isValid')
-          );
+            ->attach(
+                'session.validate',
+                array(new HttpUserAgent(), 'isValid')
+            );
         /*
           $sessionManager->getValidatorChain()
           ->attach(
@@ -65,10 +87,17 @@ class Module {
           );*/
         $sessionManager->start();
         /**
-         * Optional: If you later want to use namespaces, you can already store the 
+         * Optional: If you later want to use namespaces, you can already store the
          * Manager in the shared (static) Container (=namespace) field
          */
         Container::setDefaultManager($sessionManager);
+    }
+
+    //https://stackoverflow.com/questions/46969748/display-all-exception-messages-in-zend-instead-of-an-error-occurred
+    public function displayException($e)
+    {
+        echo "<span style='font-family: courier new; padding: 2px 5px; background:red; color: white;'> " . $e->getMessage() . '</span><br/>';
+        echo "<pre>" . $e->getTraceAsString() . '</pre>';
     }
 
     /*
@@ -89,5 +118,5 @@ class Module {
     }
      * 
      */
-    
+
 }

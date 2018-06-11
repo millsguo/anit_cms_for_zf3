@@ -5,6 +5,7 @@ namespace Uploadmgmt\Model;
 use Application\DBConnection\ParentDao;
 use Uploadmgmt\Model\FileuploadStatus;
 use Uploadmgmt\Model\Fileupload;
+use Uploadmgmt\Model\Mapper\FileuploadMapper;
 
 class Uploadmgmtdao extends ParentDao
 {
@@ -62,6 +63,8 @@ class Uploadmgmtdao extends ParentDao
 
     public function getFileByFilename(string $filename)
     {
+
+        $fileuploadMapper = new FileuploadMapper();
         $query = $this->dbGateway->prepare("
 		SELECT " . self::$fields . " 
 		FROM filesupload p
@@ -75,7 +78,7 @@ class Uploadmgmtdao extends ParentDao
 
         $result = $query->fetch(\PDO::FETCH_ASSOC);
 
-        return Fileupload::fromArray($result);
+        return $fileuploadMapper->exchangeArray($result);
     }
 
     /**

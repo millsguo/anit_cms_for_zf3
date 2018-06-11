@@ -4,6 +4,7 @@ namespace Privatespace\Model;
 
 use Application\DBConnection\ParentDao;
 use ExtLib\MCrypt;
+use Privatespace\Model\Mapper\PrivatespaceMapper;
 
 class PrivatespaceDao extends ParentDao {
 
@@ -12,6 +13,8 @@ class PrivatespaceDao extends ParentDao {
     }
 
     public function getAllSpaces($dataType) {
+
+        $mapper = new PrivatespaceMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT space_id, space_name, space_token
@@ -23,20 +26,20 @@ class PrivatespaceDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType, "object") == 0) {
             //Put result in an array of objects
             $arrayOfSpaces = array();
             if (is_array($requete2)) {
                 foreach ($requete2 as $value) {
                     //put code to define an array of objects
                     if ($value['space_id'] != null && $value['space_name'] != "") {
-                        $arrayOfSpaces[] = Privatespace::fromArray($value);
+                        $arrayOfSpaces[] = $mapper->exchangeArray($value);
                     }
                 }
             }
 
             return $arrayOfSpaces;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType, "array") == 0) {
             return $requete2;
         }
     }
@@ -45,6 +48,7 @@ class PrivatespaceDao extends ParentDao {
 
         $id = (int) $id;
         $result = array();
+        $mapper = new PrivatespaceMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT space_id, space_name, space_token
@@ -58,8 +62,8 @@ class PrivatespaceDao extends ParentDao {
         ));
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
-        //var_dump($requete2);
-        $result = Privatespace::fromArray($requete2);
+
+        $result = $mapper->exchangeArray($requete2);
 
         return $result;
     }

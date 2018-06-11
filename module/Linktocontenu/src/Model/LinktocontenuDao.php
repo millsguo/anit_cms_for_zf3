@@ -8,6 +8,7 @@ use Contenu\Model\ContenuDao;
 use Rubrique\Model\RubriqueDao;
 use Linktocontenu\Model\Linktocontenu;
 use Linktocontenu\Model\LinktocontenuType;
+use Linktocontenu\Model\Mapper\LinktocontenuMapper;
 
 class LinktocontenuDao extends ParentDao {
 
@@ -34,11 +35,11 @@ class LinktocontenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType, "object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
-
+            $linkedContentMapper = new LinktocontenuMapper();
             if (is_array($requete2)) {
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
@@ -73,7 +74,7 @@ class LinktocontenuDao extends ParentDao {
                         //id of the section that have the content link
                         $arrayOfContenustep1[$count]['linktosection'] = $linktosousrubrique;
 
-                        $arrayOfContenustep2[$count] = Linktocontenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $linkedContentMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $count++;
                     }
@@ -81,7 +82,7 @@ class LinktocontenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType, "array") == 0) {
             return $requete2;
         }
     }
@@ -108,11 +109,11 @@ class LinktocontenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType, "object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
-
+            $linkedContentMapper = new LinktocontenuMapper();
             if (is_array($requete2)) {
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
@@ -147,7 +148,7 @@ class LinktocontenuDao extends ParentDao {
                         //id of the section that have the content link
                         $arrayOfContenustep1[$count]['linktosection'] = $linktosousrubrique;
 
-                        $arrayOfContenustep2[$count] = Linktocontenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $linkedContentMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $count++;
                     }
@@ -155,7 +156,7 @@ class LinktocontenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType, "array") == 0) {
             return $requete2;
         }
     }
@@ -183,11 +184,11 @@ class LinktocontenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType, "object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
-
+            $linkedContentMapper = new LinktocontenuMapper();
             if (is_array($requete2)) {
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
@@ -222,7 +223,7 @@ class LinktocontenuDao extends ParentDao {
                         //id of the section that have the content link
                         $arrayOfContenustep1[$count]['linktosection'] = $linktosousrubrique;
 
-                        $arrayOfContenustep2[$count] = Linktocontenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $linkedContentMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $count++;
                     }
@@ -230,7 +231,7 @@ class LinktocontenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType, "array") == 0) {
             return $requete2;
         }
     }
@@ -243,6 +244,7 @@ class LinktocontenuDao extends ParentDao {
 
         $sousrubriqueDao = new Sousrubriquedao();
         $contenuDao = new ContenuDao();
+        $linkedContentMapper = new LinktocontenuMapper();
 
         $contenustep1 = array();
 
@@ -284,7 +286,7 @@ class LinktocontenuDao extends ParentDao {
         //id of the section that have the content link
         $contenustep1['linktosection'] = $linktosousrubrique;
 
-        $linktocontenu = Linktocontenu::fromArray($contenustep1);
+        $linktocontenu = $linkedContentMapper->exchangeArray($contenustep1);
 
         return $linktocontenu;
     }

@@ -4,6 +4,7 @@ namespace Contenu\Model;
 
 use Sousrubrique\Model\Sousrubrique;
 use Contenu\Model\IContenu;
+use Contenu\Model\Mapper\ContenuMapper as Mapper;
 
 class Contenu implements IContenu{
 
@@ -19,46 +20,6 @@ class Contenu implements IContenu{
    
     public function __construct() {
         
-    }
-
-    //first hydrator strategy
-    public static function fromArray($row) {
-        $instance = new self();
-        $instance->exchangeArray($row);
-        //print_r($instance);
-        //exit;
-        return $instance;
-    }
-
-    protected function exchangeArray($data) {
-
-        if (isset($data['id'])) {
-            $this->setId($data['id']);
-        }
-        if (isset($data['titre'])) {
-            $this->setTitre($data['titre']);
-        }
-        if (isset($data['soustitre'])) {
-            $this->setSousTitre($data['soustitre']);
-        }
-        if (isset($data['contenu'])) {
-            $this->setContenuHtml($data['contenu']);
-        }
-        if (isset($data['position'])) {
-            $this->setRang($data['position']);
-        }
-        if (isset($data['image'])) {
-            $this->setImage($data['image']);
-        }
-        if (isset($data['image2'])) {
-            $this->setImage2($data['image2']);
-        }
-        if (isset($data['sousrubrique'])) {
-            $this->setSousRubrique($data['sousrubrique']);
-        }
-        if (isset($data['type'])) {
-            $this->setType($data['type']);
-        }
     }
 
     public function setId($_id) {
@@ -204,10 +165,4 @@ class Contenu implements IContenu{
         return ($a->getRang() < $b->getRang()) ? -1 : 1;
        
     }*/
-
-    // Add the following method:
-    public function getArrayCopy() {
-        return get_object_vars($this);
-    }
-
 }

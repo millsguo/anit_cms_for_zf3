@@ -7,6 +7,8 @@ use Application\DBConnection\ParentDao;
 use Contenu\Model\Contenu;
 use Contenu\Model\ContenuType;
 use Blogcontent\Model\Blogcontent;
+use Blogcontent\Model\Mapper\BlogContentMapper;
+use Contenu\Model\Mapper\ContenuMapper;
 
 class ContenuDao extends ParentDao {
 
@@ -30,12 +32,15 @@ class ContenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
 
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
+
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -53,7 +58,7 @@ class ContenuDao extends ParentDao {
                         $arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
                         if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
-                            $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
                         } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
                             $arrayOfContenustep1[$count]['author'] = $value['author'];
                             $arrayOfContenustep1[$count]['themes'] = $value['themes'];
@@ -62,7 +67,7 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
-                            $arrayOfContenustep2[$count] = Blogcontent::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $count++;
@@ -71,7 +76,7 @@ class ContenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -99,7 +104,7 @@ class ContenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
@@ -107,6 +112,8 @@ class ContenuDao extends ParentDao {
 
             $sousrub = "";
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -130,7 +137,7 @@ class ContenuDao extends ParentDao {
                         //$arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
                         if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
-                            $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
                         } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
                             $arrayOfContenustep1[$count]['author'] = $value['author'];
                             $arrayOfContenustep1[$count]['themes'] = $value['themes'];
@@ -139,7 +146,7 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
-                            $arrayOfContenustep2[$count] = Blogcontent::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
 
@@ -149,7 +156,7 @@ class ContenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep3;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -176,7 +183,7 @@ class ContenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
@@ -184,6 +191,8 @@ class ContenuDao extends ParentDao {
 
             $sousrub = "";
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -207,7 +216,7 @@ class ContenuDao extends ParentDao {
                         //$arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
                         if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
-                            $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
                         } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
                             $arrayOfContenustep1[$count]['author'] = $value['author'];
                             $arrayOfContenustep1[$count]['themes'] = $value['themes'];
@@ -216,7 +225,7 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
-                            $arrayOfContenustep2[$count] = Blogcontent::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
@@ -227,7 +236,7 @@ class ContenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep3;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -259,7 +268,7 @@ class ContenuDao extends ParentDao {
 
         //var_dump($requete2);
         //exit();
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
@@ -267,6 +276,8 @@ class ContenuDao extends ParentDao {
 
             $sousrub = "";
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -290,7 +301,7 @@ class ContenuDao extends ParentDao {
                         //$arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
                         if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
-                            $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
                         } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
                             $arrayOfContenustep1[$count]['author'] = $value['author'];
                             $arrayOfContenustep1[$count]['themes'] = $value['themes'];
@@ -299,7 +310,7 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
-                            $arrayOfContenustep2[$count] = Blogcontent::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
@@ -310,7 +321,7 @@ class ContenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep3;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -322,6 +333,7 @@ class ContenuDao extends ParentDao {
 
         $sousrubriqueDao = new SousRubriqueDao();
         $contenustep1 = array();
+        $contenuMapper = new ContenuMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT *
@@ -354,9 +366,7 @@ class ContenuDao extends ParentDao {
           $contenustep1['']=$requete2['othertext2'];
           $contenustep1['']=$requete2['othertext3'];
          */
-        $contenu = Contenu::fromArray($contenustep1);
-
-        return $contenu;
+        return $contenuMapper->exchangeArray($contenustep1);
     }
 
     public function getContenusBySousrubrique($sousrubriqueid, $dataType) {
@@ -380,13 +390,15 @@ class ContenuDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
 
             if (is_array($requete2)) {
                 $count = 0;
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -405,7 +417,7 @@ class ContenuDao extends ParentDao {
                         $arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
                         if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
-                            $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
                         } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
                             $arrayOfContenustep1[$count]['author'] = $value['author'];
                             $arrayOfContenustep1[$count]['themes'] = $value['themes'];
@@ -414,7 +426,7 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
-                            $arrayOfContenustep2[$count] = Blogcontent::fromArray($arrayOfContenustep1[$count]);
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $count++;
@@ -423,7 +435,7 @@ class ContenuDao extends ParentDao {
             }
 
             return $arrayOfContenustep2;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }

@@ -3,6 +3,7 @@
 namespace Loginmgmt\Model;
 
 use Login\Model\LoginDao;
+use Loginmgmt\Model\Mapper\LoginMapper;
 
 class LoginmgmtDao extends LoginDao {
     
@@ -24,19 +25,20 @@ class LoginmgmtDao extends LoginDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfUsers = array();
             if (is_array($requete2)) {
+                $loginMapper = new LoginMapper();
                 foreach ($requete2 as $value) {
                     //put code to define an array of objects
                     if ($value['id_access'] != null && $value['id_access'] != "") {
-                        $arrayOfUsers[] = Login::fromArray($value);
+                        $arrayOfUsers[] = $loginMapper->exchangeArray($value);
                     }
                 }
             }
             return $arrayOfUsers;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -45,7 +47,7 @@ class LoginmgmtDao extends LoginDao {
 
         $id = (int) $id;
         $result = array();
-
+        $loginMapper = new LoginMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT id_access, user_access, pwd_access, role_access
 		FROM backofficeaccess
@@ -58,8 +60,9 @@ class LoginmgmtDao extends LoginDao {
         ));
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
+
         //var_dump($requete2);
-        $result = Login::fromArray($requete2);
+        $result = $loginMapper->exchangeArray($requete2);
 
         return $result;
     }

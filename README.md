@@ -207,7 +207,7 @@ You can clone the project :
 git clone https://github.com/rongeb/anit_cms_for_zf3.git
 
 dependencies :
-The project is build on top of zend framework 3. It works with php >= 5.6.
+The project is built on top of zend framework 3. It works with php >= 5.6.
 If you want to use a newer version of zend framework, you have to use composer.
 You have to modify the composer.json file and remove composer.lock files
 With the command line, you go to the root folder of the project and you type :

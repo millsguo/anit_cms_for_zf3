@@ -1,10 +1,9 @@
 <?php
 
-// module/Sousrubrique/src/Sousrubrique/Model/Sousrubrique.php:
-
 namespace Sousrubrique\Model;
 
 use Rubrique\Model\Rubrique;
+use Sousrubrique\Model\Mapper\SousrubriqueMapper as SectionMapper;
 
 class Sousrubrique {
 
@@ -13,32 +12,7 @@ class Sousrubrique {
     protected $rang;
     protected $rubrique;
 
-    public function __construct() {
-        
-    }
-
-    //first hydrator strategy
-    public static function fromArray($row) {
-        $instance = new self();
-        $instance->exchangeArray($row);
-        return $instance;
-    }
-
-    private function exchangeArray($data) {
-
-        if (isset($data['id'])) {
-            $this->setId($data['id']);
-        }
-        if (isset($data['libelle'])) {
-            $this->setLibelle($data['libelle']);
-        }
-        if (isset($data['rang'])) {
-            $this->setRang($data['rang']);
-        }
-        if (isset($data['rubrique'])) {
-            $this->setRubrique($data['rubrique']);
-        }
-    }
+    public function __construct() {}
 
     public function setId($_id) {
         $this->id = $_id;

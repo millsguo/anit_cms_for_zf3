@@ -4,6 +4,7 @@ namespace Rubrique\Model;
 
 use Rubrique\Model\Rubrique;
 use Application\DBConnection\ParentDao;
+use Rubrique\Model\Mapper\RubriqueMapper;
 
 class RubriqueDao extends ParentDao {
 
@@ -12,6 +13,9 @@ class RubriqueDao extends ParentDao {
     }
 
     public function getFirstRubrique($dataType) {
+
+        $mapper = new RubriqueMapper();
+
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
@@ -23,17 +27,20 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $rubriqueObj = Rubrique::fromArray($requete2[0]);
+            $rubriqueObj = $mapper->exchangeArray($requete2[0]);
 
             return $rubriqueObj;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
 
     public function getFirstRubriqueBySpace($spaceId, $dataType) {
+
+        $mapper = new RubriqueMapper();
+
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
@@ -48,17 +55,19 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $rubriqueObj = Rubrique::fromArray($requete2);
+            $rubriqueObj = $mapper->exchangeArray($requete2);
 
             return $rubriqueObj;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
 
     public function getRubriqueBySpaceToken($token, $dataType) {
+
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, rub.fileuploadForm
                 FROM rubrique rub
@@ -74,16 +83,17 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $rubriqueObj = Rubrique::fromArray($requete2);
+            $rubriqueObj = $mapper->exchangeArray($requete2);
             return $rubriqueObj;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
 
     public function getRubriqueByFilename($filename, $dataType) {
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, rub.fileuploadForm
                 FROM rubrique rub
@@ -97,16 +107,17 @@ class RubriqueDao extends ParentDao {
         
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
         
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $arrayOfRubrique = Rubrique::fromArray($requete2);
+            $arrayOfRubrique = $mapper->exchangeArray($requete2);
             return $arrayOfRubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
 
     public function getPrivateRubriqueByFilename($filename, $dataType) {
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT rub.id, rub.libelle, rub.rang, rub.scope, rub.spaceId, rub.filename, rub.contactForm, rub.messageForm, rub.updateForm, fileuploadForm
                 FROM rubrique rub
@@ -120,11 +131,11 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $arrayOfRubrique = Rubrique::fromArray($requete2);
+            $arrayOfRubrique = $mapper->exchangeArray($requete2);
             return $arrayOfRubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -132,6 +143,7 @@ class RubriqueDao extends ParentDao {
     public function getAllRubriques($dataType) {
 
         $count = 0;
+        $mapper = new RubriqueMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
@@ -143,7 +155,7 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfRubrique = array();
 
@@ -151,13 +163,13 @@ class RubriqueDao extends ParentDao {
                 foreach ($requete2 as $value) {
                     //print_r($value);
                     //put code to define an array of objects
-                    $arrayOfRubrique[$count] = Rubrique::fromArray($value);
+                    $arrayOfRubrique[$count] = $mapper->exchangeArray($value);
                     $count++;
                 }
             }
             
             return $arrayOfRubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -165,7 +177,7 @@ class RubriqueDao extends ParentDao {
     public function getAllRubriquesBySpaceId($spaceId, $dataType) {
 
         $count = 0;
-
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
@@ -179,7 +191,7 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfRubrique = array();
 
@@ -187,13 +199,13 @@ class RubriqueDao extends ParentDao {
                 foreach ($requete2 as $value) {
                     //print_r($value);
                     //put code to define an array of objects
-                    $arrayOfRubrique[$count] = Rubrique::fromArray($value);
+                    $arrayOfRubrique[$count] = $mapper->exchangeArray($value);
                     $count++;
                 }
             }
 
             return $arrayOfRubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -201,7 +213,7 @@ class RubriqueDao extends ParentDao {
     public function getAllRubriquesForAllPrivateSpaces($dataType) {
 
         $count = 0;
-
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
                 FROM rubrique
@@ -213,7 +225,7 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfRubrique = array();
 
@@ -221,20 +233,20 @@ class RubriqueDao extends ParentDao {
                 foreach ($requete2 as $value) {
                     //print_r($value);
                     //put code to define an array of objects
-                    $arrayOfRubrique[$count] = Rubrique::fromArray($value);
+                    $arrayOfRubrique[$count] = $mapper->exchangeArray($value);
                     $count++;
                 }
             }
 
             return $arrayOfRubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
 
     public function getRubrique($id) {
         $id = (int) $id;
-
+        $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
 		FROM rubrique
@@ -247,11 +259,13 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        $rubrique = Rubrique::fromArray($requete2);
+        $rubrique = $mapper->exchangeArray($requete2);
         return $rubrique;
     }
 
     public function getRubriqueByRang($rank, $dataType) {
+
+        $mapper = new RubriqueMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm
@@ -266,11 +280,11 @@ class RubriqueDao extends ParentDao {
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
 
-            $rubrique = Rubrique::fromArray($requete2[0]);
+            $rubrique = $mapper->exchangeArray($requete2[0]);
             return $rubrique;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }

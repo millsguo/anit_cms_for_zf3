@@ -7,6 +7,7 @@ use Sousrubrique\Model\Sousrubriquedao;
 use Contenu\Model\Contenu;
 use Contenu\Model\ContenuDao;
 use Contenu\Model\ContenuType;
+use Contenu\Model\Mapper\ContenuMapper;
 
 class GalerieDao extends ContenuDao {
     public function __construct() {
@@ -20,7 +21,7 @@ class GalerieDao extends ContenuDao {
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT *
+		SELECT c.*
 		FROM contenu c
                 WHERE c.type ='".ContenuType::$galleryItem."' 
                 ORDER BY c.sousrubriques_id, c.rang
@@ -30,12 +31,14 @@ class GalerieDao extends ContenuDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
 
+
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -52,7 +55,7 @@ class GalerieDao extends ContenuDao {
                         $arrayOfContenustep1[$count]['image2'] = $value['image2'];
                         $arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
-                        $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $count++;
                     }
@@ -62,7 +65,7 @@ class GalerieDao extends ContenuDao {
             return $arrayOfContenustep2;
              
         }
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -90,7 +93,7 @@ class GalerieDao extends ContenuDao {
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
@@ -98,6 +101,7 @@ class GalerieDao extends ContenuDao {
 
             $sousrub = "";
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
                 foreach ($requete2 as $key => $value) {
 
                     //put code to define an array of objects
@@ -119,7 +123,7 @@ class GalerieDao extends ContenuDao {
                         $arrayOfContenustep1[$count]['image2'] = $value['image2'];
                         //$arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
-                        $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
                         //var_dump($arrayOfContenustep3[$count2][$count]);
@@ -129,7 +133,7 @@ class GalerieDao extends ContenuDao {
             } 
             return $arrayOfContenustep3;
         }
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") == 0) {
            return $requete2;
         }
     }
@@ -159,7 +163,7 @@ class GalerieDao extends ContenuDao {
 
         //var_dump($requete2);
         //exit();
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfContenustep1 = array();
             $arrayOfContenustep2 = array();
@@ -167,6 +171,7 @@ class GalerieDao extends ContenuDao {
 
             $sousrub = "";
             if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -189,7 +194,7 @@ class GalerieDao extends ContenuDao {
                         $arrayOfContenustep1[$count]['image2'] = $value['image2'];
                         //$arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
 
-                        $arrayOfContenustep2[$count] = Contenu::fromArray($arrayOfContenustep1[$count]);
+                        $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
                         //var_dump($arrayOfContenustep3[$count2][$count]);
@@ -201,7 +206,7 @@ class GalerieDao extends ContenuDao {
             return $arrayOfContenustep3;
              
         }
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") == 0) {
            return $requete2;
         }
     }

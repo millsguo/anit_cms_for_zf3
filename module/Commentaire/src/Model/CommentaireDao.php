@@ -4,6 +4,7 @@ namespace Commentaire\Model;
 
 use Application\DBConnection\ParentDao;
 use Commentaire\Model\Commentaire;
+use Commentaire\Model\Mapper\CommentaireMapper;
 
 class CommentaireDao extends ParentDao{
 
@@ -14,6 +15,7 @@ class CommentaireDao extends ParentDao{
     public function getAllCommentaires($dataType) {
 
         $count = 0;
+        $mapper = new CommentaireMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
@@ -25,19 +27,19 @@ class CommentaireDao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfCommentairestep1 = array();
             
             foreach ($requete2 as $key => $value) {
                 
-                $arrayOfCommentairestep1[$count] = Commentaire::fromArray($value);
+                $arrayOfCommentairestep1[$count] = $mapper->exchangeArray($value);
 
                 $count++;
             }
             
             return $arrayOfCommentairestep1;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
@@ -45,6 +47,7 @@ class CommentaireDao extends ParentDao{
     public function getCommentaire($id) {
 
         $id = (int) $id;
+        $mapper = new CommentaireMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT *
@@ -58,12 +61,15 @@ class CommentaireDao extends ParentDao{
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
         
-        $commentaire = Commentaire::fromArray($requete2);
+        $commentaire = $mapper->exchangeArray($requete2);
 
         return $commentaire;
     }
 
     public function getCommentairesByType($type, $status, $size,$dataType) {
+
+        $count = 0;
+        $mapper = new CommentaireMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
@@ -81,25 +87,27 @@ class CommentaireDao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfCommentairestep1 = array();
             //$arrayOfCommentairestep2 = array();
             //foreach($requete2 as $value){
             foreach ($requete2 as $key => $value) {
                 
-                $arrayOfCommentairestep1[$count] = Commentaire::fromArray($value);
+                $arrayOfCommentairestep1[$count] = $mapper->exchangeArray($value);
 
                 $count++;
             }
             //print_r($arrayOfCommentairestep2);
             return $arrayOfCommentairestep1;
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
     
     public function getCommentairesByRubrique($rubriqueid, $status, $dataType) {
+
+        $mapper = new CommentaireMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT com.commentaire_id, com.commentaire_msg, com.commentaire_row1, com.commentaire_row2, com.commentaire_row3, com.commentaire_row4, com.commentaire_position, com.commentaire_type, com.commentaire_date, com.commentaire_status, com.commentaire_contenuid
@@ -118,27 +126,28 @@ class CommentaireDao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
          
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfCommentairestep1 = array();
             
             if(is_array($requete2)){
                 $count=0;
                 foreach ($requete2 as $key => $value) {
-                    $arrayOfCommentairestep1[$count] = Commentaire::fromArray($value);
+                    $arrayOfCommentairestep1[$count] = $mapper->exchangeArray($value);
                     $count++;
                 }
             }
             //print_r($arrayOfCommentairestep2);
             return $arrayOfCommentairestep1;
         } 
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }
     
     public function getCommentairesByContenu($contenuid, $status, $dataType) {
 
+        $mapper = new CommentaireMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT m.commentaire_id, m.commentaire_msg, m.commentaire_row1, m.commentaire_row2, m.commentaire_row3, m.commentaire_row4, m.commentaire_position, m.commentaire_type, m.commentaire_date, m.commentaire_status, m.commentaire_contenuid
@@ -154,21 +163,21 @@ class CommentaireDao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
          
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfCommentairestep1 = array();
             
             if(is_array($requete2)){
                 $count=0;
                 foreach ($requete2 as $key => $value) {
-                    $arrayOfCommentairestep1[$count] = Commentaire::fromArray($value);
+                    $arrayOfCommentairestep1[$count] = $mapper->exchangeArray($value);
                     $count++;
                 }
             }
             //print_r($arrayOfCommentairestep2);
             return $arrayOfCommentairestep1;
         } 
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
         }
     }

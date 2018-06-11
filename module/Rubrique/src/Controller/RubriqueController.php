@@ -9,6 +9,7 @@ use Rubrique\Model\Rubrique;
 use Rubrique\Form\RubriqueForm;
 use Rubrique\Form\RubriqueInputFilter as InputFilter;
 use Rubrique\Model\RubriqueDao;
+use Rubrique\Model\Mapper\RubriqueMapper;
 use Rubrique\Model\Meta;
 use Rubrique\Form\MetaForm;
 use Rubrique\Form\MetaInputFilter;
@@ -61,9 +62,10 @@ class RubriqueController extends AbstractActionController {
             if ($form->isValid()) {
                 $utils = new Utils();
                 $filemanager = new FileManager();
+                $rubriqueMapper = new RubriqueMapper();
                 //$request->getPost()->set('libelle', $utils->stripTags_replaceHtmlChar_trim($request->getPost('libelle'), true, true, true));
+                $rubrique = $rubriqueMapper->exchangeArray($form->getData());
                 $rubrique->setLibelle($utils->stripTags_replaceHtmlChar_trim($rubrique->getLibelle(), true, true, true));
-                $rubrique = Rubrique::fromArray($form->getData());
                 $filename = $filemanager->formatNameFile($rubrique->getFilename());
                 $rubrique->setFilename($filename);
                 
@@ -147,8 +149,9 @@ class RubriqueController extends AbstractActionController {
 
                 $utils = new Utils();
                 $fileManager = new FileManager();
+                $rubriqueMapper = new RubriqueMapper();
                 $request->getPost()->set('libelle', $utils->stripTags_replaceHtmlChar_trim($request->getPost('libelle'), true, true, true));
-                $rubrique = Rubrique::fromArray($form->getData());
+                $rubrique = $rubriqueMapper->exchangeArray($form->getData());
                 $filename = $fileManager->formatNameFile($rubrique->getFilename());
                 $rubrique->setFilename($filename);
 

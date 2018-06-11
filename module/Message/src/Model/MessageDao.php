@@ -4,6 +4,7 @@ namespace Message\Model;
 
 use Application\DBConnection\ParentDao;
 use Message\Model\Message;
+use Message\Model\Mapper\MessageMapper;
 
 class MessageDao extends ParentDao{
 
@@ -14,6 +15,7 @@ class MessageDao extends ParentDao{
     public function getAllMessages($dataType) {
 
         $count = 0;
+        $messageMapper = new MessageMapper();
 
         $requete = $this->dbGateway->prepare("
 		SELECT *
@@ -25,21 +27,20 @@ class MessageDao extends ParentDao{
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfMessagestep1 = array();
             if (is_array($requete2)) {
                 foreach ($requete2 as $key => $value) {
 
-                    $arrayOfMessagestep1[$count] = Message::fromArray($value);
+                    $arrayOfMessagestep1[$count] = $messageMapper->exchangeArray($value);
 
                     $count++;
                 }
             }
-            //print_r($arrayOfMessagestep2);
             return $arrayOfMessagestep1;
             
-        } elseif ($dataType == "array") {
+        } elseif (strcasecmp($dataType,"array")==0) {
             return $requete2;
         }
     }
@@ -47,7 +48,7 @@ class MessageDao extends ParentDao{
     public function getMessage($id) {
 
         $id = (int) $id;
-
+        $messageMapper = new MessageMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT *
 		FROM message m
@@ -60,14 +61,15 @@ class MessageDao extends ParentDao{
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        $message = Message::fromArray($requete2);
+        $message = $messageMapper->exchangeArray($requete2);
 
         return $message;
     }
 
     public function getMessagesByType($type, $dataType) {
 
-
+        $messageMapper = new MessageMapper();
+        $count=0;
         $requete = $this->dbGateway->prepare("
 		SELECT *
 		FROM message m
@@ -81,13 +83,13 @@ class MessageDao extends ParentDao{
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        if ($dataType == "object") {
+        if (strcasecmp($dataType,"object") == 0) {
             //Put result in an array of objects
             $arrayOfMessagestep1 = array();
             if (is_array($requete2)) {
                 foreach ($requete2 as $key => $value) {
 
-                    $arrayOfMessagestep1[$count] = Message::fromArray($value);
+                    $arrayOfMessagestep1[$count] = $messageMapper->exchangeArray($value);
 
                     $count++;
                 }
@@ -95,7 +97,7 @@ class MessageDao extends ParentDao{
             //print_r($arrayOfMessagestep2);
             return $arrayOfMessagestep1;
         } 
-        elseif ($dataType == "array") {
+        elseif (strcasecmp($dataType,"array") ==0) {
             return $requete2;
         }
     }

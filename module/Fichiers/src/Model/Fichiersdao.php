@@ -6,6 +6,7 @@ namespace Fichiers\Model;
 
 use Fichiers\Model\Fichiers;
 use Application\DBConnection\ParentDao;
+use Fichiers\Model\Mapper\FichiersMapper as FilesMapper;
 
 class Fichiersdao extends ParentDao
 {
@@ -34,23 +35,28 @@ class Fichiersdao extends ParentDao
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
         if (is_array($requete2)) {
-            if ($dataType == "object") {
+            $filesMapper = new FilesMapper();
+            if (strcasecmp($dataType,"object")==0) {
                 //Put result in an array of objects
                 $arrayOfFichierstep = array();
 
                 foreach ($requete2 as $key => $value) {
 
-                    $arrayOfFichierstep[$count] = Fichiers::fromArray($value);
+                    $arrayOfFichierstep[$count] = $filesMapper->exchangeArray($value);
 
                     $count++;
                 }
 
+                return $arrayOfFichierstep;
+
+            } elseif (strcasecmp($dataType,"array")==0) {
+                return $requete2;
             }
             //print_r($arrayOfFichierstep2);
-            return $arrayOfFichierstep;
-        } elseif ($dataType == "array") {
-            return $requete2;
         }
+        /*elseif (strcasecmp($dataType,"array")==0) {
+            return $requete2;
+        }*/
     }
 
     public function getFichiers($id)
@@ -58,7 +64,7 @@ class Fichiersdao extends ParentDao
 
         $id = (int)$id;
         $result = array();
-
+        $filesMapper = new FilesMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT " . self::$fields . "
 		FROM fichiers
@@ -71,7 +77,7 @@ class Fichiersdao extends ParentDao
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        $fichiers = Fichiers::fromArray($requete2);
+        $fichiers = $filesMapper->exchangeArray($requete2);
 
         return $fichiers;
     }
@@ -146,6 +152,7 @@ class Fichiersdao extends ParentDao
     public function getFichiersByFilename($filename)
     {
 
+        $filesMapper = new FilesMapper();
         $requete = $this->dbGateway->prepare("
 		SELECT " . self::$fields ." 
 		FROM fichiers
@@ -159,7 +166,7 @@ class Fichiersdao extends ParentDao
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
 
-        $fichiers = Fichiers::fromArray($requete2);
+        $fichiers = $filesMapper->exchangeArray($requete2);
 
         return $fichiers;
     }

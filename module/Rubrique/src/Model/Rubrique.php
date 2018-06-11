@@ -2,6 +2,8 @@
 
 namespace Rubrique\Model;
 
+use Rubrique\Model\Mapper\RubriqueMapper as Mapper;
+
 
 class Rubrique {
 
@@ -16,52 +18,7 @@ class Rubrique {
     protected $hasUpdateForm;
     protected $hasFileuploadForm;
 
-    public function __construct() {
-        
-    }
-
-    //first hydrator strategy
-    public static function fromArray($row) {
-        $instance = new self();
-        $instance->exchangeArray($row);
-        //print_r($instance);
-        //exit;
-        return $instance;
-    }
-
-    private function exchangeArray($data) {
-
-        if (isset($data['id'])) {
-            $this->setId($data['id']);
-        }
-        if (isset($data['libelle'])) {
-            $this->setLibelle($data['libelle']);
-        }
-        if (isset($data['rang'])) {
-            $this->setRang($data['rang']);
-        }
-        if (isset($data['scope'])) {
-            $this->setScope($data['scope']);
-        }
-        if (isset($data['spaceId'])) {
-            $this->setSpaceId($data['spaceId']);
-        }
-        if (isset($data['filename'])) {
-            $this->setFilename($data['filename']);
-        }
-        if (isset($data['contactForm'])) {
-            $this->setHasContactForm($data['contactForm']);
-        }
-        if (isset($data['messageForm'])) {
-            $this->setHasMessageForm($data['messageForm']);
-        }
-        if (isset($data['updateForm'])) {
-            $this->setHasUpdateForm($data['updateForm']);
-        }
-        if (isset($data['fileuploadForm'])) {
-            $this->setHasFileuploadForm($data['fileuploadForm']);
-        }
-    }
+    public function __construct() {}
 
     public function setId($_id) {
         $this->id = $_id;
@@ -142,10 +99,4 @@ class Rubrique {
     public function gethasFileuploadForm(){
         return $this->hasFileuploadForm;
     }
-    
-    // Add the following method:
-    public function getArrayCopy() {
-        return get_object_vars($this);
-    }
-
 }

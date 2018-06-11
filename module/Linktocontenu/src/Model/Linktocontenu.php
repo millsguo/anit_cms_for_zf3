@@ -26,64 +26,6 @@ class Linktocontenu implements IContenu{
         
     }
 
-    //first hydrator strategy
-    public static function fromArray($row) {
-        $instance = new self();
-        $instance->exchangeArray($row);
-        //print_r($instance);
-        //exit;
-        return $instance;
-    }
-
-    protected function exchangeArray($data) {
-        
-        if (isset($data['id'])) {
-            $this->setId($data['id']);
-        }
-        if (isset($data['contenuobj'])) {
-            $this->setContenu($data['contenuobj']);
-        }
-        if (isset($data['position'])) {
-            $this->setRang($data['position']);
-        }
-        if (isset($data['title'])) {
-            $this->setTitre($data['title']);
-        }
-        if (isset($data['subtitle'])) {
-            $this->setSousTitre($data['subtitle']);
-        }
-        /*
-        if (isset($data['page'])){
-            $this->setRubrique($data['page']);
-        }
-         * 
-         */
-        if (isset($data['section'])) {
-            $this->setSousrubrique($data['section']);
-        }
-        if (isset($data['html'])) {
-            $this->setContenuHtml($data['html']);
-        }
-        if (isset($data['image'])) {
-            $this->setImage($data['image']);
-        }
-        if (isset($data['image2'])) {
-            $this->setImage2($data['image2']);
-        }
-        if(isset($data['type'])){
-            $this->setType($data['type']);
-        }
-        
-        if (isset($data['linktopage'])) {
-            $this->setLinktopage($data['linktopage']);
-        }
-         
-        
-        if (isset($data['linktosection'])) {
-            $this->setLinktosection($data['linktosection']);
-        }
-    }
-
     public function setId($_id) {
         $this->id = $_id;
     }

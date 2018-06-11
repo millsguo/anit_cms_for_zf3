@@ -8,6 +8,7 @@ use Zend\Mvc\I18n\Translator;
 use Login\Form\LoginForm;
 use Login\Form\LoginInputFilter;
 use Login\Model\LoginDao;
+use Loginmgmt\Model\Mapper\LoginMapper;
 use Privatespacelogin\Model\PrivatespaceloginDao;
 use Rubrique\Model\RubriqueDao;
 use Loginmgmt\Model\Login;
@@ -54,7 +55,8 @@ class LoginController extends AbstractActionController {
             $mcrypt = new MCrypt();
             
             if ($form->isValid()) {
-                $login = Login::fromForm($form->getData());
+                $loginMapper = new LoginMapper();
+                $login = $loginMapper->exchangeForm($form->getData());
                 $utils = new Utils();
                 $rowNb = $loginDao->getAuthenticationByUserAndPwd($utils->stripTags_replaceHtmlChar_trim($login->getUser(), true, true, false),
                         $utils->stripTags_replaceHtmlChar_trim($login->getPwd(), true, true, false));
