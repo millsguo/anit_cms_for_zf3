@@ -242,6 +242,11 @@ These are relative url usefull to start :
     - password : anit_private@anit.org
     - url : /siteprivate?myspace=token_of_the_privatespace_stored_in_the_space_table
 
+- In the index.php file in the public folder, you can define the environment where the application have been installed 
+with the global variable ANIT_ENVIRONMENT. By default, it is the value 'dev' that is defined. 
+'dev' allows to disable the application configuration cache and to display the exception. If you put another value, the
+the application configuration cache will be enabled and the debug mode will be disabled.
+
 - Database
     - The configuration of the database is located in module/Application/src/DBConnection/DBConnection.php
     - MySql 5 or above is required
