@@ -81,6 +81,74 @@ class ContenuDao extends ParentDao {
         }
     }
 
+
+    public function getAllContenusOrderByPage($dataType) {
+
+        $count = 0;
+        $sousrubriqueDao = new Sousrubriquedao();
+
+        $requete = $this->dbGateway->prepare("
+		SELECT c.*
+		FROM contenu c
+		JOIN sousrubrique sr on sr.id = c.sousrubriques_id
+        JOIN rubrique r on r.id = sr.rubriques_id
+        ORDER BY r.id, c.type
+		")or die(print_r($this->dbGateway->error_info()));
+
+        $requete->execute();
+
+        $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
+
+        if (strcasecmp($dataType,"object") == 0) {
+            //Put result in an array of objects
+            $arrayOfContenustep1 = array();
+            $arrayOfContenustep2 = array();
+
+            if (is_array($requete2)) {
+                $contenuMapper = new ContenuMapper();
+                $blogContentMapper = new BlogContentMapper();
+
+                foreach ($requete2 as $key => $value) {
+                    //print_r($value);
+                    //put code to define an array of objects
+                    if ($value['sousrubriques_id'] != null && $value['sousrubriques_id'] != "") {
+
+                        $sousrubrique = $sousrubriqueDao->getSousrubrique($value['sousrubriques_id']);
+
+                        $arrayOfContenustep1[$count]['id'] = $value['contenu_id'];
+                        $arrayOfContenustep1[$count]['titre'] = $value['titre'];
+                        $arrayOfContenustep1[$count]['soustitre'] = $value['soustitre'];
+                        $arrayOfContenustep1[$count]['contenu'] = $value['contenuhtml'];
+                        $arrayOfContenustep1[$count]['position'] = $value['rang'];
+                        $arrayOfContenustep1[$count]['image'] = $value['image'];
+                        $arrayOfContenustep1[$count]['image2'] = $value['image2'];
+                        $arrayOfContenustep1[$count]['type'] = $value['type'];
+                        $arrayOfContenustep1[$count]['sousrubrique'] = $sousrubrique;
+
+                        if (strcasecmp($value['type'], ContenuType::$htmlcontent) == 0 or strcasecmp($value['type'], ContenuType::$galleryItem) == 0) {
+                            $arrayOfContenustep2[$count] = $contenuMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif (strcasecmp($value['type'], ContenuType::$blog) == 0) {
+                            $arrayOfContenustep1[$count]['author'] = $value['author'];
+                            $arrayOfContenustep1[$count]['themes'] = $value['themes'];
+                            $arrayOfContenustep1[$count]['blogdate'] = $value['contenu_date'];
+                            $arrayOfContenustep1[$count]['text1'] = $value['othertext1'];
+                            $arrayOfContenustep1[$count]['text2'] = $value['othertext2'];
+                            $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
+
+                            $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        }
+
+                        $count++;
+                    }
+                }
+            }
+
+            return $arrayOfContenustep2;
+        } elseif (strcasecmp($dataType,"array") == 0) {
+            return $requete2;
+        }
+    }
+
     public function getAllContenusByRubriqueAndByContenuType($id, $contenuType, $dataType) {
 
         //var_dump($id);

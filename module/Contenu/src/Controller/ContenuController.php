@@ -2,6 +2,8 @@
 
 namespace Contenu\Controller;
 
+use Contenu\Model\Mapper\ContenuMapper;
+use Linktocontenu\Model\LinktocontenuDao;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
@@ -37,6 +39,15 @@ class ContenuController extends AbstractActionController {
         //print_r($contenuDao->getAllContenus("object"));
         return new ViewModel(array(
             'contenus' => $contenuDao->getAllContenus("object")
+        ));
+    }
+
+    public function indexalltypesAction() {
+
+        $contenuDao = new ContenuDao();
+
+        return new ViewModel(array(
+            'contenus' => $contenuDao->getAllContenusOrderByPage("object")
         ));
     }
 
