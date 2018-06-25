@@ -8,11 +8,13 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
-class RubriqueInputFilter extends InputFilter {
+class RubriqueInputFilter extends InputFilter
+{
 
     protected $translator;
 
-    public function __construct() {
+    public function __construct()
+    {
 
         $this->translator = new Utils();
 
@@ -68,7 +70,7 @@ class RubriqueInputFilter extends InputFilter {
                         ),
                     ),
                 ),
-        )));
+            )));
 
         $this->add(array(
             'name' => 'spacesList',
@@ -115,7 +117,7 @@ class RubriqueInputFilter extends InputFilter {
             'name' => 'messageForm',
             'required' => true
         ));
-        
+
         $this->add(array(
             'name' => 'updateForm',
             'required' => true
@@ -139,8 +141,17 @@ class RubriqueInputFilter extends InputFilter {
                             \Zend\Validator\StringLength::TOO_LONG => $this->translator->translate('La taille du fichier doit pas dépasser 128 caractères'),
                             \Zend\Validator\StringLength::INVALID => $this->translator->translate('La taille du fichier ne doit pas dépasser 128 caractères'),
                         ),),
+                ),
+                array(
+                    'name' => 'Regex',
+                    'options' => array(
+                        'pattern' => '/^.*\.(phtml)$/i',
+                        'messages' => array(
+                            \Zend\Validator\Regex::NOT_MATCH => $this->translator->translate('L\'extension ne se termine pas par phtml')
+                        )
+                    )
                 )
-            ),
+            )
         ));
     }
 
