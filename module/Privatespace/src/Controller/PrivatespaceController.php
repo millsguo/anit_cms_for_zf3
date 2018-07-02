@@ -22,7 +22,7 @@ class PrivatespaceController extends AbstractActionController {
         $this->cache = $cache;
         $this->translator = $translator;
     }
-    
+
     public function indexAction() {
 
         $privatespaceDao = new PrivatespaceDao();
@@ -36,10 +36,10 @@ class PrivatespaceController extends AbstractActionController {
     public function addAction() {
 
         $form = new PrivatespaceForm();
-        
+
         // $this->translator=$this->getServiceLocator()->get('translator');
         $form->get('submit')->setAttribute('value', $this->translator->translate('Ajouter'));
-        
+
         $privatespaceDao = new PrivatespaceDao();
         $space = new Privatespace();
 
@@ -56,12 +56,12 @@ class PrivatespaceController extends AbstractActionController {
             if ($form->isValid()) {
                 $utils = new Utils();
                 $request->getPost()->set('name', $utils->stripTags_replaceHtmlChar_trim($request->getPost('name'), true, true, true));
-                
+
                 $privatespaceDao->saveSpace($space);
-                
+
                 //flush cache
                 $this->cache->getCacheService()->flush();
-                
+
                 // Redirect to list of privatespaces
                 return $this->redirect()->toRoute('privatespace', array('action' => 'index'));
             } else {
@@ -81,7 +81,7 @@ class PrivatespaceController extends AbstractActionController {
 
         $privatespaceDao = new PrivatespaceDao();
         // $this->translator=$this->getServiceLocator()->get('translator');
-        
+
         $id = (int) $this->params()->fromRoute('id', 0);
 
         if (!$id) {
@@ -99,11 +99,11 @@ class PrivatespaceController extends AbstractActionController {
                 return $this->notFoundAction();
             }
         }
-        
+
         $form = new PrivatespaceForm();
         //form : bind data to automatically build privatespace object
         $form->bind($space);
-        
+
         $form->get('submit')->setAttribute('value', $this->translator->translate('Modifier'));
 
         $request = $this->getRequest();
@@ -119,9 +119,9 @@ class PrivatespaceController extends AbstractActionController {
                 $utils = new Utils();
                 $request->getPost()->set('libelle', $utils->stripTags_replaceHtmlChar_trim($request->getPost('libelle'), true, true, true));
                 //$privatespace = Rubrique::fromArray($form->getData());
-                
+
                 $privatespaceDao->saveSpace($space);
-                
+
                 //flush cache
                 $this->cache->getCacheService()->flush();
 
@@ -144,10 +144,10 @@ class PrivatespaceController extends AbstractActionController {
     }
 
     public function deleteAction() {
-        
+
         $privatespaceDao = new PrivatespaceDao();
         // $this->translator=$this->getServiceLocator()->get('translator');
-        
+
         $id = (int) $this->params()->fromRoute('id', 0);
 
         if (!$id) {
@@ -162,9 +162,9 @@ class PrivatespaceController extends AbstractActionController {
 
             if ($del == $this->translator->translate('Oui')) {
                 $id = (int) $request->getPost('id');
-                
+
                 $privatespaceDao->deleteSpace($id);
-                
+
                 //flush cache
                 $this->cache->getCacheService()->flush();
             }
@@ -180,5 +180,5 @@ class PrivatespaceController extends AbstractActionController {
             'privatespace' => $privatespace
         );
     }
-    
+
 }

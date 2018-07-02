@@ -19,17 +19,24 @@ use Zend\Mvc\I18n\Translator;
 use ExtLib\Utils;
 use ExtLib\FileManager;
 
-class RubriqueController extends AbstractActionController {
+class RubriqueController extends AbstractActionController
+{
 
     private $cache;
     private $translator;
+    private $sitepublicViewsPath;
+    private $siteprivateViewsPath;
 
-    public function __construct(CacheDataListener $cacheDataListener, Translator $translator){
+    public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
+    {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
+        $this->sitepublicViewsPath = BASE_PATH . '/module/Sitepublic/view/sitepublic/sitepublic/';
+        $this->siteprivateViewsPath = BASE_PATH . '/module/Siteprivate/view/siteprivate/Siteprivate/';
     }
 
-    public function indexAction() {
+    public function indexAction()
+    {
 
         $rubriqueDao = new RubriqueDao();
 
@@ -39,22 +46,19 @@ class RubriqueController extends AbstractActionController {
     }
 
     // Add content to this method:
-    public function addAction() {
-
+    public function addAction()
+    {
         $form = new RubriqueForm();
-        //$path = BASE_PATH . "/module/Siteprivate/view/siteprivate/siteprivate/";
 
-        // $this->translator = $this->getServiceLocator()->get('translator');
         $form->get('submit')->setAttribute('value', $this->translator->translate('Ajouter'));
 
         $rubriqueDao = new RubriqueDao();
         $rubrique = new Rubrique();
 
-        //$form->bind($rubrique);
         $request = $this->getRequest();
 
         if ($request->isPost()) {
-            
+
             $form->setInputFilter(new InputFilter());
 
             $form->setData($request->getPost());
@@ -68,17 +72,16 @@ class RubriqueController extends AbstractActionController {
                 $rubrique->setLibelle($utils->stripTags_replaceHtmlChar_trim($rubrique->getLibelle(), true, true, true));
                 $filename = $filemanager->formatNameFile($rubrique->getFilename());
                 $rubrique->setFilename($filename);
-                
+
                 $idInserted = $rubriqueDao->saveRubrique($rubrique);
-                
-                /* TO DO create phtml file
-                if(strcmp($rubrique->getScope(),'private') == 0){
-                    //
-                    $filemanager->createFile($path, $filename);
+                $path = $this->sitepublicViewsPath;
+
+                if ($rubrique->getSpaceId() > 0) {
+                    $path = $this->siteprivateViewsPath;
                 }
-                 * 
-                 */
-                
+
+                $filemanager->createFile($path, $filename);
+
                 //flush cache
                 $this->cache->getCacheService()->flush();
                 // Redirect to list of rubriques
@@ -94,17 +97,17 @@ class RubriqueController extends AbstractActionController {
             'error' => '');
     }
 
-    public function editAction() {
+    public function editAction()
+    {
 
         $rubriqueDao = new RubriqueDao();
         $metaDao = new MetaDao();
-        //$path = BASE_PATH . "/module/Siteprivate/view/siteprivate/siteprivate/";
 
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int)$this->params()->fromRoute('id', 0);
 
         if (!$id) {
             return $this->redirect()->toRoute('rubrique', array(
-                        'action' => 'add'
+                'action' => 'add'
             ));
         }
 
@@ -126,10 +129,10 @@ class RubriqueController extends AbstractActionController {
         $form->get('scope')->setAttribute('value', $rubrique->getScope());
         $form->get('spaceId')->setAttribute('value', $rubrique->getSpaceId());
         $form->get('filename')->setAttribute('value', $rubrique->getFilename());
-        $form->get('contactForm')->setAttribute('value', (int) $rubrique->getHasContactForm());
-        $form->get('messageForm')->setAttribute('value', (int) $rubrique->getHasMessageForm());
-        $form->get('updateForm')->setAttribute('value', (int) $rubrique->getHasUpdateForm());
-        $form->get('fileuploadForm')->setAttribute('value', (int) $rubrique->gethasFileuploadForm());
+        $form->get('contactForm')->setAttribute('value', (int)$rubrique->getHasContactForm());
+        $form->get('messageForm')->setAttribute('value', (int)$rubrique->getHasMessageForm());
+        $form->get('updateForm')->setAttribute('value', (int)$rubrique->getHasUpdateForm());
+        $form->get('fileuploadForm')->setAttribute('value', (int)$rubrique->gethasFileuploadForm());
         $form->get('submit')->setAttribute('value', $this->translator->translate('Modifier'));
 
         $metaForm = new MetaForm();
@@ -140,7 +143,6 @@ class RubriqueController extends AbstractActionController {
 
         if ($request->isPost()) {
 
-            //$form->setInputFilter($rubrique->getInputFilter());
             $form->setInputFilter(new InputFilter());
 
             $form->setData($request->getPost());
@@ -158,16 +160,18 @@ class RubriqueController extends AbstractActionController {
                 if (strcmp($rubrique->getScope(), "public") == 0) {
                     $rubrique->setSpaceId(-1);
                 }
-                
-                /*TODO renamefile
+
                 $rubriqueOld = $rubriqueDao->getRubrique($rubrique->getId());
-                else{
-                    if (strcmp($rubriqueOld->getFilename(), $rubrique->getFilename()) != 0) {
-                        $fileManager->renameExistingFile($path, $rubriqueOld->getFilename(), $rubrique->getFilename());
-                    }
+
+                $path = $this->sitepublicViewsPath;
+
+                if ($rubrique->getSpaceId() > 0) {
+                    $path = $this->siteprivateViewsPath;
                 }
-                 * 
-                 */
+
+                if (strcmp($rubriqueOld->getFilename(), $rubrique->getFilename()) != 0) {
+                    $fileManager->renameExistingFile($path, $rubriqueOld->getFilename(), $rubrique->getFilename());
+                }
 
                 $rubriqueDao->saveRubrique($rubrique);
 
@@ -196,12 +200,14 @@ class RubriqueController extends AbstractActionController {
         );
     }
 
-    public function deleteAction() {
+    public
+    function deleteAction()
+    {
 
         $rubriqueDao = new RubriqueDao();
         $fileManager = new FileManager();
 
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int)$this->params()->fromRoute('id', 0);
 
         if (!$id) {
             return $this->redirect()->toRoute('rubrique');
@@ -216,10 +222,15 @@ class RubriqueController extends AbstractActionController {
             $del = $request->getPost('del', $this->translator->translate('Non'));
 
             if ($del == $this->translator->translate('Oui')) {
-                $id = (int) $request->getPost('id');
+                $id = (int)$request->getPost('id');
 
                 $rubriqueDao->deleteRubrique($id);
-                $fileManager->deletefile($rubrique->getFileName(), $this->path);
+                $path = $this->sitepublicViewsPath;
+                if ($rubrique->getSpaceId() > 0) {
+                    $path = $this->siteprivateViewsPath;
+                }
+
+                $fileManager->deletefile($rubrique->getFileName(), $path);
                 //flush cache
                 $this->cache->getCacheService()->flush();
             }
@@ -234,7 +245,8 @@ class RubriqueController extends AbstractActionController {
         );
     }
 
-    function addmetaajaxAction() {
+    function addmetaajaxAction()
+    {
 
         $form = new MetaForm();
         $metaDao = new MetaDao();
@@ -269,7 +281,7 @@ class RubriqueController extends AbstractActionController {
                 }
 
                 return new JsonModel(
-                        $result
+                    $result
                 );
             } else {
                 return new JsonModel(array(
@@ -282,9 +294,10 @@ class RubriqueController extends AbstractActionController {
             'error' => '');
     }
 
-    function updatemetaajaxAction() {
+    function updatemetaajaxAction()
+    {
 
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int)$this->params()->fromRoute('id', 0);
         $meta = new Meta();
         // $this->translator = $this->getServiceLocator()->get('translator');
         $metaDao = new MetaDao();
@@ -298,7 +311,7 @@ class RubriqueController extends AbstractActionController {
             $meta->setMetakey($utils->stripTags_replaceHtmlChar_trim($request->getPost('metakey'), true, true, true));
             $meta->setMetavalue($utils->stripTags_replaceHtmlChar_trim($request->getPost('metavalue'), true, true, true));
             $meta->setMetaid($id);
-            $meta->setRubriqueid((int) $request->getPost('rubriqueid'));
+            $meta->setRubriqueid((int)$request->getPost('rubriqueid'));
             //get number of row inserted
             $row = $metaDao->saveMeta($meta);
             $result = array();
@@ -311,14 +324,15 @@ class RubriqueController extends AbstractActionController {
             }
 
             return new JsonModel(
-                    $result
+                $result
             );
         }
     }
 
-    function deletemetaajaxAction() {
+    function deletemetaajaxAction()
+    {
 
-        $metaid = (int) $this->params()->fromRoute('id', 0);
+        $metaid = (int)$this->params()->fromRoute('id', 0);
         // $this->translator = $this->getServiceLocator()->get('translator');
         $metaDao = new MetaDao();
         $request = $this->getRequest();
@@ -337,7 +351,7 @@ class RubriqueController extends AbstractActionController {
             }
 
             return new JsonModel(
-                    $result
+                $result
             );
         }
     }

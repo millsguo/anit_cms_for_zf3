@@ -145,9 +145,9 @@ class RubriqueInputFilter extends InputFilter
                 array(
                     'name' => 'Regex',
                     'options' => array(
-                        'pattern' => '/^.*\.(phtml)$/i',
+                        'pattern' => '/^.*\.(phtml)$/',
                         'messages' => array(
-                            \Zend\Validator\Regex::NOT_MATCH => $this->translator->translate('L\'extension ne se termine pas par phtml')
+                            \Zend\Validator\Regex::NOT_MATCH => $this->translator->translate('L\'extension doit se terminer par phtml en minuscule')
                         )
                     )
                 )

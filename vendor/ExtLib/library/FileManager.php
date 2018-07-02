@@ -64,6 +64,7 @@ final class FileManager
     public function renameExistingFile($path, $oldName, $newName)
     {
         return @rename($path . $oldName, $path . $newName);
+        //var_dump(@rename($path . $oldName, $path . $newName));
     }
 
     //fonction d'upload de fichier
@@ -199,10 +200,10 @@ final class FileManager
     }
 
     //function de suppression de fichier
-    function deletefile($fichier, $chemin)
+    function deletefile($file, $path)
     {
-        if ((file_exists($chemin . $fichier) == true) && ($fichier != "")) {
-            unlink($chemin . $fichier);
+        if ((file_exists($path . $file)) && (isset($file))) {
+            @unlink($path . $file);
         }
     }
 
