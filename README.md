@@ -52,6 +52,8 @@ Principles
 ----------
 Let's talk about the principles of the cms:
 - Page (Module: Rubrique): it's a web page, the main container.
+When you create a new page, the related phtml file is created in the sitepublic or in the siteprivate view folder.
+Just verify that you have the appropriate rights to manage files from the application.
 
 - Section (Module: Sous-Rubrique) : a page has one or many sections. 
 a section does not represent a section tag in html, it represents a piece of your page.
@@ -116,7 +118,6 @@ customize the content in order to fit the design of your page.
         - manage the case of a user who forgot his password.
         - manage comment's form 
         - manage contact's form
-    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module in view/siteprivate/Siteprivate
     
     
 - Sitepublic (Module: Sitepublic):
@@ -124,7 +125,6 @@ customize the content in order to fit the design of your page.
         - manage the display of the pages related to your public web site.
         - manage comment's form
         - manage contact's form
-    When you create a new page through the form available in the backoffice then you must create manually the phtml file in the module in view/sitepublic/sitepublic
  
 - Pagews (Module: Pagews):  It contains web services. It gives you pagearrangement object related to a page (public or private)
 
