@@ -56,6 +56,18 @@ $title = $this->translate('Mon espace');
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        $('#passwordIdTag').prop('readonly', true);
+        $('#passwordIdTag').on('focus', function () {
+            $('#passwordIdTag').removeAttr('readonly');
+        });
+        setTimeout(function(){
+            $('#passwordIdTag').trigger('focus');
+        }, 100);
+        setTimeout(function(){
+            $('#usernameIdTag').trigger('focus');
+        }, 300);
+
         $('#submitbutton').on('click', function(){
            //hash password before submiting 
            var shaObj = new jsSHA("SHA-512", "TEXT");
