@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-05 17:07+0200\n"
-"PO-Revision-Date: 2018-04-05 18:56+0200\n"
+"POT-Creation-Date: 2018-09-06 19:13+0200\n"
+"PO-Revision-Date: 2018-09-06 19:15+0200\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: Me & myself\n"
 "Language: en_US\n"
@@ -18,18 +18,20 @@ msgstr ""
 
 #: Blogcontent/src/Controller/BlogcontentController.php:48
 #: Commentaire/src/Controller/CommentaireController.php:44
-#: Contenu/src/Controller/ContenuController.php:48
-#: Contenu/src/Controller/ContenuController.php:170
+#: Contenu/src/Controller/ContenuController.php:59
+#: Contenu/src/Controller/ContenuController.php:181
 #: Fichiers/src/Controller/FichiersController.php:70
 #: Galerie/src/Controller/GalerieController.php:56
 #: Galerie/src/Controller/GalerieController.php:176
 #: Linktocontenu/src/Controller/LinktocontenuController.php:49
 #: Linktocontenu/src/Controller/LinktocontenuController.php:149
 #: Linktocontenu/src/Controller/LinktocontenuController.php:302
+#: Mapcontent/src/Controller/MapcontentController.php:55
+#: Mapcontent/src/Controller/MapcontentController.php:183
 #: Message/src/Controller/MessageController.php:46
 #: Privatespace/src/Controller/PrivatespaceController.php:41
 #: Privatespacelogin/src/Controller/PrivatespaceloginController.php:61
-#: Rubrique/src/Controller/RubriqueController.php:47
+#: Rubrique/src/Controller/RubriqueController.php:53
 #: Siteprivate/src/Controller/SiteprivateController.php:541
 #: Sousrubrique/src/Controller/SousrubriqueController.php:48
 msgid "Ajouter"
@@ -41,17 +43,18 @@ msgstr "Add"
 #: Message/src/Controller/MessageController.php:99
 #: Privatespace/src/Controller/PrivatespaceController.php:107
 #: Privatespacelogin/src/Controller/PrivatespaceloginController.php:196
-#: Rubrique/src/Controller/RubriqueController.php:131
+#: Rubrique/src/Controller/RubriqueController.php:136
 #: Sousrubrique/src/Controller/SousrubriqueController.php:120
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:61
 #: Commentaire/view/commentaire/commentaire/index.phtml:66
 #: Contenu/view/contenu/contenu/index.phtml:63
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:77
 #: Fichiers/view/fichiers/fichiers/index.phtml:131
 #: Galerie/view/galerie/galerie/index.phtml:61
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:67
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:79
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:63
 #: Message/view/message/message/index.phtml:65
-#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:63
 #: Privatespace/view/privatespace/privatespace/index.phtml:63
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:64
 #: Rubrique/view/rubrique/rubrique/edit.phtml:133
@@ -64,21 +67,22 @@ msgstr "Update"
 
 #: Blogcontent/src/Controller/BlogcontentController.php:256
 #: Commentaire/src/Controller/CommentaireController.php:212
-#: Contenu/src/Controller/ContenuController.php:235
+#: Contenu/src/Controller/ContenuController.php:246
 #: Fichiers/src/Controller/FichiersController.php:290
 #: Galerie/src/Controller/GalerieController.php:247
 #: Linktocontenu/src/Controller/LinktocontenuController.php:359
 #: Loginmgmt/src/Controller/LoginmgmtController.php:203
+#: Mapcontent/src/Controller/MapcontentController.php:265
 #: Message/src/Controller/MessageController.php:194
 #: Privatespace/src/Controller/PrivatespaceController.php:161
 #: Privatespacelogin/src/Controller/PrivatespaceloginController.php:231
 #: Privatespacelogin/src/Form/PrivatespaceloginForm.php:206
-#: Rubrique/src/Controller/RubriqueController.php:213
+#: Rubrique/src/Controller/RubriqueController.php:222
 #: Rubrique/src/Form/RubriqueForm.php:87 Rubrique/src/Form/RubriqueForm.php:99
 #: Rubrique/src/Form/RubriqueForm.php:111
 #: Rubrique/src/Form/RubriqueForm.php:123
 #: Sousrubrique/src/Controller/SousrubriqueController.php:178
-#: Application/view/layout/layout.phtml:187
+#: Application/view/layout/layout.phtml:189
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:21
 #: Commentaire/view/commentaire/commentaire/delete.phtml:22
 #: Contenu/view/contenu/contenu/delete.phtml:21
@@ -86,6 +90,7 @@ msgstr "Update"
 #: Galerie/view/galerie/galerie/delete.phtml:21
 #: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:21
 #: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:21
+#: Mapcontent/view/mapcontent/mapcontent/delete.phtml:21
 #: Message/view/message/message/delete.phtml:22
 #: Privatespace/view/privatespace/privatespace/delete.phtml:21
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:21
@@ -96,7 +101,7 @@ msgstr "Update"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:179
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:177
 #: Siteprivate/view/siteprivate/layout/layout.phtml:104
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:179
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:186
 #: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:21
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:118
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:148
@@ -105,21 +110,22 @@ msgstr "No"
 
 #: Blogcontent/src/Controller/BlogcontentController.php:258
 #: Commentaire/src/Controller/CommentaireController.php:214
-#: Contenu/src/Controller/ContenuController.php:237
+#: Contenu/src/Controller/ContenuController.php:248
 #: Fichiers/src/Controller/FichiersController.php:292
 #: Galerie/src/Controller/GalerieController.php:249
 #: Linktocontenu/src/Controller/LinktocontenuController.php:361
 #: Loginmgmt/src/Controller/LoginmgmtController.php:205
+#: Mapcontent/src/Controller/MapcontentController.php:267
 #: Message/src/Controller/MessageController.php:196
 #: Privatespace/src/Controller/PrivatespaceController.php:163
 #: Privatespacelogin/src/Controller/PrivatespaceloginController.php:235
 #: Privatespacelogin/src/Form/PrivatespaceloginForm.php:206
-#: Rubrique/src/Controller/RubriqueController.php:215
+#: Rubrique/src/Controller/RubriqueController.php:224
 #: Rubrique/src/Form/RubriqueForm.php:87 Rubrique/src/Form/RubriqueForm.php:99
 #: Rubrique/src/Form/RubriqueForm.php:111
 #: Rubrique/src/Form/RubriqueForm.php:123
 #: Sousrubrique/src/Controller/SousrubriqueController.php:180
-#: Application/view/layout/layout.phtml:168
+#: Application/view/layout/layout.phtml:170
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:20
 #: Commentaire/view/commentaire/commentaire/delete.phtml:21
 #: Contenu/view/contenu/contenu/delete.phtml:20
@@ -127,6 +133,7 @@ msgstr "No"
 #: Galerie/view/galerie/galerie/delete.phtml:20
 #: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:20
 #: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:20
+#: Mapcontent/view/mapcontent/mapcontent/delete.phtml:20
 #: Message/view/message/message/delete.phtml:21
 #: Privatespace/view/privatespace/privatespace/delete.phtml:20
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:20
@@ -137,7 +144,7 @@ msgstr "No"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:160
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:158
 #: Siteprivate/view/siteprivate/layout/layout.phtml:85
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:160
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:167
 #: Sousrubrique/view/sousrubrique/sousrubrique/delete.phtml:20
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:97
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:127
@@ -208,7 +215,7 @@ msgstr "You must put a date"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:88
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:74
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:92
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:88
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:92
 msgid "Nom"
 msgstr "Name"
 
@@ -217,7 +224,7 @@ msgstr "Name"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:94
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:80
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:98
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:94
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:98
 msgid "Entreprise"
 msgstr "Company"
 
@@ -228,7 +235,7 @@ msgstr "Company"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:100
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:86
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:104
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:100
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:104
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/index.phtml:259
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:249
 msgid "Email"
@@ -365,6 +372,8 @@ msgstr "Maximum of 128 characters"
 #: Galerie/view/galerie/galerie/edit.phtml:76
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:239
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:239
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:229
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:122
 msgid "Vous devez choisir une rubrique"
 msgstr "You must choose a page"
 
@@ -388,7 +397,9 @@ msgstr "Subtitle"
 #: Sousrubrique/src/Form/SousrubriqueForm.php:70
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:48
 #: Contenu/view/contenu/contenu/index.phtml:50
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:49
 #: Galerie/view/galerie/galerie/index.phtml:48
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:50
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:50
 #: Rubrique/view/rubrique/rubrique/index.phtml:52
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:47
@@ -404,13 +415,15 @@ msgstr "Rank"
 #: Galerie/view/galerie/galerie/add.phtml:80
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:74
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:74
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:158
 msgid "Sélectionner une sous-rubrique"
 msgstr "Choose a section"
 
 #: Contenu/src/Form/ContenuInputFilter.php:92
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:92
 #: Message/src/Form/MessageInputFilter.php:149
-#: Rubrique/src/Form/RubriqueInputFilter.php:67
+#: Rubrique/src/Form/RubriqueInputFilter.php:69
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:71
 msgid "La position doit être vide ou doit être un nombre"
 msgstr "Rank can be empty or a number"
@@ -427,6 +440,8 @@ msgstr "Rank can be empty or a number"
 #: Galerie/view/galerie/galerie/edit.phtml:82
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:246
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:246
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:235
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:128
 msgid "Vous devez choisir une sous-rubrique"
 msgstr "You must choose a section"
 
@@ -470,19 +485,19 @@ msgstr "Image"
 msgid "Image 2"
 msgstr "Image 2"
 
-#: Login/src/Controller/LoginController.php:64
+#: Login/src/Controller/LoginController.php:66
 #: Siteprivate/src/Controller/SiteprivateController.php:121
 msgid ""
 "Veuillez recommencer le nom d'utilisateur et/ou le mot de passe sont "
 "incorrects"
 msgstr "Please try again, username or password are not valid"
 
-#: Login/src/Controller/LoginController.php:95
+#: Login/src/Controller/LoginController.php:97
 #: Siteprivate/src/Controller/SiteprivateController.php:156
 msgid "Veuillez contacter l'administrateur du site svp."
 msgstr "Please contact your administrator."
 
-#: Login/src/Controller/LoginController.php:102
+#: Login/src/Controller/LoginController.php:104
 #: Siteprivate/src/Controller/SiteprivateController.php:164
 msgid "Veuillez rafraichir la page et recommencer svp."
 msgstr "Please refresh the page and try again."
@@ -521,7 +536,7 @@ msgstr "type the characters from above"
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:114
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:100
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:118
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:114
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:118
 msgid "Vérification"
 msgstr "Verification"
 
@@ -685,6 +700,42 @@ msgstr "The password must have a minimum of 5 characters"
 msgid "Vous devez choisir un rôle"
 msgstr "You must choose a role"
 
+#: Mapcontent/src/Form/Mapcontentcollectionfieldset.php:19
+msgid "Noter les coordonnées GPS et un descriptif"
+msgstr "Record GPS coordinates and its description"
+
+#: Mapcontent/src/Form/Mapcontentlocationfiedset.php:18
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+msgid "Géolocalisation"
+msgstr "Geolocation"
+
+#: Mapcontent/src/Form/Mapcontentlocationfiedset.php:23
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+msgid "Latitude"
+msgstr "Latitude"
+
+#: Mapcontent/src/Form/Mapcontentlocationfiedset.php:36
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+msgid "Longitude"
+msgstr "Longitude"
+
+#: Mapcontent/src/Form/Mapcontentlocationfiedset.php:50
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+msgid "Détails concernant les coordonnées"
+msgstr "Information details about the coordinates"
+
 #: Message/src/Form/MessageForm.php:69
 msgid "Autre ligne"
 msgstr "Row 4"
@@ -704,7 +755,9 @@ msgstr "Content of the message"
 #: Sousrubrique/src/Form/SousrubriqueForm.php:61
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:47
 #: Contenu/view/contenu/contenu/index.phtml:49
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:48
 #: Galerie/view/galerie/galerie/index.phtml:47
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:49
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:49
 #: Privatespace/view/privatespace/privatespace/index.phtml:51
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:51
@@ -715,8 +768,8 @@ msgstr "Wording"
 #: Privatespace/src/Form/PrivatespaceInputFilter.php:40
 #: Rubrique/src/Form/MetaInputFilter.php:44
 #: Rubrique/src/Form/MetaInputFilter.php:73
-#: Rubrique/src/Form/RubriqueInputFilter.php:40
-#: Rubrique/src/Form/RubriqueInputFilter.php:94
+#: Rubrique/src/Form/RubriqueInputFilter.php:42
+#: Rubrique/src/Form/RubriqueInputFilter.php:96
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:44
 msgid "La taille minimum du libell&eacute; est de 1 caractère"
 msgstr "The wording can not be empty"
@@ -724,8 +777,8 @@ msgstr "The wording can not be empty"
 #: Privatespace/src/Form/PrivatespaceInputFilter.php:41
 #: Rubrique/src/Form/MetaInputFilter.php:45
 #: Rubrique/src/Form/MetaInputFilter.php:74
-#: Rubrique/src/Form/RubriqueInputFilter.php:41
-#: Rubrique/src/Form/RubriqueInputFilter.php:95
+#: Rubrique/src/Form/RubriqueInputFilter.php:43
+#: Rubrique/src/Form/RubriqueInputFilter.php:97
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:45
 msgid "La taille du libell&eacute; doit pas dépasser 128 caractères"
 msgstr "Maximum of 128 characters for a wording"
@@ -733,8 +786,8 @@ msgstr "Maximum of 128 characters for a wording"
 #: Privatespace/src/Form/PrivatespaceInputFilter.php:42
 #: Rubrique/src/Form/MetaInputFilter.php:46
 #: Rubrique/src/Form/MetaInputFilter.php:75
-#: Rubrique/src/Form/RubriqueInputFilter.php:42
-#: Rubrique/src/Form/RubriqueInputFilter.php:96
+#: Rubrique/src/Form/RubriqueInputFilter.php:44
+#: Rubrique/src/Form/RubriqueInputFilter.php:98
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:46
 msgid "La taille du libell&eacute; ne doit pas dépasser 128 caractères"
 msgstr "The label can not have more than 128 characters"
@@ -742,8 +795,8 @@ msgstr "The label can not have more than 128 characters"
 #: Privatespace/src/Form/PrivatespaceInputFilter.php:48
 #: Rubrique/src/Form/MetaInputFilter.php:52
 #: Rubrique/src/Form/MetaInputFilter.php:81
-#: Rubrique/src/Form/RubriqueInputFilter.php:48
-#: Rubrique/src/Form/RubriqueInputFilter.php:102
+#: Rubrique/src/Form/RubriqueInputFilter.php:50
+#: Rubrique/src/Form/RubriqueInputFilter.php:104
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:52
 msgid "Vous devez saisir un libell&eacute;"
 msgstr "You must type a label"
@@ -825,9 +878,9 @@ msgstr "You must choose a private space"
 msgid "Vous devez préciser si vous validez l'inscription"
 msgstr "You must choose to validate or not the subscription"
 
-#: Rubrique/src/Controller/RubriqueController.php:262
-#: Rubrique/src/Controller/RubriqueController.php:305
-#: Rubrique/src/Controller/RubriqueController.php:331
+#: Rubrique/src/Controller/RubriqueController.php:277
+#: Rubrique/src/Controller/RubriqueController.php:321
+#: Rubrique/src/Controller/RubriqueController.php:348
 msgid "Un problème est survenu, veuillez recommencer"
 msgstr "A problem occurred, please try again"
 
@@ -853,17 +906,21 @@ msgstr ""
 "name of the file related to the page, please add .phtml at the end (ex: "
 "mypage.phtml)"
 
-#: Rubrique/src/Form/RubriqueInputFilter.php:138
+#: Rubrique/src/Form/RubriqueInputFilter.php:140
 msgid "La taille minimum du fichier est de 1 caractère"
 msgstr "The filename must have a minimum of 1 character"
 
-#: Rubrique/src/Form/RubriqueInputFilter.php:139
+#: Rubrique/src/Form/RubriqueInputFilter.php:141
 msgid "La taille du fichier doit pas dépasser 128 caractères"
 msgstr "The filename can not have more than 128 characters"
 
-#: Rubrique/src/Form/RubriqueInputFilter.php:140
+#: Rubrique/src/Form/RubriqueInputFilter.php:142
 msgid "La taille du fichier ne doit pas dépasser 128 caractères"
 msgstr "The filename can not have more than 128 characters"
+
+#: Rubrique/src/Form/RubriqueInputFilter.php:150
+msgid "L'extension doit se terminer par phtml en minuscule"
+msgstr "The extension file must be phtml in lower case"
 
 #: Siteprivate/src/Controller/SiteprivateController.php:590
 msgid "Un compte existe déjà avec cette email"
@@ -1018,66 +1075,74 @@ msgid "Type de Contenus"
 msgstr "Content type"
 
 #: Application/view/layout/layout.phtml:70
-msgid "Contenus"
-msgstr "Std Content"
+msgid "Std, Blog, Gallery, Map"
+msgstr "Std, Blog, Gallery, Map"
 
 #: Application/view/layout/layout.phtml:71
-msgid "Galeries"
-msgstr "Img Content"
+msgid "Contenus"
+msgstr "Std content"
 
 #: Application/view/layout/layout.phtml:72
+msgid "Galeries"
+msgstr "Img content"
+
+#: Application/view/layout/layout.phtml:73
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:3
 msgid "Blog"
 msgstr "Blog content"
 
-#: Application/view/layout/layout.phtml:73
+#: Application/view/layout/layout.phtml:74
+msgid "Carte GPS"
+msgstr "Map content"
+
+#: Application/view/layout/layout.phtml:75
 msgid "Liens"
 msgstr "Links"
 
-#: Application/view/layout/layout.phtml:76
+#: Application/view/layout/layout.phtml:78
 msgid "Disposition"
 msgstr "Page arrangement"
 
-#: Application/view/layout/layout.phtml:77
+#: Application/view/layout/layout.phtml:79
 msgid "Messages"
 msgstr "Messages"
 
-#: Application/view/layout/layout.phtml:78
+#: Application/view/layout/layout.phtml:80
 msgid "Commentaires"
 msgstr "Comments"
 
-#: Application/view/layout/layout.phtml:79
+#: Application/view/layout/layout.phtml:81
 msgid "Fichiers"
 msgstr "Files"
 
-#: Application/view/layout/layout.phtml:82
+#: Application/view/layout/layout.phtml:84
 msgid "Visualisation"
 msgstr "Visualize"
 
 # Loginmgmt
-#: Application/view/layout/layout.phtml:91
+#: Application/view/layout/layout.phtml:93
 msgid "Fichiers utilisateurs"
 msgstr "Files uploaded"
 
-#: Application/view/layout/layout.phtml:95
+#: Application/view/layout/layout.phtml:97
 msgid "&Agrave; valider"
 msgstr "waiting for validation"
 
-#: Application/view/layout/layout.phtml:96
+#: Application/view/layout/layout.phtml:98
 msgid "Validés"
 msgstr "Validated"
 
-#: Application/view/layout/layout.phtml:109
+#: Application/view/layout/layout.phtml:111
 #: Siteprivate/view/siteprivate/layout/layout.phtml:64
 msgid "Déconnexion"
 msgstr "Log out"
 
-#: Application/view/layout/layout.phtml:167
+#: Application/view/layout/layout.phtml:169
 #: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:85
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:159
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:157
 #: Siteprivate/view/siteprivate/layout/layout.phtml:84
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:159
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:166
 msgid "&Ecirc;tes vous sûr de vous déconnecter ?"
 msgstr "Are you sure to log out"
 
@@ -1092,6 +1157,7 @@ msgstr "Add a blog content"
 #: Contenu/view/contenu/contenu/add.phtml:95
 #: Contenu/view/contenu/contenu/edit.phtml:163
 #: Contenu/view/contenu/contenu/index.phtml:10
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:10
 #: Fichiers/view/fichiers/fichiers/index.phtml:22
 #: Galerie/view/galerie/galerie/add.phtml:100
 #: Galerie/view/galerie/galerie/edit.phtml:159
@@ -1100,6 +1166,9 @@ msgstr "Add a blog content"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:129
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:10
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:12
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:112
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:253
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:10
 #: Message/view/message/message/index.phtml:10
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:12
 #: Privatespace/view/privatespace/privatespace/index.phtml:12
@@ -1121,6 +1190,7 @@ msgstr "Processing…"
 #: Contenu/view/contenu/contenu/add.phtml:96
 #: Contenu/view/contenu/contenu/edit.phtml:164
 #: Contenu/view/contenu/contenu/index.phtml:11
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:11
 #: Fichiers/view/fichiers/fichiers/index.phtml:23
 #: Galerie/view/galerie/galerie/add.phtml:101
 #: Galerie/view/galerie/galerie/edit.phtml:160
@@ -1129,6 +1199,9 @@ msgstr "Processing…"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:130
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:11
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:13
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:113
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:254
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:11
 #: Message/view/message/message/index.phtml:11
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:13
 #: Privatespace/view/privatespace/privatespace/index.phtml:13
@@ -1150,6 +1223,7 @@ msgstr "Search"
 #: Contenu/view/contenu/contenu/add.phtml:97
 #: Contenu/view/contenu/contenu/edit.phtml:165
 #: Contenu/view/contenu/contenu/index.phtml:12
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:12
 #: Fichiers/view/fichiers/fichiers/index.phtml:24
 #: Galerie/view/galerie/galerie/add.phtml:102
 #: Galerie/view/galerie/galerie/edit.phtml:161
@@ -1158,6 +1232,9 @@ msgstr "Search"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:131
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:12
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:114
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:255
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:12
 #: Message/view/message/message/index.phtml:12
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:14
 #: Privatespace/view/privatespace/privatespace/index.phtml:14
@@ -1186,6 +1263,8 @@ msgstr "Display"
 #: Contenu/view/contenu/contenu/edit.phtml:167
 #: Contenu/view/contenu/contenu/index.phtml:12
 #: Contenu/view/contenu/contenu/index.phtml:14
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:12
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:24
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
 #: Galerie/view/galerie/galerie/add.phtml:102
@@ -1202,6 +1281,12 @@ msgstr "Display"
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:114
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:255
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:12
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:12
 #: Message/view/message/message/index.phtml:14
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:14
@@ -1234,6 +1319,7 @@ msgstr "elements"
 #: Contenu/view/contenu/contenu/add.phtml:98
 #: Contenu/view/contenu/contenu/edit.phtml:166
 #: Contenu/view/contenu/contenu/index.phtml:13
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:13
 #: Fichiers/view/fichiers/fichiers/index.phtml:25
 #: Galerie/view/galerie/galerie/add.phtml:103
 #: Galerie/view/galerie/galerie/edit.phtml:162
@@ -1242,6 +1328,9 @@ msgstr "elements"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:132
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:13
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:15
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:115
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:256
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:13
 #: Message/view/message/message/index.phtml:13
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:15
 #: Privatespace/view/privatespace/privatespace/index.phtml:15
@@ -1265,6 +1354,7 @@ msgstr "Display element _START_ to _END_ on _TOTAL_ elements"
 #: Contenu/view/contenu/contenu/add.phtml:99
 #: Contenu/view/contenu/contenu/edit.phtml:167
 #: Contenu/view/contenu/contenu/index.phtml:14
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
 #: Galerie/view/galerie/galerie/add.phtml:104
 #: Galerie/view/galerie/galerie/edit.phtml:163
@@ -1273,6 +1363,9 @@ msgstr "Display element _START_ to _END_ on _TOTAL_ elements"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:14
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
 #: Privatespace/view/privatespace/privatespace/index.phtml:16
@@ -1294,6 +1387,7 @@ msgstr "Display element"
 #: Contenu/view/contenu/contenu/add.phtml:99
 #: Contenu/view/contenu/contenu/edit.phtml:167
 #: Contenu/view/contenu/contenu/index.phtml:14
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
 #: Galerie/view/galerie/galerie/add.phtml:104
 #: Galerie/view/galerie/galerie/edit.phtml:163
@@ -1302,6 +1396,9 @@ msgstr "Display element"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:14
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
 #: Privatespace/view/privatespace/privatespace/index.phtml:16
@@ -1321,6 +1418,7 @@ msgstr "on"
 #: Contenu/view/contenu/contenu/add.phtml:100
 #: Contenu/view/contenu/contenu/edit.phtml:168
 #: Contenu/view/contenu/contenu/index.phtml:15
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:15
 #: Fichiers/view/fichiers/fichiers/index.phtml:27
 #: Galerie/view/galerie/galerie/add.phtml:105
 #: Galerie/view/galerie/galerie/edit.phtml:164
@@ -1328,6 +1426,9 @@ msgstr "on"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:117
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:258
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:15
 #: Message/view/message/message/index.phtml:15
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
 #: Privatespace/view/privatespace/privatespace/index.phtml:17
@@ -1346,6 +1447,7 @@ msgstr "(filtered"
 #: Contenu/view/contenu/contenu/add.phtml:100
 #: Contenu/view/contenu/contenu/edit.phtml:168
 #: Contenu/view/contenu/contenu/index.phtml:15
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:15
 #: Fichiers/view/fichiers/fichiers/index.phtml:27
 #: Galerie/view/galerie/galerie/add.phtml:105
 #: Galerie/view/galerie/galerie/edit.phtml:164
@@ -1353,6 +1455,9 @@ msgstr "(filtered"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:117
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:258
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:15
 #: Message/view/message/message/index.phtml:15
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
 #: Privatespace/view/privatespace/privatespace/index.phtml:17
@@ -1373,6 +1478,7 @@ msgstr "total of elements"
 #: Contenu/view/contenu/contenu/add.phtml:102
 #: Contenu/view/contenu/contenu/edit.phtml:170
 #: Contenu/view/contenu/contenu/index.phtml:17
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:17
 #: Fichiers/view/fichiers/fichiers/index.phtml:29
 #: Galerie/view/galerie/galerie/add.phtml:107
 #: Galerie/view/galerie/galerie/edit.phtml:166
@@ -1381,6 +1487,9 @@ msgstr "total of elements"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:136
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:17
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:19
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:119
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:260
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:17
 #: Message/view/message/message/index.phtml:17
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:19
 #: Privatespace/view/privatespace/privatespace/index.phtml:19
@@ -1402,6 +1511,7 @@ msgstr "Loading…"
 #: Contenu/view/contenu/contenu/add.phtml:103
 #: Contenu/view/contenu/contenu/edit.phtml:171
 #: Contenu/view/contenu/contenu/index.phtml:18
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:18
 #: Fichiers/view/fichiers/fichiers/index.phtml:30
 #: Galerie/view/galerie/galerie/add.phtml:108
 #: Galerie/view/galerie/galerie/edit.phtml:167
@@ -1410,6 +1520,9 @@ msgstr "Loading…"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:18
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:20
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:120
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:261
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:18
 #: Message/view/message/message/index.phtml:18
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:20
 #: Privatespace/view/privatespace/privatespace/index.phtml:20
@@ -1431,6 +1544,7 @@ msgstr "Nothing to display"
 #: Contenu/view/contenu/contenu/add.phtml:104
 #: Contenu/view/contenu/contenu/edit.phtml:172
 #: Contenu/view/contenu/contenu/index.phtml:19
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:19
 #: Fichiers/view/fichiers/fichiers/index.phtml:31
 #: Galerie/view/galerie/galerie/add.phtml:109
 #: Galerie/view/galerie/galerie/edit.phtml:168
@@ -1439,6 +1553,9 @@ msgstr "Nothing to display"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:138
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:19
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:21
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:121
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:262
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:19
 #: Message/view/message/message/index.phtml:19
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:21
 #: Privatespace/view/privatespace/privatespace/index.phtml:21
@@ -1460,6 +1577,7 @@ msgstr "No data available"
 #: Contenu/view/contenu/contenu/add.phtml:106
 #: Contenu/view/contenu/contenu/edit.phtml:174
 #: Contenu/view/contenu/contenu/index.phtml:21
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:21
 #: Fichiers/view/fichiers/fichiers/index.phtml:33
 #: Galerie/view/galerie/galerie/add.phtml:111
 #: Galerie/view/galerie/galerie/edit.phtml:170
@@ -1468,6 +1586,9 @@ msgstr "No data available"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:140
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:21
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:23
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:123
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:264
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:21
 #: Message/view/message/message/index.phtml:21
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:23
 #: Privatespace/view/privatespace/privatespace/index.phtml:23
@@ -1489,6 +1610,7 @@ msgstr "First"
 #: Contenu/view/contenu/contenu/add.phtml:107
 #: Contenu/view/contenu/contenu/edit.phtml:175
 #: Contenu/view/contenu/contenu/index.phtml:22
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:22
 #: Fichiers/view/fichiers/fichiers/index.phtml:34
 #: Galerie/view/galerie/galerie/add.phtml:112
 #: Galerie/view/galerie/galerie/edit.phtml:171
@@ -1497,6 +1619,9 @@ msgstr "First"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:141
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:22
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:24
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:124
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:265
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:22
 #: Message/view/message/message/index.phtml:22
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:24
 #: Privatespace/view/privatespace/privatespace/index.phtml:24
@@ -1518,6 +1643,7 @@ msgstr "Previous"
 #: Contenu/view/contenu/contenu/add.phtml:108
 #: Contenu/view/contenu/contenu/edit.phtml:176
 #: Contenu/view/contenu/contenu/index.phtml:23
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:23
 #: Fichiers/view/fichiers/fichiers/index.phtml:35
 #: Galerie/view/galerie/galerie/add.phtml:113
 #: Galerie/view/galerie/galerie/edit.phtml:172
@@ -1526,6 +1652,9 @@ msgstr "Previous"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:142
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:23
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:25
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:125
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:266
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:23
 #: Message/view/message/message/index.phtml:23
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:25
 #: Privatespace/view/privatespace/privatespace/index.phtml:25
@@ -1547,6 +1676,7 @@ msgstr "Next"
 #: Contenu/view/contenu/contenu/add.phtml:109
 #: Contenu/view/contenu/contenu/edit.phtml:177
 #: Contenu/view/contenu/contenu/index.phtml:24
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:24
 #: Fichiers/view/fichiers/fichiers/index.phtml:36
 #: Galerie/view/galerie/galerie/add.phtml:114
 #: Galerie/view/galerie/galerie/edit.phtml:173
@@ -1555,6 +1685,9 @@ msgstr "Next"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:143
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:24
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:26
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:126
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:267
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:24
 #: Message/view/message/message/index.phtml:24
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:26
 #: Privatespace/view/privatespace/privatespace/index.phtml:26
@@ -1576,6 +1709,7 @@ msgstr "Last"
 #: Contenu/view/contenu/contenu/add.phtml:112
 #: Contenu/view/contenu/contenu/edit.phtml:180
 #: Contenu/view/contenu/contenu/index.phtml:27
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:27
 #: Fichiers/view/fichiers/fichiers/index.phtml:39
 #: Galerie/view/galerie/galerie/add.phtml:117
 #: Galerie/view/galerie/galerie/edit.phtml:176
@@ -1584,6 +1718,9 @@ msgstr "Last"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:146
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:27
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:29
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:129
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:270
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:27
 #: Message/view/message/message/index.phtml:27
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:29
 #: Privatespace/view/privatespace/privatespace/index.phtml:29
@@ -1605,6 +1742,7 @@ msgstr "sort ASC"
 #: Contenu/view/contenu/contenu/add.phtml:113
 #: Contenu/view/contenu/contenu/edit.phtml:181
 #: Contenu/view/contenu/contenu/index.phtml:28
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:28
 #: Fichiers/view/fichiers/fichiers/index.phtml:40
 #: Galerie/view/galerie/galerie/add.phtml:118
 #: Galerie/view/galerie/galerie/edit.phtml:177
@@ -1613,6 +1751,9 @@ msgstr "sort ASC"
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:147
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:28
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:30
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:130
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:271
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:28
 #: Message/view/message/message/index.phtml:28
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:30
 #: Privatespace/view/privatespace/privatespace/index.phtml:30
@@ -1635,6 +1776,8 @@ msgstr "sort DESC"
 #: Galerie/view/galerie/galerie/edit.phtml:89
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:273
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:273
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:242
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:135
 msgid "La position doit être vide ou être un nombre"
 msgstr "rank can not be empty"
 
@@ -1644,11 +1787,15 @@ msgstr "rank can not be empty"
 #: Contenu/view/contenu/contenu/add.phtml:226
 #: Contenu/view/contenu/contenu/edit.phtml:255
 #: Contenu/view/contenu/contenu/index.phtml:47
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:46
 #: Galerie/view/galerie/galerie/add.phtml:234
 #: Galerie/view/galerie/galerie/edit.phtml:254
 #: Galerie/view/galerie/galerie/index.phtml:45
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:302
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:302
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:298
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:352
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:47
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:45
 msgid "Rubrique"
 msgstr "Page"
@@ -1659,11 +1806,15 @@ msgstr "Page"
 #: Contenu/view/contenu/contenu/add.phtml:227
 #: Contenu/view/contenu/contenu/edit.phtml:256
 #: Contenu/view/contenu/contenu/index.phtml:48
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:47
 #: Galerie/view/galerie/galerie/add.phtml:235
 #: Galerie/view/galerie/galerie/edit.phtml:255
 #: Galerie/view/galerie/galerie/index.phtml:46
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:303
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:303
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:299
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:353
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:48
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:46
 msgid "Sous-Rubrique"
 msgstr "Section"
@@ -1680,6 +1831,8 @@ msgstr "Blog template"
 #: Galerie/view/galerie/galerie/edit.phtml:266
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:321
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:321
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:314
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:369
 msgid "Vignette"
 msgstr "Thumbnail"
 
@@ -1691,6 +1844,8 @@ msgstr "Thumbnail"
 #: Galerie/view/galerie/galerie/edit.phtml:267
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:322
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:322
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:315
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:370
 msgid "Chemin image"
 msgstr "Image path"
 
@@ -1703,6 +1858,8 @@ msgstr "Image path"
 #: Galerie/view/galerie/galerie/edit.phtml:268
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:323
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:323
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:316
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:371
 msgid "Description"
 msgstr "Description"
 
@@ -1715,6 +1872,8 @@ msgstr "Description"
 #: Galerie/view/galerie/galerie/edit.phtml:269
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:324
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:324
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:317
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:372
 msgid "Meta Donn&eacute;es"
 msgstr "Meta data"
 
@@ -1725,6 +1884,7 @@ msgstr "Meta data"
 #: Galerie/view/galerie/galerie/edit.phtml:270
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:325
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:325
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:373
 msgid "type de fichier"
 msgstr "File type"
 
@@ -1740,6 +1900,10 @@ msgstr "File type"
 #: Galerie/view/galerie/galerie/add.phtml:272
 #: Galerie/view/galerie/galerie/edit.phtml:271
 #: Galerie/view/galerie/galerie/edit.phtml:294
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:319
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:343
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:374
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:397
 msgid "Copier le lien"
 msgstr "Copy the link"
 
@@ -1784,8 +1948,10 @@ msgstr "Add a blog content"
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:49
 #: Commentaire/view/commentaire/commentaire/index.phtml:53
 #: Contenu/view/contenu/contenu/index.phtml:51
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:50
 #: Galerie/view/galerie/galerie/index.phtml:49
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:51
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:51
 #: Message/view/message/message/index.phtml:52
 msgid "Actions"
 msgstr "Actions"
@@ -1793,10 +1959,16 @@ msgstr "Actions"
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:63
 #: Commentaire/view/commentaire/commentaire/index.phtml:68
 #: Contenu/view/contenu/contenu/index.phtml:65
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:79
 #: Fichiers/view/fichiers/fichiers/index.phtml:133
 #: Galerie/view/galerie/galerie/index.phtml:63
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:69
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:82
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:65
 #: Message/view/message/message/index.phtml:67
 #: Privatespace/view/privatespace/privatespace/index.phtml:66
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:67
@@ -1869,29 +2041,33 @@ msgid "Ajouter un contenu"
 msgstr "Add a content"
 
 #: Contenu/view/contenu/contenu/add.phtml:240
-#, fuzzy
-#| msgid "type de fichier"
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:318
 msgid "Type de fichier"
 msgstr "File type"
 
 #: Contenu/view/contenu/contenu/delete.phtml:3
+#: Mapcontent/view/mapcontent/mapcontent/delete.phtml:3
 msgid "Supprimer un contenu"
 msgstr "Delete a content"
 
 #: Contenu/view/contenu/contenu/delete.phtml:8
-msgid "&Ecirc;tes-vous s&Ucirc;r de vouloir supprimer le contenu"
-msgstr "Are you sure you want to remove this comment"
+#: Mapcontent/view/mapcontent/mapcontent/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer ce contenu"
+msgstr "Are you sure you want to remove this content"
 
 #: Contenu/view/contenu/contenu/edit.phtml:3
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:3
 msgid "Modifier le contenu"
 msgstr "Update a content"
 
 #: Contenu/view/contenu/contenu/index.phtml:2
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:2
 msgid "Mes contenus"
 msgstr "My contents"
 
 #: Contenu/view/contenu/contenu/index.phtml:41
 #: Galerie/view/galerie/galerie/index.phtml:39
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:41
 msgid "Ajouter du contenu"
 msgstr "Add a content"
 
@@ -2116,7 +2292,7 @@ msgstr ""
 #: Siteprivate/view/siteprivate/error/index.phtml:16
 #: Siteprivate/view/siteprivate/error/index.phtml:40
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:111
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:107
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:111
 msgid "Message"
 msgstr "Message"
 
@@ -2198,6 +2374,29 @@ msgstr "My users"
 msgid "Ajouter un utilisateur"
 msgstr "Add a user"
 
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:2
+msgid "Ajouter un contenu de type carte GPS"
+msgstr "Add an map content"
+
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:207
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:104
+msgid "une longitude GPS n'est pas correcte"
+msgstr "A longitude coordinate is not correct"
+
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:111
+msgid "une latitude GPS n'est pas correcte"
+msgstr "A latitude coordinate is not correct"
+
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:304
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:358
+msgid "Ajouter un point gps"
+msgstr "Add a gps coordinate"
+
+#: Mapcontent/view/mapcontent/mapcontent/index.phtml:2
+msgid "Mes contenus de type Carte GPS"
+msgstr "My map contents"
+
 # Message
 #: Message/view/message/message/add.phtml:3
 msgid "Ajouter un Message"
@@ -2226,6 +2425,10 @@ msgstr "Add a message"
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:3
 msgid "Mes pages"
 msgstr "My pages"
+
+#: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:63
+msgid "Voir"
+msgstr "View"
 
 #: Pagearrangement/view/pagearrangement/pagearrangement/showpagecontents.phtml:3
 msgid "Modifier la disposition de la page"
@@ -2426,31 +2629,31 @@ msgstr "upload a file"
 
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:79
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:83
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:79
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:83
 msgid "Envoyer un commentaire"
 msgstr "Send a comment"
 
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:227
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:205
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:227
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:234
 msgid "'Vous devez saisir un nom'"
 msgstr "'You must type a name'"
 
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:232
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:210
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:232
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:239
 msgid "'Vous devez saisir une adresse courriel'"
 msgstr "'You must type an email address'"
 
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:237
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:215
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:237
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:244
 msgid "'L\\'adresse courriel est incorrect. Veuillez recommencer svp.'"
 msgstr "'The email address is not valid, please try again'"
 
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:242
 #: Sitepublic/view/sitepublic/sitepublic/blog.phtml:220
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:242
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:249
 msgid "'Vous devez saisir un message'"
 msgstr "'You must type a message'"
 
@@ -2466,31 +2669,31 @@ msgstr "Update my information"
 msgid "public index"
 msgstr "public index"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:280
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:287
 msgid "Votre commentaire a été envoyé"
 msgstr "Your comment has been sent!"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:287
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:294
 msgid "Veuillez vérifier la saisie du nom"
 msgstr "Please check the name"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:291
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:298
 msgid "Veuillez vérifier la saisie de l'entreprise"
 msgstr "Please check the entry of the company"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:295
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:302
 msgid "Veuillez vérifier la saisie de l'email"
 msgstr "Please check the email entry"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:299
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:306
 msgid "Veuillez vérifier la saisie du message"
 msgstr "Please check the message entry"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:303
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:310
 msgid "Veuillez vérifier la saisie du captcha"
 msgstr "Please check the captcha entry"
 
-#: Sitepublic/view/sitepublic/sitepublic/index.phtml:306
+#: Sitepublic/view/sitepublic/sitepublic/index.phtml:313
 msgid "Veuillez rafraîchir la page et recommencer"
 msgstr "Please refresh the page and try again"
 
@@ -2593,6 +2796,9 @@ msgstr "Validated files"
 #: Uploadmgmt/view/uploadmgmt/uploadmgmt/validatedfiles.phtml:58
 msgid "Une erreur est survenue<br>"
 msgstr "An error occurred<br>"
+
+#~ msgid "&Ecirc;tes-vous s&Ucirc;r de vouloir supprimer le contenu"
+#~ msgstr "Are you sure you want to remove this comment"
 
 #, fuzzy
 #~| msgid "Type de Contenus"

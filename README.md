@@ -252,5 +252,5 @@ the application configuration cache will be enabled and the debug mode will be d
     - MySql 5 or above is required
 
 - PHP
-    - php >= 5.6 for zend framework 3
+    - php >= 7.1 for zend framework 3
 
