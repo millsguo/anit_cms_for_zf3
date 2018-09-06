@@ -63,6 +63,7 @@ I have divided content in three types :
     - stdContent : html content that you can edit with an editor + title and subtitle
     - imgContent : std content plus images
     - blogContet : imgContent plus another fields like author, date...
+    - mapContent : stdContent enriched with GPS coordinates and its information details
 
 It's up to you to create a new content type or just to modify an existing one.
 
