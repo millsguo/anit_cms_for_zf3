@@ -38,7 +38,7 @@ class ContenuController extends AbstractActionController {
         $contenuDao = new ContenuDao();
         //print_r($contenuDao->getAllContenus("object"));
         return new ViewModel(array(
-            'contenus' => $contenuDao->getAllContenus("object")
+            'contenus' => $contenuDao->getAllContentsByType(ContenuType::$htmlcontent, "object")
         ));
     }
 
@@ -47,7 +47,7 @@ class ContenuController extends AbstractActionController {
         $contenuDao = new ContenuDao();
 
         return new ViewModel(array(
-            'contenus' => $contenuDao->getAllContenusOrderByPage("object")
+            'contenus' => $contenuDao->getAllContentsOrderByPage("object")
         ));
     }
 

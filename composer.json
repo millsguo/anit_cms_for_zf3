@@ -35,11 +35,12 @@
       "Siteprivate\\": "module/Siteprivate/src/",
       "Sitepublic\\": "module/Sitepublic/src/",
       "Sousrubrique\\": "module/Sousrubrique/src/",
-      "Uploadmgmt\\":"module/Uploadmgmt/src/"
+      "Uploadmgmt\\":"module/Uploadmgmt/src/",
+      "Mapcontent\\":"module/Mapcontent/src/"
     }
   },
   "require": {
-    "zendframework/zend-component-installer": "1.1",
-    "zendframework/zendframework": "3.0"
+    "zendframework/zend-component-installer": "^1.1.1",
+    "zendframework/zendframework": "^3.0.0"
   }
 }

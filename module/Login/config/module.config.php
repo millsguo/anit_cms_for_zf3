@@ -18,7 +18,7 @@ return array(
             'Login' => array(
                 'type' => Segment::class,
                 'options' => array(
-                    'route' => '/backofficeacccess[/:action]',
+                    'route' => '/backofficeaccess[/:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*'),
 

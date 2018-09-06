@@ -2,6 +2,7 @@
 
 namespace Contenu\Model;
 
+use Mapcontent\Model\Mapper\MapcontentMapper;
 use Sousrubrique\Model\Sousrubriquedao;
 use Application\DBConnection\ParentDao;
 use Contenu\Model\Contenu;
@@ -16,19 +17,25 @@ class ContenuDao extends ParentDao {
         parent::__construct();
     }
 
-    public function getAllContenus($dataType) {
+    protected static $fields = ' c.contenu_id, c.rang, c.titre, c.soustitre, c.sousrubriques_id, c.contenuhtml, 
+    c.image, c.image2, c.type, c.author, c.themes, c.contenu_date, c.othertext1, c.othertext2, c.othertext3, 
+    c.sousrubriques_preview, c.contenu_rank_preview, c.gps_coordinates ';
+
+    public function getAllContentsByType($typeofContent, $dataType) {
 
         $count = 0;
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT *
+		SELECT".self::$fields."
 		FROM contenu c
-                WHERE c.type ='" . ContenuType::$htmlcontent . "'
+        WHERE c.type = :typeofContent
 		ORDER BY c.sousrubriques_id, c.rang
 		")or die(print_r($this->dbGateway->error_info()));
 
-        $requete->execute();
+        $requete->execute(array(
+            'typeofContent' => $typeofContent
+        ));
 
         $requete2 = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -40,7 +47,7 @@ class ContenuDao extends ParentDao {
             if (is_array($requete2)) {
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
-
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -68,6 +75,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $count++;
@@ -82,13 +92,13 @@ class ContenuDao extends ParentDao {
     }
 
 
-    public function getAllContenusOrderByPage($dataType) {
+    public function getAllContentsOrderByPage($dataType) {
 
         $count = 0;
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT c.*
+		SELECT".self::$fields."
 		FROM contenu c
 		JOIN sousrubrique sr on sr.id = c.sousrubriques_id
         JOIN rubrique r on r.id = sr.rubriques_id
@@ -107,7 +117,7 @@ class ContenuDao extends ParentDao {
             if (is_array($requete2)) {
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
-
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -136,6 +146,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $count++;
@@ -157,7 +170,7 @@ class ContenuDao extends ParentDao {
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT c.*
+		SELECT".self::$fields."
 		FROM contenu c
                 JOIN sousrubrique sr on sr.id = c.sousrubriques_id
                 JOIN rubrique r on r.id = sr.rubriques_id
@@ -182,6 +195,7 @@ class ContenuDao extends ParentDao {
             if (is_array($requete2)) {
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -215,6 +229,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
 
@@ -229,7 +246,7 @@ class ContenuDao extends ParentDao {
         }
     }
 
-    public function getAllContenusByRubrique($id, $dataType) {
+    public function getAllContentsByRubrique($id, $dataType) {
 
         //var_dump($id);
         $count = 0;
@@ -237,7 +254,7 @@ class ContenuDao extends ParentDao {
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT c.*
+		SELECT".self::$fields."
 		FROM contenu c
                 JOIN sousrubrique sr on sr.id = c.sousrubriques_id
                 JOIN rubrique r on r.id = sr.rubriques_id
@@ -261,6 +278,7 @@ class ContenuDao extends ParentDao {
             if (is_array($requete2)) {
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -294,6 +312,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
@@ -317,7 +338,7 @@ class ContenuDao extends ParentDao {
         $sousrubriqueDao = new Sousrubriquedao();
 
         $requete = $this->dbGateway->prepare("
-		SELECT c.*
+		SELECT".self::$fields."
 		FROM contenu c
                 JOIN sousrubrique sr on sr.id = c.sousrubriques_id
                 JOIN rubrique r on r.id = sr.rubriques_id
@@ -346,6 +367,7 @@ class ContenuDao extends ParentDao {
             if (is_array($requete2)) {
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -379,6 +401,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $arrayOfContenustep3[$count2][$count] = $arrayOfContenustep2[$count];
@@ -404,7 +429,7 @@ class ContenuDao extends ParentDao {
         $contenuMapper = new ContenuMapper();
 
         $requete = $this->dbGateway->prepare("
-		SELECT *
+		SELECT".self::$fields."
 		FROM contenu c
 		WHERE c.contenu_id = :id
 		")or die(print_r($this->dbGateway->error_info()));
@@ -446,8 +471,8 @@ class ContenuDao extends ParentDao {
         $contenustep1 = array();
 
         $requete = $this->dbGateway->prepare("
-		SELECT *
-		FROM contenu
+		SELECT".self::$fields."
+		FROM contenu c
 		WHERE sousrubriques_id = :id
                 ORDER BY rang
 		")or die(print_r($this->dbGateway->error_info()));
@@ -467,6 +492,7 @@ class ContenuDao extends ParentDao {
                 $count = 0;
                 $contenuMapper = new ContenuMapper();
                 $blogContentMapper = new BlogContentMapper();
+                $mapContentMapper = new MapcontentMapper();
                 foreach ($requete2 as $key => $value) {
                     //print_r($value);
                     //put code to define an array of objects
@@ -495,6 +521,9 @@ class ContenuDao extends ParentDao {
                             $arrayOfContenustep1[$count]['text3'] = $value['othertext3'];
 
                             $arrayOfContenustep2[$count] = $blogContentMapper->exchangeArray($arrayOfContenustep1[$count]);
+                        } elseif(strcasecmp($value['type'], ContenuType::$mapContent) == 0) {
+                            $arrayOfContenustep1[$count]['gps_coordinates'] = $value['gps_coordinates'];
+                            $arrayOfContenustep2[$count] = $mapContentMapper->exchangeArray($arrayOfContenustep1[$count]);
                         }
 
                         $count++;

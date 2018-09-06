@@ -172,15 +172,21 @@ class BaseInputFilter implements
     /**
      * Set data to use when validating and filtering
      *
-     * @param  array|Traversable $data
+     * @param  null|array|Traversable $data null is cast to an empty array.
      * @throws Exception\InvalidArgumentException
      * @return InputFilterInterface
      */
     public function setData($data)
     {
+        // A null value indicates an empty set
+        if (null === $data) {
+            $data = [];
+        }
+
         if ($data instanceof Traversable) {
             $data = ArrayUtils::iteratorToArray($data);
         }
+
         if (! is_array($data)) {
             throw new Exception\InvalidArgumentException(sprintf(
                 '%s expects an array or Traversable argument; received %s',
@@ -517,6 +523,11 @@ class BaseInputFilter implements
             $value = $this->data[$name];
 
             if ($input instanceof InputFilterInterface) {
+                // Fixes #159
+                if (! is_array($value) && ! $value instanceof Traversable) {
+                    $value = [];
+                }
+
                 $input->setData($value);
                 continue;
             }
@@ -533,7 +544,7 @@ class BaseInputFilter implements
      */
     public function hasUnknown()
     {
-        return count($this->getUnknown()) > 0;
+        return $this->getUnknown() ? true : false;
     }
 
     /**

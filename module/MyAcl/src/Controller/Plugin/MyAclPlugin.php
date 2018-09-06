@@ -53,6 +53,7 @@ class MyAclPlugin extends AbstractPlugin
         $acl->addResource('privatespacelogincontroller'); // privatespace module
         $acl->addResource('siteprivatecontroller'); // privatespace module
         $acl->addResource('pagewscontroller'); // privatespace module
+        $acl->addResource('mapcontentcontroller'); // privatespace module
         //$acl->addResource('mobilewscontroller'); // authentication and upload ws
         $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
 	# end RESOURCES ########################################
@@ -118,6 +119,9 @@ class MyAclPlugin extends AbstractPlugin
 
         // uploadmgmtcontroller -------------------------->
         $acl->allow('guest', 'uploadmgmtcontroller', NULL);
+
+        // Mapcontent -------------------------->
+        $acl->allow('user', 'mapcontentcontroller', NULL);
         
         // siteprivate -------------------------->
         $acl->allow('anonymous', 'siteprivatecontroller', array('index','auth','registration','forgottenpassword', 'changepassword','displayregistrationstate'));

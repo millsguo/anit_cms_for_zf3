@@ -2,11 +2,35 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 2.6.2 - TBD
+## 2.7.0 - 2018-05-14
 
 ### Added
 
 - Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- [#32](https://github.com/zendframework/zend-xmlrpc/pull/32) removes support for HHVM.
+
+### Fixed
+
+- Nothing.
+
+## 2.6.2 - 2018-01-25
+
+### Added
+
+- [#29](https://github.com/zendframework/zend-xmlrpc/pull/29) adds support for
+  PHP 7.2, by replacing deprecated `list`/`each` syntax with a functional
+  equivalent.
 
 ### Deprecated
 
@@ -36,7 +60,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Fixed
 
-- [#27](https://github.com/zendframework/zend-xmlrpc/pull/19) fixed a memory leak
+- [#27](https://github.com/zendframework/zend-xmlrpc/pull/27) fixed a memory leak
   caused by repetitive addition of `Accept` and `Content-Type` headers on subsequent
   HTTP requests produced by the `Zend\XmlRpc\Client`.
 

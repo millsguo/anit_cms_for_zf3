@@ -172,6 +172,7 @@ class ContenuForm extends Form {
             'attributes' => array(
                 'value' => $this->utils->translate('Valider'),
                 'id' => 'submitbutton',
+                'class' => 'btn-info'
             ),
         ));
        

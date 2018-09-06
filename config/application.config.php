@@ -41,7 +41,8 @@ $appConfig = array(
         'Siteprivate',
         'Uploadmgmt',
         'Pagews',
-        'Mobilews'
+        'Mobilews',
+        'Mapcontent'
     ),
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(

@@ -145,7 +145,8 @@ return array(
         'Privatespace' => 'layout/layout',
         'Privatespaceloginmgmt' => 'layout/layout',
         'Uploadmgmt' => 'layout/layout',
-        'Siteprivate' => 'privatespacelogin/layout'
+        'Siteprivate' => 'privatespacelogin/layout',
+        'Mapcontent' => 'layout/layout'
     )
 
 );

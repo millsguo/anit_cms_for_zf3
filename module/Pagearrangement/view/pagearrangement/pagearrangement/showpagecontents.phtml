@@ -93,6 +93,10 @@ $(document).ready(function(){
                 html +='<a class="btn btn-mini" type="button" style="float:right;" href="<?php echo $this->basePath(); ?>/blogcontent/delete/'+page[i]["content_id"]+'">'
                      + '<i class="icon-remove"></i></a>'
                      +'<div style="float:right;">&nbsp;</div><a class="btn btn-mini" type="button" style="float:right;" href="<?php echo $this->basePath(); ?>/blogcontent/edit/'+page[i]["content_id"]+'"><i class="icon-pencil"></i></a></li>';
+            } else if(page[i]["content_type"] == 'mapcontent'){
+                html +='<a class="btn btn-mini" type="button" style="float:right;" href="<?php echo $this->basePath(); ?>/mapcontent/delete/'+page[i]["content_id"]+'">'
+                    + '<i class="icon-remove"></i></a>'
+                    +'<div style="float:right;">&nbsp;</div><a class="btn btn-mini" type="button" style="float:right;" href="<?php echo $this->basePath(); ?>/mapcontent/edit/'+page[i]["content_id"]+'"><i class="icon-pencil"></i></a></li>';
             }
             else if(page[i]["content_type"] == 'linktocontenu'){
                 html +='<a class="btn btn-mini" type="button" style="float:right;" href="<?php echo $this->basePath(); ?>/linktocontenu/delete/'+page[i]["content_id"]+'">'

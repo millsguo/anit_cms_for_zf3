@@ -244,292 +244,423 @@ class Socket implements HttpAdapter, StreamInterface
                     if (! stream_context_set_option(
                         $context,
                         'ssl',
-     ﻿/* Copyright (C) Microsoft Corporation. All rights reserved. */
-scriptValidator("/Components/Playback/Playbackhelpers.js","/Framework/data/queries/marketplacequeries.js","/Framework/querywatcher.js","/Framework/stringids.js","/Framework/utilities.js","/ViewModels/QueryViewModel.js");
-(function()
-{
-    "use strict";
-    MS.Entertainment.UI.Debug.defineAssert("MS.Entertainment.ViewModels");
-    WinJS.Namespace.define("MS.Entertainment.ViewModels",{Music: WinJS.Class.derive(MS.Entertainment.ViewModels.QueryViewModel,function(view)
-        {
-            this._queryWatcherString = "music-marketplace-";
-            this._loadingDoneString = "music", MS.Entertainment.ViewModels.QueryViewModel.prototype.constructor.apply(this,arguments)
-        },{createTrackQuery: function()
-            {
-                var query;
-                var QueryType;
-                var options;
-                var view = this.getViewDefinition(this.view);
-                var pivot = this._workingPivotsSelectionManager.selectedItem;
-                var modifier = this._workingModifierSelectionManager.selectedItem;
-                pivot = pivot || {value: {}};
-                modifier = modifier || {value: {}};
-                if(view.trackQuery)
-                    QueryType = view.trackQuery;
-                else if(modifier.value.trackQuery)
-                    QueryType = modifier.value.trackQuery;
-                else if(pivot.value.trackQuery)
-                    QueryType = pivot.value.trackQuery;
-                if(QueryType)
-                {
-                    query = new QueryType;
-                    options = MS.Entertainment.Utilities.uniteObjects(WinJS.Binding.unwrap(pivot.value.trackQueryOptions),WinJS.Binding.unwrap(modifier.value.trackQueryOptions));
-                    options = MS.Entertainment.Utilities.uniteObjects(options,WinJS.Binding.unwrap(view.trackQueryOptions));
-                    MS.Entertainment.Utilities.BindingAgnostic.setProperties(query,options)
-                }
-                if(!query)
-                {
-                    if(view.query)
-                        QueryType = view.query;
-                    else if(modifier.value.query)
-                        QueryType = modifier.value.query;
-                    else if(pivot.value.query)
-                        QueryType = pivot.value.query;
-                    if(QueryType)
-                    {
-                        query = new QueryType;
-                        options = MS.Entertainment.Utilities.uniteObjects(WinJS.Binding.unwrap(pivot.value.queryOptions),WinJS.Binding.unwrap(modifier.value.queryOptions));
-                        options = MS.Entertainment.Utilities.uniteObjects(options,WinJS.Binding.unwrap(view.queryOptions));
-                        MS.Entertainment.Utilities.BindingAgnostic.setProperties(query,options)
+                        'verify_peer_name',
+                        $this->config['sslverifypeername']
+                    )) {
+                        throw new AdapterException\RuntimeException('Unable to set sslverifypeername option');
                     }
                 }
-                MS.Entertainment.ViewModels.assert(query,"No track query was created, when we expected one");
-                return query
-            }})});
-    WinJS.Namespace.define("MS.Entertainment.ViewModels",{
-        PlayQueryAction: MS.Entertainment.derive(MS.Entertainment.Platform.PlayAction,function(queryFactory)
-        {
-            this.base();
-            this.queryFactory = queryFactory;
-            this.title = String.load(String.id.IDS_PLAY_ALL_LABEL)
-        },{
-            _queryFactory: null,
-            _disposed: false,
-            isEnabled: false,
-            dispose: function()
-            {
-                this._queryFactory = null;
-                this.requeryCanExecute();
-                this._disposed = true
-            },
-            queryFactory: {
-                get: function()
-                {
-                    return this._queryFactory
-                },
-                set: function(value)
-                {
-                    if(!this._disposed)
-                        this._queryFactory = value
-                }
-            },
-            executedPlay: function(param)
-            {
-                var query = this.queryFactory();
-                MS.Entertainment.ViewModels.assert(query,"QueryFactory returned a null query");
-                if(query)
-                {
-                    query.isLive = false;
-                    MS.Entertainment.Platform.PlaybackHelpers.playMedia2(query,{
-                        sessionId: MS.Entertainment.Platform.Playback.WellKnownPlaybackSessionId.nowPlaying,
-                        autoPlay: true,
-                        showImmersive: false,
-                        showAppBar: true
-                    })
-                }
-                return!!query
-            },
-            canExecutePlay: function(param)
-            {
-                return!!this.queryFactory
             }
-        }),
-        PlayArtistAction: MS.Entertainment.derive(MS.Entertainment.Platform.PlayAction,function()
-        {
-            this.base()
-        },{
-            executedPlay: function(param)
-            {
-                var query,
-                    id;
-                var navigationService = MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.navigation);
-                var isImmersive = navigationService.checkUserLocation(MS.Entertainment.UI.Monikers.immersiveDetails);
-                MS.Entertainment.ViewModels.assert(param.mediaItem.mediaType === Microsoft.Entertainment.Queries.ObjectType.person && param.mediaItem.personType === Microsoft.Entertainment.Queries.PersonType.artist,"Invalid media type. Was expecting an artist media object");
-                if(param.playCollectionItemsOnly)
-                {
-                    id = MS.Entertainment.Utilities.isValidLibraryId(param.mediaItem.libraryId) ? param.mediaItem.libraryId : param.libraryId;
-                    query = new MS.Entertainment.Data.Query.libraryTracks;
-                    query.artistId = param.mediaItem.libraryId;
-                    if(param.librarySort)
-                        query.sort = param.librarySort
-                }
-                else
-                {
-                    id = !MS.Entertainment.Utilities.isEmptyGuid(param.mediaItem.canonicalId) ? param.mediaItem.canonicalId : param.serviceId;
-                    query = new MS.Entertainment.Data.Query.Music.ArtistTopSongs;
-                    query.id = param.mediaItem.canonicalId;
-                    query.impressionGuid = param.mediaItem.impressionGuid
-                }
-                if(MS.Entertainment.Utilities.Telemetry.isCurrentPageSearchPage())
-                    MS.Entertainment.Utilities.Telemetry.logSearchExit(param.mediaItem,false,"Play");
-                MS.Entertainment.Platform.PlaybackHelpers.playMedia2(query,{
-                    sessionId: MS.Entertainment.Platform.Playback.WellKnownPlaybackSessionId.nowPlaying,
-                    autoPlay: true,
-                    startPositionMsec: param.startPositionMS,
-                    showImmersive: !!param.showImmersive,
-                    showAppBar: !!param.showAppBar && !isImmersive,
-                    automationId: param.automationId,
-                    immersiveOptions: {
-                        sessionId: MS.Entertainment.Platform.Playback.WellKnownPlaybackSessionId.nowPlaying,
-                        startFullScreen: !param.showDetails,
-                        overridePageChange: param.overridePageChange
-                    }
-                });
-                return true
-            },
-            canExecutePlay: function(param)
-            {
-                return param && param.mediaItem && (param.playCollectionItemsOnly && (MS.Entertainment.Utilities.isValidLibraryId(param.mediaItem.libraryId) || MS.Entertainment.Utilities.isValidLibraryId(param.libraryId)) || !param.playCollectionItemsOnly && (!MS.Entertainment.Utilities.isEmptyGuid(param.mediaItem.serviceId) || !MS.Entertainment.Utilities.isEmptyGuid(param.serviceId)))
+
+            $flags = STREAM_CLIENT_CONNECT;
+            if ($this->config['persistent']) {
+                $flags |= STREAM_CLIENT_PERSISTENT;
             }
-        }),
-        PlaySmartDJAction: MS.Entertainment.derive(MS.Entertainment.Platform.PlayAction,function()
-        {
-            this.base()
-        },{
-            _addSmartDJTimeout: 5e3,
-            _uiStateService: MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.uiState),
-            _numberOfFeaturedArtistNamesToFind: 2,
-            _numberOfArtistNamesToCheck: 8,
-            _appendArtistName: function(item, mediaNameLowercase, featuredArtists)
-            {
-                var newArtistNameLowerCase = featuredArtists.length < this._numberOfFeaturedArtistNamesToFind && item && item.data.artist && item.data.artist.name.toLowerCase();
-                if(newArtistNameLowerCase !== mediaNameLowercase)
-                {
-                    var matchFound = false;
-                    for(var i = 0; i < featuredArtists.length; i++)
-                        if(newArtistNameLowerCase === featuredArtists[i].toLowerCase())
-                            matchFound = true;
-                    if(!matchFound)
-                        featuredArtists.push(item.data.artist.name)
+
+            if (isset($this->config['connecttimeout'])) {
+                $connectTimeout = $this->config['connecttimeout'];
+            } else {
+                $connectTimeout = $this->config['timeout'];
+            }
+            ErrorHandler::start();
+            $this->socket = stream_socket_client(
+                $host . ':' . $port,
+                $errno,
+                $errstr,
+                (int) $connectTimeout,
+                $flags,
+                $context
+            );
+            $error = ErrorHandler::stop();
+
+            if (! $this->socket) {
+                $this->close();
+                throw new AdapterException\RuntimeException(
+                    sprintf(
+                        'Unable to connect to %s:%d%s',
+                        $host,
+                        $port,
+                        ($error ? ' . Error #' . $error->getCode() . ': ' . $error->getMessage() : '')
+                    ),
+                    0,
+                    $error
+                );
+            }
+
+            // Set the stream timeout
+            if (! stream_set_timeout($this->socket, (int) $this->config['timeout'])) {
+                throw new AdapterException\RuntimeException('Unable to set the connection timeout');
+            }
+
+            if ($secure || $this->config['sslusecontext']) {
+                if ($this->config['ssltransport'] && isset(static::$sslCryptoTypes[$this->config['ssltransport']])) {
+                    $sslCryptoMethod = static::$sslCryptoTypes[$this->config['ssltransport']];
+                } else {
+                    $sslCryptoMethod = STREAM_CRYPTO_METHOD_SSLv3_CLIENT;
                 }
-                return WinJS.Promise.wrap(item)
-            },
-            _addSmartDJ: function(mediaItem)
-            {
-                var promise;
-                var sessionMgr = MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.sessionManager);
-                var playbackSession = sessionMgr.nowPlayingSession;
-                var playbackError = playbackSession.playerState === MS.Entertainment.Platform.Playback.PlayerState.error;
-                if(playbackError)
-                    promise = WinJS.Promise.wrapError(new Error("Playback failed"));
-                else if(playbackSession.smartDJSeed !== mediaItem)
-                    promise = WinJS.Promise.wrap();
-                else if(playbackSession.mediaCollection)
-                {
-                    var featuredArtists = [];
-                    var mediaNameLowercase = mediaItem.name.toLowerCase();
-                    var appendArtistName = function(item)
-                        {
-                            return this._appendArtistName(item,mediaNameLowercase,featuredArtists)
-                        }.bind(this);
-                    promise = MS.Entertainment.Platform.Playback.Playlist.PlaylistCore.forEachItemSequentially(playbackSession.mediaCollection,appendArtistName,this._numberOfArtistNamesToCheck).then(function()
-                    {
-                        var smartDJAddQuery = new MS.Entertainment.Data.Query.Music.SmartDJAdd(mediaItem,featuredArtists);
-                        return smartDJAddQuery.execute()
-                    }).then(function()
-                    {
-                        MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.smartDJList).refresh()
-                    })
-                }
-                else
-                {
-                    var smartDJAddQuery = new MS.Entertainment.Data.Query.Music.SmartDJAdd(mediaItem);
-                    return smartDJAddQuery.execute().then(function()
-                        {
-                            MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.smartDJList).refresh()
-                        })
-                }
-                return promise.then(null,function(error)
-                    {
-                        MS.Entertainment.ViewModels.assert(error && error.message === "Canceled","SmartDJ add failed. Error: " + error)
-                    })
-            },
-            _addSmartDJAfterPlayback: function(mediaItem)
-            {
-                var bindings;
-                var completed;
-                var playbackSession = MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.sessionManager).nowPlayingSession;
-                function onPlaybackChanged()
-                {
-                    if(!bindings)
-                        return;
-                    var playbackError = playbackSession.playerState === MS.Entertainment.Platform.Playback.PlayerState.error;
-                    if(playbackError)
-                        completed();
-                    else if(playbackSession.smartDJSeed === mediaItem && playbackSession.currentTransportState === MS.Entertainment.Platform.Playback.TransportState.playing && playbackSession.mediaCollection)
-                        playbackSession.mediaCollection.getCount().then(function(count)
-                        {
-                            if(bindings && count > 1)
-                                completed()
-                        },function()
-                        {
-                            completed()
-                        })
-                }
-                var promise = new WinJS.Promise(function(c)
-                    {
-                        completed = c;
-                        bindings = WinJS.Binding.bind(playbackSession,{
-                            currentTransportState: onPlaybackChanged,
-                            playerState: onPlaybackChanged
-                        })
-                    },function(){});
-                promise.then(this._addSmartDJCallback(mediaItem),function(){}).done(function()
-                {
-                    if(bindings)
-                    {
-                        bindings.cancel();
-                        bindings = null
-                    }
-                });
-                return promise
-            },
-            _addSmartDJCallback: function(mediaItem)
-            {
-                return function()
-                    {
-                        this._addSmartDJ(mediaItem)
-                    }.bind(this)
-            },
-            _defaultPlaybackOptions: function(param)
-            {
-                return{
-                        sessionId: MS.Entertainment.Platform.Playback.WellKnownPlaybackSessionId.nowPlaying,
-                        autoPlay: true,
-                        showImmersive: !!param.showImmersive,
-                        showAppBar: !!param.showAppBar && !this._uiStateService.nowPlayingVisible,
-                        shuffle: false,
-                        automationId: param.automationId,
-                        immersiveOptions: {
-                            sessionId: MS.Entertainment.Platform.Playback.WellKnownPlaybackSessionId.nowPlaying,
-                            startFullScreen: !param.showDetails,
-                            overridePageChange: param.overridePageChange
+
+                ErrorHandler::start();
+                $test  = stream_socket_enable_crypto($this->socket, true, $sslCryptoMethod);
+                $error = ErrorHandler::stop();
+                if (! $test || $error) {
+                    // Error handling is kind of difficult when it comes to SSL
+                    $errorString = '';
+                    if (extension_loaded('openssl')) {
+                        while (($sslError = openssl_error_string()) != false) {
+                            $errorString .= sprintf('; SSL error: %s', $sslError);
                         }
                     }
-            },
-            executedPlay: function(param)
-            {
-                var primaryStringId;
-                var secondaryStringId;
-                var error = false;
-                var networkStatus = MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.uiState).networkStatus;
-                if(networkStatus === MS.Entertainment.UI.NetworkStatusService.NetworkStatus.localOnly || networkStatus === MS.Entertainment.UI.NetworkStatusService.NetworkStatus.none)
-                {
-                    error = true;
-                    primaryStringId = String.id.IDS_SMARTDJ_OFFINE_ERROR_TITLE;
-                    secondaryStringId = String.id.IDS_SMARTDJ_OFFINE_ERROR_DESC
+                    $this->close();
+
+                    if ((! $errorString) && $this->config['sslverifypeer']) {
+                        // There's good chance our error is due to sslcapath not being properly set
+                        if (! ($this->config['sslcafile'] || $this->config['sslcapath'])) {
+                            $errorString = 'make sure the "sslcafile" or "sslcapath" option are properly set for the '
+                                . 'environment.';
+                        } elseif ($this->config['sslcafile'] && ! is_file($this->config['sslcafile'])) {
+                            $errorString = 'make sure the "sslcafile" option points to a valid SSL certificate file';
+                        } elseif ($this->config['sslcapath'] && ! is_dir($this->config['sslcapath'])) {
+                            $errorString = 'make sure the "sslcapath" option points to a valid SSL certificate '
+                                . 'directory';
+                        }
+                    }
+
+                    if ($errorString) {
+                        $errorString = sprintf(': %s', $errorString);
+                    }
+
+                    throw new AdapterException\RuntimeException(sprintf(
+                        'Unable to enable crypto on TCP connection %s%s',
+                        $host,
+                        $errorString
+                    ), 0, $error);
                 }
-                var sessionManager = MS.Entertainment.ServiceLocator.getService(MS.Entertainment.Services.sessionManager);
-                if(sessionManager.primarySession && sessionManager.primarySession.isRemoteSession && sessionManager.primarySession.isRemoteSession())
-                {
-                    error = 
+
+                $host = $this->config['ssltransport'] . '://' . $host;
+            } else {
+                $host = 'tcp://' . $host;
+            }
+
+            // Update connectedTo
+            $this->connectedTo = [$host, $port];
+        }
+    }
+
+
+    /**
+     * Send request to the remote server
+     *
+     * @param string        $method
+     * @param \Zend\Uri\Uri $uri
+     * @param string        $httpVer
+     * @param array         $headers
+     * @param string        $body
+     * @throws AdapterException\RuntimeException
+     * @return string Request as string
+     */
+    public function write($method, $uri, $httpVer = '1.1', $headers = [], $body = '')
+    {
+        // Make sure we're properly connected
+        if (! $this->socket) {
+            throw new AdapterException\RuntimeException('Trying to write but we are not connected');
+        }
+
+        $host = $uri->getHost();
+        $host = (strtolower($uri->getScheme()) == 'https' ? $this->config['ssltransport'] : 'tcp') . '://' . $host;
+        if ($this->connectedTo[0] != $host || $this->connectedTo[1] != $uri->getPort()) {
+            throw new AdapterException\RuntimeException('Trying to write but we are connected to the wrong host');
+        }
+
+        // Save request method for later
+        $this->method = $method;
+
+        // Build request headers
+        $path = $uri->getPath();
+        if ($uri->getQuery()) {
+            $path .= '?' . $uri->getQuery();
+        }
+        $request = $method . ' ' . $path . ' HTTP/' . $httpVer . "\r\n";
+        foreach ($headers as $k => $v) {
+            if (is_string($k)) {
+                $v = ucfirst($k) . ': ' . $v;
+            }
+            $request .= $v . "\r\n";
+        }
+
+        if (is_resource($body)) {
+            $request .= "\r\n";
+        } else {
+            // Add the request body
+            $request .= "\r\n" . $body;
+        }
+
+        // Send the request
+        ErrorHandler::start();
+        $test  = fwrite($this->socket, $request);
+        $error = ErrorHandler::stop();
+        if (false === $test) {
+            throw new AdapterException\RuntimeException('Error writing request to server', 0, $error);
+        }
+
+        if (is_resource($body)) {
+            if (stream_copy_to_stream($body, $this->socket) == 0) {
+                throw new AdapterException\RuntimeException('Error writing request to server');
+            }
+        }
+
+        return $request;
+    }
+
+    /**
+     * Read response from server
+     *
+     * @throws AdapterException\RuntimeException
+     * @return string
+     */
+    public function read()
+    {
+        // First, read headers only
+        $response = '';
+        $gotStatus = false;
+
+        while (($line = fgets($this->socket)) !== false) {
+            $gotStatus = $gotStatus || (strpos($line, 'HTTP') !== false);
+            if ($gotStatus) {
+                $response .= $line;
+                if (rtrim($line) === '') {
+                    break;
+                }
+            }
+        }
+
+        $this->_checkSocketReadTimeout();
+
+        $responseObj = Response::fromString($response);
+
+        $statusCode = $responseObj->getStatusCode();
+
+        // Handle 100 and 101 responses internally by restarting the read again
+        if ($statusCode == 100 || $statusCode == 101) {
+            return $this->read();
+        }
+
+        // Check headers to see what kind of connection / transfer encoding we have
+        $headers = $responseObj->getHeaders();
+
+        /**
+         * Responses to HEAD requests and 204 or 304 responses are not expected
+         * to have a body - stop reading here
+         */
+        if ($statusCode == 304
+            || $statusCode == 204
+            || $this->method == Request::METHOD_HEAD
+        ) {
+            // Close the connection if requested to do so by the server
+            $connection = $headers->get('connection');
+            if ($connection && $connection->getFieldValue() == 'close') {
+                $this->close();
+            }
+            return $response;
+        }
+
+        // If we got a 'transfer-encoding: chunked' header
+        $transferEncoding = $headers->get('transfer-encoding');
+        $contentLength = $headers->get('content-length');
+        if ($transferEncoding !== false) {
+            if (strtolower($transferEncoding->getFieldValue()) == 'chunked') {
+                do {
+                    $line  = fgets($this->socket);
+                    $this->_checkSocketReadTimeout();
+
+                    $chunk = $line;
+
+                    // Figure out the next chunk size
+                    $chunksize = trim($line);
+                    if (! ctype_xdigit($chunksize)) {
+                        $this->close();
+                        throw new AdapterException\RuntimeException(sprintf(
+                            'Invalid chunk size "%s" unable to read chunked body',
+                            $chunksize
+                        ));
+                    }
+
+                    // Convert the hexadecimal value to plain integer
+                    $chunksize = hexdec($chunksize);
+
+                    // Read next chunk
+                    $readTo = ftell($this->socket) + $chunksize;
+
+                    do {
+                        $currentPos = ftell($this->socket);
+                        if ($currentPos >= $readTo) {
+                            break;
+                        }
+
+                        if ($this->outStream) {
+                            if (stream_copy_to_stream($this->socket, $this->outStream, $readTo - $currentPos) == 0) {
+                                $this->_checkSocketReadTimeout();
+                                break;
+                            }
+                        } else {
+                            $line = fread($this->socket, $readTo - $currentPos);
+                            if ($line === false || strlen($line) === 0) {
+                                $this->_checkSocketReadTimeout();
+                                break;
+                            }
+                            $chunk .= $line;
+                        }
+                    } while (! feof($this->socket));
+
+                    ErrorHandler::start();
+                    $chunk .= fgets($this->socket);
+                    ErrorHandler::stop();
+                    $this->_checkSocketReadTimeout();
+
+                    if (! $this->outStream) {
+                        $response .= $chunk;
+                    }
+                } while ($chunksize > 0);
+            } else {
+                $this->close();
+                throw new AdapterException\RuntimeException(sprintf(
+                    'Cannot handle "%s" transfer encoding',
+                    $transferEncoding->getFieldValue()
+                ));
+            }
+
+            // We automatically decode chunked-messages when writing to a stream
+            // this means we have to disallow the Zend\Http\Response to do it again
+            if ($this->outStream) {
+                $response = str_ireplace("Transfer-Encoding: chunked\r\n", '', $response);
+            }
+        // Else, if we got the content-length header, read this number of bytes
+        } elseif ($contentLength !== false) {
+            // If we got more than one Content-Length header (see ZF-9404) use
+            // the last value sent
+            if (is_array($contentLength)) {
+                $contentLength = $contentLength[count($contentLength) - 1];
+            }
+            $contentLength = $contentLength->getFieldValue();
+
+            $currentPos = ftell($this->socket);
+
+            for ($readTo = $currentPos + $contentLength;
+                 $readTo > $currentPos;
+                 $currentPos = ftell($this->socket)) {
+                if ($this->outStream) {
+                    if (stream_copy_to_stream($this->socket, $this->outStream, $readTo - $currentPos) == 0) {
+                        $this->_checkSocketReadTimeout();
+                        break;
+                    }
+                } else {
+                    $chunk = fread($this->socket, $readTo - $currentPos);
+                    if ($chunk === false || strlen($chunk) === 0) {
+                        $this->_checkSocketReadTimeout();
+                        break;
+                    }
+
+                    $response .= $chunk;
+                }
+
+                // Break if the connection ended prematurely
+                if (feof($this->socket)) {
+                    break;
+                }
+            }
+
+        // Fallback: just read the response until EOF
+        } else {
+            do {
+                if ($this->outStream) {
+                    if (stream_copy_to_stream($this->socket, $this->outStream) == 0) {
+                        $this->_checkSocketReadTimeout();
+                        break;
+                    }
+                } else {
+                    $buff = fread($this->socket, 8192);
+                    if ($buff === false || strlen($buff) === 0) {
+                        $this->_checkSocketReadTimeout();
+                        break;
+                    } else {
+                        $response .= $buff;
+                    }
+                }
+            } while (feof($this->socket) === false);
+
+            $this->close();
+        }
+
+        // Close the connection if requested to do so by the server
+        $connection = $headers->get('connection');
+        if ($connection && $connection->getFieldValue() == 'close') {
+            $this->close();
+        }
+
+        return $response;
+    }
+
+    /**
+     * Close the connection to the server
+     *
+     */
+    public function close()
+    {
+        if (is_resource($this->socket)) {
+            ErrorHandler::start();
+            fclose($this->socket);
+            ErrorHandler::stop();
+        }
+        $this->socket = null;
+        $this->connectedTo = [null, null];
+    }
+
+    /**
+     * Check if the socket has timed out - if so close connection and throw
+     * an exception
+     *
+     * @throws AdapterException\TimeoutException with READ_TIMEOUT code
+     */
+    // @codingStandardsIgnoreStart
+    protected function _checkSocketReadTimeout()
+    {
+        // @codingStandardsIgnoreEnd
+        if ($this->socket) {
+            $info = stream_get_meta_data($this->socket);
+            $timedout = $info['timed_out'];
+            if ($timedout) {
+                $this->close();
+                throw new AdapterException\TimeoutException(
+                    sprintf('Read timed out after %d seconds', $this->config['timeout']),
+                    AdapterException\TimeoutException::READ_TIMEOUT
+                );
+            }
+        }
+    }
+
+    /**
+     * Set output stream for the response
+     *
+     * @param resource $stream
+     * @return \Zend\Http\Client\Adapter\Socket
+     */
+    public function setOutputStream($stream)
+    {
+        $this->outStream = $stream;
+        return $this;
+    }
+
+    /**
+     * Destructor: make sure the socket is disconnected
+     *
+     * If we are in persistent TCP mode, will not close the connection
+     *
+     */
+    public function __destruct()
+    {
+        if (! $this->config['persistent']) {
+            if ($this->socket) {
+                $this->close();
+            }
+        }
+    }
+}

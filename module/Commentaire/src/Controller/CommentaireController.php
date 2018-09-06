@@ -242,7 +242,7 @@ class CommentaireController extends AbstractActionController {
             
             $contenuDao = new ContenuDao();
 
-            $result = $contenuDao->getAllContenusByRubrique($rubid, "array");
+            $result = $contenuDao->getAllContentsByRubrique($rubid, "array");
             
             return new JsonModel(array(
                 'contenusList' => $result
