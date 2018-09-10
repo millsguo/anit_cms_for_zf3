@@ -62,7 +62,10 @@
                 $module = "Blogcontent";
             }elseif(strcasecmp($contenu->getType(), \Contenu\Model\ContenuType::$galleryItem) == 0){
                 $module = "Galerie";
+            }elseif(strcasecmp($contenu->getType(), \Contenu\Model\ContenuType::$mapContent) == 0){
+                $module = "mapcontent";
             }
+
             /*elseif(strcasecmp($contenu->getType(), \Contenu\Model\ContenuType::$linkItem) == 0){
                 $module = "Linktocontenu";
             }*/

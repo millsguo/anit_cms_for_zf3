@@ -7,5 +7,4 @@ nbproject
 .project
 .settings
 todoList.txt
-data/cache
-composer_upadate.bat
+composer_update.bat
