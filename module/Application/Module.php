@@ -18,7 +18,7 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
-        //modify the condition depending on your environments / display exception not a good idea in a production environment
+        //modify the condition depending on your environments / display exception is not a good idea in a production environment
         if (strcasecmp(ANIT_ENVIRONMENT, 'dev')==0) {
             //https://stackoverflow.com/questions/46969748/display-all-exception-messages-in-zend-instead-of-an-error-occurred
             //Attach render errors
