@@ -78,6 +78,7 @@ return array(
     'Sousrubrique\\' => array($baseDir . '/module/Sousrubrique/src'),
     'Sitepublic\\' => array($baseDir . '/module/Sitepublic/src'),
     'Siteprivate\\' => array($baseDir . '/module/Siteprivate/src'),
+    'Searchws\\' => array($baseDir . '/module/Searchws/src'),
     'Rubrique\\' => array($baseDir . '/module/Rubrique/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),

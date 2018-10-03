@@ -1,8 +1,8 @@
 <?php
 
-namespace Pagews;
+namespace Searchws;
 
-use Pagews\Controller\SearchwsController;
+use Searchws\Controller\SearchwsController;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -18,7 +18,7 @@ return array(
             'pagews' => array(
                 'type' => Segment::class,
                 'options' => array(
-                    'route' => '/pagews[/:action][/:id]',
+                    'route' => '/searchws[/:action]',
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         //'id' => '[0-9]+',

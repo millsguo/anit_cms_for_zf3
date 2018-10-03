@@ -36,7 +36,8 @@
       "Sitepublic\\": "module/Sitepublic/src/",
       "Sousrubrique\\": "module/Sousrubrique/src/",
       "Uploadmgmt\\":"module/Uploadmgmt/src/",
-      "Mapcontent\\":"module/Mapcontent/src/"
+      "Mapcontent\\":"module/Mapcontent/src/",
+      "Searchws\\":"module/Searchws/src/"
     }
   },
   "require": {

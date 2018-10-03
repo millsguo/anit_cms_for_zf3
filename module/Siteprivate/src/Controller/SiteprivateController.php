@@ -88,7 +88,6 @@ class SiteprivateController extends AbstractActionController
 
     public function authAction()
     {
-
         $siteprivateDao = new SiteprivateDao();
         $rubriqueDao = new RubriqueDao();
 

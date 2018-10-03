@@ -50,10 +50,11 @@ class MyAclPlugin extends AbstractPlugin
         $acl->addResource('linktocontenucontroller'); // linktocontenu module
         $acl->addResource('pagearrangementcontroller'); // pagearrangement module
         $acl->addResource('privatespacecontroller'); // privatespace module
-        $acl->addResource('privatespacelogincontroller'); // privatespace module
-        $acl->addResource('siteprivatecontroller'); // privatespace module
-        $acl->addResource('pagewscontroller'); // privatespace module
-        $acl->addResource('mapcontentcontroller'); // privatespace module
+        $acl->addResource('privatespacelogincontroller'); // privatespacelogin module
+        $acl->addResource('siteprivatecontroller'); // siteprivate module
+        $acl->addResource('pagewscontroller'); // pagews module
+        $acl->addResource('searchwscontroller'); // searchws module
+        $acl->addResource('mapcontentcontroller'); // mapcontent module
         //$acl->addResource('mobilewscontroller'); // authentication and upload ws
         $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
 	# end RESOURCES ########################################
@@ -114,6 +115,12 @@ class MyAclPlugin extends AbstractPlugin
         // pagews -------------------------->
         $acl->allow('anonymous', 'pagewscontroller', NULL);
 
+        // searchws -------------------------->
+        //$acl->allow('anonymous', 'searchwscontroller', array('getpublicpages', 'getprivatepages', 'getallpages'));
+        $acl->allow('anonymous', 'searchwscontroller', 'getpublicpages');
+        $acl->allow('guest', 'searchwscontroller', 'getprivatepages');
+        $acl->allow('user', 'searchwscontroller', 'getallpages');
+
         // mobilews -------------------------->
         //$acl->allow('anonymous', 'mobilewscontroller', NULL);
 
@@ -137,12 +144,9 @@ class MyAclPlugin extends AbstractPlugin
         $actionName = strtolower($routeMatch->getParam('action', 'not-found'));	// get the action name	
         $controllerName = $routeMatch->getParam('controller', 'not-found');	// get the controller name	
         $controllerName2 = strtolower(array_pop(explode('\\', $controllerName)));
-        
-/*
-		print '<br>$moduleName: '.$moduleName.'<br>'; 
-		print '<br>$controllerClass: '.$controllerClass.'<br>'; 
-		print '$controllerName: '.$controllerName.'<br>'; 
-		print '$action: '.$actionName.'<br>'; */
+
+		//print '$controllerName: '.$controllerName.'<br>';
+		//print '$action: '.$actionName.'<br>';
 
 		
 		#################### Check Access ########################

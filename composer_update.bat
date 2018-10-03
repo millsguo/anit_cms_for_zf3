@@ -1,1 +1,1 @@
-c:\MAMP\bin\php\php7.0.19\php.exe -c c:\MAMP\conf\php7.0.19\php.ini composer.phar update
+C:\wamp64\bin\php\php7.1.9\php.exe -c C:\wamp64\bin\php\php7.1.9\php.ini composer.phar update

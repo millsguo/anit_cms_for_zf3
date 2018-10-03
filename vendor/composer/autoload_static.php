@@ -113,6 +113,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
             'Sousrubrique\\' => 13,
             'Sitepublic\\' => 11,
             'Siteprivate\\' => 12,
+            'Searchws\\' => 9,
         ),
         'R' => 
         array (
@@ -472,6 +473,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         array (
             0 => __DIR__ . '/../..' . '/module/Siteprivate/src',
         ),
+        'Searchws\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Searchws/src',
+        ),
         'Rubrique\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/Rubrique/src',
@@ -762,7 +767,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'PHPUnit\\Util\\Configuration' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Configuration.php',
         'PHPUnit\\Util\\ConfigurationGenerator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/ConfigurationGenerator.php',
         'PHPUnit\\Util\\ErrorHandler' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/ErrorHandler.php',
-        'PHPUnit\\Util\\FileLoader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/FileLoader.php',
+        'PHPUnit\\Util\\FileLoader' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Fileloader.php',
         'PHPUnit\\Util\\Filesystem' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Filesystem.php',
         'PHPUnit\\Util\\Filter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Filter.php',
         'PHPUnit\\Util\\Getopt' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Getopt.php',
@@ -786,7 +791,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
-        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
+        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XML.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
         'PHPUnit_Framework_MockObject_MockObject' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/MockObject/MockObject.php',
         'PHP_Token' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
