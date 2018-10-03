@@ -84,16 +84,14 @@ class SearchwsController extends AbstractActionController
         $accept = $headers->get('Content-Type');
         $params = "";
         $isJson = $accept->match('application/json');
-        $isUrlencoded = $accept->match('application/x-www-form-urlencoded');
+        // $isUrlencoded = $accept->match('application/x-www-form-urlencoded');
         if ($isJson) {
             $content = $request->getContent();
             $content = str_replace("'", "\"", $content);
             $jsonDecode = json_decode($content, true);
             $params = $jsonDecode['search'];
-        } else if ($isUrlencoded) {
-            $params = $request->getPost('search');
         } else {
-            $params = $params = $request->getPost('search');
+            $params = $request->getPost('search');
         }
 
         return $params;
