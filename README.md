@@ -123,10 +123,63 @@ customize the content in order to fit the design of your page.
     
 - Sitepublic (Module: Sitepublic):
     It allows to:
-        - manage the display of the pages related to your public web site.-        - manage comment's form
+        - manage the display of the pages related to your public web site.
         - manage contact's form
  
-- Pagews (Module: Pagews):  It contains web services. It gives you pagearrangement object related to a page (public or private)
+- Pagews (Module: Pagews):  this web service send in a json format a pagearrangement object.
+It means you can get all the html content related to a page organized through the pagearrangement object.
+It allows to get this content through an ajax request and not from a viewmodel object from Zend Framework.
+It is useful if you use a front-end framework.
+
+You have 3 endpoints:
+1) getallpagesbyspaceid
+     get pages related to a space
+1) getpagearrangementbypagename
+     get all the objects related to the page by filename
+2) getpagearrangementbypageid
+    get all the objects related to the page by id
+
+        Please notice that these web services are by default available for any user profile
+
+- Searchws (Module: Searchws): This web service allows to search words contained in your pages.
+
+        You have 3 endpoints :    
+            1) For the public website 
+                - getpublicpages
+            2) For the extranet
+                - getprivatepages
+            3) For the back-office
+                - getallpages
+        
+            It accepts POST http request. 
+            The content-type can be application/json or application/x-www-form-urlencoded.
+            
+            Body example in a json format: {
+                "search": my words separated by a whitespace 
+            }
+            
+            An example of a response in a json format :
+            
+            {
+                "results": [
+                    {
+                        "contenttitle": "Image Slider 1",
+                        "contentsubtitle": "",
+                        "contenthtml": "\r\nLorem Ipsum\r\n\r\nCassium viderit etiam magis habemus.Cassium viderit etiam magis habemus\r\n\r\nLearn more Examples",
+                        "contentcreation": "2018-09-28 18:37:31",
+                        "pagefilename": "index.phtml",
+                        "pagetitle": "One Page",
+                        "sectiontitle": "Home",
+                        "pagerank": "1",
+                        "sectionrank": "1",
+                        "contentrank": "1",
+                        "occurences": [
+                            "lorem",
+                            "ipsum"
+                        ]
+                    }
+                ]
+            }
 
 - Uploadmgmt (Module: Uploadmgmt): This module allows a user of an extranet to upload files. 
 Through an admnistration pages, you can download, validate, modify or delete the documents. 

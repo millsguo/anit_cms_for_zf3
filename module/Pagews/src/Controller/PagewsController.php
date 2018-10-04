@@ -9,7 +9,7 @@ use Sousrubrique\Model\Sousrubriquedao;
 use Pagearrangement\Model\PagearrangementDao;
 
 class PagewsController extends AbstractActionController {
-
+/*
     public function getallpagesAction() {
         $rubriqueDao = new RubriqueDao();
         $allPagesBySpace = $rubriqueDao->getAllRubriques("array");
@@ -18,7 +18,7 @@ class PagewsController extends AbstractActionController {
             'data' => $allPagesBySpace
         ));
     }
-
+*/
     public function getallpagesbyspaceidAction() {
         $spaceId = $this->params()->fromRoute('id');
         $rubriqueDao = new RubriqueDao();
@@ -28,7 +28,7 @@ class PagewsController extends AbstractActionController {
             'data' => $allPagesBySpace
         ));
     }
-
+/*
     public function getallsectionsbypageidAction() {
         $pageId = $this->params()->fromRoute('id');
         $sousrubriqueDao = new Sousrubriquedao();
@@ -37,7 +37,7 @@ class PagewsController extends AbstractActionController {
             'data' => $sousrubriques
         ));
     }
-
+*/
     public function getpagearrangementbypagenameAction() {
         $filename = $this->params()->fromRoute('id');
         $rubriqueDao = new RubriqueDao();
