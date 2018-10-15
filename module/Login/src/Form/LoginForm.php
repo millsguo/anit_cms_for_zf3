@@ -36,7 +36,7 @@ class LoginForm extends Form {
         
         $this->captcha = new \Zend\Captcha\Figlet(array(
             
-            'wordLen' => 4,
+            'wordLen' => 6,
             'timeout' => 1200,
         ));
         

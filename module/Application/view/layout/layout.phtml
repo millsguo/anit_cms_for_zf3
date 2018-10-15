@@ -103,6 +103,7 @@
                             $role = $session->role;
 
                             if (strcmp($role, 'admin') == 0) {
+                                echo '<li><a href="'. $this->url('publishing').'">'.$this->translate('Publication').'</a></li>';
                                 echo '<li><a href="' . $this->url('loginmgmt') . '">Login</a></li>';
                             }
                             ?>
@@ -111,7 +112,6 @@
                             <li><a id="logoutbtn" href="javascript:void(0)"><?php echo $this->translate('Déconnexion'); ?></a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
-                
             </div>
         </div>
         <div class="container">

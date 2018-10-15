@@ -8,9 +8,11 @@ use Rubrique\Model\RubriqueDao;
 use Sousrubrique\Model\Sousrubriquedao;
 use Pagearrangement\Model\PagearrangementDao;
 
-class PagewsController extends AbstractActionController {
-/*
-    public function getallpagesAction() {
+class PagewsController extends AbstractActionController
+{
+
+    public function getallpagesAction()
+    {
         $rubriqueDao = new RubriqueDao();
         $allPagesBySpace = $rubriqueDao->getAllRubriques("array");
 
@@ -18,8 +20,9 @@ class PagewsController extends AbstractActionController {
             'data' => $allPagesBySpace
         ));
     }
-*/
-    public function getallpagesbyspaceidAction() {
+
+    public function getallpagesbyspaceidAction()
+    {
         $spaceId = $this->params()->fromRoute('id');
         $rubriqueDao = new RubriqueDao();
         $allPagesBySpace = $rubriqueDao->getAllRubriquesBySpaceId($spaceId, "array");
@@ -28,35 +31,40 @@ class PagewsController extends AbstractActionController {
             'data' => $allPagesBySpace
         ));
     }
-/*
-    public function getallsectionsbypageidAction() {
-        $pageId = $this->params()->fromRoute('id');
-        $sousrubriqueDao = new Sousrubriquedao();
-        $sousrubriques = $sousrubriqueDao->getSousrubriquesByRubrique($pageId, "array");
-        return new JsonModel(array(
-            'data' => $sousrubriques
-        ));
-    }
-*/
-    public function getpagearrangementbypagenameAction() {
+
+    /*
+        public function getallsectionsbypageidAction() {
+            $pageId = $this->params()->fromRoute('id');
+            $sousrubriqueDao = new Sousrubriquedao();
+            $sousrubriques = $sousrubriqueDao->getSousrubriquesByRubrique($pageId, "array");
+            return new JsonModel(array(
+                'data' => $sousrubriques
+            ));
+        }
+    */
+    public function getpagearrangementbypagenameAction()
+    {
         $filename = $this->params()->fromRoute('id');
+        // var_dump($filename);
         $rubriqueDao = new RubriqueDao();
         $rubrique = $rubriqueDao->getRubriqueByFilename($filename, "array");
-        $rubriqueId = (int) $rubrique['id'];
-        //var_dump($rubriqueId);
+        $rubriqueId = (int)$rubrique['id'];
+        // var_dump($rubriqueId);
+        // exit;
         $pageArrangementDao = new PagearrangementDao();
         $pageArrangement = $pageArrangementDao->getPage($rubriqueId, "asc", "array");
-        
+
         return new JsonModel(array(
             'data' => $pageArrangement
         ));
     }
 
-    public function getpagearrangementbypageidAction() {
+    public function getpagearrangementbypageidAction()
+    {
         $id = (int)$this->params()->fromRoute('id');
         $pageArrangementDao = new PagearrangementDao();
         $pageArrangement = $pageArrangementDao->getPage($id, "asc", "array");
-        
+
         return new JsonModel(array(
             'data' => $pageArrangement
         ));

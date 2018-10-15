@@ -15,7 +15,7 @@ return array(
     // The following section is new and should be added to your file
     'router' => array(
         'routes' => array(
-            'pagews' => array(
+            'searchws' => array(
                 'type' => Segment::class,
                 'options' => array(
                     'route' => '/searchws[/:action]',

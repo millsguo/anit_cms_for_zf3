@@ -80,6 +80,7 @@ return array(
     'Siteprivate\\' => array($baseDir . '/module/Siteprivate/src'),
     'Searchws\\' => array($baseDir . '/module/Searchws/src'),
     'Rubrique\\' => array($baseDir . '/module/Rubrique/src'),
+    'Publishing\\' => array($baseDir . '/module/Publishing/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),

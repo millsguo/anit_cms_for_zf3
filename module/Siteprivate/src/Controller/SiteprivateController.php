@@ -195,12 +195,28 @@ class SiteprivateController extends AbstractActionController
             $page = str_replace(".phtml", "", $firstRubrique->getFilename());
         }
 
-        //get cache
-        $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
+        $loginaccess = new \Zend\Session\Container('myacl');
+        //get cache only for an anonymous user or an extranet user
+        if ((strcasecmp($loginaccess->role, MyAclRoles::$USER) == 0 || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) == 0)
+        ) {
+            //get cache
+            $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
+        }
 
         if (!$result) {
-            $rubrique = $rubriqueDao->getRubriqueByFilename($page . ".phtml", 'object');
+            $rubrique = $rubriqueDao->getPrivateRubriqueByFilename($page . ".phtml", 'object');
             $idrub = $rubrique->getId();
+
+            //if the page is not authorized to be published but the request comes from an user of the back-office or an adminstrator
+            //the page will be displayed
+            if (($rubrique->getId() == null || (int)$rubrique->getId() == 0) && (strcasecmp($loginaccess->role, MyAclRoles::$USER) == 0
+                    || strcasecmp($loginaccess->role, MyAclRoles::ADMIN) == 0)
+            ) {
+                $rubrique = $rubriqueDao->getRubriqueByFilename($page . ".phtml", 'object');
+            } elseif ($rubrique->getId() == null || (int)$rubrique->getId() == 0) {
+                return $this->notFoundAction();
+            }
+
             //It doesn't have the proper behaviour with the admin's user
             // (user provided by default for visualization)
             if ((strcasecmp($role, MyAclRoles::$ADMIN) == 0) || (strcasecmp($role, MyAclRoles::$USER) == 0)) {
@@ -240,15 +256,18 @@ class SiteprivateController extends AbstractActionController
             $this->layout()->setVariable('navigationJSON', $allPagesBySpaceJSON);
 
             //Cache management
-            $this->cache->setCacheDataItem($this->getEvent()->getRouteMatch(), array(
-                    'navigationJSON' => $allPagesBySpaceJSON,
-                    'navigation' => $allPagesBySpace,
-                    'metas' => $metas,
-                    'pageContents' => $pageContents,
-                    'pageContentsJSON' => $pageContentsJSON,
-                    'comments' => $comments
-                )
-            );
+            if ((strcasecmp($loginaccess->role, MyAclRoles::$ANONYMOUS) == 0 || strcasecmp($loginaccess->role, MyAclRoles::$GUEST) == 0)
+            ) {
+                $this->cache->setCacheDataItem($this->getEvent()->getRouteMatch(), array(
+                        'navigationJSON' => $allPagesBySpaceJSON,
+                        'navigation' => $allPagesBySpace,
+                        'metas' => $metas,
+                        'pageContents' => $pageContents,
+                        'pageContentsJSON' => $pageContentsJSON,
+                        'comments' => $comments
+                    )
+                );
+            }
 
             $viewModel = new ViewModel(array(
                 'navigationJSON' => $allPagesBySpaceJSON,
