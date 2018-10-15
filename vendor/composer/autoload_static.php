@@ -121,6 +121,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         ),
         'P' => 
         array (
+            'Publishing\\' => 11,
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
@@ -480,6 +481,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'Rubrique\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/Rubrique/src',
+        ),
+        'Publishing\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Publishing/src',
         ),
         'Psr\\SimpleCache\\' => 
         array (

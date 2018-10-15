@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-06 19:05+0200\n"
-"PO-Revision-Date: 2018-09-06 19:06+0200\n"
+"POT-Creation-Date: 2018-10-15 18:53+0200\n"
+"PO-Revision-Date: 2018-10-15 18:53+0200\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: me & myself\n"
 "Language: fr_FR\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: Privatespace/src/Controller/PrivatespaceController.php:41
 #: Privatespacelogin/src/Controller/PrivatespaceloginController.php:61
 #: Rubrique/src/Controller/RubriqueController.php:53
-#: Siteprivate/src/Controller/SiteprivateController.php:541
+#: Siteprivate/src/Controller/SiteprivateController.php:559
 #: Sousrubrique/src/Controller/SousrubriqueController.php:48
 msgid "Ajouter"
 msgstr ""
@@ -47,7 +47,7 @@ msgstr ""
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:61
 #: Commentaire/view/commentaire/commentaire/index.phtml:66
 #: Contenu/view/contenu/contenu/index.phtml:63
-#: Contenu/view/contenu/contenu/indexalltypes.phtml:77
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:80
 #: Fichiers/view/fichiers/fichiers/index.phtml:131
 #: Galerie/view/galerie/galerie/index.phtml:61
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:67
@@ -81,7 +81,7 @@ msgstr ""
 #: Rubrique/src/Form/RubriqueForm.php:111
 #: Rubrique/src/Form/RubriqueForm.php:123
 #: Sousrubrique/src/Controller/SousrubriqueController.php:178
-#: Application/view/layout/layout.phtml:189
+#: Application/view/layout/layout.phtml:190
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:21
 #: Commentaire/view/commentaire/commentaire/delete.phtml:22
 #: Contenu/view/contenu/contenu/delete.phtml:21
@@ -124,7 +124,7 @@ msgstr ""
 #: Rubrique/src/Form/RubriqueForm.php:111
 #: Rubrique/src/Form/RubriqueForm.php:123
 #: Sousrubrique/src/Controller/SousrubriqueController.php:180
-#: Application/view/layout/layout.phtml:170
+#: Application/view/layout/layout.phtml:171
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:20
 #: Commentaire/view/commentaire/commentaire/delete.phtml:21
 #: Contenu/view/contenu/contenu/delete.phtml:20
@@ -400,6 +400,7 @@ msgstr ""
 #: Galerie/view/galerie/galerie/index.phtml:48
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:50
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:50
+#: Publishing/view/publishing/publishing/index.phtml:50
 #: Rubrique/view/rubrique/rubrique/index.phtml:52
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:47
 msgid "Position"
@@ -485,19 +486,19 @@ msgid "Image 2"
 msgstr ""
 
 #: Login/src/Controller/LoginController.php:66
-#: Siteprivate/src/Controller/SiteprivateController.php:121
+#: Siteprivate/src/Controller/SiteprivateController.php:120
 msgid ""
 "Veuillez recommencer le nom d'utilisateur et/ou le mot de passe sont "
 "incorrects"
 msgstr ""
 
 #: Login/src/Controller/LoginController.php:97
-#: Siteprivate/src/Controller/SiteprivateController.php:156
+#: Siteprivate/src/Controller/SiteprivateController.php:155
 msgid "Veuillez contacter l'administrateur du site svp."
 msgstr ""
 
 #: Login/src/Controller/LoginController.php:104
-#: Siteprivate/src/Controller/SiteprivateController.php:164
+#: Siteprivate/src/Controller/SiteprivateController.php:163
 msgid "Veuillez rafraichir la page et recommencer svp."
 msgstr ""
 
@@ -760,6 +761,7 @@ msgstr ""
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:49
 #: Privatespace/view/privatespace/privatespace/index.phtml:51
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:51
+#: Publishing/view/publishing/publishing/index.phtml:48
 #: Rubrique/view/rubrique/rubrique/index.phtml:51
 msgid "Libellé"
 msgstr ""
@@ -877,6 +879,10 @@ msgstr ""
 msgid "Vous devez préciser si vous validez l'inscription"
 msgstr ""
 
+#: Publishing/src/Controller/PublishingController.php:72
+msgid "un paramètre n'est pas correct"
+msgstr ""
+
 #: Rubrique/src/Controller/RubriqueController.php:277
 #: Rubrique/src/Controller/RubriqueController.php:321
 #: Rubrique/src/Controller/RubriqueController.php:348
@@ -919,32 +925,39 @@ msgstr ""
 msgid "L'extension doit se terminer par phtml en minuscule"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:590
+#: Searchws/src/Controller/SearchwsController.php:29
+#: Searchws/src/Controller/SearchwsController.php:49
+#: Searchws/src/Controller/SearchwsController.php:73
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:308
+msgid "Ce n'est pas une requête POST"
+msgstr ""
+
+#: Siteprivate/src/Controller/SiteprivateController.php:608
 msgid "Un compte existe déjà avec cette email"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:620
-#: Siteprivate/src/Controller/SiteprivateController.php:968
+#: Siteprivate/src/Controller/SiteprivateController.php:638
+#: Siteprivate/src/Controller/SiteprivateController.php:986
 msgid "Les mots de passes saisis sont différents"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:718
+#: Siteprivate/src/Controller/SiteprivateController.php:736
 msgid "Vous ne pouvez pas modifier votre email"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:817
+#: Siteprivate/src/Controller/SiteprivateController.php:835
 msgid "Veuillez cliquer sur le lien afin d'initialiser un nouveau mot de passe"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:837
+#: Siteprivate/src/Controller/SiteprivateController.php:855
 msgid "Changer votre mot de passe "
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:899
+#: Siteprivate/src/Controller/SiteprivateController.php:917
 msgid "L'adresse email est incorrect"
 msgstr ""
 
-#: Siteprivate/src/Controller/SiteprivateController.php:956
+#: Siteprivate/src/Controller/SiteprivateController.php:974
 msgid "Un compte existe déjà avec cet email"
 msgstr ""
 
@@ -1029,10 +1042,6 @@ msgstr ""
 
 #: Uploadmgmt/src/Controller/UploadmgmtController.php:288
 msgid "OK"
-msgstr ""
-
-#: Uploadmgmt/src/Controller/UploadmgmtController.php:308
-msgid "Ce n'est pas une requête POST"
 msgstr ""
 
 #: Application/view/application/index/index.phtml:2
@@ -1128,12 +1137,16 @@ msgstr ""
 msgid "Validés"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:111
+#: Application/view/layout/layout.phtml:106
+msgid "Publication"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:112
 #: Siteprivate/view/siteprivate/layout/layout.phtml:64
 msgid "Déconnexion"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:169
+#: Application/view/layout/layout.phtml:170
 #: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:85
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:159
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:157
@@ -1170,6 +1183,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:12
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:12
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:12
+#: Publishing/view/publishing/publishing/index.phtml:12
 #: Rubrique/view/rubrique/rubrique/edit.phtml:276
 #: Rubrique/view/rubrique/rubrique/index.phtml:12
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:12
@@ -1203,6 +1217,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:13
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:13
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:13
+#: Publishing/view/publishing/publishing/index.phtml:13
 #: Rubrique/view/rubrique/rubrique/edit.phtml:277
 #: Rubrique/view/rubrique/rubrique/index.phtml:13
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:13
@@ -1236,6 +1251,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:14
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:14
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:14
+#: Publishing/view/publishing/publishing/index.phtml:14
 #: Rubrique/view/rubrique/rubrique/edit.phtml:278
 #: Rubrique/view/rubrique/rubrique/index.phtml:14
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:14
@@ -1293,6 +1309,8 @@ msgstr ""
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:14
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Publishing/view/publishing/publishing/index.phtml:14
+#: Publishing/view/publishing/publishing/index.phtml:16
 #: Rubrique/view/rubrique/rubrique/edit.phtml:278
 #: Rubrique/view/rubrique/rubrique/edit.phtml:280
 #: Rubrique/view/rubrique/rubrique/index.phtml:14
@@ -1332,6 +1350,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:15
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:15
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:15
+#: Publishing/view/publishing/publishing/index.phtml:15
 #: Rubrique/view/rubrique/rubrique/edit.phtml:279
 #: Rubrique/view/rubrique/rubrique/index.phtml:15
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:15
@@ -1367,6 +1386,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:16
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Publishing/view/publishing/publishing/index.phtml:16
 #: Rubrique/view/rubrique/rubrique/edit.phtml:280
 #: Rubrique/view/rubrique/rubrique/index.phtml:16
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:16
@@ -1400,6 +1420,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:16
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:16
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:16
+#: Publishing/view/publishing/publishing/index.phtml:16
 #: Rubrique/view/rubrique/rubrique/edit.phtml:280
 #: Rubrique/view/rubrique/rubrique/index.phtml:16
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:16
@@ -1430,6 +1451,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:17
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:17
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:17
+#: Publishing/view/publishing/publishing/index.phtml:17
 #: Rubrique/view/rubrique/rubrique/index.phtml:17
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:17
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:15
@@ -1459,6 +1481,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:17
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:17
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:17
+#: Publishing/view/publishing/publishing/index.phtml:17
 #: Rubrique/view/rubrique/rubrique/index.phtml:17
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:17
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:15
@@ -1491,6 +1514,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:19
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:19
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:19
+#: Publishing/view/publishing/publishing/index.phtml:19
 #: Rubrique/view/rubrique/rubrique/edit.phtml:283
 #: Rubrique/view/rubrique/rubrique/index.phtml:19
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:19
@@ -1524,6 +1548,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:20
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:20
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:20
+#: Publishing/view/publishing/publishing/index.phtml:20
 #: Rubrique/view/rubrique/rubrique/edit.phtml:284
 #: Rubrique/view/rubrique/rubrique/index.phtml:20
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:20
@@ -1557,6 +1582,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:21
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:21
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:21
+#: Publishing/view/publishing/publishing/index.phtml:21
 #: Rubrique/view/rubrique/rubrique/edit.phtml:285
 #: Rubrique/view/rubrique/rubrique/index.phtml:21
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:21
@@ -1590,6 +1616,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:23
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:23
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:23
+#: Publishing/view/publishing/publishing/index.phtml:23
 #: Rubrique/view/rubrique/rubrique/edit.phtml:287
 #: Rubrique/view/rubrique/rubrique/index.phtml:23
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:23
@@ -1623,6 +1650,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:24
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:24
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:24
+#: Publishing/view/publishing/publishing/index.phtml:24
 #: Rubrique/view/rubrique/rubrique/edit.phtml:288
 #: Rubrique/view/rubrique/rubrique/index.phtml:24
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:24
@@ -1656,6 +1684,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:25
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:25
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:25
+#: Publishing/view/publishing/publishing/index.phtml:25
 #: Rubrique/view/rubrique/rubrique/edit.phtml:289
 #: Rubrique/view/rubrique/rubrique/index.phtml:25
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:25
@@ -1689,6 +1718,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:26
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:26
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:26
+#: Publishing/view/publishing/publishing/index.phtml:26
 #: Rubrique/view/rubrique/rubrique/edit.phtml:290
 #: Rubrique/view/rubrique/rubrique/index.phtml:26
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:26
@@ -1722,6 +1752,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:29
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:29
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:29
+#: Publishing/view/publishing/publishing/index.phtml:29
 #: Rubrique/view/rubrique/rubrique/edit.phtml:293
 #: Rubrique/view/rubrique/rubrique/index.phtml:29
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:29
@@ -1755,6 +1786,7 @@ msgstr ""
 #: Privatespace/view/privatespace/privatespace/index.phtml:30
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:30
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/indexlogin.phtml:30
+#: Publishing/view/publishing/publishing/index.phtml:30
 #: Rubrique/view/rubrique/rubrique/edit.phtml:294
 #: Rubrique/view/rubrique/rubrique/index.phtml:30
 #: Siteprivate/view/siteprivate/Siteprivate/indexlogin.phtml:30
@@ -1955,7 +1987,7 @@ msgstr ""
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:63
 #: Commentaire/view/commentaire/commentaire/index.phtml:68
 #: Contenu/view/contenu/contenu/index.phtml:65
-#: Contenu/view/contenu/contenu/indexalltypes.phtml:79
+#: Contenu/view/contenu/contenu/indexalltypes.phtml:82
 #: Fichiers/view/fichiers/fichiers/index.phtml:133
 #: Galerie/view/galerie/galerie/index.phtml:63
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:69
@@ -2117,6 +2149,7 @@ msgstr ""
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:51
 #: Privatespace/view/privatespace/privatespace/index.phtml:52
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/index.phtml:52
+#: Publishing/view/publishing/publishing/index.phtml:53
 #: Rubrique/view/rubrique/rubrique/edit.phtml:373
 #: Rubrique/view/rubrique/rubrique/index.phtml:54
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:48
@@ -2480,6 +2513,23 @@ msgstr ""
 msgid "Gérer les utilisateurs"
 msgstr ""
 
+#: Publishing/view/publishing/publishing/index.phtml:3
+msgid "Gestion de la publication des pages html"
+msgstr ""
+
+#: Publishing/view/publishing/publishing/index.phtml:52
+#: Rubrique/view/rubrique/rubrique/index.phtml:53
+msgid "Espace"
+msgstr ""
+
+#: Publishing/view/publishing/publishing/index.phtml:67
+msgid "Publier"
+msgstr ""
+
+#: Publishing/view/publishing/publishing/index.phtml:69
+msgid "Arrêter la publication"
+msgstr ""
+
 #: Rubrique/view/rubrique/rubrique/add.phtml:3
 msgid "Ajouter une nouvelle rubrique"
 msgstr ""
@@ -2556,10 +2606,6 @@ msgstr ""
 
 #: Rubrique/view/rubrique/rubrique/index.phtml:44
 msgid "Ajouter une rubrique"
-msgstr ""
-
-#: Rubrique/view/rubrique/rubrique/index.phtml:53
-msgid "Espace"
 msgstr ""
 
 #: Siteprivate/view/siteprivate/Siteprivate/changepassword.phtml:3

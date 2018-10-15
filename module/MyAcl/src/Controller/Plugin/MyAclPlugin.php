@@ -57,6 +57,7 @@ class MyAclPlugin extends AbstractPlugin
         $acl->addResource('mapcontentcontroller'); // mapcontent module
         //$acl->addResource('mobilewscontroller'); // authentication and upload ws
         $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
+        $acl->addResource('publishingcontroller'); // uploadmgmt module
 	# end RESOURCES ########################################
 		
 	################ PERMISSIONS #######################
@@ -113,7 +114,8 @@ class MyAclPlugin extends AbstractPlugin
         $acl->allow('user', 'privatespacelogincontroller', NULL);
         
         // pagews -------------------------->
-        $acl->allow('anonymous', 'pagewscontroller', NULL);
+        $acl->allow('anonymous', 'pagewscontroller', array('getallpagesbyspaceid', 'getpagearrangementbypagename', 'getpagearrangementbypageid'));
+        $acl->allow('user', 'pagewscontroller', array('getallpages'));
 
         // searchws -------------------------->
         //$acl->allow('anonymous', 'searchwscontroller', array('getpublicpages', 'getprivatepages', 'getallpages'));
@@ -134,7 +136,8 @@ class MyAclPlugin extends AbstractPlugin
         $acl->allow('anonymous', 'siteprivatecontroller', array('index','auth','registration','forgottenpassword', 'changepassword','displayregistrationstate'));
 	    $acl->allow('guest', 'siteprivatecontroller', array('updatecontactinformation','changepassword','displayprivatepage','logout','addcommentajax','contactajax'));
 
-        
+        // publishing -------------------------->
+        $acl->allow('admin', 'publishingcontroller', NULL);
 	
 		################ end PERMISSIONS #####################
 		

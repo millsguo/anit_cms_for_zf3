@@ -41,6 +41,9 @@ class RubriqueMapper
         if (isset($data['fileuploadForm'])) {
             $rubrique->setHasFileuploadForm($data['fileuploadForm']);
         }
+        if (isset($data['publishing'])) {
+            $rubrique->setPublishing($data['publishing']);
+        }
 
         return $rubrique;
     }

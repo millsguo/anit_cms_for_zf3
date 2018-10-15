@@ -17,6 +17,7 @@ class Rubrique {
     protected $hasMessageForm;
     protected $hasUpdateForm;
     protected $hasFileuploadForm;
+    protected $publishing;
 
     public function __construct() {}
 
@@ -98,5 +99,13 @@ class Rubrique {
 
     public function gethasFileuploadForm(){
         return $this->hasFileuploadForm;
+    }
+
+    public function setPublishing($_topublish){
+        $this->publishing = $_topublish;
+    }
+
+    public function getPublishing(){
+        return $this->publishing;
     }
 }

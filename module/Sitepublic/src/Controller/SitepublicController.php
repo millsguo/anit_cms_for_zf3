@@ -3,6 +3,7 @@
 namespace Sitepublic\Controller;
 
 use Contenu\Model\ContenuType;
+use MyAcl\Controller\Plugin\MyAclRoles;
 use Rubrique\Model\RubriqueDao;
 use Rubrique\Model\MetaDao;
 use Commentaire\Model\Commentaire;
@@ -30,19 +31,22 @@ use ExtLib\Utils;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
-class SitepublicController extends AbstractActionController {
+class SitepublicController extends AbstractActionController
+{
 
     private $cache;
     private $translator;
 
-    public function __construct(CacheDataListener $cacheDataListener, Translator $translator){
+    public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
+    {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
     private static $publicSpace = -1;
 
-    public function displaypublicpageAction() {
+    public function displaypublicpageAction()
+    {
 
         $pageArrangementDao = new PagearrangementDao();
         $metaDao = new MetaDao();
@@ -60,11 +64,27 @@ class SitepublicController extends AbstractActionController {
             $page = str_replace(".phtml", "", $firtRubrique->getFilename());
         }
 
-        //get cache
-        $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
+        $loginaccess = new \Zend\Session\Container('myacl');
+        //get cache only for anonymous or extranet user
+        if ((strcasecmp($loginaccess->role, MyAclRoles::$USER) == 0 || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) == 0)
+        ) {
+            //get cache
+            $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
+        }
+
 
         if (!$result) {
-            $rubrique = $rubriqueDao->getRubriqueByFilename($page . ".phtml", 'object');
+            $rubrique = $rubriqueDao->getPublicRubriqueByFilename($page . ".phtml", 'object');
+            //if the page is not authorized to be published but the request comes from an user of the back-office or an adminstrator
+            //the page will be displayed
+            if (($rubrique->getId() == null || (int)$rubrique->getId() == 0) && (strcasecmp($loginaccess->role, MyAclRoles::$USER) == 0
+                    || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) == 0)
+            ) {
+                $rubrique = $rubriqueDao->getRubriqueByFilename($page . ".phtml", 'object');
+            } elseif ($rubrique->getId() == null || (int)$rubrique->getId() == 0) {
+                return $this->notFoundAction();
+            }
+
             $idrub = $rubrique->getId();
             $allPagesBySpace = $rubriqueDao->getAllRubriquesBySpaceId(SitepublicController::$publicSpace, "array");
             $allPagesBySpaceJSON = json_encode($allPagesBySpace);
@@ -95,15 +115,18 @@ class SitepublicController extends AbstractActionController {
             $this->layout()->setVariable('navigationJSON', $allPagesBySpaceJSON);
 
             //Cache management
-            $this->cache->setCacheDataItem($this->getEvent()->getRouteMatch(), array(
-                'navigationJSON' => $allPagesBySpaceJSON,
-                'navigation' => $allPagesBySpace,
-                'metas' => $metas,
-                'pageContents' => $pageContents,
-                'pageContentsJSON' => $pageContentsJSON,
-                'comments' => $comments
+            if ((strcasecmp($loginaccess->role, MyAclRoles::$ANONYMOUS) == 0 || strcasecmp($loginaccess->role, MyAclRoles::$GUEST) == 0)
+            ) {
+                $this->cache->setCacheDataItem($this->getEvent()->getRouteMatch(), array(
+                        'navigationJSON' => $allPagesBySpaceJSON,
+                        'navigation' => $allPagesBySpace,
+                        'metas' => $metas,
+                        'pageContents' => $pageContents,
+                        'pageContentsJSON' => $pageContentsJSON,
+                        'comments' => $comments
                     )
-            );
+                );
+            }
 
             $viewModel = new ViewModel(array(
                 'navigationJSON' => $allPagesBySpaceJSON,
@@ -148,7 +171,8 @@ class SitepublicController extends AbstractActionController {
         return $viewModel;
     }
 
-    public function addcommentajaxAction() {
+    public function addcommentajaxAction()
+    {
 
         $request = $this->getRequest();
 
@@ -170,7 +194,7 @@ class SitepublicController extends AbstractActionController {
                 $subject = "Contact site web de la part de " . $utils->stripTags_replaceHtmlChar_trim($request->getPost('contactnom'), true, true, true);
                 $from = $utils->stripTags_replaceHtmlChar_trim($request->getPost('contactemail'), true, true, true);
 
-                $contenuid = (int) $utils->stripTags_replaceHtmlChar_trim($request->getPost('contactcontenuid'), true, true, true);
+                $contenuid = (int)$utils->stripTags_replaceHtmlChar_trim($request->getPost('contactcontenuid'), true, true, true);
 
                 $txt = wordwrap($utils->stripTags_replaceHtmlChar_trim($request->getPost('contacttext'), true, true, true), 70);
 
@@ -245,7 +269,8 @@ class SitepublicController extends AbstractActionController {
         }
     }
 
-    public function contactajaxAction() {
+    public function contactajaxAction()
+    {
 
         $request = $this->getRequest();
 
@@ -332,7 +357,8 @@ class SitepublicController extends AbstractActionController {
         }
     }
 
-    private function getInformationFromPage($pageContents) {
+    private function getInformationFromPage($pageContents)
+    {
         $configuration = array();
         $configuration['hasMessageForm'] = false;
         $configuration['hasContactForm'] = false;
@@ -342,10 +368,10 @@ class SitepublicController extends AbstractActionController {
                 //$counter++;
                 $configuration['phtmlFile'] = $value->getFilename();
 
-                if ((bool) $value->getHasMessageForm()) {
+                if ((bool)$value->getHasMessageForm()) {
                     $configuration['hasMessageForm'] = true;
                 }
-                if ((bool) $value->getHasContactForm()) {
+                if ((bool)$value->getHasContactForm()) {
                     $configuration['hasContactForm'] = true;
                 }
             }// set contenuId for commentForm

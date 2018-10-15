@@ -37,7 +37,8 @@
       "Sousrubrique\\": "module/Sousrubrique/src/",
       "Uploadmgmt\\":"module/Uploadmgmt/src/",
       "Mapcontent\\":"module/Mapcontent/src/",
-      "Searchws\\":"module/Searchws/src/"
+      "Searchws\\":"module/Searchws/src/",
+      "Publishing\\":"module/Publishing/src/"
     }
   },
   "require": {

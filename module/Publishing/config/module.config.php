@@ -1,24 +1,25 @@
 <?php
-namespace Rubrique;
+namespace Publishing;
 
 return array(
 	'controllers' => array(
 		'factories' => array(
-			Controller\RubriqueController::class => Controller\RubriqueControllerFactory::class),
+			Controller\PublishingController::class => Controller\PublishingControllerFactory::class),
 	),
 	
 	// The following section is new and should be added to your file
 	'router' => array(
 		'routes' => array(
-			'rubrique' => array(
+			'publishing' => array(
 				'type' => 'segment',
 				'options' => array(
-					'route' => '/rubrique[/:action][/:id]',
+					'route' => '/publishing[/:action][/:id]',
 					'constraints' => array(
 					'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+					//'publish' =>'[0-1]+',
 					'id' => '[0-9]+',),
 				'defaults' => array(
-					'controller' => Controller\RubriqueController::class,
+					'controller' => Controller\PublishingController::class,
 					'action' => 'index'),
                                         //'cache'      => true),
 				),
@@ -27,7 +28,7 @@ return array(
 	),
 	'view_manager' => array(
 		'template_path_stack' => array(
-			'rubrique' => __DIR__ . '/../view',),
+			'publishing' => __DIR__ . '/../view',),
 	),
 );
 	
