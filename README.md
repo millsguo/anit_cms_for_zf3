@@ -185,6 +185,8 @@ You have 3 endpoints:
 Through an admnistration pages, you can download, validate, modify or delete the documents. 
 It could be pictures, office documents, videos, compressed files.
 
+- Publishing (Module: Publishing): It allows an administrator of the back-office to publish a page or not.
+It means a user of the back-office can create a page and its contents but it is only an administrator of the site who give the authorization to publish.
 
 
 Position
