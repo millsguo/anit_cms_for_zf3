@@ -5,6 +5,7 @@ namespace Privatespace;
 use Privatespace\Controller\PrivatespaceControllerFactory;
 use Zend\Router\Http\Segment;
 
+
 return array(
 	'controllers' => array(
 		'factories' => array(

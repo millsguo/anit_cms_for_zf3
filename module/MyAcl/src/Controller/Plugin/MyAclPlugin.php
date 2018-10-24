@@ -6,11 +6,18 @@ use Zend\Mvc\Controller\Plugin\AbstractPlugin,
     Zend\Permissions\Acl\Acl,
     Zend\Permissions\Acl\Role\GenericRole as Role,
     Zend\Permissions\Acl\Resource\GenericResource as Resource;
-    
+
+/**
+ * Class MyAclPlugin
+ * @package MyAcl\Controller\Plugin
+ */
 class MyAclPlugin extends AbstractPlugin
 {
     protected $sesscontainer ;
 
+    /**
+     * @return SessionContainer
+     */
     private function getSessContainer()
     {
         if (!$this->sesscontainer) {
@@ -18,7 +25,10 @@ class MyAclPlugin extends AbstractPlugin
         }
         return $this->sesscontainer;
     }
-    
+
+    /**
+     * @param $e
+     */
     public function doAuthorization($e)
     {
         // set ACL

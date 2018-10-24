@@ -6,12 +6,23 @@ use Application\DBConnection\ParentDao;
 use Commentaire\Model\Commentaire;
 use Commentaire\Model\Mapper\CommentaireMapper;
 
+/**
+ * Class CommentaireDao
+ * @package Commentaire\Model
+ */
 class CommentaireDao extends ParentDao{
 
+    /**
+     * CommentaireDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType
+     * @return array|array of Commentaire
+     */
     public function getAllCommentaires($dataType) {
 
         $count = 0;
@@ -44,6 +55,10 @@ class CommentaireDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     * @return \Commentaire\Model\Commentaire
+     */
     public function getCommentaire($id) {
 
         $id = (int) $id;
@@ -66,7 +81,14 @@ class CommentaireDao extends ParentDao{
         return $commentaire;
     }
 
-    public function getCommentairesByType($type, $status, $size,$dataType) {
+    /**
+     * @param $type
+     * @param $status
+     * @param $size
+     * @param $dataType
+     * @return array|array of Commentaire
+     */
+    public function getCommentairesByType($type, $status, $size, $dataType) {
 
         $count = 0;
         $mapper = new CommentaireMapper();
@@ -104,7 +126,13 @@ class CommentaireDao extends ParentDao{
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $rubriqueid
+     * @param $status
+     * @param $dataType
+     * @return array|array of Commentaires
+     */
     public function getCommentairesByRubrique($rubriqueid, $status, $dataType) {
 
         $mapper = new CommentaireMapper();
@@ -144,7 +172,13 @@ class CommentaireDao extends ParentDao{
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $contenuid
+     * @param $status
+     * @param $dataType
+     * @return array|array of Commentaires
+     */
     public function getCommentairesByContenu($contenuid, $status, $dataType) {
 
         $mapper = new CommentaireMapper();
@@ -182,6 +216,10 @@ class CommentaireDao extends ParentDao{
         }
     }
 
+    /**
+     * @param \Commentaire\Model\Commentaire $commentaire
+     * @return bool
+     */
     public function saveCommentaire(Commentaire $commentaire) {
 
         $id = (int) $commentaire->getId();
@@ -290,6 +328,9 @@ class CommentaireDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteCommentaire($id) {
 
         $id = (int) $id;

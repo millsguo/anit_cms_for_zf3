@@ -4,12 +4,23 @@ namespace Message\Model\Mapper;
 
 use Message\Model\Message;
 
+/**
+ * Class MessageMapper
+ * @package Message\Model\Mapper
+ */
 class MessageMapper
 {
+    /**
+     * MessageMapper constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * @param $data (array)
+     * @return Message
+     */
     public function exchangeArray($data) {
 
         $message = new Message();

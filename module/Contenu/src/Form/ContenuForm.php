@@ -9,13 +9,18 @@ use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
 use ExtLib\Utils;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class ContenuForm
+ * @package Contenu\Form
+ */
 class ContenuForm extends Form {
 
     protected $utils;
 
-    
+
+    /**
+     * @return array
+     */
     protected function getRubriques() {
 
         $rubriquesDao = new RubriqueDao();
@@ -50,8 +55,12 @@ class ContenuForm extends Form {
       return $sousrubriqueArray;
       }
      */
-    /* TODO : get All Sous Rubriques by Id pour le select */
 
+
+    /**
+     * ContenuForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         
         $this->utils = new Utils(); 

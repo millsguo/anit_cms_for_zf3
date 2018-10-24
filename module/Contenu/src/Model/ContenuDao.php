@@ -11,8 +11,15 @@ use Blogcontent\Model\Blogcontent;
 use Blogcontent\Model\Mapper\BlogContentMapper;
 use Contenu\Model\Mapper\ContenuMapper;
 
+/**
+ * Class ContenuDao
+ * @package Contenu\Model
+ */
 class ContenuDao extends ParentDao {
 
+    /**
+     * ContenuDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
@@ -21,6 +28,11 @@ class ContenuDao extends ParentDao {
     c.image, c.image2, c.type, c.author, c.themes, c.contenu_date, c.othertext1, c.othertext2, c.othertext3, 
     c.sousrubriques_preview, c.contenu_rank_preview, c.gps_coordinates ';
 
+    /**
+     * @param $typeofContent
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getAllContentsByType($typeofContent, $dataType) {
 
         $count = 0;
@@ -92,6 +104,10 @@ class ContenuDao extends ParentDao {
     }
 
 
+    /**
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getAllContentsOrderByPage($dataType) {
 
         $count = 0;
@@ -162,6 +178,12 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     * @param $contenuType
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getAllContenusByRubriqueAndByContenuType($id, $contenuType, $dataType) {
 
         //var_dump($id);
@@ -246,6 +268,12 @@ class ContenuDao extends ParentDao {
         }
     }
 
+
+    /**
+     * @param $id
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getAllContentsByRubrique($id, $dataType) {
 
         //var_dump($id);
@@ -330,6 +358,13 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $rubName
+     * @param $limit
+     * @param $typeContenu
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getAllContenusByRubriqueName($rubName, $limit, $typeContenu, $dataType) {
 
         //var_dump($id);
@@ -419,6 +454,10 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     * @return \Contenu\Model\Contenu
+     */
     public function getContenu($id) {
 
         $id = (int) $id;
@@ -462,6 +501,11 @@ class ContenuDao extends ParentDao {
         return $contenuMapper->exchangeArray($contenustep1);
     }
 
+    /**
+     * @param $sousrubriqueid
+     * @param $dataType
+     * @return array|array of Contenu object
+     */
     public function getContenusBySousrubrique($sousrubriqueid, $dataType) {
 
         $sousrubriqueid = (int) $sousrubriqueid;
@@ -537,6 +581,9 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param \Contenu\Model\Contenu $contenu
+     */
     public function saveContenu(Contenu $contenu) {
 
         $id = (int) $contenu->getId();
@@ -584,6 +631,11 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     * @param $position
+     * @return bool
+     */
     public function updateContenuPosition($id, $position) {
 
         $id = (int) $id;
@@ -609,6 +661,9 @@ class ContenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteContenu($id) {
 
         $id = (int) $id;

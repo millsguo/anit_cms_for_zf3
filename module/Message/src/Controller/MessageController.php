@@ -16,17 +16,29 @@ use ExtLib\Utils;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class MessageController
+ * @package Message\Controller
+ */
 class MessageController extends AbstractActionController {
 
     protected $translator;
     protected $cache;
 
+    /**
+     * MessageController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator){
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $messageDao = new MessageDao();
@@ -36,7 +48,9 @@ class MessageController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new MessageForm();
@@ -91,6 +105,9 @@ class MessageController extends AbstractActionController {
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
 
         $form = new MessageForm();
@@ -175,6 +192,9 @@ class MessageController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         // $this->translator=$this->getServiceLocator()->get('translator');

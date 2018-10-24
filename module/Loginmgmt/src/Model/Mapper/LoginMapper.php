@@ -4,8 +4,16 @@ namespace Loginmgmt\Model\Mapper;
 
 use Loginmgmt\Model\Login;
 
+/**
+ * Class LoginMapper
+ * @package Loginmgmt\Model\Mapper
+ */
 class LoginMapper
 {
+    /**
+     * @param $data
+     * @return Login
+     */
     public function exchangeArray($data) {
 
         $login = new Login();
@@ -32,6 +40,10 @@ class LoginMapper
         return $login;
     }
 
+    /**
+     * @param $data
+     * @return Login
+     */
     public function exchangeForm($data) {
 
         $login = new Login();

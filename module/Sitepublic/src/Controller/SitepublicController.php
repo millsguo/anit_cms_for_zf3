@@ -31,12 +31,21 @@ use ExtLib\Utils;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class SitepublicController
+ * @package Sitepublic\Controller
+ */
 class SitepublicController extends AbstractActionController
 {
 
     private $cache;
     private $translator;
 
+    /**
+     * SitepublicController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
@@ -45,6 +54,9 @@ class SitepublicController extends AbstractActionController
 
     private static $publicSpace = -1;
 
+    /**
+     * @return null|ViewModel
+     */
     public function displaypublicpageAction()
     {
 
@@ -171,6 +183,9 @@ class SitepublicController extends AbstractActionController
         return $viewModel;
     }
 
+    /**
+     * @return JsonModel
+     */
     public function addcommentajaxAction()
     {
 
@@ -269,6 +284,9 @@ class SitepublicController extends AbstractActionController
         }
     }
 
+    /**
+     * @return JsonModel
+     */
     public function contactajaxAction()
     {
 
@@ -357,6 +375,10 @@ class SitepublicController extends AbstractActionController
         }
     }
 
+    /**
+     * @param $pageContents
+     * @return array
+     */
     private function getInformationFromPage($pageContents)
     {
         $configuration = array();

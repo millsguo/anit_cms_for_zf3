@@ -6,6 +6,10 @@ use Sousrubrique\Model\Sousrubrique;
 use Contenu\Model\IContenu;
 use Contenu\Model\Mapper\ContenuMapper as Mapper;
 
+/**
+ * Class Contenu
+ * @package Contenu\Model
+ */
 class Contenu implements IContenu{
 
     protected $id;
@@ -17,84 +21,145 @@ class Contenu implements IContenu{
     protected $image;
     protected $image2;
     protected $type;
-   
+
+    /**
+     * Contenu constructor.
+     */
     public function __construct() {
         
     }
 
+    /**
+     * @param $_id
+     */
     public function setId($_id) {
         $this->id = $_id;
     }
 
+    /**
+     * @return mixed
+     */
     public function getId() {
         return $this->id;
     }
 
+    /**
+     * @param $_titre
+     */
     public function setTitre($_titre) {
         $this->titre = $_titre;
     }
 
+    /**
+     * @return mixed
+     */
     public function getTitre() {
         return $this->titre;
     }
 
+    /**
+     * @param $_soustitre
+     */
     public function setSousTitre($_soustitre) {
         $this->soustitre = $_soustitre;
     }
 
+    /**
+     * @return mixed
+     */
     public function getSousTitre() {
         return $this->soustitre;
     }
 
-    //public function setSousRubrique(SousRubrique $_sousrubrique) {
+    /**
+     * @param Sousrubrique $_sousrubrique
+     */
     public function setSousRubrique(SousRubrique $_sousrubrique) {
         $this->sousrubrique = $_sousrubrique;
     }
 
+    /**
+     * @return mixed
+     */
     public function getSousRubrique() {
         return $this->sousrubrique;
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getContenuHtml() {
         return $this->contenuhtml;
     }
 
+    /**
+     * @param $_contenuhtml
+     */
     public function setContenuHtml($_contenuhtml) {
         $this->contenuhtml = $_contenuhtml;
     }
 
+    /**
+     * @return mixed
+     */
     public function getRang() {
         return $this->rang;
     }
 
+    /**
+     * @param $_rang
+     */
     public function setRang($_rang) {
         $this->rang = $_rang;
     }
 
+    /**
+     * @return mixed
+     */
     public function getImage() {
         return $this->image;
     }
 
+    /**
+     * @param $_image
+     */
     public function setImage($_image) {
         $this->image = $_image;
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getImage2() {
         return $this->image2;
     }
 
+    /**
+     * @param $_image2
+     */
     public function setImage2($_image2) {
         $this->image2 = $_image2;
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getType(){
         return $this->type;
     }
-    
+
+    /**
+     * @param $_type
+     */
     public function setType($_type){
         $this->type = $_type;
     }
-    
+
+    /**
+     * @param $collection
+     * @param $order
+     * @return false|sorted collection
+     */
     public function sortByPosition($collection, $order){
         /*
         usort($collection, array(__CLASS__, "rankComparison"));

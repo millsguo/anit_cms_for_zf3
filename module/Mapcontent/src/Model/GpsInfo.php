@@ -2,7 +2,10 @@
 
 namespace Mapcontent\Model;
 
-
+/**
+ * Class GpsInfo
+ * @package Mapcontent\Model
+ */
 class GpsInfo
 {
     public $latitude;

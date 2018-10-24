@@ -19,6 +19,10 @@ use Zend\Mvc\I18n\Translator;
 use ExtLib\Utils;
 use ExtLib\FileManager;
 
+/**
+ * Class RubriqueController
+ * @package Rubrique\Controller
+ */
 class RubriqueController extends AbstractActionController
 {
 
@@ -27,6 +31,11 @@ class RubriqueController extends AbstractActionController
     private $sitepublicViewsPath;
     private $siteprivateViewsPath;
 
+    /**
+     * RubriqueController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
@@ -35,6 +44,9 @@ class RubriqueController extends AbstractActionController
         $this->siteprivateViewsPath = BASE_PATH . '/module/Siteprivate/view/siteprivate/Siteprivate/';
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
 
@@ -45,7 +57,9 @@ class RubriqueController extends AbstractActionController
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction()
     {
         $form = new RubriqueForm();
@@ -97,6 +111,9 @@ class RubriqueController extends AbstractActionController
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction()
     {
 
@@ -200,8 +217,10 @@ class RubriqueController extends AbstractActionController
         );
     }
 
-    public
-    function deleteAction()
+    /**
+     * @return array|\Zend\Http\Response
+     */
+    public function deleteAction()
     {
 
         $rubriqueDao = new RubriqueDao();
@@ -245,6 +264,9 @@ class RubriqueController extends AbstractActionController
         );
     }
 
+    /**
+     * @return array|JsonModel
+     */
     function addmetaajaxAction()
     {
 

@@ -5,13 +5,18 @@ namespace Mapcontent\Form;
 
 use Contenu\Form\ContenuInputFilter;
 use ExtLib\Utils;
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
 
+/**
+ * Class MapcontentInputFilter
+ * @package Mapcontent\Form
+ */
 class MapcontentInputFilter extends ContenuInputFilter {
 
     protected $translator;
-    
+
+    /**
+     * MapcontentInputFilter constructor.
+     */
     public function __construct()
     {
         parent::__construct();

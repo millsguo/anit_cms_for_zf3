@@ -8,6 +8,11 @@ use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
+
+/**
+ * Class PrivatespaceloginControllerFactory
+ * @package Privatespacelogin\Controller
+ */
 class PrivatespaceloginControllerFactory implements FactoryInterface {
 
     /**

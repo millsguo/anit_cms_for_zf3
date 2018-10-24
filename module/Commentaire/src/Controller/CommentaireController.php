@@ -15,17 +15,29 @@ use ExtLib\Utils;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class CommentaireController
+ * @package Commentaire\Controller
+ */
 class CommentaireController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * CommentaireController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $commentaireDao = new CommentaireDao();
@@ -35,7 +47,9 @@ class CommentaireController extends AbstractActionController {
         ));
     }
 
-    // Add content with this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new CommentaireForm();
@@ -94,6 +108,9 @@ class CommentaireController extends AbstractActionController {
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
 
         $form = new CommentaireForm();
@@ -193,6 +210,9 @@ class CommentaireController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         //$this->translator=$this->getServiceLocator()->get('translator');
@@ -231,7 +251,10 @@ class CommentaireController extends AbstractActionController {
             'commentaire' => $commentaire
         );
     }
-    
+
+    /**
+     * @return JsonModel
+     */
     public function contenuajaxAction() {
 
         $request = $this->getRequest();

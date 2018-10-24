@@ -1,16 +1,21 @@
 <?php
 
-// module/Fichiers/src/Fichiers/Model/FichiersTable.php:
-
 namespace Fichiers\Model;
 
 use Fichiers\Model\Fichiers;
 use Application\DBConnection\ParentDao;
 use Fichiers\Model\Mapper\FichiersMapper as FilesMapper;
 
+/**
+ * Class Fichiersdao
+ * @package Fichiers\Model
+ */
 class Fichiersdao extends ParentDao
 {
 
+    /**
+     * Fichiersdao constructor.
+     */
     public function __construct()
     {
 
@@ -20,6 +25,10 @@ class Fichiersdao extends ParentDao
 
     private static $fields = "fichiers_id, fichiers_chemin, fichiers_nom, fichiers_type, fichiers_libelle, fichiers_meta, fichiers_thumbnailpath, fichiers_thumbnail";
 
+    /**
+     * @param $dataType
+     * @return array|array of fichiers
+     */
     public function getAllFichiers($dataType)
     {
 
@@ -59,6 +68,10 @@ class Fichiersdao extends ParentDao
         }*/
     }
 
+    /**
+     * @param $id
+     * @return Mapper\Fichiers
+     */
     public function getFichiers($id)
     {
 
@@ -82,6 +95,9 @@ class Fichiersdao extends ParentDao
         return $fichiers;
     }
 
+    /**
+     * @param \Fichiers\Model\Fichiers $fichiers
+     */
     public function saveFichiers(Fichiers $fichiers)
     {
 
@@ -119,6 +135,10 @@ class Fichiersdao extends ParentDao
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public function deleteFichiers($id)
     {
 
@@ -135,6 +155,10 @@ class Fichiersdao extends ParentDao
         return $isDeleted;
     }
 
+    /**
+     * @param $filename
+     * @return bool
+     */
     public function deleteFichiersByFilename($filename)
     {
         $requete = $this->dbGateway->prepare("
@@ -149,6 +173,10 @@ class Fichiersdao extends ParentDao
         return $isDeleted;
     }
 
+    /**
+     * @param $filename
+     * @return Fichiers
+     */
     public function getFichiersByFilename($filename)
     {
 
@@ -171,6 +199,10 @@ class Fichiersdao extends ParentDao
         return $fichiers;
     }
 
+    /**
+     * @param \Fichiers\Model\Fichiers $fichiers
+     * @return bool
+     */
     public function saveFichiersFilename(Fichiers $fichiers)
     {
         $id = (int)$fichiers->getId();

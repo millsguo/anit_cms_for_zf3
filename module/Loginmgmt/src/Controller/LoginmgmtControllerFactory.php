@@ -8,6 +8,10 @@ use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
+/**
+ * Class LoginmgmtControllerFactory
+ * @package Loginmgmt\Controller
+ */
 class LoginmgmtControllerFactory implements FactoryInterface {
 
     /**

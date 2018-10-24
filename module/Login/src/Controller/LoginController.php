@@ -15,14 +15,25 @@ use Loginmgmt\Model\Login;
 use ExtLib\Utils;
 use ExtLib\MCrypt;
 
+/**
+ * Class LoginController
+ * @package Login\Controller
+ */
 class LoginController extends AbstractActionController {
 
     private $translator;
 
+    /**
+     * LoginController constructor.
+     * @param Translator $translator
+     */
     public function __construct(Translator $translator){
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $form = new LoginForm();
@@ -34,7 +45,10 @@ class LoginController extends AbstractActionController {
             'error' => ''
         ));
     }
-    
+
+    /**
+     * @return \Zend\Http\Response
+     */
     public function authAction() {
 
         $loginDao = new LoginDao();
@@ -106,7 +120,10 @@ class LoginController extends AbstractActionController {
             }
         }
     }
-    
+
+    /**
+     * @return json
+     */
     public function logoutAction() {
         $loginaccess = new \Zend\Session\Container('myacl');
         $loginaccess->getManager()->getStorage()->clear('myacl');

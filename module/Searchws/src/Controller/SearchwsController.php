@@ -7,13 +7,16 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
 use ExtLib\MCrypt;
 
-
+/**
+ * Class SearchwsController
+ * @package Searchws\Controller
+ */
 class SearchwsController extends AbstractActionController
 {
     /**
      * Content-Type accepted :
      * application/json and x-www-form-urlencoded
-     *
+     * @return JsonModel
      */
     public function getpublicpagesAction()
     {
@@ -34,6 +37,11 @@ class SearchwsController extends AbstractActionController
         }
     }
 
+    /**
+     * Content-Type accepted :
+     * application/json and x-www-form-urlencoded
+     * @return JsonModel
+     */
     public function getallpagesAction()
     {
         $request = $this->getRequest();
@@ -55,6 +63,11 @@ class SearchwsController extends AbstractActionController
     }
 
     // TODO test line 67 to 69
+    /**
+     * Content-Type accepted :
+     * application/json and x-www-form-urlencoded
+     * @return JsonModel
+     */
     public function getprivatepagesAction()
     {
         $request = $this->getRequest();
@@ -78,6 +91,10 @@ class SearchwsController extends AbstractActionController
         }
     }
 
+    /**
+     * @param $request
+     * @return string
+     */
     private function getParams($request)
     {
         $headers = $request->getHeaders();

@@ -4,12 +4,23 @@ namespace Contenu\Model\Mapper;
 
 use Contenu\Model\Contenu;
 
+/**
+ * Class ContenuMapper
+ * @package Contenu\Model\Mapper
+ */
 class ContenuMapper
 {
+    /**
+     * ContenuMapper constructor.
+     */
     function __construct()
     {
     }
 
+    /**
+     * @param $data
+     * @return Contenu
+     */
     public function exchangeArray($data) {
 
         $stdContent = new Contenu();

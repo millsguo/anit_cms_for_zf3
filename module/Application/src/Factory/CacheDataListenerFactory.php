@@ -8,7 +8,11 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Application\Factory\CacheDataListener;
- 
+
+/**
+ * Class CacheDataListenerFactory
+ * @package Application\Factory
+ */
 class CacheDataListenerFactory implements FactoryInterface {
 
     /**

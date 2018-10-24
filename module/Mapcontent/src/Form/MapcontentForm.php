@@ -11,8 +11,16 @@ use Rubrique\Model\RubriqueDao;
 use ExtLib\Utils;
 use Mapcontent\Form\Mapcontentlocationfiedset;
 
+/**
+ * Class MapcontentForm
+ * @package Mapcontent\Form
+ */
 class MapcontentForm extends ContenuForm
 {
+    /**
+     * MapcontentForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null)
     {
         parent::__construct('mapcontentForm');

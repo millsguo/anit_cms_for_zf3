@@ -4,6 +4,10 @@ namespace Blogcontent\Model;
 
 use Contenu\Model\IContenu;
 
+/**
+ * Interface IBlogcontent
+ * @package Blogcontent\Model
+ */
 interface IBlogcontent extends IContenu{
 
     public function getAuthor();

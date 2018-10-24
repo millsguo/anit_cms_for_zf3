@@ -5,6 +5,10 @@ namespace Pagearrangement\Model;
 use Rubrique\Model\Rubrique;
 use Sousrubrique\Model\Sousrubrique;
 
+/**
+ * Class Pagearrangement
+ * @package Pagearrangement\Model
+ */
 class Pagearrangement {
    
     private $pagestructure = array();

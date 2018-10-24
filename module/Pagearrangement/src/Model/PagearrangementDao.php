@@ -13,9 +13,15 @@ use Pagearrangement\Model\Pagearrangement;
 use Application\DBConnection\ParentDao;
 use ExtLib\Utils;
 
-
+/**
+ * Class PagearrangementDao
+ * @package Pagearrangement\Model
+ */
 class PagearrangementDao extends ParentDao{
 
+    /**
+     * PagearrangementDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
@@ -25,6 +31,12 @@ class PagearrangementDao extends ParentDao{
     private $rubriqueDao;
     private $sousRubriqueDao;
 
+    /**
+     * @param $rubriqueId
+     * @param $order
+     * @param $dataType
+     * @return array|null|string
+     */
     public function getPage($rubriqueId, $order, $dataType) {
         
         $this->rubriqueDao = new RubriqueDao();

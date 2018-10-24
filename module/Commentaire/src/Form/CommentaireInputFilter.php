@@ -5,13 +5,17 @@ namespace Commentaire\Form;
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
 
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
-
+/**
+ * Class CommentaireInputFilter
+ * @package Commentaire\Form
+ */
 class CommentaireInputFilter extends InputFilter {
 
     private $translator;
 
+    /**
+     * CommentaireInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

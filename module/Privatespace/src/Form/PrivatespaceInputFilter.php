@@ -8,10 +8,17 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
+/**
+ * Class PrivatespaceInputFilter
+ * @package Privatespace\Form
+ */
 class PrivatespaceInputFilter extends InputFilter {
 
     protected $translator;
-    
+
+    /**
+     * PrivatespaceInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

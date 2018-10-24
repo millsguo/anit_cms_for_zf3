@@ -8,6 +8,10 @@ use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
+/**
+ * Class PagearrangementControllerFactory
+ * @package Pagearrangement\Controller
+ */
 class PagearrangementControllerFactory implements FactoryInterface {
 
     /**

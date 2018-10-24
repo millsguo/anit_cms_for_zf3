@@ -4,9 +4,16 @@ namespace Rubrique\Model\Mapper;
 
 use Rubrique\Model\Rubrique;
 
-
+/**
+ * Class RubriqueMapper
+ * @package Rubrique\Model\Mapper
+ */
 class RubriqueMapper
 {
+    /**
+     * @param $data
+     * @return Rubrique
+     */
     public function exchangeArray($data)
     {
         $rubrique = new Rubrique();

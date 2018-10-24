@@ -3,24 +3,37 @@
 // module/Rubrique/src/Rubrique/Model/Rubrique.php:
 namespace Rubrique\Model;
 
+/**
+ * Class Meta
+ * @package Rubrique\Model
+ */
 class Meta{
 
 	protected $metaid;
 	protected $metakey;
         protected $metavalue;
         protected $rubriqueid;
-	
-	public function __construct(){}
+
+    /**
+     * Meta constructor.
+     */
+    public function __construct(){}
 		
-	//first hydrator strategy
-	public static function fromArray($row) {
+	/**
+     * @param $row
+     * @return Meta
+     */
+    public static function fromArray($row) {
 		$instance = new self();
                 $instance->exchangeArray($row);
 		
                 return $instance;
 	}
-	
-	private function exchangeArray($data){
+
+    /**
+     * @param $data
+     */
+    private function exchangeArray($data){
 		
             if(isset($data['meta_id'])){
 		$this->setMetaid($data['meta_id']);
@@ -35,8 +48,11 @@ class Meta{
                 $this->setRubriqueId($data['rubrique_id']);  
             }
 	}
-	
-	public function setMetaid($_id){
+
+    /**
+     * @param $_id
+     */
+    public function setMetaid($_id){
 		$this->metaid = $_id;
 	}
 	public function getMetaid(){
@@ -63,9 +79,11 @@ class Meta{
 	public function getRubriqueid(){
 		return $this->rubriqueid;
 	}
-        
-		
-	// Add the following method:
+
+
+    /**
+     * @return array
+     */
 	public function getArrayCopy(){
 		return get_object_vars($this);
 	}

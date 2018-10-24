@@ -8,13 +8,23 @@ use Rubrique\Model\Rubrique;
 use Rubrique\Model\RubriqueDao;
 use Sousrubrique\Model\Mapper\SousrubriqueMapper;
 
-
+/**
+ * Class Sousrubriquedao
+ * @package Sousrubrique\Model
+ */
 class Sousrubriquedao extends ParentDao{
 
+    /**
+     * Sousrubriquedao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Sousrubrique
+     */
     public function getAllSousrubriques($dataType) {
 
         $count = 0;
@@ -61,6 +71,11 @@ class Sousrubriquedao extends ParentDao{
         }
     }
 
+    /**
+     * @param $rubid
+     * @param $dataType: array|object
+     * @return array|array of Sousrubrique
+     */
     public function getSousrubriquesByRubrique($rubid, $dataType) {
 
         $count = 0;
@@ -109,7 +124,12 @@ class Sousrubriquedao extends ParentDao{
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $rubName
+     * @param $dataType: array|object
+     * @return array|array of Sousrubrique
+     */
     public function getSousrubriquesByRubriqueName($rubName, $dataType) {
 
         $count = 0;
@@ -159,7 +179,11 @@ class Sousrubriquedao extends ParentDao{
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Sousrubrique
+     */
     public function getSousrubriquesOfFirstRubrique($dataType) {
 
         $count = 0;
@@ -210,6 +234,10 @@ class Sousrubriquedao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     * @return \Sousrubrique\Model\Sousrubrique
+     */
     public function getSousrubrique($id) {
 
         $id = (int) $id;
@@ -242,6 +270,9 @@ class Sousrubriquedao extends ParentDao{
         return $sousrubrique;
     }
 
+    /**
+     * @param \Sousrubrique\Model\Sousrubrique $sousrubrique
+     */
     public function saveSousrubrique(Sousrubrique $sousrubrique) {
 
         $id = (int) $sousrubrique->getId();
@@ -271,8 +302,13 @@ class Sousrubriquedao extends ParentDao{
             ));
         }
     }
-    
-        public function updatepositionSousrubrique($id, $position) {
+
+    /**
+     * @param $id
+     * @param $position
+     * @return bool
+     */
+    public function updatepositionSousrubrique($id, $position) {
 
         $id = (int) $id;
 
@@ -294,6 +330,9 @@ class Sousrubriquedao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteSousrubrique($id) {
 
         $id = (int) $id;

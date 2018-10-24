@@ -9,6 +9,10 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class MapcontentControllerFactory
+ * @package Mapcontent\Controller
+ */
 class MapcontentControllerFactory implements FactoryInterface {
 
     /**

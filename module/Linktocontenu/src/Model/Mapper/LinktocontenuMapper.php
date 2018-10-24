@@ -4,9 +4,16 @@ namespace Linktocontenu\Model\Mapper;
 
 use Linktocontenu\Model\Linktocontenu as LinkedContent;
 
-
+/**
+ * Class LinktocontenuMapper
+ * @package Linktocontenu\Model\Mapper
+ */
 class LinktocontenuMapper
 {
+    /**
+     * @param $data
+     * @return LinkedContent
+     */
     public function exchangeArray($data) {
 
         $linkedContent = new LinkedContent();

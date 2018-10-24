@@ -3,13 +3,24 @@ namespace Uploadmgmt\Model\Mapper;
 
 use Uploadmgmt\Model\Fileupload;
 
+/**
+ * Class FileuploadMapper
+ * @package Uploadmgmt\Model\Mapper
+ */
 class FileuploadMapper
 {
 
+    /**
+     * FileuploadMapper constructor.
+     */
     function __construct()
     {
     }
 
+    /**
+     * @param $data
+     * @return Fileupload
+     */
     public function exchangeArray($data)
     {
         $fileupload = new Fileupload();

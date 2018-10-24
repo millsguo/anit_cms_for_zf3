@@ -10,12 +10,23 @@ use Linktocontenu\Model\Linktocontenu;
 use Linktocontenu\Model\LinktocontenuType;
 use Linktocontenu\Model\Mapper\LinktocontenuMapper;
 
+/**
+ * Class LinktocontenuDao
+ * @package Linktocontenu\Model
+ */
 class LinktocontenuDao extends ParentDao {
 
+    /**
+     * LinktocontenuDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType : array|object
+     * @return array|array of Linktocontenu
+     */
     public function getAllLinktocontenus($dataType) {
 
         $count = 0;
@@ -86,7 +97,11 @@ class LinktocontenuDao extends ParentDao {
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $dataType : array|object
+     * @return array|array of Linktocontenu
+     */
     public function getAllLinktocontenusBySousrubrique($sectionId ,$dataType) {
 
         $count = 0;
@@ -160,8 +175,11 @@ class LinktocontenuDao extends ParentDao {
             return $requete2;
         }
     }
-    
-    
+
+    /**
+     * @param $dataType : array|object
+     * @return array|array of Linktocontenu
+     */
     public function getAllLinktocontenusByRubrique($pageId ,$dataType) {
 
         $count = 0;
@@ -235,8 +253,12 @@ class LinktocontenuDao extends ParentDao {
             return $requete2;
         }
     }
-    
 
+
+    /**
+     * @param $id
+     * @return \Linktocontenu\Model\Linktocontenu
+     */
     public function getLinktocontenu($id) {
 
         $id = (int) $id;
@@ -291,6 +313,9 @@ class LinktocontenuDao extends ParentDao {
         return $linktocontenu;
     }
 
+    /**
+     * @param \Linktocontenu\Model\Linktocontenu $linktocontenu
+     */
     public function saveLinktocontenu(Linktocontenu $linktocontenu) {
 
         $id = (int) $linktocontenu->getId();
@@ -364,7 +389,12 @@ class LinktocontenuDao extends ParentDao {
             ));
         }
     }
-    
+
+    /**
+     * @param $id
+     * @param $position
+     * @return bool
+     */
     public function updateLinktocontenuPosition($id, $position) {
 
         $id = (int)$id;
@@ -391,6 +421,9 @@ class LinktocontenuDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteLinktocontenu($id) {
 
         $id = (int) $id;

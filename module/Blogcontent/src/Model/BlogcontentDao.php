@@ -8,14 +8,24 @@ use Contenu\Model\ContenuType;
 use Application\DBConnection\ParentDao;
 use Blogcontent\Model\Mapper\BlogContentMapper;
 
+/**
+ * Class BlogcontentDao
+ * @package Blogcontent\Model
+ */
 class BlogcontentDao extends ParentDao{
 
     public function __construct() {
         
         parent::__construct();
     }
+
+
     /**
+     * @param $dataType
+     *
      * dataType : array, object, json
+     *
+     * @return array
      */
     public function getAllBlogContent($dataType) {
 
@@ -79,6 +89,12 @@ class BlogcontentDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     * @param $dataType
+     * ataType : array, object
+     * @return array
+     */
     public function getAllBlogContentByRubrique($id, $dataType) {
 
         //var_dump($id);
@@ -153,6 +169,14 @@ class BlogcontentDao extends ParentDao{
         }
     }
 
+
+    /**
+     * @param $rubName
+     * @param $limit
+     * @param $typeContenu
+     * @param $dataType : array or object
+     * @return array or blogcontent object
+     */
     public function getAllBlogContentByRubriqueName($rubName, $limit, $typeContenu, $dataType) {
 
         //var_dump($id);
@@ -233,9 +257,12 @@ class BlogcontentDao extends ParentDao{
            return $requete2;
         }
     }
-    
+
+
     /**
-     * dataType : array, object, json
+     * @param $id
+     * @param $dataType : array, object, json
+     * @return array|\Blogcontent\Model\Blogcontent|mixed
      */
     public function getBlogContent($id, $dataType) {
 
@@ -287,6 +314,11 @@ class BlogcontentDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $sousrubriqueid
+     * @param $dataType : array, object
+     * @return array|blogcontent object
+     */
     public function getBlogContentBySousrubrique($sousrubriqueid, $dataType) {
 
         $sousrubriqueid = (int) $sousrubriqueid;
@@ -353,6 +385,9 @@ class BlogcontentDao extends ParentDao{
         }
     }
 
+    /**
+     * @param \Blogcontent\Model\Blogcontent $contenu
+     */
     public function saveBlogContent(Blogcontent $contenu) {
 
         $id = (int) $contenu->getId();
@@ -416,6 +451,9 @@ class BlogcontentDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteBlogContent($id) {
 
         $id = (int) $id;

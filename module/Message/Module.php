@@ -1,9 +1,11 @@
 <?php
 
-// module/Album/Module.php
-
 namespace Message;
 
+/**
+ * Class Module
+ * @package Messages
+ */
 class Module {
 /*
     public function getAutoloaderConfig() {
@@ -16,6 +18,9 @@ class Module {
         );
     }
 */
+    /**
+     * @return mixed
+     */
     public function getConfig() {
         return include __DIR__ . '/config/module.config.php';
     }

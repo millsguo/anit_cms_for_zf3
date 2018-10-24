@@ -9,6 +9,10 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class PublishingControllerFactory
+ * @package Publishing\Controller
+ */
 class PublishingControllerFactory implements FactoryInterface {
 
     /**

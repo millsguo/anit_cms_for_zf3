@@ -4,9 +4,16 @@ namespace Sousrubrique\Model\Mapper;
 
 use Sousrubrique\Model\Sousrubrique;
 
-
+/**
+ * Class SousrubriqueMapper
+ * @package Sousrubrique\Model\Mapper
+ */
 class SousrubriqueMapper
 {
+    /**
+     * @param $data
+     * @return Sousrubrique
+     */
     public function exchangeArray($data) {
 
         $section = new Sousrubrique();

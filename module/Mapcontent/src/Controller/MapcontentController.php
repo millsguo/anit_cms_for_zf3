@@ -26,18 +26,30 @@ use Application\Factory\CacheKeys;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class MapcontentController
+ * @package Mapcontent\Controller
+ */
 class MapcontentController extends AbstractActionController
 {
 
     private $cache;
     private $translator;
 
+    /**
+     * MapcontentController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
 
@@ -48,7 +60,10 @@ class MapcontentController extends AbstractActionController
         ));
     }
 
-    // Add content to this method:
+
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction()
     {
         $form = new MapcontentForm();
@@ -131,6 +146,9 @@ class MapcontentController extends AbstractActionController
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction()
     {
 
@@ -246,6 +264,9 @@ class MapcontentController extends AbstractActionController
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction()
     {
 
@@ -285,6 +306,9 @@ class MapcontentController extends AbstractActionController
         );
     }
 
+    /**
+     * @return JsonModel
+     */
     public function sousrubriqueajaxAction()
     {
 

@@ -4,8 +4,15 @@ namespace Login\Form;
 
 use Zend\InputFilter\InputFilter;
 
+/**
+ * Class LoginInputFilter
+ * @package Login\Form
+ */
 class LoginInputFilter extends InputFilter {
 
+    /**
+     * LoginInputFilter constructor.
+     */
     public function __construct() {
 
         $this->add(array(

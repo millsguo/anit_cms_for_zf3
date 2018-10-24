@@ -16,12 +16,21 @@ use Application\Factory\CacheKeys;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class FichiersController
+ * @package Fichiers\Controller
+ */
 class FichiersController extends AbstractActionController
 {
 
     private $cache;
     private $translator;
 
+    /**
+     * FichiersController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
@@ -31,6 +40,9 @@ class FichiersController extends AbstractActionController
     protected $path = 'public/filesbank/';
     protected $savepath = 'filesbank/';
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
         $fichiersDao = new Fichiersdao();
@@ -58,7 +70,9 @@ class FichiersController extends AbstractActionController
         }
     }
 
-    // Add content to this method:
+    /**
+     * @return array|ViewModel
+     */
     public function addAction()
     {
 
@@ -218,7 +232,9 @@ class FichiersController extends AbstractActionController
             'error' => "no error");
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response|ViewModel
+     */
     public function editAction()
     {
 
@@ -270,6 +286,9 @@ class FichiersController extends AbstractActionController
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction()
     {
 

@@ -1,19 +1,24 @@
 <?php
 
-// module/SousRubrique/src/SousRubrique/Form/SousRubriqueForm.php:
-
 namespace Message\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element;
 use Message\Model\TypeMessage;
 use ExtLib\Utils;
-//use Zend\Stdlib\Hydrator\ClassMethods;
 
+/**
+ * Class MessageForm
+ * @package Message\Form
+ */
 class MessageForm extends Form {
    
     private $utils;
-    
+
+    /**
+     * MessageForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('messageform');

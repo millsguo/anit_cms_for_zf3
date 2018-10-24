@@ -14,10 +14,18 @@ use Zend\View\Model\ViewModel;
 use ExtLib\Utils;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class PrivatespaceloginController
+ * @package Privatespacelogin\Controller
+ */
 class PrivatespaceloginController extends AbstractActionController {
 
     private $translator;
 
+    /**
+     * PrivatespaceloginController constructor.
+     * @param Translator $translator
+     */
     public function __construct(Translator $translator){
         $this->translator = $translator;
     }
@@ -30,6 +38,9 @@ class PrivatespaceloginController extends AbstractActionController {
         ));
     }
 
+    /**
+     * @return \Zend\Http\Response|ViewModel
+     */
     public function indexloginAction() {
 
         $privatespaceloginmgmtDao = new PrivatespaceloginDao();
@@ -51,7 +62,9 @@ class PrivatespaceloginController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new PrivatespaceloginForm();
@@ -119,6 +132,9 @@ class PrivatespaceloginController extends AbstractActionController {
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
 
         $form = new PrivatespaceloginForm();
@@ -213,6 +229,9 @@ class PrivatespaceloginController extends AbstractActionController {
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $privatespaceloginmgmtDao = new PrivatespaceloginDao();

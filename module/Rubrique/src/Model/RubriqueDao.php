@@ -6,12 +6,24 @@ use Rubrique\Model\Rubrique;
 use Application\DBConnection\ParentDao;
 use Rubrique\Model\Mapper\RubriqueMapper;
 
+/**
+ * Class RubriqueDao
+ * @package Rubrique\Model
+ */
 class RubriqueDao extends ParentDao {
 
+    /**
+     * RubriqueDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $spaceId
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getFirstRubriqueBySpace($spaceId, $dataType) {
 
         $mapper = new RubriqueMapper();
@@ -40,6 +52,11 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $token
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getRubriqueBySpaceToken($token, $dataType) {
 
         $mapper = new RubriqueMapper();
@@ -67,6 +84,11 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $filename
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getRubriqueByFilename($filename, $dataType) {
         $mapper = new RubriqueMapper();
 
@@ -92,6 +114,11 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $filename
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getPublicRubriqueByFilename($filename, $dataType) {
         $mapper = new RubriqueMapper();
 
@@ -117,6 +144,11 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $filename
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getPrivateRubriqueByFilename($filename, $dataType) {
         $mapper = new RubriqueMapper();
         $requete = $this->dbGateway->prepare("
@@ -141,6 +173,10 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Rubrique
+     */
     public function getAllRubriques($dataType) {
 
         $count = 0;
@@ -175,6 +211,10 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Rubrique
+     */
     public function getAllPublicAndPublishedRubriques($dataType) {
 
         $count = 0;
@@ -209,6 +249,11 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $spaceId
+     * @param $dataType: array|object
+     * @return array|array of Rubrique
+     */
     public function getAllRubriquesBySpaceId($spaceId, $dataType) {
 
         $count = 0;
@@ -244,7 +289,11 @@ class RubriqueDao extends ParentDao {
             return $requete2;
         }
     }
-    
+
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Rubrique
+     */
     public function getAllRubriquesForAllPrivateSpaces($dataType) {
 
         $count = 0;
@@ -279,6 +328,10 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     * @return \Rubrique\Model\Rubrique
+     */
     public function getRubrique($id) {
         $id = (int) $id;
         $mapper = new RubriqueMapper();
@@ -298,6 +351,11 @@ class RubriqueDao extends ParentDao {
         return $rubrique;
     }
 
+    /**
+     * @param $rank
+     * @param $dataType: array|object
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
     public function getRubriqueByRang($rank, $dataType) {
 
         $mapper = new RubriqueMapper();
@@ -324,6 +382,10 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param \Rubrique\Model\Rubrique $rubrique
+     * @return int|string
+     */
     public function saveRubrique(Rubrique $rubrique) {
         $id = (int) $rubrique->getId();
 
@@ -372,6 +434,10 @@ class RubriqueDao extends ParentDao {
         }
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public function deleteRubrique($id) {
 
         $id = (int) $id;

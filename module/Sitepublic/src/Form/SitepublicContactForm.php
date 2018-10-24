@@ -1,16 +1,20 @@
 <?php
 
-// module/SousRubrique/src/SousRubrique/Form/SousRubriqueForm.php:
-
 namespace Sitepublic\Form;
 
 use Zend\Form\Form;
 use Zend\Form\Element;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class SitepublicContactForm
+ * @package Sitepublic\Form
+ */
 class SitepublicContactForm extends Form {
 
+    /**
+     * SitepublicContactForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('contactform');

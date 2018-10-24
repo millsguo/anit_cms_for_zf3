@@ -21,17 +21,30 @@ use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 use Application\Factory\CacheKeys;
 
+/**
+ * Class BlogcontentController
+ * @package Blogcontent\Controller
+ * Controller that manage blog contents
+ */
 class BlogcontentController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * BlogcontentController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $blogContentDao = new BlogcontentDao();
@@ -41,7 +54,9 @@ class BlogcontentController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new BlogcontentForm();
@@ -118,6 +133,9 @@ class BlogcontentController extends AbstractActionController {
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
 
         $form = new BlogcontentForm();
@@ -238,6 +256,9 @@ class BlogcontentController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $blogContentDao = new BlogcontentDao();
@@ -276,6 +297,9 @@ class BlogcontentController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return JsonModel
+     */
     public function sousrubriqueajaxAction() {
 
         $request = $this->getRequest();

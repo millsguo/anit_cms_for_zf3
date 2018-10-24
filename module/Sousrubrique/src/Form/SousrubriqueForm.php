@@ -1,7 +1,5 @@
 <?php
 
-// module/SousRubrique/src/SousRubrique/Form/SousRubriqueForm.php:
-
 namespace SousRubrique\Form;
 
 use Zend\Form\Form;
@@ -9,12 +7,17 @@ use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
 use ExtLib\Utils;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class SousRubriqueForm
+ * @package SousRubrique\Form
+ */
 class SousRubriqueForm extends Form {
 
     private $translator;
-    
+
+    /**
+     * @return array
+     */
     protected function getRubriques() {
         $rubriquesDao = new RubriqueDao();
         $rubriques = $rubriquesDao->getAllRubriques("array");
@@ -29,6 +32,10 @@ class SousRubriqueForm extends Form {
         return $rubriqueArray;
     }
 
+    /**
+     * SousRubriqueForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('sousrubrique');

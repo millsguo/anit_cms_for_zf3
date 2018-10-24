@@ -6,9 +6,16 @@ use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 
+/**
+ * Class FichiersinputFilter
+ * @package Fichiers\Form
+ */
 class FichiersinputFilter extends InputFilter{
 
-	public function __construct(){
+    /**
+     * FichiersinputFilter constructor.
+     */
+    public function __construct(){
 	
 		$this->add(array(
 			'name' => 'id',

@@ -11,14 +11,25 @@ use Zend\View\Model\JsonModel;
 use ExtLib\Utils;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class LoginmgmtController
+ * @package Loginmgmt\Controller
+ */
 class LoginmgmtController extends AbstractActionController {
 
     private $translator;
 
+    /**
+     * LoginmgmtController constructor.
+     * @param Translator $translator
+     */
     public function __construct(Translator $translator){
         $this->translator = $translator;
     }
-    
+
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $loginmgmtDao = new LoginmgmtDao();
@@ -33,7 +44,9 @@ class LoginmgmtController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new LoginmgmtForm();
@@ -91,6 +104,9 @@ class LoginmgmtController extends AbstractActionController {
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response|ViewModel
+     */
     public function editAction() {
 
         $form = new LoginmgmtForm();
@@ -185,6 +201,9 @@ class LoginmgmtController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $loginmgmtDao = new LoginmgmtDao();

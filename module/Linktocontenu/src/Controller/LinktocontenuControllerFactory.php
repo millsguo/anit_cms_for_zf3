@@ -9,6 +9,10 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class LinktocontenuControllerFactory
+ * @package Linktocontenu\Controller
+ */
 class LinktocontenuControllerFactory implements FactoryInterface {
 
     /**

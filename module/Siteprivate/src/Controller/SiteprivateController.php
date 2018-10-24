@@ -55,12 +55,21 @@ use ExtLib\MCrypt;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class SiteprivateController
+ * @package Siteprivate\Controller
+ */
 class SiteprivateController extends AbstractActionController
 {
 
     protected $translator;
     protected $cache;
 
+    /**
+     * SiteprivateController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
@@ -68,6 +77,9 @@ class SiteprivateController extends AbstractActionController
     }
 
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
 
@@ -86,6 +98,9 @@ class SiteprivateController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return \Zend\Http\Response
+     */
     public function authAction()
     {
         $siteprivateDao = new SiteprivateDao();
@@ -166,6 +181,9 @@ class SiteprivateController extends AbstractActionController
         }
     }
 
+    /**
+     * @return null|ViewModel
+     */
     public function displayprivatepageAction()
     {
         $pageArrangementDao = new PagearrangementDao();
@@ -317,6 +335,10 @@ class SiteprivateController extends AbstractActionController
         return $viewModel;
     }
 
+    /**
+     * @param $pageContents
+     * @return array
+     */
     private function getInformationFromPage($pageContents)
     {
         $configuration = array();
@@ -352,6 +374,9 @@ class SiteprivateController extends AbstractActionController
         return $configuration;
     }
 
+    /**
+     * @return json string
+     */
     public function logoutAction()
     {
         $loginaccess = new \Zend\Session\Container('myacl');
@@ -360,6 +385,9 @@ class SiteprivateController extends AbstractActionController
         //return $this->redirect()->toRoute('Login');
     }
 
+    /**
+     * @return JsonModel
+     */
     public function addcommentajaxAction()
     {
 
@@ -458,8 +486,9 @@ class SiteprivateController extends AbstractActionController
         }
     }
 
-    // manage registration form
-
+    /**
+     * @return JsonModel
+     */
     public function contactajaxAction()
     {
 
@@ -548,8 +577,9 @@ class SiteprivateController extends AbstractActionController
         }
     }
 
-    // update contact information
-
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function registrationAction()
     {
 
@@ -651,6 +681,9 @@ class SiteprivateController extends AbstractActionController
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function updatecontactinformationAction()
     {
 
@@ -789,6 +822,12 @@ class SiteprivateController extends AbstractActionController
             'error' => '');
     }
 
+    /**
+     * @param $form
+     * @param $login
+     * @param $spaceId
+     * @return mixed
+     */
     private function fillPrivatespaceloginForm($form, $login, $spaceId)
     {
         $form->get('id')->setAttribute('value', $login->getId());
@@ -809,6 +848,9 @@ class SiteprivateController extends AbstractActionController
         return $form;
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function forgottenpasswordAction()
     {
 
@@ -933,6 +975,9 @@ class SiteprivateController extends AbstractActionController
         );
     }
 
+    /**
+     * @return array
+     */
     public function changepasswordAction()
     {
         $form = new SiteprivateNewPasswordForm();
@@ -997,6 +1042,9 @@ class SiteprivateController extends AbstractActionController
             'error' => '');
     }
 
+    /**
+     * @return ViewModel
+     */
     public function displayregistrationstateAction()
     {
         $msg = $this->params()->fromQuery('msg');
@@ -1008,6 +1056,10 @@ class SiteprivateController extends AbstractActionController
         );
     }
 
+    /**
+     * @param $sessionData
+     * @return SiteprivateFileuploadForm
+     */
     private function setFileuploadForm($sessionData)
     {
         $fileuploadForm = new SiteprivateFileuploadForm();

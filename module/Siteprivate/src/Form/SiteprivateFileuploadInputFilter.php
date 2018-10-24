@@ -6,9 +6,16 @@ use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 
+/**
+ * Class SiteprivateFileuploadInputFilter
+ * @package Siteprivate\Form
+ */
 class SiteprivateFileuploadInputFilter extends InputFilter{
 
-	public function __construct(){
+    /**
+     * SiteprivateFileuploadInputFilter constructor.
+     */
+    public function __construct(){
 	
 		$this->add(array(
 			'name' => 'id',

@@ -8,10 +8,17 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
+/**
+ * Class LoginmgmtInputFilter
+ * @package Loginmgmt\Form
+ */
 class LoginmgmtInputFilter extends InputFilter {
     
     protected $translator;
 
+    /**
+     * LoginmgmtInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

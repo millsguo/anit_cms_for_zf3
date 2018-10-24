@@ -1,8 +1,11 @@
 <?php
 
-// module/Album/Module.php
 namespace Fichiers;
 
+/**
+ * Class Module
+ * @package Fichiers
+ */
 class Module
 {
 	public function getConfig(){

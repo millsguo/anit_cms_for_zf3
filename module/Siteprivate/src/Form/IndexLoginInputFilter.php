@@ -4,8 +4,15 @@ namespace Siteprivate\Form;
 
 use Login\Form\LoginInputFilter;
 
+/**
+ * Class IndexLoginInputFilter
+ * @package Siteprivate\Form
+ */
 class IndexLoginInputFilter extends LoginInputFilter {
 
+    /**
+     * IndexLoginInputFilter constructor.
+     */
     public function __construct() {
         parent::__construct();
         

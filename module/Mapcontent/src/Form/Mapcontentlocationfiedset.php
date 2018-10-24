@@ -8,8 +8,17 @@ use Zend\Form\Element;
 use ExtLib\Utils;
 use Zend\InputFilter\InputFilterProviderInterface;
 
+/**
+ * Class Mapcontentlocationfiedset
+ * @package Mapcontent\Form
+ */
 class Mapcontentlocationfiedset extends Fieldset
 {
+    /**
+     * Mapcontentlocationfiedset constructor.
+     * @param null $name
+     * @param array $options
+     */
     public function __construct($name = null, array $options = [])
     {
         parent::__construct('locationfieldset');

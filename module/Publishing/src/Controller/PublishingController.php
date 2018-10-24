@@ -9,6 +9,10 @@ use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 use ExtLib\Utils;
 
+/**
+ * Class PublishingController
+ * @package Publishing\Controller
+ */
 class PublishingController extends AbstractActionController
 {
     private $cache;
@@ -16,12 +20,20 @@ class PublishingController extends AbstractActionController
     private $sitepublicViewsPath;
     private $siteprivateViewsPath;
 
+    /**
+     * PublishingController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
         $rubriqueDao = new RubriqueDao();
@@ -31,6 +43,9 @@ class PublishingController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function publishAction()
     {
         $rubriqueDao = new RubriqueDao();

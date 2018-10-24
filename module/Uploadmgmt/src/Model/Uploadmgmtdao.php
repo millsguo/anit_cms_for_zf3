@@ -7,6 +7,10 @@ use Uploadmgmt\Model\FileuploadStatus;
 use Uploadmgmt\Model\Fileupload;
 use Uploadmgmt\Model\Mapper\FileuploadMapper;
 
+/**
+ * Class Uploadmgmtdao
+ * @package Uploadmgmt\Model
+ */
 class Uploadmgmtdao extends ParentDao
 {
     private static $fields = "p.filesupload_id as id, p.filesupload_name as name, p.filesupload_path as path, p.filesupload_type as type," .
@@ -14,6 +18,10 @@ class Uploadmgmtdao extends ParentDao
     "p.filesupload_author as author, p.filesupload_userid as userid, p.filesupload_email as email, p.filesupload_date as creationdate," .
     "p.filesupload_lat as lat, p.filesupload_lng as lng";
 
+    /**
+     * @param int $idFile
+     * @return mixed
+     */
     public function getPhoto($idFile = 0)
     {
         $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE filesupload_id=' . abs((int)$idFile))
@@ -22,6 +30,9 @@ class Uploadmgmtdao extends ParentDao
         return $query->fetch(\PDO::FETCH_ASSOC);
     }
 
+    /**
+     * @return array
+     */
     public function getPhotoWaitStatus()
     {
         $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=\'' . FileuploadStatus::$WAITING . '\' ORDER BY p.filesupload_date DESC')
@@ -30,6 +41,9 @@ class Uploadmgmtdao extends ParentDao
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    /**
+     * @return array
+     */
     public function getPhotoValidateStatus()
     {
         $query = $this->dbGateway->prepare('SELECT ' . $this::$fields . ' FROM filesupload p WHERE p.filesupload_status=\'' . FileuploadStatus::$VALIDATED . '\' ORDER BY p.filesupload_date DESC')
@@ -39,6 +53,11 @@ class Uploadmgmtdao extends ParentDao
     }
 
 
+    /**
+     * @param int $idFile
+     * @param $status
+     * @return bool
+     */
     public function updateStatus($idFile = 0, $status)
     {
         //return false;
@@ -49,6 +68,11 @@ class Uploadmgmtdao extends ParentDao
         return (bool)$reqIsOK;
     }
 
+    /**
+     * @param int $idFile
+     * @param array $params
+     * @return bool
+     */
     public function updateComment($idFile = 0, $params = array())
     {
         $idFile = abs((int)$idFile);
@@ -61,6 +85,10 @@ class Uploadmgmtdao extends ParentDao
         return (bool)$reqIsOK;
     }
 
+    /**
+     * @param string $filename
+     * @return \Uploadmgmt\Model\Fileupload
+     */
     public function getFileByFilename(string $filename)
     {
 

@@ -9,6 +9,10 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use Privatespace\Model\PrivatespaceDao;
 use ExtLib\Utils;
 
+/**
+ * Class SiteprivateForgottenPasswordForm
+ * @package Siteprivate\Form
+ */
 class SiteprivateForgottenPasswordForm extends Form {
 
     private $utils;
@@ -29,6 +33,10 @@ class SiteprivateForgottenPasswordForm extends Form {
         return $privatespaceDropdownlist;
     }
     */
+    /**
+     * SiteprivateForgottenPasswordForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('forgottenpassword');

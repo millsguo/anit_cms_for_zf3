@@ -13,16 +13,28 @@ use ExtLib\Utils;
 use Zend\Mvc\I18n\Translator;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class PrivatespaceController
+ * @package Privatespace\Controller
+ */
 class PrivatespaceController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * PrivatespaceController constructor.
+     * @param CacheDataListener $cache
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cache, Translator $translator){
         $this->cache = $cache;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $privatespaceDao = new PrivatespaceDao();
@@ -32,7 +44,9 @@ class PrivatespaceController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Responses
+     */
     public function addAction() {
 
         $form = new PrivatespaceForm();
@@ -77,6 +91,9 @@ class PrivatespaceController extends AbstractActionController {
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response|ViewModel
+     */
     public function editAction() {
 
         $privatespaceDao = new PrivatespaceDao();
@@ -143,6 +160,9 @@ class PrivatespaceController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $privatespaceDao = new PrivatespaceDao();

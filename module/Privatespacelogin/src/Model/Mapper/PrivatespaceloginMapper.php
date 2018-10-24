@@ -10,8 +10,16 @@ namespace Privatespacelogin\Model\Mapper;
 use Privatespacelogin\Model\Privatespacelogin;
 use Privatespace\Model\PrivatespaceDao;
 
+/**
+ * Class PrivatespaceloginMapper
+ * @package Privatespacelogin\Model\Mapper
+ */
 class PrivatespaceloginMapper
 {
+    /**
+     * @param $data
+     * @return Privatespacelogin
+     */
     public function exchangeArray($data) {
         
         $privatespaceLogin = new Privatespacelogin();

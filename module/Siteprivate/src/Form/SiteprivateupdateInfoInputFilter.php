@@ -8,10 +8,17 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
+/**
+ * Class SiteprivateupdateInfoInputFilter
+ * @package Siteprivate\Form
+ */
 class SiteprivateupdateInfoInputFilter extends InputFilter {
     
     protected $translator;
-  
+
+    /**
+     * SiteprivateupdateInfoInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

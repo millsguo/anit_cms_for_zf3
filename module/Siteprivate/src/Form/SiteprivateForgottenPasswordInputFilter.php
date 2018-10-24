@@ -8,10 +8,17 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
+/**
+ * Class SiteprivateForgottenPasswordInputFilter
+ * @package Siteprivate\Form
+ */
 class SiteprivateForgottenPasswordInputFilter extends InputFilter {
 
     protected $translator;
 
+    /**
+     * SiteprivateForgottenPasswordInputFilter constructor.
+     */
     public function __construct() {
 
         $this->translator = new Utils();

@@ -7,6 +7,10 @@ use ExtLib\Utils;
 use Mobilews\Controller\MobilewsController;
 use Uploadmgmt\Controller\UploadmgmtController;
 
+/**
+ * Class Photosmgmt
+ * @package Uploadmgmt\Model
+ */
 class Photosmgmt
 {
 
@@ -18,11 +22,18 @@ class Photosmgmt
     protected $publicPath = 'public/';
     protected $util;
 
+    /**
+     * Photosmgmt constructor.
+     */
     public function __construct()
     {
         $util = new Utils();
     }
 
+    /**
+     * @param $idPhoto
+     * @param $angle
+     */
     public function photoRotate($idPhoto, $angle)
     {
         $Photosmgmtdao = new Uploadmgmtdao();
@@ -77,6 +88,10 @@ class Photosmgmt
         }
     }
 
+    /**
+     * @param $photo
+     * @return array
+     */
     public function photoBackToOriginal($photo)
     {
         try {
@@ -121,6 +136,10 @@ class Photosmgmt
         }
     }
 
+    /**
+     * @param $pathToFile
+     * @return bool
+     */
     public function deleteFile($pathToFile)
     {
         if (is_file($pathToFile)) {
@@ -129,6 +148,10 @@ class Photosmgmt
         }
     }
 
+    /**
+     * @param $path
+     * @param $filename
+     */
     public function deleteOriTypePhoto($path, $filename)
     {
         $oriFilePath = $path . substr($filename, 0, strrpos($filename, '.')) . '.Ori' . substr($filename, strrpos($filename, '.'));

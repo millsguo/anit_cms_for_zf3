@@ -9,12 +9,23 @@ use Contenu\Model\ContenuDao;
 use Contenu\Model\ContenuType;
 use Contenu\Model\Mapper\ContenuMapper;
 
+/**
+ * Class GalerieDao
+ * @package Galerie\Model
+ */
 class GalerieDao extends ContenuDao {
+    /**
+     * GalerieDao constructor.
+     */
     public function __construct() {
         
         parent::__construct();
     }
 
+    /**
+     * @param $dataType
+     * @return array|array of Contenu
+     */
     public function getAllGaleries($dataType) {
         
         $count = 0;
@@ -70,6 +81,12 @@ class GalerieDao extends ContenuDao {
         }
     }
 
+    /**
+     * @param $id
+     * @param $limit
+     * @param $dataType
+     * @return array|array of Contenu
+     */
     public function getAllGaleriesByRubrique($id, $limit, $dataType) {
         //public function getAllGaleriesByRubrique($id, $dataType) {
         $count = 0;
@@ -138,6 +155,12 @@ class GalerieDao extends ContenuDao {
         }
     }
 
+    /**
+     * @param $id
+     * @param $limit
+     * @param $dataType
+     * @return array|array of Contenu
+     */
     public function getAllGaleriesByRubriqueName($id, $limit, $dataType) {
 
         //var_dump($id);
@@ -211,7 +234,10 @@ class GalerieDao extends ContenuDao {
         }
     }
 
-    //a sousrubrique can be a gallery
+    /**
+     * @param $id
+     * @return Contenu
+     */
     public function getGalerieContenu($id) {
 
         $contenu = $this->getContenu($id);
@@ -219,6 +245,11 @@ class GalerieDao extends ContenuDao {
         return $contenu;
     }
 
+    /**
+     * @param $sourubriqueid
+     * @param $dataType
+     * @return array
+     */
     public function getGalerieContenusFromSousrubrique($sourubriqueid, $dataType) {
 
         $contenu = $this->getContenusBySousrubrique($sourubriqueid, $dataType);
@@ -226,10 +257,16 @@ class GalerieDao extends ContenuDao {
         return $contenu;
     }
 
+    /**
+     * @param Contenu $contenu
+     */
     public function saveGalerieContenu(Contenu $contenu) {
         $this->saveContenu($contenu);
     }
 
+    /**
+     * @param $id
+     */
     public function deleteGalerieContenu($id) {
 
         $this->deleteContenu($id);

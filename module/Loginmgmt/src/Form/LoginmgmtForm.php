@@ -5,10 +5,18 @@ use Zend\Form\Form;
 use Zend\Hydrator\ClassMethods;
 use ExtLib\Utils;
 
+/**
+ * Class LoginmgmtForm
+ * @package Loginmgmt\Form
+ */
 class LoginmgmtForm extends Form {
 
     private $translator;
 
+    /**
+     * LoginmgmtForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('loginmgmt');

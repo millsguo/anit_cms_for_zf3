@@ -5,12 +5,23 @@ namespace Loginmgmt\Model;
 use Login\Model\LoginDao;
 use Loginmgmt\Model\Mapper\LoginMapper;
 
+/**
+ * Class LoginmgmtDao
+ * @package Loginmgmt\Model
+ */
 class LoginmgmtDao extends LoginDao {
-    
+
+    /**
+     * LoginmgmtDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Login
+     */
     public function getAllLogin($dataType) {
 
         $count = 0;
@@ -43,6 +54,10 @@ class LoginmgmtDao extends LoginDao {
         }
     }
 
+    /**
+     * @param $id
+     * @return array|Login
+     */
     public function getLogin($id) {
 
         $id = (int) $id;
@@ -66,7 +81,11 @@ class LoginmgmtDao extends LoginDao {
 
         return $result;
     }
-    
+
+    /**
+     * @param $username
+     * @return int
+     */
     public function checkLoginUserame($username){
        
         $requete = $this->dbGateway->prepare("
@@ -84,6 +103,9 @@ class LoginmgmtDao extends LoginDao {
        return $requete->rowCount();
     }
 
+    /**
+     * @param Login $login
+     */
     public function saveLogin(Login $login) {
 
         $id = (int) $login->getId();
@@ -113,6 +135,9 @@ class LoginmgmtDao extends LoginDao {
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteLogin($id) {
 
         $id = (int) $id;

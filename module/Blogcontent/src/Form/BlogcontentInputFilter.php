@@ -9,8 +9,15 @@ use Zend\InputFilter\InputFilterInterface;
 use Galerie\Form\GalerieInputFilter;
 use ExtLib\Utils;
 
+/**
+ * Class BlogcontentInputFilter
+ * @package Blogcontent\Form
+ */
 class BlogcontentInputFilter extends GalerieInputFilter {
 
+    /**
+     * BlogcontentInputFilter constructor.
+     */
     public function __construct() {
 
         parent::__construct();

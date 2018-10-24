@@ -6,10 +6,17 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use Privatespace\Model\PrivatespaceDao;
 use ExtLib\Utils;
 
+/**
+ * Class PrivatespaceloginForm
+ * @package Privatespacelogin\Form
+ */
 class PrivatespaceloginForm extends Form {
 
     private $translator;
 
+    /**
+     * @return array
+     */
     private function getAllSpaces(){
         $privatespaceDao = new PrivatespaceDao();
         
@@ -24,7 +31,11 @@ class PrivatespaceloginForm extends Form {
         
         return $privatespaceDropdownlist;
     }
-    
+
+    /**
+     * PrivatespaceloginForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('privatespacelogin');

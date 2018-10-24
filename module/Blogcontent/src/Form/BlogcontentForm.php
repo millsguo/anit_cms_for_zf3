@@ -8,10 +8,16 @@ use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
 use Galerie\Form\GalerieForm;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class BlogcontentForm
+ * @package Blogcontent\Form
+ * form that manage blog content
+ */
 class BlogcontentForm extends GalerieForm {
 
+    /**
+     * @return array
+     */
     protected function getRubriques() {
 
         $rubriquesDao = new RubriqueDao();
@@ -46,8 +52,10 @@ class BlogcontentForm extends GalerieForm {
       return $sousrubriqueArray;
       }
      */
-    /* TODO : get All Sous Rubriques by Id pour le select */
-
+    /**
+     * BlogcontentForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('blogcontentform');

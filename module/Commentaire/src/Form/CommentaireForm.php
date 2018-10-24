@@ -9,12 +9,18 @@ use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
 use Message\Model\TypeMessage;
 use ExtLib\Utils;
-//use Zend\Stdlib\Hydrator\ClassMethods;
 
+/**
+ * Class CommentaireForm
+ * @package Commentaire\Form
+ */
 class CommentaireForm extends Form {
    
     private $utils;
-    
+
+    /**
+     * @return array
+     */
     protected function getRubriques() {
 
         $rubriquesDao = new RubriqueDao();
@@ -31,6 +37,10 @@ class CommentaireForm extends Form {
         return $rubriqueArray;
     }
 
+    /**
+     * CommentaireForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('commentaireform');

@@ -4,12 +4,23 @@ namespace Mapcontent\Model\Mapper;
 
 use Mapcontent\Model\Mapcontent;
 
+/**
+ * Class MapcontentMapper
+ * @package Mapcontent\Model\Mapper
+ */
 class MapcontentMapper
 {
+    /**
+     * MapcontentMapper constructor.
+     */
     function __construct()
     {
     }
 
+    /**
+     * @param $data
+     * @return Mapcontent
+     */
     public function exchangeArray($data) {
 
         $mapContent = new Mapcontent();

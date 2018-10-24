@@ -1,7 +1,5 @@
 <?php
 
-// module/SousRubrique/src/SousRubrique/Form/SousRubriqueForm.php:
-
 namespace Linktocontenu\Form;
 
 use Zend\Form\Form;
@@ -9,12 +7,17 @@ use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
 use ExtLib\Utils;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class LinktocontenuForm
+ * @package Linktocontenu\Form
+ */
 class LinktocontenuForm extends Form {
 
     protected $utils;
 
+    /**
+     * @return array
+     */
     protected function getRubriques() {
 
         $rubriquesDao = new RubriqueDao();
@@ -49,8 +52,11 @@ class LinktocontenuForm extends Form {
       return $sousrubriqueArray;
       }
      */
-    /* TODO : get All Sous Rubriques by Id pour le select */
 
+    /**
+     * LinktocontenuForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
 
         $this->utils = new Utils();

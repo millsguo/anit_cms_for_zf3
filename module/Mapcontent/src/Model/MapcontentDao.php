@@ -6,12 +6,23 @@ use Contenu\Model\ContenuDao;
 use Mapcontent\Model\Mapper\MapcontentMapper;
 use Sousrubrique\Model\Sousrubriquedao;
 
+/**
+ * Class MapcontentDao
+ * @package Mapcontent\Model
+ */
 class MapcontentDao extends ContenuDao {
 
+    /**
+     * MapcontentDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $id
+     * @return Mapcontent
+     */
     public function getMapcontent($id) {
 
         $id = (int) $id;
@@ -49,6 +60,9 @@ class MapcontentDao extends ContenuDao {
         return $mapcontentMapper->exchangeArray($contenustep1);
     }
 
+    /**
+     * @param Mapcontent $mapcontent
+     */
     public function saveMapcontent(Mapcontent $mapcontent) {
 
         $id = (int) $mapcontent->getId();

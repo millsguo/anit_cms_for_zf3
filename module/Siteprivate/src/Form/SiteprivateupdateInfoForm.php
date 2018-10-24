@@ -9,10 +9,18 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use Privatespace\Model\PrivatespaceDao;
 use ExtLib\Utils;
 
+/**
+ * Class SiteprivateUpdateInfoForm
+ * @package Siteprivate\Form
+ */
 class SiteprivateUpdateInfoForm extends Form {
 
     private $translator;
 
+    /**
+     * SiteprivateUpdateInfoForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('siteprivateupdateInfo');

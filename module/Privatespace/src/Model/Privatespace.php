@@ -2,12 +2,19 @@
 
 namespace Privatespace\Model;
 
+/**
+ * Class Privatespace
+ * @package Privatespace\Model
+ */
 class Privatespace {
 
     protected $id;
     protected $name;
     protected $token;
-    
+
+    /**
+     * Privatespace constructor.
+     */
     public function __construct() {}
 
     public function setId($_id) {

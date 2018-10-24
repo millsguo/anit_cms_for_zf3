@@ -22,17 +22,29 @@ use Application\Factory\CacheKeys;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class ContenuController
+ * @package Contenu\Controller
+ */
 class ContenuController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * ContenuController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $contenuDao = new ContenuDao();
@@ -42,6 +54,9 @@ class ContenuController extends AbstractActionController {
         ));
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexalltypesAction() {
 
         $contenuDao = new ContenuDao();
@@ -51,7 +66,9 @@ class ContenuController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new ContenuForm();
@@ -124,6 +141,9 @@ class ContenuController extends AbstractActionController {
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
  
         $form = new ContenuForm();
@@ -228,6 +248,9 @@ class ContenuController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $contenuDao = new ContenuDao();
@@ -266,6 +289,9 @@ class ContenuController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return JsonModel
+     */
     public function sousrubriqueajaxAction() {
 
         $request = $this->getRequest();

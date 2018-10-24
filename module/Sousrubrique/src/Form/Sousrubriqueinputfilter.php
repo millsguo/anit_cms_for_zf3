@@ -5,10 +5,17 @@ namespace Sousrubrique\Form;
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
 
+/**
+ * Class SousrubriqueInputFilter
+ * @package Sousrubrique\Form
+ */
 class SousrubriqueInputFilter extends InputFilter {
 
     protected $translator;
-    
+
+    /**
+     * SousrubriqueInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

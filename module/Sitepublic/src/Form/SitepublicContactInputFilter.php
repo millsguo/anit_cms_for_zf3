@@ -4,11 +4,15 @@ namespace Sitepublic\Form;
 
 use Zend\InputFilter\InputFilter;
 
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
-
+/**
+ * Class SitepublicContactInputFilter
+ * @package Sitepublic\Form
+ */
 class SitepublicContactInputFilter extends InputFilter {
 
+    /**
+     * SitepublicContactInputFilter constructor.
+     */
     public function __construct() {
 
         $this->add(array(

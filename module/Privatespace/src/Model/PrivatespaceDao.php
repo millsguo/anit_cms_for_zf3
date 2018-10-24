@@ -6,12 +6,23 @@ use Application\DBConnection\ParentDao;
 use ExtLib\MCrypt;
 use Privatespace\Model\Mapper\PrivatespaceMapper;
 
+/**
+ * Class PrivatespaceDao
+ * @package Privatespace\Model
+ */
 class PrivatespaceDao extends ParentDao {
 
+    /**
+     * PrivatespaceDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType
+     * @return array|array of Privatespace
+     */
     public function getAllSpaces($dataType) {
 
         $mapper = new PrivatespaceMapper();

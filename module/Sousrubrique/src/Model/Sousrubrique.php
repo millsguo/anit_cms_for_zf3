@@ -5,6 +5,10 @@ namespace Sousrubrique\Model;
 use Rubrique\Model\Rubrique;
 use Sousrubrique\Model\Mapper\SousrubriqueMapper as SectionMapper;
 
+/**
+ * Class Sousrubrique
+ * @package Sousrubrique\Model
+ */
 class Sousrubrique {
 
     protected $id;
@@ -12,46 +16,80 @@ class Sousrubrique {
     protected $rang;
     protected $rubrique;
 
+    /**
+     * Sousrubrique constructor.
+     */
     public function __construct() {}
 
+    /**
+     * @param $_id
+     */
     public function setId($_id) {
         $this->id = $_id;
     }
 
+    /**
+     * @return mixed
+     */
     public function getId() {
         return $this->id;
     }
 
+    /**
+     * @param $_libelle
+     */
     public function setLibelle($_libelle) {
         $this->libelle = $_libelle;
     }
 
+    /**
+     * @return mixed
+     */
     public function getLibelle() {
         return $this->libelle;
     }
-    
+
+    /**
+     * @param $_rang
+     */
     public function setRang($_rang) {
         $this->rang = $_rang;
     }
 
+    /**
+     * @return mixed
+     */
     public function getRang() {
         return $this->rang;
     }
 
+    /**
+     * @param Rubrique $_rubrique
+     */
     public function setRubrique(Rubrique $_rubrique) {
 
         $this->rubrique = $_rubrique;
     }
 
+    /**
+     * @return mixed
+     */
     public function getRubrique() {
         return $this->rubrique;
     }
 
-    // Add the following method:
+    /**
+     * @return array
+     */
     public function getArrayCopy() {
         return get_object_vars($this);
     }
-    
+
+    /**
+     * @param $collection
+     * @param $order
+     * @return sorted collection
+     */
     public function sortByPosition($collection, $order){
         /*
         usort($collection, array(__CLASS__, "rankComparison"));

@@ -6,13 +6,24 @@ namespace Searchws\Model;
 use Application\DBConnection\ParentDao;
 use ExtLib\Utils;
 
+/**
+ * Class Searchdao
+ * @package Searchws\Model
+ */
 class Searchdao extends ParentDao
 {
+    /**
+     * Searchdao constructor.
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
+    /**
+     * @param $words
+     * @return array
+     */
     public function getPublicPages($words)
     {
 
@@ -65,7 +76,11 @@ class Searchdao extends ParentDao
         return $matchingResults;
     }
 
-
+    /**
+     * @param $words
+     * @param $spaceid
+     * @return array
+     */
     public function getPrivatePages($words, $spaceid)
     {
 
@@ -114,7 +129,10 @@ class Searchdao extends ParentDao
         return $matchingResults;
     }
 
-
+    /**
+     * @param $words
+     * @return array
+     */
     public function getAllPages($words)
     {
 
@@ -157,6 +175,10 @@ class Searchdao extends ParentDao
         return $matchingResults;
     }
 
+    /**
+     * @param $row
+     * @return array
+     */
     private function filterRowValues($row)
     {
         $values = [];
@@ -168,6 +190,11 @@ class Searchdao extends ParentDao
         return $values;
     }
 
+    /**
+     * @param $wordList
+     * @param $row
+     * @return mixed
+     */
     private function findOccurences($wordList, $row)
     {
         foreach ($wordList as $word) {

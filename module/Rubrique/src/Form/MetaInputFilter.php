@@ -5,10 +5,17 @@ namespace Rubrique\Form;
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
 
+/**
+ * Class MetaInputFilter
+ * @package Rubrique\Form
+ */
 class MetaInputFilter extends InputFilter {
     
     protected $translator;
 
+    /**
+     * MetaInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

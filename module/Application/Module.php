@@ -9,9 +9,16 @@ use Zend\Session\Config\SessionConfig;
 use Zend\Session\Container;
 use Zend\Session\Validator\HttpUserAgent;
 
+/**
+ * Class Module
+ * @package Application
+ */
 class Module
 {
 
+    /**
+     * @param MvcEvent $e
+     */
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager = $e->getApplication()->getEventManager();
@@ -53,6 +60,9 @@ class Module
         ));
     }
 
+    /**
+     * @return mixed
+     */
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
@@ -69,6 +79,10 @@ class Module
             );
         }
     */
+    /**
+     * @param $config
+     * Session initialization
+     */
     public function initSession($config)
     {
         $sessionConfig = new SessionConfig();
@@ -93,7 +107,12 @@ class Module
         Container::setDefaultManager($sessionManager);
     }
 
-    //https://stackoverflow.com/questions/46969748/display-all-exception-messages-in-zend-instead-of-an-error-occurred
+    //
+
+    /**
+     * @param $e
+     * https://stackoverflow.com/questions/46969748/display-all-exception-messages-in-zend-instead-of-an-error-occurred
+     */
     public function displayException($e)
     {
         echo "<span style='font-family: courier new; padding: 2px 5px; background:red; color: white;'> " . $e->getMessage() . '</span><br/>';

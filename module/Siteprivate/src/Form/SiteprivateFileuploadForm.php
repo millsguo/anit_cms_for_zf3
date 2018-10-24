@@ -1,7 +1,5 @@
 <?php
 
-// module/Fichiers/src/Fichiers/Form/FichiersForm.php:
-
 namespace Siteprivate\Form;
 
 use Zend\Form\Form;
@@ -9,13 +7,19 @@ use Zend\Form\Element;
 use Uploadmgmt\Model\FileuploadStatus;
 use ExtLib\Utils;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class SiteprivateFileuploadForm
+ * @package Siteprivate\Form
+ */
 class SiteprivateFileuploadForm extends Form
 {
 
     private $utils;
 
+    /**
+     * SiteprivateFileuploadForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null)
     {
         // we want to ignore the name passed

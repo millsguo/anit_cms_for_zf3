@@ -4,6 +4,10 @@ namespace Contenu\Model;
 
 use Sousrubrique\Model\Sousrubrique;
 
+/**
+ * Interface IContenu
+ * @package Contenu\Model
+ */
 interface IContenu {
     
     public function setId($_id);

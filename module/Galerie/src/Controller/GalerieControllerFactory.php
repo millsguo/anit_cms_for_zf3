@@ -9,6 +9,10 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class GalerieControllerFactory
+ * @package Galerie\Controller
+ */
 class GalerieControllerFactory implements FactoryInterface {
 
     /**

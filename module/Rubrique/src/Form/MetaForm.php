@@ -8,10 +8,18 @@ use Zend\Form\Form;
 //use Zend\Stdlib\Hydrator\ClassMethods;
 use ExtLib\Utils;
 
+/**
+ * Class MetaForm
+ * @package Rubrique\Form
+ */
 class MetaForm extends Form {
 
     private $translator;
-    
+
+    /**
+     * MetaForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
 
         parent::__construct('metaform');

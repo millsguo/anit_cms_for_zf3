@@ -1,7 +1,5 @@
 <?php
 
-// module/Sousrubrique/src/Sousrubrique/Controller/SousrubriqueController.php:
-
 namespace Sousrubrique\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
@@ -15,16 +13,28 @@ use Zend\Mvc\I18n\Translator;
 use Application\Factory\CacheDataListener;
 use ExtLib\Utils;
 
+/**
+ * Class SousrubriqueController
+ * @package Sousrubrique\Controller
+ */
 class SousrubriqueController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * SousrubriqueController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator){
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
-    
+
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $sousrubriqueDao = new Sousrubriquedao();
@@ -35,7 +45,9 @@ class SousrubriqueController extends AbstractActionController {
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         //$this->cache->getCacheService()->flush();
@@ -83,6 +95,9 @@ class SousrubriqueController extends AbstractActionController {
             'error' => '');
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction() {
 
         $form = new SousrubriqueForm();
@@ -160,6 +175,9 @@ class SousrubriqueController extends AbstractActionController {
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         // $this->translator=$this->getServiceLocator()->get('translator');

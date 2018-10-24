@@ -18,6 +18,10 @@ use Zend\View\Model\JsonModel;
 use Zend\Mvc\I18n\Translator;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class UploadmgmtController
+ * @package Uploadmgmt\Controller
+ */
 class UploadmgmtController extends AbstractActionController
 {
     protected $path;
@@ -27,6 +31,11 @@ class UploadmgmtController extends AbstractActionController
     protected $translator;
     protected $cache;
 
+    /**
+     * UploadmgmtController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
@@ -36,6 +45,9 @@ class UploadmgmtController extends AbstractActionController
         $this->paththumbnails = 'uploadedfilesbank/thumbnails/';
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
 
@@ -45,6 +57,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return ViewModel
+     */
     public function validatedfilesAction()
     {
         $photosmgmtdao = new Uploadmgmtdao();
@@ -53,6 +68,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return JsonModel
+     */
     public function rotaterightAction()
     {
         $idPhoto = (int)$this->params()->fromRoute('id', 0);
@@ -63,6 +81,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return JsonModel
+     */
     public function rotateleftAction()
     {
         $idPhoto = (int)$this->params()->fromRoute('id', 0);
@@ -73,6 +94,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return JsonModel
+     */
     public function validatefileAction()
     {
         $idFile = (int)$this->params()->fromRoute('id', 0);
@@ -83,6 +107,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return JsonModel
+     */
     public function deletefileAction()
     {
         $idFile = (int)$this->params()->fromRoute('id', 0);
@@ -125,6 +152,9 @@ class UploadmgmtController extends AbstractActionController
         ));
     }
 
+    /**
+     * @return \Zend\Http\Response|JsonModel
+     */
     public function updateAction()
     {
         $idFile = (int)$this->params()->fromRoute('id', 0);
@@ -150,6 +180,9 @@ class UploadmgmtController extends AbstractActionController
         );
     }
 
+    /**
+     * @return JsonModel
+     */
     public function backtooriginalAction()
     {
         $photosmgmtdao = new Uploadmgmtdao();

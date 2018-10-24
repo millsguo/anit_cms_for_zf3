@@ -5,12 +5,24 @@ namespace Rubrique\Model;
 use Rubrique\Model\Meta;
 use Application\DBConnection\ParentDao;
 
+/**
+ * Class MetaDao
+ * @package Rubrique\Model
+ */
 class MetaDao extends ParentDao{
 
+    /**
+     * MetaDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $idrub
+     * @param $dataType: array|object
+     * @return array|array of Meta
+     */
     public function getAllMetasByRubrique($idrub, $dataType) {
 
         $count = 0;
@@ -50,6 +62,10 @@ class MetaDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     * @return \Rubrique\Model\Meta
+     */
     public function getMeta($id) {
         $id = (int) $id;
 
@@ -68,7 +84,11 @@ class MetaDao extends ParentDao{
         $meta = Meta::fromArray($requete2);
         return $meta;
     }
-    
+
+    /**
+     * @param \Rubrique\Model\Meta $meta
+     * @return int|string
+     */
     public function saveMeta(Meta $meta) {
         
         $id = (int) $meta->getMetaid();
@@ -106,6 +126,10 @@ class MetaDao extends ParentDao{
         return $row;
     }
 
+    /**
+     * @param $id
+     * @return int
+     */
     public function deleteMeta($id) {
 
         $id = (int) $id;

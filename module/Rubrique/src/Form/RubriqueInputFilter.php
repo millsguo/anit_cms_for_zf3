@@ -8,11 +8,18 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use ExtLib\Utils;
 
+/**
+ * Class RubriqueInputFilter
+ * @package Rubrique\Form
+ */
 class RubriqueInputFilter extends InputFilter
 {
 
     protected $translator;
 
+    /**
+     * RubriqueInputFilter constructor.
+     */
     public function __construct()
     {
 

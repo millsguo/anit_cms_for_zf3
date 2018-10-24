@@ -8,12 +8,18 @@ use Zend\Form\Form;
 use Zend\Form\Element;
 use ExtLib\Utils;
 
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class FichiersForm
+ * @package Fichiers\Form
+ */
 class FichiersForm extends Form {
 
     private $utils;
 
+    /**
+     * FichiersForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('formfichiers');

@@ -3,12 +3,23 @@ namespace Commentaire\Model\Mapper;
 
 use Commentaire\Model\Commentaire as Comment;
 
+/**
+ * Class CommentaireMapper
+ * @package Commentaire\Model\Mapper
+ */
 class CommentaireMapper
 {
+    /**
+     * CommentaireMapper constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * @param $data
+     * @return Comment
+     */
     public function exchangeArray($data) {
 
         $comment = new Comment();

@@ -5,13 +5,18 @@ namespace Contenu\Form;
 
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
 
+/**
+ * Class ContenuInputFilter
+ * @package Contenu\Form
+ */
 class ContenuInputFilter extends InputFilter {
 
     protected $translator;
-    
+
+    /**
+     * ContenuInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

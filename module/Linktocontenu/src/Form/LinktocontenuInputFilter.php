@@ -5,9 +5,11 @@ namespace Linktocontenu\Form;
 
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
 
+/**
+ * Class LinktocontenuInputFilter
+ * @package Linktocontenu\Form
+ */
 class LinktocontenuInputFilter extends InputFilter {
 
     protected $translator;

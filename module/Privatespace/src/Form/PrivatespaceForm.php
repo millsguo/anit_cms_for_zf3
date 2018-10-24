@@ -1,17 +1,23 @@
 <?php
 
-// module/Rubrique/src/Rubrique/Form/RubriqueForm.php:
-
 namespace Privatespace\Form;
 
 use Zend\Form\Form;
 use Zend\Hydrator\ClassMethods;
 use ExtLib\Utils;
 
+/**
+ * Class PrivatespaceForm
+ * @package Privatespace\Form
+ */
 class PrivatespaceForm extends Form {
 
     private $translator;
-    
+
+    /**
+     * PrivatespaceForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('space');

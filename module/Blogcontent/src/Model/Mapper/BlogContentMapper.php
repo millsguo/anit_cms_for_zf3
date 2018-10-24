@@ -5,13 +5,24 @@ namespace Blogcontent\Model\Mapper;
 use Blogcontent\Model\Blogcontent;
 use Contenu\Model\Mapper\ContenuMapper;
 
+/**
+ * Class BlogContentMapper
+ * @package Blogcontent\Model\Mapper
+ */
 class BlogContentMapper
 {
 
+    /**
+     * BlogContentMapper constructor.
+     */
     public function __construct()
     {
     }
 
+    /**
+     * @param $data
+     * @return Blogcontent
+     */
     public function exchangeArray($data) {
 
         $blogcontent = new Blogcontent();
@@ -65,6 +76,10 @@ class BlogContentMapper
         return $blogcontent;
     }
 
+    /**
+     * @param $data
+     * @return array
+     */
     public function to_json($data){
         $json = array();
         $count =0;

@@ -4,11 +4,16 @@ namespace Siteprivate\Form;
 
 use Login\Form\LoginForm;
 
-//use Zend\Captcha\Image as CaptchaImage;
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class IndexLoginForm
+ * @package Siteprivate\Form
+ */
 class IndexLoginForm extends LoginForm {
-    
+
+    /**
+     * IndexLoginForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('login');

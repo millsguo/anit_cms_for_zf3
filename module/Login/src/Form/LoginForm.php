@@ -5,14 +5,19 @@ namespace Login\Form;
 use Zend\Form\Form;
 use ExtLib\Utils;
 
-//use Zend\Captcha\Image as CaptchaImage;
-//use Zend\Stdlib\Hydrator\ClassMethods;
-
+/**
+ * Class LoginForm
+ * @package Login\Form
+ */
 class LoginForm extends Form {
     
     private $captcha;
     private $utils;
 
+    /**
+     * LoginForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('login');

@@ -4,13 +4,18 @@ namespace Message\Form;
 
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
 
+/**
+ * Class MessageInputFilter
+ * @package Message\Form
+ */
 class MessageInputFilter extends InputFilter {
 
     protected $translator;
-    
+
+    /**
+     * MessageInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

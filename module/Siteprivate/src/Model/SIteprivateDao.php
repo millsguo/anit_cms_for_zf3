@@ -5,12 +5,25 @@ namespace Siteprivate\Model;
 use Application\DBConnection\ParentDao;
 use Privatespacelogin\Model\PrivatespaceloginDao;
 
+/**
+ * Class SiteprivateDao
+ * @package Siteprivate\Model
+ */
 class SiteprivateDao extends PrivatespaceloginDao {
 
+    /**
+     * SiteprivateDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $spaceId
+     * @param $email
+     * @param $pwd
+     * @return int
+     */
     public function countLoginforAuthentication($spaceId, $email, $pwd) {
         //print_r($spaceId.' '.$email.' '.$pwd);
         $requete = $this->dbGateway->prepare("

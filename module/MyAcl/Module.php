@@ -8,13 +8,18 @@ use Zend\ModuleManager\ModuleManager; // added for module specific layouts. eric
 use Zend\Mvc\MvcEvent,
     Zend\ModuleManager\Feature\AutoloaderProviderInterface,
     Zend\ModuleManager\Feature\ConfigProviderInterface;
-// end: added for Acl   ###################################
 
-//class Module
+/**
+ * Class Module
+ * @package MyAcl
+ */
 class Module 
 
 {
-	
+
+    /**
+     * @return mixed
+     */
     public function getConfig()
     {
         return include __DIR__ . '/config/module.config.php';
@@ -27,7 +32,10 @@ class Module
         $eventManager->attach('route', array($this, 'loadConfiguration'), 2);
         //you can attach other function need here...
     }
-	
+
+    /**
+     * @param MvcEvent $e
+     */
     public function loadConfiguration(MvcEvent $e)
     {
     $application   = $e->getApplication();

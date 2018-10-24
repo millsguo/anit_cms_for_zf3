@@ -15,14 +15,25 @@ use Pagearrangement\Model\PagearrangementDao;
 use ExtLib\Utils;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class PagearrangementController
+ * @package Pagearrangement\Controller
+ */
 class PagearrangementController extends AbstractActionController {
 
     private $translator;
 
+    /**
+     * PagearrangementController constructor.
+     * @param Translator $translator
+     */
     public function __construct(Translator $translator){
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $rubriqueDao = new RubriqueDao();
@@ -33,7 +44,10 @@ class PagearrangementController extends AbstractActionController {
                 //'session'=> $useraccess
         ));
     }
-    
+
+    /**
+     * @return json body
+     */
     public function updatecontentspositionajaxAction(){
         
         $request = $this->getRequest();
@@ -59,6 +73,9 @@ class PagearrangementController extends AbstractActionController {
         }
     }
 
+    /**
+     * @return ViewModel
+     */
     public function showpagecontentsAction() {
         
         $pagearrangementDao = new PagearrangementDao();
@@ -90,6 +107,9 @@ class PagearrangementController extends AbstractActionController {
         
     }
 
+    /**
+     * @return json body
+     */
     public function updatesectionspositionajaxAction() {
         $request = $this->getRequest();
         if ($request->isPost()) {

@@ -1,7 +1,5 @@
 <?php
 
-// module/Rubrique/src/Rubrique/Form/RubriqueForm.php:
-
 namespace Rubrique\Form;
 
 use Zend\Form\Form;
@@ -9,11 +7,18 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use ExtLib\Utils;
 use Privatespace\Model\PrivatespaceDao;
 
+/**
+ * Class RubriqueForm
+ * @package Rubrique\Form
+ */
 class RubriqueForm extends Form
 {
 
     private $translator;
 
+    /**
+     * @return array
+     */
     protected function getSpaces()
     {
 
@@ -30,6 +35,10 @@ class RubriqueForm extends Form
         return $spaceArray;
     }
 
+    /**
+     * RubriqueForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null)
     {
         // we want to ignore the name passed

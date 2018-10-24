@@ -9,6 +9,11 @@ use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Factory\CacheDataListener;
 
+
+/**
+ * Class RubriqueControllerFactory
+ * @package Rubrique\Controller
+ */
 class RubriqueControllerFactory implements FactoryInterface {
 
     /**

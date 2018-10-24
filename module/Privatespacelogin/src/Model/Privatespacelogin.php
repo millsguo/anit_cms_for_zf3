@@ -5,6 +5,10 @@ namespace Privatespacelogin\Model;
 use Privatespace\Model\Privatespace;
 use Privatespace\Model\PrivatespaceDao;
 
+/**
+ * Class Privatespacelogin
+ * @package Privatespacelogin\Model
+ */
 class Privatespacelogin {
 
     protected $id;
@@ -25,48 +29,84 @@ class Privatespacelogin {
     protected $space;
     protected $isValidate;
 
+    /**
+     * Privatespacelogin constructor.
+     */
     public function __construct() {}
 
+    /**
+     * @param $_id
+     */
     public function setId($_id) {
         $this->id = $_id;
     }
 
+    /**
+     * @return mixed
+     */
     public function getId() {
         return $this->id;
     }
 
+    /**
+     * @param $_email
+     */
     public function setEmail($_email) {
         $this->email = $_email;
     }
 
+    /**
+     * @return mixed
+     */
     public function getEmail() {
         return $this->email;
     }
-    
+
+    /**
+     * @param $_pwd
+     */
     public function setPwd($_pwd) {
         $this->pwd = $_pwd;
     }
 
+    /**
+     * @return mixed
+     */
     public function getPwd() {
         return $this->pwd;
     }
-    
+
+    /**
+     * @param $_validate
+     */
     public function setIsValidate($_validate) {
         $this->isValidate = $_validate;
     }
 
+    /**
+     * @return mixed
+     */
     public function getIsValidate() {
         return $this->isValidate;
     }
-    
+
+    /**
+     * @param $_firstname
+     */
     public function setFirstname($_firstname) {
         $this->firstname = $_firstname;
     }
-    
+
+    /**
+     * @return mixed
+     */
     public function getFirstname() {
         return $this->firstname;
     }
-    
+
+    /**
+     * @param $_lastname
+     */
     public function setLastname($_lastname) {
         $this->lastname = $_lastname;
     }

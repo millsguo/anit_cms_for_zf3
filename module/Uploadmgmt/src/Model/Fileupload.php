@@ -1,7 +1,10 @@
 <?php
 
 namespace Uploadmgmt\Model;
-
+/**
+ * Class Fileupload
+ * @package Uploadmgmt\Model
+ */
 class Fileupload
 {
     private $id;

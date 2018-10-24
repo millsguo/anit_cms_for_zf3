@@ -5,13 +5,17 @@ namespace Sitepublic\Form;
 use Zend\InputFilter\InputFilter;
 use ExtLib\Utils;
 
-//use Zend\Filter\StripTags;
-//use Zend\Filter\StringTrim;
-
+/**
+ * Class SitepublicCommentInputFilter
+ * @package Sitepublic\Form
+ */
 class SitepublicCommentInputFilter extends InputFilter {
     
     private $translator;
 
+    /**
+     * SitepublicCommentInputFilter constructor.
+     */
     public function __construct() {
         
         $this->translator = new Utils();

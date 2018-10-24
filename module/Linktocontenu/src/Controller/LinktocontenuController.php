@@ -22,16 +22,28 @@ use Application\Factory\CacheKeys;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class LinktocontenuController
+ * @package Linktocontenu\Controller
+ */
 class LinktocontenuController extends AbstractActionController {
 
     private $cache;
     private $translator;
 
+    /**
+     * LinktocontenuController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator){
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction() {
 
         $linktocontenuDao = new LinktocontenuDao();
@@ -40,8 +52,10 @@ class LinktocontenuController extends AbstractActionController {
             'linktocontenus' => $linktocontenuDao->getAllLinktocontenus("object")
         ));
     }
-    
-    // Add content to this method:
+
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction() {
 
         $form = new LinktocontenuForm();
@@ -140,8 +154,10 @@ class LinktocontenuController extends AbstractActionController {
             'fichiers' => $allFichiers,
             'error' => "no error");
     }
-    
-    // Add content to this method:
+
+    /**
+     * @return array
+     */
     public function editAction() {
 
         $form = new LinktocontenuForm();
@@ -321,8 +337,11 @@ class LinktocontenuController extends AbstractActionController {
             'fichiers' => $allFichiers,
             'error' => "no error");
     }
-    
-    
+
+
+    /**
+     * @return JsonModel
+     */
     public function contenuajaxAction() {
 
         $request = $this->getRequest();
@@ -340,7 +359,10 @@ class LinktocontenuController extends AbstractActionController {
             ));
         }
     }
-    
+
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction() {
 
         $linktocontenuDao = new LinktocontenuDao();

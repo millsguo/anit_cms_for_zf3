@@ -5,8 +5,16 @@ namespace Siteprivate\Form;
 use ExtLib\Utils;
 use Privatespacelogin\Form\PrivatespaceloginForm;
 
+/**
+ * Class SiteprivateRegistrationForm
+ * @package Siteprivate\Form
+ */
 class SiteprivateRegistrationForm extends PrivatespaceloginForm {
 
+    /**
+     * SiteprivateRegistrationForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('privatespacelogin');

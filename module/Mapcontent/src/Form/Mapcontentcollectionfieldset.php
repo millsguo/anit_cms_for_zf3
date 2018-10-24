@@ -5,8 +5,15 @@
  use Zend\Form\Element;
  use Zend\Form\Fieldset;
 
+ /**
+  * Class Mapcontentcollectionfieldset
+  * @package Mapcontent\Form
+  */
  class Mapcontentcollectionfieldset extends Fieldset
  {
+     /**
+      * Mapcontentcollectionfieldset constructor.
+      */
      public function __construct()
      {
          parent::__construct('Mapcontentcollectionfieldset');

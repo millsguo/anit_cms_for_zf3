@@ -10,6 +10,10 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 use Application\Controller\IndexController;
 use Application\Factory\CacheDataListener;
 
+/**
+ * Class ApplicationControllerFactory
+ * @package Application\Factory
+ */
 class ApplicationControllerFactory implements FactoryInterface {
 
     /**

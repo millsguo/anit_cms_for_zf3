@@ -6,14 +6,25 @@ use Application\DBConnection\ParentDao;
 use Privatespacelogin\Model\Privatespacelogin;
 use Privatespacelogin\Model\Mapper\PrivatespaceloginMapper;
 
+/**
+ * Class PrivatespaceloginDao
+ * @package Privatespacelogin\Model
+ */
 class PrivatespaceloginDao extends ParentDao
 {
 
+    /**
+     * PrivatespaceloginDao constructor.
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Privatespacelogin
+     */
     public function getAllLogin($dataType)
     {
         $mapper = new PrivatespaceloginMapper();
@@ -51,6 +62,11 @@ class PrivatespaceloginDao extends ParentDao
         }
     }
 
+    /**
+     * @param $id
+     * @param $dataType: array|object
+     * @return array|array of Privatespacelogin
+     */
     public function getAllLoginBySpace($id, $dataType)
     {
 
@@ -94,6 +110,11 @@ class PrivatespaceloginDao extends ParentDao
         }
     }
 
+    /**
+     * @param $spaceId
+     * @param $email
+     * @return int
+     */
     public function countLoginByEmailAndPrivatespace($spaceId, $email)
     {
 
@@ -111,6 +132,10 @@ class PrivatespaceloginDao extends ParentDao
         return (int)$requete->fetchColumn();
     }
 
+    /**
+     * @param $email
+     * @return int
+     */
     public function countLoginByEmail($email)
     {
 
@@ -126,6 +151,10 @@ class PrivatespaceloginDao extends ParentDao
         return (int)$requete->fetchColumn();
     }
 
+    /**
+     * @param $id
+     * @return array|\Privatespacelogin\Model\Privatespacelogin
+     */
     public function getLogin($id)
     {
 
@@ -157,6 +186,10 @@ class PrivatespaceloginDao extends ParentDao
         return $result;
     }
 
+    /**
+     * @param $email
+     * @return \Privatespacelogin\Model\Privatespacelogin
+     */
     public function getLoginByEmail($email)
     {
         $mapper = new PrivatespaceloginMapper();
@@ -213,6 +246,9 @@ class PrivatespaceloginDao extends ParentDao
         return $result;
     }
 
+    /**
+     * @param $id
+     */
     public function updateLastConnection($id)
     {
         $requete = $this->dbGateway->prepare("
@@ -225,6 +261,10 @@ class PrivatespaceloginDao extends ParentDao
         ));
     }
 
+    /**
+     * @param \Privatespacelogin\Model\Privatespacelogin $login
+     * @return bool|int
+     */
     public function saveLogin(Privatespacelogin $login)
     {
 
@@ -285,6 +325,9 @@ class PrivatespaceloginDao extends ParentDao
         return $nbRowSaved;
     }
 
+    /**
+     * @param $id
+     */
     public function deleteLogin($id)
     {
 

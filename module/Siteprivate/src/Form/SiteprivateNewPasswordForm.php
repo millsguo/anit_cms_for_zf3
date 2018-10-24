@@ -7,9 +7,17 @@ use Zend\Stdlib\Hydrator\ClassMethods;
 use Privatespace\Model\PrivatespaceDao;
 use ExtLib\Utils;
 
+/**
+ * Class SiteprivateNewPasswordForm
+ * @package Siteprivate\Form
+ */
 class SiteprivateNewPasswordForm extends Form {
 
 
+    /**
+     * SiteprivateNewPasswordForm constructor.
+     * @param null $name
+     */
     public function __construct($name = null) {
         // we want to ignore the name passed
         parent::__construct('forgotten');

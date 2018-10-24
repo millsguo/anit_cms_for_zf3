@@ -18,17 +18,29 @@ use Application\Factory\CacheKeys;
 use Application\Factory\CacheDataListener;
 use Zend\Mvc\I18n\Translator;
 
+/**
+ * Class GalerieController
+ * @package Galerie\Controller
+ */
 class GalerieController extends AbstractActionController
 {
     private $cache;
     private $translator;
 
+    /**
+     * GalerieController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
     public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
     {
         $this->cache = $cacheDataListener;
         $this->translator = $translator;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function indexAction()
     {
 
@@ -40,7 +52,9 @@ class GalerieController extends AbstractActionController
         ));
     }
 
-    // Add content to this method:
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function addAction()
     {
 
@@ -116,6 +130,9 @@ class GalerieController extends AbstractActionController
             'error' => "no error");
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function editAction()
     {
 
@@ -228,6 +245,9 @@ class GalerieController extends AbstractActionController
         );
     }
 
+    /**
+     * @return array|\Zend\Http\Response
+     */
     public function deleteAction()
     {
 
@@ -267,6 +287,9 @@ class GalerieController extends AbstractActionController
         );
     }
 
+    /**
+     * @return JsonModel
+     */
     public function sousrubriqueajaxAction()
     {
 

@@ -2,6 +2,10 @@
 // module/Fichiers/src/Fichiers/Model/Fichiers.php:
 namespace Fichiers\Model;
 
+/**
+ * Class Fichiers
+ * @package Fichiers\Model
+ */
 class Fichiers
 {
     protected $id;
@@ -14,6 +18,9 @@ class Fichiers
     protected $metaData;
 
 
+    /**
+     * Fichiers constructor.
+     */
     public function __construct()
     {
     }

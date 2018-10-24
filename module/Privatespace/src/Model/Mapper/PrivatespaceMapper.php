@@ -4,9 +4,16 @@ namespace Privatespace\Model\Mapper;
 
 use Privatespace\Model\Privatespace;
 
-
+/**
+ * Class PrivatespaceMapper
+ * @package Privatespace\Model\Mapper
+ */
 class PrivatespaceMapper
 {
+    /**
+     * @param $data
+     * @return Privatespace
+     */
     public function exchangeArray($data) {
 
         $privateSpace = new Privatespace();

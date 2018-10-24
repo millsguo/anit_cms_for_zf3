@@ -6,12 +6,23 @@ use Application\DBConnection\ParentDao;
 use Message\Model\Message;
 use Message\Model\Mapper\MessageMapper;
 
+/**
+ * Class MessageDao
+ * @package Message\Model
+ */
 class MessageDao extends ParentDao{
 
+    /**
+     * MessageDao constructor.
+     */
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * @param $dataType: array|object
+     * @return array|array of Message
+     */
     public function getAllMessages($dataType) {
 
         $count = 0;
@@ -45,6 +56,10 @@ class MessageDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     * @return \Message\Model\Message
+     */
     public function getMessage($id) {
 
         $id = (int) $id;
@@ -66,6 +81,11 @@ class MessageDao extends ParentDao{
         return $message;
     }
 
+    /**
+     * @param $type
+     * @param $dataType: array|objrct
+     * @return array|array of Message
+     */
     public function getMessagesByType($type, $dataType) {
 
         $messageMapper = new MessageMapper();
@@ -102,6 +122,9 @@ class MessageDao extends ParentDao{
         }
     }
 
+    /**
+     * @param \Message\Model\Message $message
+     */
     public function saveMessage(Message $message) {
 
         $id = (int) $message->getId();
@@ -175,6 +198,9 @@ class MessageDao extends ParentDao{
         }
     }
 
+    /**
+     * @param $id
+     */
     public function deleteMessage($id) {
 
         $id = (int) $id;

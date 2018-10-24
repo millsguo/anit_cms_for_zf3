@@ -4,9 +4,16 @@ namespace Fichiers\Model\Mapper;
 
 use Fichiers\Model\Fichiers as Files;
 
-
+/**
+ * Class FichiersMapper
+ * @package Fichiers\Model\Mapper
+ */
 class FichiersMapper
 {
+    /**
+     * @param $data
+     * @return Fichiers object
+     */
     public function exchangeArray($data)
     {
         $files = new Files();
