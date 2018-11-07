@@ -411,9 +411,11 @@ class RubriqueDao extends ParentDao {
                 'fileuploadForm' => $rubrique->gethasFileuploadForm(),
                 'publishing'=> $rubrique->getPublishing()
             ));
+            //var_dump($requete->errorInfo());
+            //exit;
         } else {
-            $requete = $this->dbGateway->prepare("INSERT into rubrique(libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm) 
-					values(:libelle, :rang, :scope, :spaceId, :filename, :contactForm, :messageForm, :updateForm, :fileuploadForm, publishing=:publishing)")or die(print_r($this->dbGateway->error_info()));
+            $requete = $this->dbGateway->prepare("INSERT into rubrique(libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm, publishing) 
+					values(:libelle, :rang, :scope, :spaceId, :filename, :contactForm, :messageForm, :updateForm, :fileuploadForm, :publishing)")or die(print_r($this->dbGateway->error_info()));
 
             $requete->execute(array(
                 'libelle' => $rubrique->getLibelle(),
@@ -429,7 +431,6 @@ class RubriqueDao extends ParentDao {
             ));
 
             $id = $this->dbGateway->lastInsertId();
-            //exit;
             return $id;
         }
     }

@@ -61,6 +61,7 @@ class PagewsController extends AbstractActionController
         // var_dump($filename);
         $rubriqueDao = new RubriqueDao();
         $rubrique = $rubriqueDao->getRubriqueByFilename($filename, "array");
+        // var_dump($rubrique);
         $rubriqueId = (int)$rubrique['id'];
         // var_dump($rubriqueId);
         // exit;

@@ -86,7 +86,7 @@ class RubriqueController extends AbstractActionController
                 $rubrique->setLibelle($utils->stripTags_replaceHtmlChar_trim($rubrique->getLibelle(), true, true, true));
                 $filename = $filemanager->formatNameFile($rubrique->getFilename());
                 $rubrique->setFilename($filename);
-
+                $rubrique->setPublishing(0);
                 $idInserted = $rubriqueDao->saveRubrique($rubrique);
                 $path = $this->sitepublicViewsPath;
 
@@ -119,6 +119,7 @@ class RubriqueController extends AbstractActionController
 
         $rubriqueDao = new RubriqueDao();
         $metaDao = new MetaDao();
+        $emptyError = '';
 
         $id = (int)$this->params()->fromRoute('id', 0);
 
@@ -170,15 +171,15 @@ class RubriqueController extends AbstractActionController
                 $fileManager = new FileManager();
                 $rubriqueMapper = new RubriqueMapper();
                 $request->getPost()->set('libelle', $utils->stripTags_replaceHtmlChar_trim($request->getPost('libelle'), true, true, true));
+                $rubriqueOld = $rubriqueDao->getRubrique($form->get('id')->getValue());
                 $rubrique = $rubriqueMapper->exchangeArray($form->getData());
                 $filename = $fileManager->formatNameFile($rubrique->getFilename());
                 $rubrique->setFilename($filename);
+                $rubrique->setPublishing($rubriqueOld->getPublishing());
 
                 if (strcmp($rubrique->getScope(), "public") == 0) {
                     $rubrique->setSpaceId(-1);
                 }
-
-                $rubriqueOld = $rubriqueDao->getRubrique($rubrique->getId());
 
                 $path = $this->sitepublicViewsPath;
 
@@ -213,7 +214,7 @@ class RubriqueController extends AbstractActionController
             'form' => $form,
             'metaform' => $metaForm,
             'metas' => $metas,
-            'error' => ''
+            'error' => $emptyError
         );
     }
 

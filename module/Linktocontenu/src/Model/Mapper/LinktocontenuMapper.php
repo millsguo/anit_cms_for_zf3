@@ -55,13 +55,37 @@ class LinktocontenuMapper
             $linkedContent->setType($data['type']);
         }
 
+        if (isset($data['author'])) {
+            $linkedContent->setAuthor($data['author']);
+        }
+        if (isset($data['themes'])) {
+            $linkedContent->setThemes($data['themes']);
+        }
+        if (isset($data['blogdate'])) {
+            $linkedContent->setDate($data['blogdate']);
+        }
+        if (isset($data['text1'])) {
+            $linkedContent->setText1($data['text1']);
+        }
+        if (isset($data['text2'])) {
+            $linkedContent->setText2($data['text2']);
+        }
+        if (isset($data['text3'])) {
+            $linkedContent->setText3($data['text3']);
+        }
+
+        if (isset($data['gps_coordinates'])) {
+            // always null
+            $linkedContent->setGpsInfoList(null);
+        }
         if (isset($data['linktopage'])) {
             $linkedContent->setLinktopage($data['linktopage']);
         }
         if (isset($data['linktosection'])) {
             $linkedContent->setLinktosection($data['linktosection']);
         }
-
+        //var_dump($linkedContent);
+        //exit;
         return $linkedContent;
     }
 }

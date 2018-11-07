@@ -2,6 +2,7 @@
 
 namespace Linktocontenu\Model;
 
+use Blogcontent\Model\IBlogcontent;
 use Contenu\Model\IContenu;
 use Sousrubrique\Model\Sousrubrique;
 use Rubrique\Model\Rubrique;
@@ -10,7 +11,7 @@ use Rubrique\Model\Rubrique;
  * Class Linktocontenu
  * @package Linktocontenu\Model
  */
-class Linktocontenu implements IContenu{
+class Linktocontenu implements IBlogcontent {
 
     protected $id;
     protected $position;
@@ -21,6 +22,13 @@ class Linktocontenu implements IContenu{
     protected $image;
     protected $image2;
     protected $type;
+    protected $author;
+    protected $themes;
+    protected $linkDate;
+    protected $text1;
+    protected $text2;
+    protected $text3;
+    protected $gpsInfoList;
     
     protected $linktopage;
     protected $contenu;
@@ -213,6 +221,136 @@ class Linktocontenu implements IContenu{
         return get_object_vars($this);
     }
 
-    
 
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param $_author
+     */
+    public function setAuthor($_author)
+    {
+        $this->author = $_author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThemes()
+    {
+        return $this->themes;
+    }
+
+    /**
+     * @param $_themes
+     */
+    public function setThemes($_themes)
+    {
+        $this->themes = $_themes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->linkDate;
+    }
+
+    /**
+     * @param $_linkDate
+     */
+    public function setDate($_linkDate)
+    {
+        $this->linkDate = $_linkDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getText1()
+    {
+        return $this->text1;
+    }
+
+    /**
+     * @param $_text1
+     * @return mixed
+     */
+    public function setText1($_text1)
+    {
+        return $this->text1;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getText2()
+    {
+        return $this->text2;
+    }
+
+    /**
+     * @param $_text2
+     */
+    public function setText2($_text2)
+    {
+        $this->text2 = $_text2;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getText3()
+    {
+        return $this->text3;
+    }
+
+    /**
+     * @param $_text3
+     */
+    public function setText3($_text3)
+    {
+        $this->text3 = $_text3;
+    }
+
+    /**
+     * @return mixed
+     * it is an Std Object with 3 properties:
+     * - latitude
+     * - longitude
+     * - description
+     */
+    public function getGpsInfoList()
+    {
+        return $this->gpsInfoList;
+    }
+
+    /**
+     * @param $_gpsInfoList: associative array with 3 properties
+     * - latitude
+     * - longitude
+     * - description
+     * @return json string
+     */
+    public function setGpsInfoList($_gpsInfoList)
+    {
+        $gpsInfos = array();
+        //print_r($_gpsInfoList);
+        //exit;
+        foreach($_gpsInfoList as $value) {
+            //print_r($value);
+            $gpsInfo['latitude'] = $value->latitude;
+            $gpsInfo['longitude'] = $value->longitude;
+            $gpsInfo['description'] = $value->description;
+            array_push($gpsInfos, $gpsInfo);
+        }
+
+        return $this->gpsInfoList = json_encode($gpsInfos);
+    }
 }

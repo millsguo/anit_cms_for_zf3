@@ -59,7 +59,7 @@ class LinktocontenuDao extends ParentDao {
 
                         $sousrubrique = $sousrubriqueDao->getSousrubrique($value['sousrubriques_id']);
                         //$rubrique = $rubriqueDao->getRubrique($sousrubrique->getRubrique()->getId());
-                        $contenu = $contenuDao->getContenu($value['contenu_id']);
+                        $contenu = $contenuDao->getContenuRelatedToLinkToContenu($value['contenu_id']);
 
                         $linktosousrubrique = $sousrubriqueDao->getSousrubrique($value['linktosousrubrique_id']);
                         //$linktorubrique = $rubriqueDao->getRubrique($value['linktorubrique_id']);
@@ -137,7 +137,7 @@ class LinktocontenuDao extends ParentDao {
 
                         $sousrubrique = $sousrubriqueDao->getSousrubrique($value['sousrubriques_id']);
                         //$rubrique = $rubriqueDao->getRubrique($sousrubrique->getRubrique()->getId());
-                        $contenu = $contenuDao->getContenu($value['contenu_id']);
+                        $contenu = $contenuDao->getContenuRelatedToLinkToContenu($value['contenu_id']);
 
                         $linktosousrubrique = $sousrubriqueDao->getSousrubrique($value['linktosousrubrique_id']);
                         //$linktorubrique = $rubriqueDao->getRubrique($value['linktorubrique_id']);
@@ -157,7 +157,14 @@ class LinktocontenuDao extends ParentDao {
                         $arrayOfContenustep1[$count]['image2'] = $value['image2'];
                         
                         $arrayOfContenustep1[$count]['type'] = $value['type'];
-                        
+                        /*$arrayOfContenustep1[$count]['author'] = null;
+                        $arrayOfContenustep1[$count]['themes'] = null;
+                        $arrayOfContenustep1[$count]['blogdate'] = null;
+                        $arrayOfContenustep1[$count]['text1'] = null;
+                        $arrayOfContenustep1[$count]['text2'] = null;
+                        $arrayOfContenustep1[$count]['text3'] = null;
+                        $arrayOfContenustep1[$count]['gps_coordinates'] = null;*/
+
                         $arrayOfContenustep1[$count]['linktopage'] = $value['linktorubrique_id'];
 
                         //id of the section that have the content link
@@ -215,7 +222,7 @@ class LinktocontenuDao extends ParentDao {
 
                         $sousrubrique = $sousrubriqueDao->getSousrubrique($value['sousrubriques_id']);
                         //$rubrique = $rubriqueDao->getRubrique($sousrubrique->getRubrique()->getId());
-                        $contenu = $contenuDao->getContenu($value['contenu_id']);
+                        $contenu = $contenuDao->getContenuRelatedToLinkToContenu($value['contenu_id']);
 
                         $linktosousrubrique = $sousrubriqueDao->getSousrubrique($value['linktosousrubrique_id']);
                         //$linktorubrique = $rubriqueDao->getRubrique($value['linktorubrique_id']);
@@ -284,7 +291,7 @@ class LinktocontenuDao extends ParentDao {
         $value = $requete->fetch(\PDO::FETCH_ASSOC);
 
         $sousrubrique = $sousrubriqueDao->getSousrubrique($value['sousrubriques_id']);
-        $contenu = $contenuDao->getContenu($value['contenu_id']);
+        $contenu = $contenuDao->getContenuRelatedToLinkToContenu($value['contenu_id']);
         $linktosousrubrique = $sousrubriqueDao->getSousrubrique($value['linktosousrubrique_id']);
         
         $contenustep1['id'] = $value['linktocontenu_id'];

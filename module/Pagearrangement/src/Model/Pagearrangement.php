@@ -83,6 +83,27 @@ class Pagearrangement {
                 if ((bool)$value->getType()) {
                     $json["content_".$value->getId()]["content_type"]=$value->getType();
                 }
+                if((method_exists($value, 'getAuthor')) && (bool)$value->getAuthor()) {
+                    $json["content_".$value->getId()]["content_author"]=$value->getAuthor();
+                }
+                if((method_exists($value, 'getThemes')) && (bool)$value->getThemes()) {
+                    $json["content_".$value->getId()]["content_themes"]=$value->getThemes();
+                }
+                if((method_exists($value, 'getDate')) && (bool)$value->getDate()) {
+                    $json["content_".$value->getId()]["content_date"]=$value->getDate();
+                }
+                if((method_exists($value, 'getText1')) && (bool)$value->getText1()) {
+                    $json["content_".$value->getId()]["content_text1"]=$value->getText1();
+                }
+                if((method_exists($value, 'getText2')) && (bool)$value->getText2()) {
+                    $json["content_".$value->getId()]["content_text2"]=$value->getText2();
+                }
+                if((method_exists($value, 'getText3')) && (bool)$value->getText3()) {
+                    $json["content_".$value->getId()]["content_text3"]=$value->getText3();
+                }
+                if(method_exists($value,'getGpsInfoList') && (bool)$value->getGpsInfoList()) {
+                    $json["content_".$value->getId()]["content_gpsinfolist"]=$value->getGpsInfoList();
+                }
                
             }
             elseif (strcmp("section", $nodeType[0])==0){
@@ -149,6 +170,27 @@ class Pagearrangement {
                 }
                 if ((bool)$value->getType()) {
                     $myArray["content_".$value->getId()]["content_type"]=$value->getType();
+                }
+                if((method_exists($value, 'getAuthor')) && (bool)$value->getAuthor()) {
+                    $myArray["content_".$value->getId()]["content_author"]=$value->getAuthor();
+                }
+                if((method_exists($value, 'getThemes')) && (bool)$value->getThemes()) {
+                    $myArray["content_".$value->getId()]["content_themes"]=$value->getThemes();
+                }
+                if((method_exists($value, 'getDate')) && (bool)$value->getDate()) {
+                    $myArray["content_".$value->getId()]["content_date"]=$value->getDate();
+                }
+                if((method_exists($value, 'getText1')) && (bool)$value->getText1()) {
+                    $myArray["content_".$value->getId()]["content_text1"]=$value->getText1();
+                }
+                if((method_exists($value, 'getText2')) && (bool)$value->getText2()) {
+                    $myArray["content_".$value->getId()]["content_text2"]=$value->getText2();
+                }
+                if((method_exists($value, 'getText3')) && (bool)$value->getText3()) {
+                    $myArray["content_".$value->getId()]["content_text3"]=$value->getText3();
+                }
+                if(method_exists($value,'getGpsInfoList') && (bool)$value->getGpsInfoList()) {
+                    $myArray["content_".$value->getId()]["content_gpsinfolist"]=$value->getGpsInfoList();
                 }
                
             }

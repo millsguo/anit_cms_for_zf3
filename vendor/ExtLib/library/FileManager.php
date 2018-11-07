@@ -58,6 +58,7 @@ final class FileManager
         if (!$isOk) {
             $message = false;
         }
+
         return $message;
     }
 
