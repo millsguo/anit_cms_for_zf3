@@ -77,13 +77,12 @@ class SitepublicController extends AbstractActionController
         }
 
         $loginaccess = new \Zend\Session\Container('myacl');
-        //get cache only for anonymous or extranet user
-        if ((strcasecmp($loginaccess->role, MyAclRoles::$USER) == 0 || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) == 0)
+        //get cache only for anonymous or extranet user ('guest')
+        if ((strcasecmp($loginaccess->role, MyAclRoles::$USER) != 0 || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) != 0)
         ) {
             //get cache
             $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
         }
-
 
         if (!$result) {
             $rubrique = $rubriqueDao->getPublicRubriqueByFilename($page . ".phtml", 'object');
