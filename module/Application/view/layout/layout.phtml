@@ -36,7 +36,7 @@
 
     </head>
     <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" style="opacity:0.75">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <!--<div class="container">-->
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -145,13 +145,13 @@
                         //console.log(page);
                         for (var j in data['data'][i]){
                             if(j==="spaceId" && data['data'][i][j] >-1 && page == "updatecontactinformation"){
-                                html+='<div><a href="'+updatecontactinformation+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
+                                html+='<li><a href="'+updatecontactinformation+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></li>';
                             }
                             if(j==="spaceId" && data['data'][i][j] >-1 && page != "updatecontactinformation" ){
-                                html+='<div><a href="'+displayPrivatePageUrl+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
+                                html+='<li><a href="'+displayPrivatePageUrl+'/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></li>';
                             }
                             else if(j==="spaceId" && data['data'][i][j] == -1){
-                                html+='<div><a href="'+displayPublicPageUrl+'/'+'displaypublicpage/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></div>';
+                                html+='<li><a href="'+displayPublicPageUrl+'/'+'displaypublicpage/'+page+'" target="_blank">'+data['data'][i]['libelle']+'</a></li>';
                             }
                         }
                     }
