@@ -5,8 +5,6 @@ namespace Blogcontent\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Zend\View\Model\JsonModel;
-//use Zend\Validator\File\Size;
-//use Zend\Validator\File\Extension;
 use Blogcontent\Model\Blogcontent;
 use Blogcontent\Model\BlogcontentDao;
 use Blogcontent\Form\BlogcontentForm;

@@ -3,13 +3,13 @@
 namespace Searchws;
 
 use Searchws\Controller\SearchwsController;
+use Searchws\Controller\SearchwsControllerFactory;
 use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
 return array(
     'controllers' => array(
         'factories' => array(
-            SearchwsController::class => InvokableFactory::class,
+            SearchwsController::class => SearchwsControllerFactory::class,
         ),
     ),
     // The following section is new and should be added to your file

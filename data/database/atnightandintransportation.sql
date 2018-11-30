@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 08 nov. 2018 à 17:08
+-- Généré le :  ven. 30 nov. 2018 à 17:24
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `contenu` (
   `gps_coordinates` json DEFAULT NULL,
   PRIMARY KEY (`contenu_id`),
   KEY `sousrubriques_id` (`sousrubriques_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `contenu`
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `fichiers` (
   `fichiers_thumbnailpath` varchar(384) COLLATE utf8_bin NOT NULL,
   `fichiers_thumbnail` varchar(128) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`fichiers_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `fichiers`
@@ -174,7 +174,8 @@ CREATE TABLE IF NOT EXISTS `fichiers` (
 
 INSERT INTO `fichiers` (`fichiers_id`, `fichiers_chemin`, `fichiers_nom`, `fichiers_type`, `fichiers_libelle`, `fichiers_meta`, `fichiers_thumbnailpath`, `fichiers_thumbnail`) VALUES
 (1, 'filesbank/', 'bbkiq7x.png', 'png', 'test dfgdg', 'test ghj', 'filesbank/', '1522304702_BBKiq7X.png'),
-(9, 'filesbank/', 'cool-meeting.jpg', 'jpg', 'cool-meeting', '', 'filesbank/', '1541524983_cool-meeting.jpg');
+(9, 'filesbank/', 'cool-meeting.jpg', 'jpg', 'cool-meeting', '', 'filesbank/', '1541524983_cool-meeting.jpg'),
+(10, 'filesbank/', 'comparison.jpg', 'jpg', 'comparison', '', 'filesbank/', '1543563772_comparison.jpg');
 
 -- --------------------------------------------------------
 
@@ -240,7 +241,8 @@ CREATE TABLE IF NOT EXISTS `linktocontenu` (
   `linktorubrique_id` int(11) NOT NULL,
   `contenu_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`linktocontenu_id`),
-  KEY `contenu_id` (`contenu_id`)
+  KEY `contenu_id` (`contenu_id`),
+  KEY `sousrubriques_id` (`sousrubriques_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -268,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `message_type` varchar(128) COLLATE utf8_bin NOT NULL,
   `message_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`message_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `message`
@@ -291,7 +293,14 @@ CREATE TABLE IF NOT EXISTS `meta` (
   `rubrique_id` int(11) NOT NULL,
   PRIMARY KEY (`meta_id`),
   KEY `rubrique_id` (`rubrique_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `meta`
+--
+
+INSERT INTO `meta` (`meta_id`, `meta_key`, `meta_value`, `rubrique_id`) VALUES
+(3, 'test', 'test', 71);
 
 -- --------------------------------------------------------
 
@@ -354,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `rubrique` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `libelle` (`libelle`),
   KEY `filename` (`filename`)
-) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `rubrique`
@@ -382,7 +391,7 @@ CREATE TABLE IF NOT EXISTS `sousrubrique` (
   `rubriques_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `rubriques_id` (`rubriques_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `sousrubrique`
@@ -415,7 +424,7 @@ CREATE TABLE IF NOT EXISTS `space` (
   `space_name` varchar(255) COLLATE utf8_bin DEFAULT '',
   `space_token` varchar(512) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`space_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `space`

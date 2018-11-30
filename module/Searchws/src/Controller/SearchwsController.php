@@ -6,6 +6,8 @@ use Searchws\Model\Searchdao;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\JsonModel;
 use ExtLib\MCrypt;
+use Application\Factory\CacheDataListener;
+use Zend\Mvc\I18n\Translator;
 
 /**
  * Class SearchwsController
@@ -13,6 +15,21 @@ use ExtLib\MCrypt;
  */
 class SearchwsController extends AbstractActionController
 {
+
+    private $cache;
+    private $translator;
+
+    /**
+     * SearchwsController constructor.
+     * @param CacheDataListener $cacheDataListener
+     * @param Translator $translator
+     */
+    public function __construct(CacheDataListener $cacheDataListener, Translator $translator)
+    {
+        $this->cache = $cacheDataListener;
+        $this->translator = $translator;
+    }
+
     /**
      * Content-Type accepted :
      * application/json and x-www-form-urlencoded
@@ -24,7 +41,7 @@ class SearchwsController extends AbstractActionController
         if ($request->isPost()) {
             $words = $this->getParams($request);
             $searchDao = new Searchdao();
-            $occurences = $searchDao->getPublicPages($words, 'public');
+            $occurences = $searchDao->getPublicPages($words);
             return new JsonModel(array(
                 'results' => $occurences
             ));
@@ -48,8 +65,7 @@ class SearchwsController extends AbstractActionController
         if ($request->isPost()) {
             $words = $this->getParams($request);
             $searchDao = new Searchdao();
-            $occurences = $searchDao->getAllPages($words, 'public');
-
+            $occurences = $searchDao->getAllPages($words, false);
             return new JsonModel(array(
                 'results' => $occurences
             ));

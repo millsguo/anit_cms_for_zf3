@@ -108,5 +108,6 @@ return array(
     'Commentaire\\' => array($baseDir . '/module/Commentaire/src'),
     'Blogcontent\\' => array($baseDir . '/module/Blogcontent/src'),
     'Blog\\' => array($baseDir . '/module/Blog/src'),
+    'Backofficesearch\\' => array($baseDir . '/module/Backofficesearch/src'),
     'Application\\' => array($baseDir . '/module/Application/src'),
 );

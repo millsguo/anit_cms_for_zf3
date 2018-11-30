@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-09 09:00+0100\n"
-"PO-Revision-Date: 2018-11-09 09:01+0100\n"
+"POT-Creation-Date: 2018-11-30 18:48+0100\n"
+"PO-Revision-Date: 2018-11-30 18:50+0100\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: Me & myself\n"
 "Language: en_US\n"
@@ -16,7 +16,15 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Blogcontent/src/Controller/BlogcontentController.php:63
+#: Backofficesearch/src/Controller/BackofficesearchController.php:53
+#: Searchws/src/Controller/SearchwsController.php:49
+#: Searchws/src/Controller/SearchwsController.php:73
+#: Searchws/src/Controller/SearchwsController.php:102
+#: Uploadmgmt/src/Controller/UploadmgmtController.php:341
+msgid "Ce n'est pas une requête POST"
+msgstr "It is not a http POST request"
+
+#: Blogcontent/src/Controller/BlogcontentController.php:61
 #: Commentaire/src/Controller/CommentaireController.php:58
 #: Contenu/src/Controller/ContenuController.php:76
 #: Contenu/src/Controller/ContenuController.php:201
@@ -37,7 +45,7 @@ msgstr ""
 msgid "Ajouter"
 msgstr "Add"
 
-#: Blogcontent/src/Controller/BlogcontentController.php:143
+#: Blogcontent/src/Controller/BlogcontentController.php:141
 #: Commentaire/src/Controller/CommentaireController.php:123
 #: Fichiers/src/Controller/FichiersController.php:245
 #: Message/src/Controller/MessageController.php:116
@@ -65,7 +73,7 @@ msgstr "Add"
 msgid "Modifier"
 msgstr "Update"
 
-#: Blogcontent/src/Controller/BlogcontentController.php:277
+#: Blogcontent/src/Controller/BlogcontentController.php:275
 #: Commentaire/src/Controller/CommentaireController.php:232
 #: Contenu/src/Controller/ContenuController.php:269
 #: Fichiers/src/Controller/FichiersController.php:309
@@ -82,7 +90,7 @@ msgstr "Update"
 #: Rubrique/src/Form/RubriqueForm.php:120
 #: Rubrique/src/Form/RubriqueForm.php:132
 #: Sousrubrique/src/Controller/SousrubriqueController.php:196
-#: Application/view/layout/layout.phtml:189
+#: Application/view/layout/layout.phtml:198
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:21
 #: Commentaire/view/commentaire/commentaire/delete.phtml:22
 #: Contenu/view/contenu/contenu/delete.phtml:21
@@ -108,7 +116,7 @@ msgstr "Update"
 msgid "Non"
 msgstr "No"
 
-#: Blogcontent/src/Controller/BlogcontentController.php:279
+#: Blogcontent/src/Controller/BlogcontentController.php:277
 #: Commentaire/src/Controller/CommentaireController.php:234
 #: Contenu/src/Controller/ContenuController.php:271
 #: Fichiers/src/Controller/FichiersController.php:311
@@ -125,7 +133,7 @@ msgstr "No"
 #: Rubrique/src/Form/RubriqueForm.php:120
 #: Rubrique/src/Form/RubriqueForm.php:132
 #: Sousrubrique/src/Controller/SousrubriqueController.php:198
-#: Application/view/layout/layout.phtml:170
+#: Application/view/layout/layout.phtml:179
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:20
 #: Commentaire/view/commentaire/commentaire/delete.phtml:21
 #: Contenu/view/contenu/contenu/delete.phtml:20
@@ -928,13 +936,6 @@ msgstr "The filename can not have more than 128 characters"
 msgid "L'extension doit se terminer par phtml en minuscule"
 msgstr "The extension file must be phtml in lower case"
 
-#: Searchws/src/Controller/SearchwsController.php:32
-#: Searchws/src/Controller/SearchwsController.php:57
-#: Searchws/src/Controller/SearchwsController.php:86
-#: Uploadmgmt/src/Controller/UploadmgmtController.php:341
-msgid "Ce n'est pas une requête POST"
-msgstr "It is not a http POST request"
-
 #: Siteprivate/src/Controller/SiteprivateController.php:638
 msgid "Un compte existe déjà avec cette email"
 msgstr "An account already exists with this email"
@@ -1112,45 +1113,50 @@ msgstr "Links"
 msgid "Disposition"
 msgstr "Page arrangement"
 
-#: Application/view/layout/layout.phtml:79
+#: Application/view/layout/layout.phtml:81
+#: Application/view/layout/layout.phtml:85
 msgid "Messages"
 msgstr "Messages"
 
-#: Application/view/layout/layout.phtml:80
+#: Application/view/layout/layout.phtml:86
 msgid "Commentaires"
 msgstr "Comments"
 
-#: Application/view/layout/layout.phtml:81
+#: Application/view/layout/layout.phtml:89
 msgid "Fichiers"
 msgstr "Files"
 
-#: Application/view/layout/layout.phtml:84
+#: Application/view/layout/layout.phtml:90
+msgid "Recherche"
+msgstr "Search"
+
+#: Application/view/layout/layout.phtml:93
 msgid "Visualisation"
 msgstr "Visualize"
 
 # Loginmgmt
-#: Application/view/layout/layout.phtml:93
+#: Application/view/layout/layout.phtml:102
 msgid "Fichiers utilisateurs"
 msgstr "Files uploaded"
 
-#: Application/view/layout/layout.phtml:97
+#: Application/view/layout/layout.phtml:106
 msgid "&Agrave; valider"
 msgstr "waiting for validation"
 
-#: Application/view/layout/layout.phtml:98
+#: Application/view/layout/layout.phtml:107
 msgid "Validés"
 msgstr "Validated"
 
-#: Application/view/layout/layout.phtml:106
+#: Application/view/layout/layout.phtml:115
 msgid "Publication"
 msgstr "Publishing"
 
-#: Application/view/layout/layout.phtml:112
+#: Application/view/layout/layout.phtml:121
 #: Siteprivate/view/siteprivate/layout/layout.phtml:64
 msgid "Déconnexion"
 msgstr "Log out"
 
-#: Application/view/layout/layout.phtml:169
+#: Application/view/layout/layout.phtml:178
 #: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:85
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:159
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:157
@@ -1158,6 +1164,38 @@ msgstr "Log out"
 #: Sitepublic/view/sitepublic/sitepublic/index.phtml:166
 msgid "&Ecirc;tes vous sûr de vous déconnecter ?"
 msgstr "Are you sure to log out"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:2
+msgid "Rechercher une page par mot clé"
+msgstr "Search a page by keyword"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:57
+msgid "Résultats de la recherche"
+msgstr "Search results"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:68
+msgid "Editer le contenu"
+msgstr "Eidt a content"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:70
+msgid "Editer le lien"
+msgstr "Edit Link"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:72
+msgid "Voir la disposition de la page"
+msgstr "View the arrangement of the page"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:81
+msgid "terme(s) trouvé(s)"
+msgstr "term(s) found(s)"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:108
+msgid "Chaque mot est séparé par un espace"
+msgstr "Each word is separated by a space"
+
+#: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:110
+msgid "Chercher"
+msgstr "Search"
 
 #: Blogcontent/view/blogcontent/blogcontent/add.phtml:2
 msgid "Ajouter un contenu de type blog"
@@ -2523,7 +2561,7 @@ msgstr "Manage the users"
 
 #: Publishing/view/publishing/publishing/index.phtml:3
 msgid "Gestion de la publication des pages html"
-msgstr ""
+msgstr "management of the publishing"
 
 #: Publishing/view/publishing/publishing/index.phtml:52
 #: Rubrique/view/rubrique/rubrique/index.phtml:53

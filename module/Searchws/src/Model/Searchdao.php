@@ -133,24 +133,36 @@ class Searchdao extends ParentDao
      * @param $words
      * @return array
      */
-    public function getAllPages($words)
+    public function getAllPages($words, $hasContentId = false)
     {
-
+        $contentIdGlobalSelect = '';
+        $contentIdContentSelect = '';
+        $linkContentLinkSelect = '';
+        if($hasContentId) {
+            $contentIdGlobalSelect = ', cl.linkid, cl.contentid, cl.pageid';
+            $contentIdContentSelect = ' c.contenu_id as contentid, null as linkid, r.id as pageid,';
+            $linkContentLinkSelect = ' l.linktocontenu_id as linkid, null as contentid, r.id as pageid,';
+        }
         $requete = $this->dbGateway->prepare("
         
          SELECT cl.contenttitle, cl.contentsubtitle, cl.contenthtml, cl.contentcreation, cl.pagefilename, 
-         cl.pagetitle, cl.sectiontitle, cl.pagerank, cl.sectionrank, cl.contentrank
+         cl.pagetitle, cl.sectiontitle, cl.pagerank, cl.pagescope, cl.sectionrank, cl.contentrank".$contentIdGlobalSelect."
           FROM
-          (SELECT c.titre as contenttitle, 
-          c.soustitre as contentsubtitle, c.sousrubriques_id as sectionid, c.contenuhtml as contenthtml, c.contenu_date as contentcreation,
-          c.rang as contentrank, r.filename as pagefilename, r.libelle as pagetitle, r.rang as pagerank, sr.libelle as sectiontitle, sr.rang as sectionrank
+          (SELECT c.titre as contenttitle,".$contentIdContentSelect."
+          c.soustitre as contentsubtitle, c.sousrubriques_id as sectionid, 
+          c.contenuhtml as contenthtml, c.contenu_date as contentcreation,
+          c.rang as contentrank, 
+          r.filename as pagefilename, r.libelle as pagetitle, r.rang as pagerank, r.scope as pagescope,
+          sr.libelle as sectiontitle, sr.rang as sectionrank
           FROM contenu c
           JOIN sousrubrique sr on sr.id=c.sousrubriques_id
           JOIN rubrique r on r.id=sr.rubriques_id
         UNION
-        SELECT l.titre as contenttitle, 
-          l.soustitre as contentsubtitle, l.sousrubriques_id as sectionid, l.contenuhtml as contenthtml, l.contenu_date as contentcreation,
-          l.rang as contentrank, r.filename as pagefilename, r.libelle as pagetitle, r.rang as pagerank, sr.libelle as sectiontitle, sr.rang as sectionrank
+        SELECT l.titre as contenttitle,".$linkContentLinkSelect."
+          l.soustitre as contentsubtitle, l.sousrubriques_id as sectionid, 
+          l.contenuhtml as contenthtml, l.contenu_date as contentcreation,
+          l.rang as contentrank, r.filename as pagefilename, r.libelle as pagetitle, r.rang as pagerank, r.scope as pagescope,
+          sr.libelle as sectiontitle, sr.rang as sectionrank
          FROM linktocontenu l
          JOIN sousrubrique sr on sr.id=l.sousrubriques_id
          JOIN rubrique r on r.id=sr.rubriques_id) as cl
@@ -158,7 +170,6 @@ class Searchdao extends ParentDao
 		") or die(print_r($this->dbGateway->error_info()));
 
         $requete->execute();
-
         $results = $requete->fetchAll(\PDO::FETCH_ASSOC);
 
         $utils = new Utils();

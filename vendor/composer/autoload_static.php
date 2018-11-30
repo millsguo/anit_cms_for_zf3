@@ -176,6 +176,7 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         array (
             'Blogcontent\\' => 12,
             'Blog\\' => 5,
+            'Backofficesearch\\' => 17,
         ),
         'A' => 
         array (
@@ -593,6 +594,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'Blog\\' => 
         array (
             0 => __DIR__ . '/../..' . '/module/Blog/src',
+        ),
+        'Backofficesearch\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Backofficesearch/src',
         ),
         'Application\\' => 
         array (

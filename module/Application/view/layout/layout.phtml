@@ -76,9 +76,18 @@
                                 </ul>
                             </li>
                             <li><a href="<?php echo $this->url('Pagearrangement') ?>"><?php echo $this->translate('Disposition'); ?></a></li>
-                            <li><a href="<?php echo $this->url('Message') ?>"><?php echo $this->translate('Messages'); ?></a></li>
-                            <li><a href="<?php echo $this->url('Commentaire') ?>"><?php echo $this->translate('Commentaires'); ?></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <?php echo $this->translate('Messages'); ?>
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->url('Message') ?>"><?php echo $this->translate('Messages'); ?></a></li>
+                                    <li><a href="<?php echo $this->url('Commentaire') ?>"><?php echo $this->translate('Commentaires'); ?></a></li>
+                                </ul>
+                            </li>
                             <li><a href="<?php echo $this->url('Fichiers') ?>"><?php echo $this->translate('Fichiers'); ?></a></li>
+                            <li><a href="<?php echo $this->url('Backofficesearch', array("action" => "search")); ?>"><?php echo $this->translate('Recherche'); ?></a></li>
                             <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                         <?php echo $this->translate('Visualisation'); ?>

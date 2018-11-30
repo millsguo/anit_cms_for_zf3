@@ -68,6 +68,7 @@ class MyAclPlugin extends AbstractPlugin
         //$acl->addResource('mobilewscontroller'); // authentication and upload ws
         $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
         $acl->addResource('publishingcontroller'); // uploadmgmt module
+        $acl->addResource('backofficesearchcontroller'); // uploadmgmt module
 	# end RESOURCES ########################################
 		
 	################ PERMISSIONS #######################
@@ -131,7 +132,7 @@ class MyAclPlugin extends AbstractPlugin
         //$acl->allow('anonymous', 'searchwscontroller', array('getpublicpages', 'getprivatepages', 'getallpages'));
         $acl->allow('anonymous', 'searchwscontroller', 'getpublicpages');
         $acl->allow('guest', 'searchwscontroller', 'getprivatepages');
-        $acl->allow('user', 'searchwscontroller', 'getallpages');
+        $acl->allow('anonymous', 'searchwscontroller', 'getallpages');
 
         // mobilews -------------------------->
         //$acl->allow('anonymous', 'mobilewscontroller', NULL);
@@ -148,6 +149,9 @@ class MyAclPlugin extends AbstractPlugin
 
         // publishing -------------------------->
         $acl->allow('admin', 'publishingcontroller', NULL);
+
+        // bacoffice search -------------------------->
+        $acl->allow('user', 'backofficesearchcontroller', NULL);
 	
 		################ end PERMISSIONS #####################
 		

@@ -83,7 +83,7 @@ class PagearrangementController extends AbstractActionController {
         
         // $this->translator=$this->getServiceLocator()->get('translator');
         
-        $id = (int) $this->params()->fromRoute('id', 0);
+        $id = (int) $this->params()->fromRoute('id', null);
         
         if(empty($id)){
            return $this->notFoundAction();
