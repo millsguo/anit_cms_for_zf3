@@ -109,12 +109,12 @@ class ContenuController extends AbstractActionController {
                 
                 $contenu->setSousRubrique($this->sousrubriqueDao->getSousrubrique($filterData->stripTags_replaceHtmlChar_trim($request->getPost('sousrubriquesList'), true, false, true)));
                 $contenu->setId($filterData->stripTags_replaceHtmlChar_trim($request->getPost('id'), true, false, true));
-                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), true, false, true));
+                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), false, false, true));
                 $contenu->setRang($filterData->stripTags_replaceHtmlChar_trim($request->getPost('position'), true, false, true));
-                $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), true, false, true));
+                $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), false, false, true));
                 $contenu->setContenuHtml($request->getPost('contenu'));
                 $contenu->setType(ContenuType::$htmlcontent);
-               ;
+
                 $contenuDao->saveContenu($contenu);
                 
                 //flush cache

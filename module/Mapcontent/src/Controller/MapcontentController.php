@@ -103,9 +103,9 @@ class MapcontentController extends AbstractActionController
 
                 $mapContent->setSousRubrique($this->sousrubriqueDao->getSousrubrique($filterData->stripTags_replaceHtmlChar_trim($request->getPost('sousrubriquesList'), true, false, true)));
                 $mapContent->setId($filterData->stripTags_replaceHtmlChar_trim($request->getPost('id'), true, false, true));
-                $mapContent->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), true, false, true));
+                $mapContent->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), false, false, true));
                 $mapContent->setRang($filterData->stripTags_replaceHtmlChar_trim($request->getPost('position'), true, false, true));
-                $mapContent->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), true, false, true));
+                $mapContent->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), false, false, true));
                 $mapContent->setContenuHtml($request->getPost('contenu'));
                 $mapContent->setType(ContenuType::$mapContent);
                 $gpsInfosFromReq = $request->getPost('gps');

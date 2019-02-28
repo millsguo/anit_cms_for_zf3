@@ -691,6 +691,8 @@ class ContenuDao extends ParentDao
                 'image2' => $contenu->getImage2(),
                 'type' => $contenu->getType()
             ));
+            //var_dump($requete->errorInfo());
+            //exit;
         }
     }
 

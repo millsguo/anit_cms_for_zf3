@@ -1,9 +1,8 @@
 <?php
 
-// module/SousRubrique/src/SousRubrique/Form/SousRubriqueForm.php:
-
 namespace Contenu\Form;
 
+use Htmltemplate\Model\HtmltemplateDao;
 use Zend\Form\Form;
 use Zend\Form\Element;
 use Rubrique\Model\RubriqueDao;
@@ -24,38 +23,28 @@ class ContenuForm extends Form {
     protected function getRubriques() {
 
         $rubriquesDao = new RubriqueDao();
-
         $rubriques = $rubriquesDao->getAllRubriques("array");
-
         $rubriqueArray = array();
 
         foreach ($rubriques as $value) {
-
             $rubriqueArray[$value['id']] = $value['libelle'];
         }
 
         return $rubriqueArray;
     }
 
-    /*
-      protected function getSousRubriques($rubid){
+    protected function getHtmltemplates() {
 
-      $sousrubriquesDao=  new SousRubriqueDao();
+        $htmltemplateDao = new HtmltemplateDao();
+        $htmltemplates = $htmltemplateDao->getAllHtmltemplate("array");
+        $htmlArray = array();
 
-      $sousrubriques = $sousrubriquesDao->getSousrubriquesByRubrique($rubid,"array");
+        foreach ($htmltemplates as $value) {
+            $htmlArray[$value['id']] = $value['label'];
+        }
 
-      $sousrubriqueArray = array();
-
-      foreach($sousrubriques as $value){
-
-      $sousrubriqueArray[$value['id']]=$value['libelle'];
-
-      }
-
-      return $sousrubriqueArray;
-      }
-     */
-
+        return $htmlArray;
+    }
 
     /**
      * ContenuForm constructor.
@@ -171,6 +160,23 @@ class ContenuForm extends Form {
                 'class' => 'contenuClass'
             )
         ));
+
+
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'htmltemplateList',
+            'attributes' => array(
+                'id' => 'htmltemplateSelectIdTag',
+                'class' => 'htmltemplateSelectIdClass'
+            ),
+            'options' => array(
+                //'label' => 'Choisir la rubrique',
+                'empty_option' => $this->utils->translate('Modèles html'),
+                //'class' => 'input-medium',
+                'value_options' => $this->getHtmltemplates()
+            ),
+        ));
+
 
         $this->add(array(
             'type' => 'Zend\Form\Element\Button',

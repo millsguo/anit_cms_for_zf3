@@ -150,6 +150,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
             'Interop\\Http\\Middleware\\' => 24,
             'Interop\\Container\\' => 18,
         ),
+        'H' => 
+        array (
+            'Htmltemplate\\' => 13,
+        ),
         'G' => 
         array (
             'Galerie\\' => 8,
@@ -558,6 +562,10 @@ class ComposerStaticInitdbb4e03bed6f83a3a2b7d8a875957b2d
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+        ),
+        'Htmltemplate\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Htmltemplate/src',
         ),
         'Galerie\\' => 
         array (

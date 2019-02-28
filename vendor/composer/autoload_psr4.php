@@ -99,6 +99,7 @@ return array(
     'Linktocontenu\\' => array($baseDir . '/module/Linktocontenu/src'),
     'Interop\\Http\\Middleware\\' => array($vendorDir . '/http-interop/http-middleware/src'),
     'Interop\\Container\\' => array($vendorDir . '/container-interop/container-interop/src/Interop/Container'),
+    'Htmltemplate\\' => array($baseDir . '/module/Htmltemplate/src'),
     'Galerie\\' => array($baseDir . '/module/Galerie/src'),
     'Fichiers\\' => array($baseDir . '/module/Fichiers/src'),
     'ExtLib\\' => array($vendorDir . '/ExtLib/library'),

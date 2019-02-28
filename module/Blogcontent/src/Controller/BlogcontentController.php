@@ -93,7 +93,7 @@ class BlogcontentController extends AbstractActionController {
                 $filterData = new Utils();
 
                 $contenu->setSousRubrique($sousrubriqueDao->getSousrubrique($filterData->stripTags_replaceHtmlChar_trim($request->getPost('sousrubriquesList'), true, true, true)));
-                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), true, false, true));
+                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), false, false, true));
                 $contenu->setRang($filterData->stripTags_replaceHtmlChar_trim($request->getPost('position'), true, false, true));
                 $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), false, true, true));
                 $contenu->setImage($filterData->stripTags_replaceHtmlChar_trim($request->getPost('imagepath'), true, false, true));
@@ -214,7 +214,7 @@ class BlogcontentController extends AbstractActionController {
 
                 $contenu->setSousRubrique($sousrubriqueDao->getSousrubrique($filterData->stripTags_replaceHtmlChar_trim($request->getPost('sousrubriquesList'), true, true, true)));
                 $contenu->setId($filterData->stripTags_replaceHtmlChar_trim($request->getPost('id'), true, false, true));
-                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), true, false, true));
+                $contenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'), false, false, true));
                 $contenu->setRang($filterData->stripTags_replaceHtmlChar_trim($request->getPost('position'), true, false, true));
                 $contenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'), false, true, true));
                 $contenu->setImage($filterData->stripTags_replaceHtmlChar_trim($request->getPost('imagepath'), true, false, true));

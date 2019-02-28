@@ -67,8 +67,9 @@ class MyAclPlugin extends AbstractPlugin
         $acl->addResource('mapcontentcontroller'); // mapcontent module
         //$acl->addResource('mobilewscontroller'); // authentication and upload ws
         $acl->addResource('uploadmgmtcontroller'); // uploadmgmt module
-        $acl->addResource('publishingcontroller'); // uploadmgmt module
-        $acl->addResource('backofficesearchcontroller'); // uploadmgmt module
+        $acl->addResource('publishingcontroller'); // publishing module
+        $acl->addResource('backofficesearchcontroller'); // backofficesearch module
+        $acl->addResource('htmltemplatecontroller'); // htmltemplate module
 	# end RESOURCES ########################################
 		
 	################ PERMISSIONS #######################
@@ -150,8 +151,11 @@ class MyAclPlugin extends AbstractPlugin
         // publishing -------------------------->
         $acl->allow('admin', 'publishingcontroller', NULL);
 
-        // bacoffice search -------------------------->
+        // backoffice search -------------------------->
         $acl->allow('user', 'backofficesearchcontroller', NULL);
+
+        // backoffice search -------------------------->
+        $acl->allow('user', 'htmltemplatecontroller', NULL);
 	
 		################ end PERMISSIONS #####################
 		

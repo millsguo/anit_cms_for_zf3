@@ -126,6 +126,10 @@ $this->headTitle($title);
     $(document).ready(function () {
         $("#tableSort").dataTable({
             language: {
+                verify_html: false,
+                cleanup: false,
+                clean_up_on_startup: false,
+                forced_rooted_block: "",
                 processing: "<?php echo $this->translate('Traitement en cours...'); ?>",
                 search: "<?php echo $this->translate('Rechercher'); ?>&nbsp; ",
                 lengthMenu: "<?php echo $this->translate('Afficher') . '_MENU_ ' . $this->translate('&eacute;l&eacute;ments'); ?>",
@@ -268,7 +272,7 @@ $this->headTitle($title);
         }
 
         //console.log(isNaN($.trim(position)));
-        if (isPosition) {
+        if (isPosition || position == undefined || position === null || position === '') {
             //    console.log(isNan($.trim(position)));
             bootbox.alert('<?php echo $this->translate('La position doit être vide ou être un nombre'); ?>');
             return false;

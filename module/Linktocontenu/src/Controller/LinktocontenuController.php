@@ -101,10 +101,10 @@ class LinktocontenuController extends AbstractActionController {
                 $linktocontenu->setContenu($contenu);
                 
                 //titre
-                $linktocontenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'),true,false,true));
+                $linktocontenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'),false,false,true));
                 
                 //soustitre
-                $linktocontenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'),true,false,true));
+                $linktocontenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'),false,false,true));
                 
                 //html
                 $linktocontenu->setContenuHtml($request->getPost('html'));
@@ -207,10 +207,10 @@ class LinktocontenuController extends AbstractActionController {
                 $linktocontenu->setContenu($contenu);
                 
                 //titre
-                $linktocontenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'),true,false,true));
+                $linktocontenu->setTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('titre'),false,false,true));
                 
                 //soustitre
-                $linktocontenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'),true,false,true));
+                $linktocontenu->setSousTitre($filterData->stripTags_replaceHtmlChar_trim($request->getPost('soustitre'),false,false,true));
                 
                 //html
                 $linktocontenu->setContenuHtml($request->getPost('html'));

@@ -45,7 +45,8 @@ $appConfig = array(
         'Mapcontent',
         'Searchws',
         'Publishing',
-        'Backofficesearch'
+        'Backofficesearch',
+        'Htmltemplate'
     ),
     // These are various options for the listeners attached to the ModuleManager
     'module_listener_options' => array(
@@ -97,7 +98,10 @@ $appConfig = array(
     // 'service_manager' => array(),
 );
 
-//modify the condition depending on your environments / cache the config and the map is useful for Production mode, definitely not for dev
+// Your environment defines if the cache of the config and the map is enabled.
+// It is useful to enable theses caches in Production mode. A request is faster
+// because the configuration is not aggregated each time the app receives an http request.
+// In dev mode you usually need to update the config regularly, so the cache is not necessary.
 if(strcasecmp(ANIT_ENVIRONMENT, 'dev') != 0){
     $appConfig['module_listener_options']['config_cache_enabled'] = true;
     $appConfig['module_listener_options']['config_cache_key'] = "124567890AZERTYUIOPQSDFGHJKLMWXC";

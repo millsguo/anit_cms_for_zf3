@@ -39,7 +39,8 @@
       "Mapcontent\\":"module/Mapcontent/src/",
       "Searchws\\":"module/Searchws/src/",
       "Publishing\\":"module/Publishing/src/",
-      "Backofficesearch\\":"module/Backofficesearch/src"
+      "Backofficesearch\\":"module/Backofficesearch/src",
+      "Htmltemplate\\":"module/Htmltemplate/src"
     }
   },
   "require": {
