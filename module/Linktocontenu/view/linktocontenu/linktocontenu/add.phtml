@@ -4,35 +4,38 @@ $this->headTitle($title);
 ?>
 
 <style>
-    div label{
-        width:150px;
+    div label {
+        width: 150px;
     }
 
-    div input[type="submit"], #submitbutton{
-        width:80px;
-        height:40px;
+    div input[type="submit"], #submitbutton {
+        width: 80px;
+        height: 40px;
     }
 
-    #contentText{
-        width:700px;
-        height:350px;
+    #contentText {
+        width: 700px;
+        height: 350px;
     }
-    .dataTables_filter{
-        
+
+    .dataTables_filter {
+
         margin-right: 10%;
     }
-    form ul{
+
+    form ul {
         display: none;
-        
+
     }
-    .imgView{
-        cursor: pointer; 
+
+    .imgView {
+        cursor: pointer;
     }
-    
-    img.imgpreview{
-       display:block;
-       margin: auto; 
-    } 
+
+    img.imgpreview {
+        display: block;
+        margin: auto;
+    }
 
 </style>
 
@@ -48,12 +51,12 @@ $this->headTitle($title);
             "importcss"
         ],
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright",
-        content_css : ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
-                      "<?php echo $this->basePath() . '/assets/css/app.css';?>", 
-                      "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
-                      "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
-                      "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
-        });
+        content_css: ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
+            "<?php echo $this->basePath() . '/assets/css/app.css';?>",
+            "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
+            "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
+            "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
+    });
 
 
     function getSousrub(id, selector) {
@@ -67,12 +70,12 @@ $this->headTitle($title);
             data: param,
             //contentType: "application/json",
             success: function (data) {
-                
-            //console.log(data);    
-            $(selector).html(function () {
+
+                //console.log(data);
+                $(selector).html(function () {
                     var content = "";
                     content += "<option value=''><?php echo $this->translate('Sélectionner une sous-rubrique'); ?></option>";
-                    
+
                     for (var i = 0; i < data['sousrubriquesList'].length; i++) {
                         content += "<option value='" + data['sousrubriquesList'][i]['id'] + "'>" + data['sousrubriquesList'][i]['libelle'] + "</option>";
 
@@ -88,8 +91,8 @@ $this->headTitle($title);
 
         });
     }
-    
-     function getContentsFromASection(id) {
+
+    function getContentsFromASection(id) {
 
         var param = {};
         param['subrubid'] = id;
@@ -100,13 +103,13 @@ $this->headTitle($title);
             data: param,
             //contentType: "application/json",
             success: function (data) {
-                
-            //console.log(data);    
-            $('#contenusSelectIdTag').html(function () {
+
+                //console.log(data);
+                $('#contenusSelectIdTag').html(function () {
                     var content = "";
-                    
+
                     content += "<option value=''><?php echo $this->translate('Sélectionner un contenu'); ?></option>";
-                    
+
                     for (var i = 0; i < data['contenusList'].length; i++) {
                         content += "<option value='" + data['contenusList'][i]['contenu_id'] + "'>" + data['contenusList'][i]['titre'] + "</option>";
 
@@ -155,117 +158,157 @@ $this->headTitle($title);
                 {'bSortable': false, 'aTargets': [0]}
             ]
         });
-       
+
         $('#rubriqueSelectIdTag').change(function () {
 
             var rubriqueid = $('#rubriqueSelectIdTag').val();
             //console.log(sousrub);
             getSousrub(rubriqueid, "#sousrubriqueSelectIdTag");
         });
-        
+
         $('#rubriquewhereislinkId').change(function () {
 
             var rubriqueid = $('#rubriquewhereislinkId').val();
             //console.log(sousrub);
             getSousrub(rubriqueid, "#sousrubriquewhereislinkId");
         });
-        
-         $('#sousrubriqueSelectIdTag').change(function () {
+
+        $('#sousrubriqueSelectIdTag').change(function () {
 
             var section_id = $('#sousrubriqueSelectIdTag').val();
             console.log(section_id);
             getContentsFromASection(section_id);
         });
-        
-        $('#submitbutton').on('click',function () {
+
+        $('#submitbutton').on('click', function () {
             //alert('submit');
             soumettreajout();
         });
-        
-        $('#tableSort').on( 'draw.dt', function () {
+
+        $('#tableSort').on('draw.dt', function () {
             $("img.imgView").off("click");
             $("img.imgView").on("click", function () {
                 var linkToImg = $(this).attr("data-img");
                 var extension = $(this).attr("data-filetype");
-                if(extension == 'jpg' || extension == 'jpeg'
+                if (extension == 'jpg' || extension == 'jpeg'
                     || extension == 'png' || extension == 'bmp'
-                    || extension == 'gif' || extension == 'svg'){       
-                    bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
+                    || extension == 'gif' || extension == 'svg') {
+                    bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
                 }
             });
-        });   
-           
+        });
+
 
         $("img.imgView").on("click", function () {
             var linkToImg = $(this).attr("data-img");
             var extension = $(this).attr("data-filetype");
-            if(extension == 'jpg' || extension == 'jpeg'
-               || extension == 'png' || extension == 'bmp'
-               || extension == 'gif' || extension == 'svg'){       
-                bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
+            if (extension == 'jpg' || extension == 'jpeg'
+                || extension == 'png' || extension == 'bmp'
+                || extension == 'gif' || extension == 'svg') {
+                bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
             }
         });
-        
+
+        $('#htmltemplateSelectIdTag').change(function () {
+            var idTemplate = $('#htmltemplateSelectIdTag').val();
+            displayDialogBox(idTemplate);
+        });
+
+        function getHtmlTemplate(id) {
+            var param = {};
+            param['id'] = id;
+            //console.log(id);
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $this->url('htmltemplate', array('action' => 'gethtmltemplate')); ?>',
+                data: param,
+                success: function (data) {
+                    if (data !== undefined && data !== null
+                        && data['template'] !== undefined && data['template'] !== null
+                        && data['template']['template'] !== undefined && data['template']['template'] !== null) {
+                        tinymce.activeEditor.setContent(data.template.template);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function displayDialogBox(id) {
+            bootbox.dialog("<?php echo $this->translate("&Ecirc;tes vous sûr de coller ce modèle html ?"); ?>", [{
+                "label": "<?php echo $this->translate('Oui') ?>",
+                "class": "btn-success",
+                "callback": function () {
+                    getHtmlTemplate(id);
+                }
+            },
+                {
+                    "label": "<?php echo $this->translate('Non') ?>",
+                    "class": "btn-danger",
+                    "callback": function () {
+                        //alert('toto');
+                    }
+                }]);
+        }
+
     });
-    
-    
-    function soumettreajout(){
-        
-        if (validajout()){
+
+
+    function soumettreajout() {
+
+        if (validajout()) {
             /*//document.linktocontenuform.submit();
-            console.log(document.linktocontenuform.imagepath.value);
-            console.log(document.linktocontenuform.imagepath2.value);
-            //console.log(document.linktocontenuform.rubriquesList.value);
-            console.log(document.linktocontenuform.sousrubriquesList.value);
-            //console.log(document.linktocontenuform.rubriqueswhereislinkList.value);
-            console.log(document.linktocontenuform.sousrubriqueswhereislinkList.value);
-            console.log(document.linktocontenuform.contenusList.value);
-            console.log(document.linktocontenuform.position.value);*/
+             console.log(document.linktocontenuform.imagepath.value);
+             console.log(document.linktocontenuform.imagepath2.value);
+             //console.log(document.linktocontenuform.rubriquesList.value);
+             console.log(document.linktocontenuform.sousrubriquesList.value);
+             //console.log(document.linktocontenuform.rubriqueswhereislinkList.value);
+             console.log(document.linktocontenuform.sousrubriqueswhereislinkList.value);
+             console.log(document.linktocontenuform.contenusList.value);
+             console.log(document.linktocontenuform.position.value);*/
             document.linktocontenuform.submit();
         }
     }
 
 
-    function validajout(){
-        
+    function validajout() {
+
         var page = document.linktocontenuform.rubriquesList.value;
         var section = document.linktocontenuform.sousrubriquesList.value;
         var pageDest = document.linktocontenuform.rubriqueswhereislinkList.value;
         var sectionDest = document.linktocontenuform.sousrubriqueswhereislinkList.value;
         var content = document.linktocontenuform.contenusList.value;
         var position = document.linktocontenuform.position.value;
-        
+
         var isPosition = isNaN($.trim(position));
         //console.log(rub);
-        
+
         if ($.trim(page) == "") {
             document.linktocontenuform.rubriquesList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir une rubrique'); ?>');
             return false;
         }
-        
-        if ($.trim(section) == "")
-        {
+
+        if ($.trim(section) == "") {
             document.linktocontenuform.sousrubriquesList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir une sous-rubrique'); ?>');
             return false;
         }
-        
-         if ($.trim(content) == "")
-        {
+
+        if ($.trim(content) == "") {
             document.linktocontenuform.contenusList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir le contenu'); ?>');
             return false;
         }
-        
+
         if ($.trim(pageDest) == "") {
             document.linktocontenuform.rubriqueswhereislinkList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir la rubrique de destination'); ?>');
             return false;
         }
-        
-        if ($.trim(sectionDest) == "")
-        {
+
+        if ($.trim(sectionDest) == "") {
             document.linktocontenuform.sousrubriqueswhereislinkList.focus();
             bootbox.alert('<?php echo $this->translate('Vous devez choisir la sous-rubrique de destination'); ?>');
             return false;
@@ -280,7 +323,7 @@ $this->headTitle($title);
 
         return true;
     }
-    
+
 </script>
 
 <h1><?php echo $this->escapeHtml($title); ?></h1>
@@ -292,28 +335,30 @@ $form->prepare();
 if (is_array($error)) {
     foreach ($error as $value) {
         //var_dump($error);
-        
-        foreach($value as $message){
+
+        foreach ($value as $message) {
             //print_r($error);
             echo '<div style="color:red;">' . $message . '</div>';
         }
     }
-}               
+}
 echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('id'));
 //echo $this->formHidden($form->get('sousrubriques_id'));
-echo '<div style="font-style:italic;font-weight:bold">'.$this->translate('Choisir un contenu').'</div>';
-echo '<div><div>'.$this->translate('Rubrique').'</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
-echo '<div><div>'.$this->translate('Sous-Rubrique').'</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
-echo '<div><div>'.$this->translate('Contenu').'</div>' . $this->formSelect($form->get('contenusList')) . '</div><br><br>';
-echo '<div style="font-style:italic;font-weight:bold">'.$this->translate('Choisir la sous-rubrique où apparaîtra le lien').'</div>';
-echo '<div><div>'.$this->translate('Lien vers la rubrique').'</div>' . $this->formSelect($form->get('rubriqueswhereislinkList')) . '</div>';
-echo '<div><div>'.$this->translate('Lien vers la sous-Rubrique').'</div>' . $this->formSelect($form->get('sousrubriqueswhereislinkList')) . '</div>';
+echo '<div style="font-style:italic;font-weight:bold">' . $this->translate('Choisir un contenu') . '</div>';
+echo '<div><div>' . $this->translate('Rubrique') . '</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
+echo '<div><div>' . $this->translate('Sous-Rubrique') . '</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
+echo '<div><div>' . $this->translate('Contenu') . '</div>' . $this->formSelect($form->get('contenusList')) . '</div><br><br>';
+echo '<div style="font-style:italic;font-weight:bold">' . $this->translate('Choisir la sous-rubrique où apparaîtra le lien') . '</div>';
+echo '<div><div>' . $this->translate('Lien vers la rubrique') . '</div>' . $this->formSelect($form->get('rubriqueswhereislinkList')) . '</div>';
+echo '<div><div>' . $this->translate('Lien vers la sous-Rubrique') . '</div>' . $this->formSelect($form->get('sousrubriqueswhereislinkList')) . '</div>';
 echo '<div>' . $this->formRow($form->get('titre')) . '</div>';
 echo '<div>' . $this->formRow($form->get('soustitre')) . '</div>';
 echo '<div>' . $this->formRow($form->get('position')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath2')) . '</div>';
+echo '<div>&nbsp;</div>';
+echo '<div>' . $this->formSelect($form->get('htmltemplateList')) . '</div>';
 echo '<div>&nbsp;</div>';
 echo '<div id="contentText">' . $this->formTextarea($form->get('html')) . '</div>';
 echo '<div>' . $this->formButton($form->get('submitbutton')) . '</div>';
@@ -326,28 +371,37 @@ echo '<tr><th class="thheader" style="cursor:default;text-align:center;">' . $th
 echo '<th class="thheader" style="cursor:pointer;text-align:center;">' . $this->translate('Chemin image') . '</th>';
 echo '<th style="text-align:center; cursor:pointer;" class="thheader">' . $this->translate('Description') . '</th>';
 echo '<th style="width:20%; text-align:center; line-height:20px; cursor:pointer;" class="thheader" align="center">' . $this->translate('Meta Donn&eacute;es') . '</th>';
-echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('type de fichier') . '</th></tr>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('Type de fichier') . '</th>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('Copier le lien') . '</th></tr>';
 //echo '<th style="cursor:default;">copier le lien</th></tr>';
 //echo '<tr><th class="thheader" style="cursor:pointer;">Chemin image</th><th style="cursor:pointer;">type de fichier</th></tr>';
 echo '</thead><tbody>';
 
 
 foreach ($fichiers as $fichier) :
-?>
-        <tr><td style="width:10%; text-align:center; line-height:40px;"><img class="imgView" data-filetype="<?php echo $fichier->getType(); ?>" data-img="<?php 
-                echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>" src="<?php
-                echo $this->basePath() . '/' . $fichier->getThumbnailpath().'/'.$fichier->getThumbnail(); 
-                
-                
-            ?>" width=40 height=40 /></td>
+    ?>
+    <tr>
+        <td style="width:10%; text-align:center; line-height:40px;"><img class="imgView"
+                                                                         data-filetype="<?php echo $fichier->getType(); ?>"
+                                                                         data-img="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"
+                                                                         src="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getThumbnailpath() . '/' . $fichier->getThumbnail();
 
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin().$fichier->getNom()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getLibelle()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getMetaData()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"> <?php echo $fichier->getType() ?> </td>
-   
-</tr>
-<?php endforeach; 
+
+                                                                         ?>" width=40 height=40/></td>
+
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin() . $fichier->getNom()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getLibelle()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getMetaData()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"> <?php echo $fichier->getType() ?> </td>
+        <td style="width:10%; text-align:center; line-height:40px;">
+            <button class="filepathBtn"
+                    data-clipboard="<?php echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"><?php echo $this->translate("Copier le lien"); ?></button>
+        </td>
+
+    </tr>
+<?php endforeach;
 
 echo '</tbody></table></div>';
 //echo "Zend engine version: " . zend_version();

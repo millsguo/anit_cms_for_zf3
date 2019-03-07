@@ -205,6 +205,49 @@ $this->headTitle($title);
                 bootbox.alert("<img class='imgpreview' src='"+linkToImg+"' >");
             }
         });
+
+        $('#htmltemplateSelectIdTag').change(function () {
+            var idTemplate = $('#htmltemplateSelectIdTag').val();
+            displayDialogBox(idTemplate);
+        });
+
+        function getHtmlTemplate(id) {
+            var param = {};
+            param['id'] = id;
+            //console.log(id);
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $this->url('htmltemplate', array('action' => 'gethtmltemplate')); ?>',
+                data: param,
+                success: function (data) {
+                    if(data !== undefined && data !== null
+                        && data['template'] !== undefined && data['template'] !== null
+                        && data['template']['template'] !== undefined && data['template']['template'] !== null) {
+                        tinymce.activeEditor.setContent(data.template.template);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function displayDialogBox(id) {
+            bootbox.dialog("<?php echo $this->translate("&Ecirc;tes vous sûr de coller ce modèle html ?"); ?>", [{
+                "label": "<?php echo $this->translate('Oui') ?>",
+                "class": "btn-success",
+                "callback": function () {
+                    getHtmlTemplate(id);
+                }
+            },
+                {
+                    "label": "<?php echo $this->translate('Non') ?>",
+                    "class": "btn-danger",
+                    "callback": function () {
+                        //alert('toto');
+                    }
+                }]);
+        }
         
     });
     
@@ -315,6 +358,8 @@ echo '<div>' . $this->formRow($form->get('position')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath')) . '</div>';
 echo '<div>' . $this->formRow($form->get('imagepath2')) . '</div>';
 echo '<div>&nbsp;</div>';
+echo '<div>' . $this->formSelect($form->get('htmltemplateList')) . '</div>';
+echo '<div>&nbsp;</div>';
 echo '<div id="contentText">' . $this->formTextarea($form->get('html')) . '</div>';
 echo '<div>' . $this->formButton($form->get('submitbutton')) . '</div>';
 echo $this->form()->closeTag();
@@ -326,28 +371,37 @@ echo '<tr><th class="thheader" style="cursor:default;text-align:center;">' . $th
 echo '<th class="thheader" style="cursor:pointer;text-align:center;">' . $this->translate('Chemin image') . '</th>';
 echo '<th style="text-align:center; cursor:pointer;" class="thheader">' . $this->translate('Description') . '</th>';
 echo '<th style="width:20%; text-align:center; line-height:20px; cursor:pointer;" class="thheader" align="center">' . $this->translate('Meta Donn&eacute;es') . '</th>';
-echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('type de fichier') . '</th></tr>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('Type de fichier') . '</th>';
+echo '<th style="cursor:pointer;text-align:center;">' . $this->translate('Copier le lien') . '</th></tr>';
 //echo '<th style="cursor:default;">copier le lien</th></tr>';
 //echo '<tr><th class="thheader" style="cursor:pointer;">Chemin image</th><th style="cursor:pointer;">type de fichier</th></tr>';
 echo '</thead><tbody>';
 
 
 foreach ($fichiers as $fichier) :
-?>
-        <tr><td style="width:10%; text-align:center; line-height:40px;"><img class="imgView" data-filetype="<?php echo $fichier->getType(); ?>" data-img="<?php 
-                echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>" src="<?php
-                echo $this->basePath() . '/' . $fichier->getThumbnailpath().'/'.$fichier->getThumbnail(); 
-                
-                
-            ?>" width=40 height=40 /></td>
+    ?>
+    <tr>
+        <td style="width:10%; text-align:center; line-height:40px;"><img class="imgView"
+                                                                         data-filetype="<?php echo $fichier->getType(); ?>"
+                                                                         data-img="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"
+                                                                         src="<?php
+                                                                         echo $this->basePath() . '/' . $fichier->getThumbnailpath() . '/' . $fichier->getThumbnail();
 
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin().$fichier->getNom()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getLibelle()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getMetaData()); ?></td>
-        <td style="width:20%; text-align:center; line-height:40px;"> <?php echo $fichier->getType() ?> </td>
-   
-</tr>
-<?php endforeach; 
+
+                                                                         ?>" width=40 height=40/></td>
+
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getChemin() . $fichier->getNom()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getLibelle()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"><?php echo $this->escapeHtml($fichier->getMetaData()); ?></td>
+        <td style="width:15%; text-align:center; line-height:40px;"> <?php echo $fichier->getType() ?> </td>
+        <td style="width:10%; text-align:center; line-height:40px;">
+            <button class="filepathBtn"
+                    data-clipboard="<?php echo $this->basePath() . '/' . $fichier->getChemin() . $fichier->getNom() ?>"><?php echo $this->translate("Copier le lien"); ?></button>
+        </td>
+
+    </tr>
+<?php endforeach;
 
 echo '</tbody></table></div>';
 //echo "Zend engine version: " . zend_version();

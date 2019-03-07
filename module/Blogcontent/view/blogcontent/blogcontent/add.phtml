@@ -56,7 +56,6 @@ $this->headTitle($title);
 <script type="text/javascript">
 
     function getSousrub(id) {
-
         var param = {};
         param['rubid'] = id;
         //console.log(id);
@@ -107,7 +106,7 @@ $this->headTitle($title);
                 "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css'; ?>"]
         });
 
-
+/*
         $('.spantext').on('click', function () {
 
             //console.log('click span OK');
@@ -140,7 +139,7 @@ $this->headTitle($title);
             tinymce.activeEditor.setContent(blogtext);
 
         });
-
+*/
 
         $("#tableSort").dataTable({
             language: {
@@ -224,9 +223,51 @@ $this->headTitle($title);
 
         $('th.today').trigger('click');
 
+        $('#htmltemplateSelectIdTag').change(function () {
+            var idTemplate = $('#htmltemplateSelectIdTag').val();
+            displayDialogBox(idTemplate);
+        });
+
+        function getHtmlTemplate(id) {
+            var param = {};
+            param['id'] = id;
+            //console.log(id);
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $this->url('htmltemplate', array('action' => 'gethtmltemplate')); ?>',
+                data: param,
+                success: function (data) {
+                    if(data !== undefined && data !== null
+                        && data['template'] !== undefined && data['template'] !== null
+                        && data['template']['template'] !== undefined && data['template']['template'] !== null) {
+                        tinymce.activeEditor.setContent(data.template.template);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function displayDialogBox(id) {
+            bootbox.dialog("<?php echo $this->translate("&Ecirc;tes vous sûr de coller ce modèle html ?"); ?>", [{
+                "label": "<?php echo $this->translate('Oui') ?>",
+                "class": "btn-success",
+                "callback": function () {
+                    getHtmlTemplate(id);
+                }
+            },
+                {
+                    "label": "<?php echo $this->translate('Non') ?>",
+                    "class": "btn-danger",
+                    "callback": function () {
+                        //alert('toto');
+                    }
+                }]);
+        }
+
 
     });
-
 
     function soumettreajout() {
 
@@ -314,7 +355,9 @@ echo '<div>' . $this->formRow($form->get('text3')) . '</div>';
 echo '<div><div>' . $this->translate('Rubrique') . '</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
 echo '<div><div>' . $this->translate('Sous-Rubrique') . '</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
 echo '<div>&nbsp;</div>';
-echo '<div><span class="spantext" data-text="textmodel">' . $this->translate('Modèle de blog') . '</span></div><br><br>';
+// echo '<div><span class="spantext" data-text="textmodel">' . $this->translate('Modèle de blog') . '</span></div><br><br>';
+echo '<div>' . $this->formSelect($form->get('htmltemplateList')) . '</div>';
+echo '<div>&nbsp;</div>';
 echo '<div id="contentText">' . $this->formTextarea($form->get('contenu')) . '</div>';
 echo '<div>' . $this->formButton($form->get('submitbutton')) . '</div>';
 echo $this->form()->closeTag();

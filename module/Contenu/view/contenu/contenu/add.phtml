@@ -131,12 +131,6 @@ $this->headTitle($title);
             getSousrub(sousrub);
         });
 
-
-        $('#htmltemplateSelectIdTag').change(function () {
-            var idTemplate = $('#htmltemplateSelectIdTag').val();
-            displayDialogBox(idTemplate);
-        });
-
         $('#submitbutton').on('click', function () {
             //alert('submit');
             soumettreajout();
@@ -163,6 +157,11 @@ $this->headTitle($title);
                 || extension == 'gif' || extension == 'svg') {
                 bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
             }
+        });
+
+        $('#htmltemplateSelectIdTag').change(function () {
+            var idTemplate = $('#htmltemplateSelectIdTag').val();
+            displayDialogBox(idTemplate);
         });
 
         function getHtmlTemplate(id) {

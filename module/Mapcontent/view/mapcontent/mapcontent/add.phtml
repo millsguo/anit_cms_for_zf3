@@ -183,6 +183,50 @@ $this->headTitle($title);
                 bootbox.alert("<img class='imgpreview' src='" + linkToImg + "' >");
             }
         });
+
+        $('#htmltemplateSelectIdTag').change(function () {
+            var idTemplate = $('#htmltemplateSelectIdTag').val();
+            displayDialogBox(idTemplate);
+        });
+
+        function getHtmlTemplate(id) {
+            var param = {};
+            param['id'] = id;
+            //console.log(id);
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo $this->url('htmltemplate', array('action' => 'gethtmltemplate')); ?>',
+                data: param,
+                success: function (data) {
+                    if(data !== undefined && data !== null
+                        && data['template'] !== undefined && data['template'] !== null
+                        && data['template']['template'] !== undefined && data['template']['template'] !== null) {
+                        tinymce.activeEditor.setContent(data.template.template);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
+        function displayDialogBox(id) {
+            bootbox.dialog("<?php echo $this->translate("&Ecirc;tes vous sûr de coller ce modèle html ?"); ?>", [{
+                "label": "<?php echo $this->translate('Oui') ?>",
+                "class": "btn-success",
+                "callback": function () {
+                    getHtmlTemplate(id);
+                }
+            },
+                {
+                    "label": "<?php echo $this->translate('Non') ?>",
+                    "class": "btn-danger",
+                    "callback": function () {
+                        //alert('toto');
+                    }
+                }]);
+        }
+
     });
 
 
@@ -301,6 +345,9 @@ echo '<div>' . $this->formRow($form->get('soustitre')) . '</div>';
 echo '<div>' . $this->formRow($form->get('position')) . '</div>';
 echo '<div><div>' . $this->translate('Rubrique') . '</div>' . $this->formSelect($form->get('rubriquesList')) . '</div>';
 echo '<div><div>' . $this->translate('Sous-Rubrique') . '</div>' . $this->formSelect($form->get('sousrubriquesList')) . '</div>';
+
+echo '<div>&nbsp;</div>';
+echo '<div>' . $this->formSelect($form->get('htmltemplateList')) . '</div>';
 echo '<div>&nbsp;</div>';
 echo '<div class="contentTextareaContainer">' . $this->formTextarea($form->get('contenu')) . '</div>';
 echo '<div class="gpsInfoContainer">' . $this->formCollection($form->get('gps')) . '</div>';

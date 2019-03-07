@@ -66,31 +66,7 @@ class ContenuForm extends Form {
                 'value' => 0
             ),
         ));
-        /*
-        $this->add(array(
-            'name' => 'sousrubriques_id',
-            'attributes' => array(
-                'type' => 'hidden',
-                'id' => 'idsousrub'
-            ),
-        ));
-        
-          $this->add(array(
-          'name' => 'imagepath',
-          'attributes' => array(
-          'type' => 'hidden',
-          'id' => 'imagepath'
-          ),
-          ));
-        
-        $this->add(array(
-            'name' => 'rubriques_id',
-            'attributes' => array(
-                'type' => 'hidden',
-                'id' => 'idrub'
-            ),
-        ));
-        */
+
         $this->add(array(
             'name' => 'titre',
             'attributes' => array(
@@ -171,7 +147,7 @@ class ContenuForm extends Form {
             ),
             'options' => array(
                 //'label' => 'Choisir la rubrique',
-                'empty_option' => $this->utils->translate('Modèles html'),
+                'empty_option' => $this->utils->translate('Utiliser un modèle html - Optionnel'),
                 //'class' => 'input-medium',
                 'value_options' => $this->getHtmltemplates()
             ),
