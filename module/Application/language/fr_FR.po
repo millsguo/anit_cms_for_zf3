@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 18:44+0100\n"
-"PO-Revision-Date: 2018-11-30 18:51+0100\n"
+"POT-Creation-Date: 2019-03-08 09:14+0100\n"
+"PO-Revision-Date: 2019-03-08 09:14+0100\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: me & myself\n"
 "Language: fr_FR\n"
@@ -30,6 +30,8 @@ msgstr ""
 #: Fichiers/src/Controller/FichiersController.php:84
 #: Galerie/src/Controller/GalerieController.php:70
 #: Galerie/src/Controller/GalerieController.php:193
+#: HtmlTemplate/src/Controller/HtmltemplateController.php:58
+#: HtmlTemplate/src/Controller/HtmltemplateController.php:163
 #: Linktocontenu/src/Controller/LinktocontenuController.php:63
 #: Linktocontenu/src/Controller/LinktocontenuController.php:165
 #: Linktocontenu/src/Controller/LinktocontenuController.php:318
@@ -58,6 +60,7 @@ msgstr ""
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:80
 #: Fichiers/view/fichiers/fichiers/index.phtml:131
 #: Galerie/view/galerie/galerie/index.phtml:61
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:57
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:67
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:79
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:63
@@ -77,6 +80,7 @@ msgstr ""
 #: Contenu/src/Controller/ContenuController.php:269
 #: Fichiers/src/Controller/FichiersController.php:309
 #: Galerie/src/Controller/GalerieController.php:267
+#: HtmlTemplate/src/Controller/HtmltemplateController.php:225
 #: Linktocontenu/src/Controller/LinktocontenuController.php:381
 #: Loginmgmt/src/Controller/LoginmgmtController.php:222
 #: Mapcontent/src/Controller/MapcontentController.php:286
@@ -89,15 +93,26 @@ msgstr ""
 #: Rubrique/src/Form/RubriqueForm.php:120
 #: Rubrique/src/Form/RubriqueForm.php:132
 #: Sousrubrique/src/Controller/SousrubriqueController.php:196
-#: Application/view/layout/layout.phtml:198
+#: Application/view/layout/layout.phtml:199
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:261
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:21
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:286
 #: Commentaire/view/commentaire/commentaire/delete.phtml:22
+#: Contenu/view/contenu/contenu/add.phtml:197
 #: Contenu/view/contenu/contenu/delete.phtml:21
+#: Contenu/view/contenu/contenu/edit.phtml:265
 #: Fichiers/view/fichiers/fichiers/delete.phtml:21
+#: Galerie/view/galerie/galerie/add.phtml:202
 #: Galerie/view/galerie/galerie/delete.phtml:21
+#: Galerie/view/galerie/galerie/edit.phtml:261
+#: HtmlTemplate/view/htmltemplate/htmltemplate/delete.phtml:21
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:247
 #: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:21
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:244
 #: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:21
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:222
 #: Mapcontent/view/mapcontent/mapcontent/delete.phtml:21
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:363
 #: Message/view/message/message/delete.phtml:22
 #: Privatespace/view/privatespace/privatespace/delete.phtml:21
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:21
@@ -120,6 +135,7 @@ msgstr ""
 #: Contenu/src/Controller/ContenuController.php:271
 #: Fichiers/src/Controller/FichiersController.php:311
 #: Galerie/src/Controller/GalerieController.php:269
+#: HtmlTemplate/src/Controller/HtmltemplateController.php:227
 #: Linktocontenu/src/Controller/LinktocontenuController.php:383
 #: Loginmgmt/src/Controller/LoginmgmtController.php:224
 #: Mapcontent/src/Controller/MapcontentController.php:288
@@ -132,15 +148,26 @@ msgstr ""
 #: Rubrique/src/Form/RubriqueForm.php:120
 #: Rubrique/src/Form/RubriqueForm.php:132
 #: Sousrubrique/src/Controller/SousrubriqueController.php:198
-#: Application/view/layout/layout.phtml:179
+#: Application/view/layout/layout.phtml:180
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:254
 #: Blogcontent/view/blogcontent/blogcontent/delete.phtml:20
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:279
 #: Commentaire/view/commentaire/commentaire/delete.phtml:21
+#: Contenu/view/contenu/contenu/add.phtml:190
 #: Contenu/view/contenu/contenu/delete.phtml:20
+#: Contenu/view/contenu/contenu/edit.phtml:258
 #: Fichiers/view/fichiers/fichiers/delete.phtml:20
+#: Galerie/view/galerie/galerie/add.phtml:195
 #: Galerie/view/galerie/galerie/delete.phtml:20
+#: Galerie/view/galerie/galerie/edit.phtml:254
+#: HtmlTemplate/view/htmltemplate/htmltemplate/delete.phtml:20
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:240
 #: Linktocontenu/view/linktocontenu/linktocontenu/delete.phtml:20
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:237
 #: Loginmgmt/view/loginmgmt/loginmgmt/delete.phtml:20
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:215
 #: Mapcontent/view/mapcontent/mapcontent/delete.phtml:20
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:356
 #: Message/view/message/message/delete.phtml:21
 #: Privatespace/view/privatespace/privatespace/delete.phtml:20
 #: Privatespacelogin/view/privatespacelogin/privatespacelogin/delete.phtml:20
@@ -253,18 +280,18 @@ msgid "Autre"
 msgstr ""
 
 #: Commentaire/src/Form/CommentaireForm.php:109
-#: Contenu/src/Form/ContenuForm.php:160
-#: Linktocontenu/src/Form/LinktocontenuForm.php:89
-#: Linktocontenu/src/Form/LinktocontenuForm.php:141
+#: Contenu/src/Form/ContenuForm.php:125
+#: Linktocontenu/src/Form/LinktocontenuForm.php:84
+#: Linktocontenu/src/Form/LinktocontenuForm.php:136
 #: Sousrubrique/src/Form/SousrubriqueForm.php:89
 msgid "Sélectionner une rubrique"
 msgstr ""
 
 #: Commentaire/src/Form/CommentaireForm.php:125
-#: Linktocontenu/src/Form/LinktocontenuForm.php:120
+#: Linktocontenu/src/Form/LinktocontenuForm.php:115
 #: Commentaire/view/commentaire/commentaire/add.phtml:91
 #: Commentaire/view/commentaire/commentaire/edit.phtml:74
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:108
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:111
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:108
 msgid "Sélectionner un contenu"
 msgstr ""
@@ -288,10 +315,12 @@ msgid "Contenu du commentaire"
 msgstr ""
 
 #: Commentaire/src/Form/CommentaireForm.php:192
-#: Contenu/src/Form/ContenuForm.php:179 Contenu/src/Form/ContenuForm.php:182
+#: Contenu/src/Form/ContenuForm.php:161 Contenu/src/Form/ContenuForm.php:164
 #: Fichiers/src/Form/FichiersForm.php:77
-#: Linktocontenu/src/Form/LinktocontenuForm.php:226
-#: Linktocontenu/src/Form/LinktocontenuForm.php:229
+#: HtmlTemplate/src/Form/HtmltemplateForm.php:60
+#: HtmlTemplate/src/Form/HtmltemplateForm.php:63
+#: Linktocontenu/src/Form/LinktocontenuForm.php:236
+#: Linktocontenu/src/Form/LinktocontenuForm.php:239
 #: Login/src/Form/LoginForm.php:140 Login/src/Form/LoginForm.php:145
 #: Loginmgmt/src/Form/LoginmgmtForm.php:75
 #: Loginmgmt/src/Form/LoginmgmtForm.php:79
@@ -328,6 +357,8 @@ msgstr ""
 #: Contenu/src/Form/ContenuInputFilter.php:118
 #: Contenu/src/Form/ContenuInputFilter.php:145
 #: Contenu/src/Form/ContenuInputFilter.php:146
+#: HtmlTemplate/src/Form/HtmltemplateInputFilter.php:48
+#: HtmlTemplate/src/Form/HtmltemplateInputFilter.php:49
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:51
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:52
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:76
@@ -371,16 +402,16 @@ msgstr ""
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:163
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:247
 #: Sousrubrique/src/Form/Sousrubriqueinputfilter.php:105
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:247
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:88
-#: Contenu/view/contenu/contenu/add.phtml:180
-#: Contenu/view/contenu/contenu/edit.phtml:82
-#: Galerie/view/galerie/galerie/add.phtml:187
-#: Galerie/view/galerie/galerie/edit.phtml:76
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:239
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:239
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:229
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:122
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:292
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:92
+#: Contenu/view/contenu/contenu/add.phtml:228
+#: Contenu/view/contenu/contenu/edit.phtml:86
+#: Galerie/view/galerie/galerie/add.phtml:233
+#: Galerie/view/galerie/galerie/edit.phtml:80
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:289
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:286
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:277
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:126
 msgid "Vous devez choisir une rubrique"
 msgstr ""
 
@@ -388,18 +419,19 @@ msgstr ""
 msgid "Vous devez choisir un contenu"
 msgstr ""
 
-#: Contenu/src/Form/ContenuForm.php:111
-#: Linktocontenu/src/Form/LinktocontenuForm.php:169
+#: Contenu/src/Form/ContenuForm.php:76
+#: HtmlTemplate/src/Form/HtmltemplateForm.php:43
+#: Linktocontenu/src/Form/LinktocontenuForm.php:164
 msgid "Titre"
 msgstr ""
 
-#: Contenu/src/Form/ContenuForm.php:121
-#: Linktocontenu/src/Form/LinktocontenuForm.php:179
+#: Contenu/src/Form/ContenuForm.php:86
+#: Linktocontenu/src/Form/LinktocontenuForm.php:174
 msgid "Sous-Titre"
 msgstr ""
 
-#: Contenu/src/Form/ContenuForm.php:131
-#: Linktocontenu/src/Form/LinktocontenuForm.php:189
+#: Contenu/src/Form/ContenuForm.php:96
+#: Linktocontenu/src/Form/LinktocontenuForm.php:184
 #: Rubrique/src/Form/RubriqueForm.php:72
 #: Sousrubrique/src/Form/SousrubriqueForm.php:77
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:48
@@ -414,18 +446,23 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: Contenu/src/Form/ContenuForm.php:144
-#: Linktocontenu/src/Form/LinktocontenuForm.php:104
-#: Linktocontenu/src/Form/LinktocontenuForm.php:156
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:71
-#: Contenu/view/contenu/contenu/add.phtml:74
-#: Contenu/view/contenu/contenu/edit.phtml:118
-#: Galerie/view/galerie/galerie/add.phtml:80
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:74
+#: Contenu/src/Form/ContenuForm.php:109
+#: Linktocontenu/src/Form/LinktocontenuForm.php:99
+#: Linktocontenu/src/Form/LinktocontenuForm.php:151
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:70
+#: Contenu/view/contenu/contenu/add.phtml:59
+#: Contenu/view/contenu/contenu/edit.phtml:122
+#: Galerie/view/galerie/galerie/add.phtml:84
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:77
 #: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:74
 #: Mapcontent/view/mapcontent/mapcontent/add.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:158
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:162
 msgid "Sélectionner une sous-rubrique"
+msgstr ""
+
+#: Contenu/src/Form/ContenuForm.php:150
+#: Linktocontenu/src/Form/LinktocontenuForm.php:197
+msgid "Utiliser un modèle html - Optionnel"
 msgstr ""
 
 #: Contenu/src/Form/ContenuInputFilter.php:97
@@ -440,16 +477,16 @@ msgstr ""
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:191
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:219
 #: Linktocontenu/src/Form/LinktocontenuInputFilter.php:275
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:253
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:94
-#: Contenu/view/contenu/contenu/add.phtml:187
-#: Contenu/view/contenu/contenu/edit.phtml:88
-#: Galerie/view/galerie/galerie/add.phtml:193
-#: Galerie/view/galerie/galerie/edit.phtml:82
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:246
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:246
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:235
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:128
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:298
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:98
+#: Contenu/view/contenu/contenu/add.phtml:234
+#: Contenu/view/contenu/contenu/edit.phtml:92
+#: Galerie/view/galerie/galerie/add.phtml:239
+#: Galerie/view/galerie/galerie/edit.phtml:86
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:295
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:293
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:132
 msgid "Vous devez choisir une sous-rubrique"
 msgstr ""
 
@@ -484,12 +521,12 @@ msgid "Choisir un fichier"
 msgstr ""
 
 #: Galerie/src/Form/GalerieForm.php:70
-#: Linktocontenu/src/Form/LinktocontenuForm.php:208
+#: Linktocontenu/src/Form/LinktocontenuForm.php:218
 msgid "Image"
 msgstr ""
 
 #: Galerie/src/Form/GalerieForm.php:80
-#: Linktocontenu/src/Form/LinktocontenuForm.php:218
+#: Linktocontenu/src/Form/LinktocontenuForm.php:228
 msgid "Image 2"
 msgstr ""
 
@@ -559,7 +596,6 @@ msgstr ""
 
 #: Loginmgmt/src/Form/LoginmgmtForm.php:65
 #: Siteprivate/view/siteprivate/layout/layout.phtml:45
-#: Sitepublic/view/sitepublic/layout/layout.phtml:45
 msgid "Site public"
 msgstr ""
 
@@ -713,34 +749,34 @@ msgid "Noter les coordonnées GPS et un descriptif"
 msgstr ""
 
 #: Mapcontent/src/Form/Mapcontentlocationfiedset.php:27
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:157
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:87
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:287
 msgid "Géolocalisation"
 msgstr ""
 
 #: Mapcontent/src/Form/Mapcontentlocationfiedset.php:32
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:157
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:87
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:287
 msgid "Latitude"
 msgstr ""
 
 #: Mapcontent/src/Form/Mapcontentlocationfiedset.php:45
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:157
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:87
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:287
 msgid "Longitude"
 msgstr ""
 
 #: Mapcontent/src/Form/Mapcontentlocationfiedset.php:59
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:157
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:87
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:287
 msgid "Détails concernant les coordonnées"
 msgstr ""
 
@@ -765,6 +801,7 @@ msgstr ""
 #: Contenu/view/contenu/contenu/index.phtml:49
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:48
 #: Galerie/view/galerie/galerie/index.phtml:47
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:47
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:49
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:49
 #: Privatespace/view/privatespace/privatespace/index.phtml:51
@@ -1050,7 +1087,7 @@ msgid "Welcome to ANIT CMS"
 msgstr ""
 
 #: Application/view/layout/layout.phtml:7
-msgid "CMS - at night & in transportation"
+msgid "Anit CMS"
 msgstr ""
 
 #: Application/view/layout/layout.phtml:51
@@ -1078,7 +1115,7 @@ msgid "Sous-Rubriques"
 msgstr ""
 
 #: Application/view/layout/layout.phtml:66
-msgid "Type de Contenus"
+msgid "Contenus html"
 msgstr ""
 
 #: Application/view/layout/layout.phtml:70
@@ -1106,53 +1143,57 @@ msgstr ""
 msgid "Liens"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:78
+#: Application/view/layout/layout.phtml:76
+msgid "Modèles html"
+msgstr ""
+
+#: Application/view/layout/layout.phtml:79
 msgid "Disposition"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:81
-#: Application/view/layout/layout.phtml:85
+#: Application/view/layout/layout.phtml:82
+#: Application/view/layout/layout.phtml:86
 msgid "Messages"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:86
+#: Application/view/layout/layout.phtml:87
 msgid "Commentaires"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:89
+#: Application/view/layout/layout.phtml:90
 msgid "Fichiers"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:90
+#: Application/view/layout/layout.phtml:91
 msgid "Recherche"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:93
+#: Application/view/layout/layout.phtml:94
 msgid "Visualisation"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:102
+#: Application/view/layout/layout.phtml:103
 msgid "Fichiers utilisateurs"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:106
+#: Application/view/layout/layout.phtml:107
 msgid "&Agrave; valider"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:107
+#: Application/view/layout/layout.phtml:108
 msgid "Validés"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:115
+#: Application/view/layout/layout.phtml:116
 msgid "Publication"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:121
+#: Application/view/layout/layout.phtml:122
 #: Siteprivate/view/siteprivate/layout/layout.phtml:64
 msgid "Déconnexion"
 msgstr ""
 
-#: Application/view/layout/layout.phtml:178
+#: Application/view/layout/layout.phtml:179
 #: Siteprivate/view/siteprivate/Siteprivate/test_extranet_upload_file.phtml:85
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_blog.phtml:159
 #: Siteprivate/view/siteprivate/Siteprivate/test_private_site.phtml:157
@@ -1197,24 +1238,27 @@ msgstr ""
 msgid "Ajouter un contenu de type blog"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:143
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:171
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:146
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:10
 #: Commentaire/view/commentaire/commentaire/index.phtml:10
-#: Contenu/view/contenu/contenu/add.phtml:95
-#: Contenu/view/contenu/contenu/edit.phtml:163
+#: Contenu/view/contenu/contenu/add.phtml:101
+#: Contenu/view/contenu/contenu/edit.phtml:167
 #: Contenu/view/contenu/contenu/index.phtml:10
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:10
 #: Fichiers/view/fichiers/fichiers/index.phtml:22
-#: Galerie/view/galerie/galerie/add.phtml:100
-#: Galerie/view/galerie/galerie/edit.phtml:159
+#: Galerie/view/galerie/galerie/add.phtml:104
+#: Galerie/view/galerie/galerie/edit.phtml:163
 #: Galerie/view/galerie/galerie/index.phtml:10
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:129
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:129
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:66
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:78
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:10
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:136
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:10
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:12
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:112
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:253
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:10
 #: Message/view/message/message/index.phtml:10
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:12
@@ -1231,24 +1275,27 @@ msgstr ""
 msgid "Traitement en cours..."
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:144
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:172
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:176
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:11
 #: Commentaire/view/commentaire/commentaire/index.phtml:11
-#: Contenu/view/contenu/contenu/add.phtml:96
-#: Contenu/view/contenu/contenu/edit.phtml:164
+#: Contenu/view/contenu/contenu/add.phtml:102
+#: Contenu/view/contenu/contenu/edit.phtml:168
 #: Contenu/view/contenu/contenu/index.phtml:11
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:11
 #: Fichiers/view/fichiers/fichiers/index.phtml:23
-#: Galerie/view/galerie/galerie/add.phtml:101
-#: Galerie/view/galerie/galerie/edit.phtml:160
+#: Galerie/view/galerie/galerie/add.phtml:105
+#: Galerie/view/galerie/galerie/edit.phtml:164
 #: Galerie/view/galerie/galerie/index.phtml:11
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:130
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:130
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:67
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:79
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:11
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:137
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:11
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:13
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:113
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:254
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:117
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:258
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:11
 #: Message/view/message/message/index.phtml:11
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:13
@@ -1265,24 +1312,27 @@ msgstr ""
 msgid "Rechercher"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:145
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:173
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:177
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:12
 #: Commentaire/view/commentaire/commentaire/index.phtml:12
-#: Contenu/view/contenu/contenu/add.phtml:97
-#: Contenu/view/contenu/contenu/edit.phtml:165
+#: Contenu/view/contenu/contenu/add.phtml:103
+#: Contenu/view/contenu/contenu/edit.phtml:169
 #: Contenu/view/contenu/contenu/index.phtml:12
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:12
 #: Fichiers/view/fichiers/fichiers/index.phtml:24
-#: Galerie/view/galerie/galerie/add.phtml:102
-#: Galerie/view/galerie/galerie/edit.phtml:161
+#: Galerie/view/galerie/galerie/add.phtml:106
+#: Galerie/view/galerie/galerie/edit.phtml:165
 #: Galerie/view/galerie/galerie/index.phtml:12
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:131
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:131
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:68
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:80
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:12
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:138
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:135
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:12
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:114
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:255
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:118
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:259
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:12
 #: Message/view/message/message/index.phtml:12
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:14
@@ -1299,42 +1349,48 @@ msgstr ""
 msgid "Afficher"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:145
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:173
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:150
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:177
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:179
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:12
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
 #: Commentaire/view/commentaire/commentaire/index.phtml:12
 #: Commentaire/view/commentaire/commentaire/index.phtml:14
-#: Contenu/view/contenu/contenu/add.phtml:97
-#: Contenu/view/contenu/contenu/add.phtml:99
-#: Contenu/view/contenu/contenu/edit.phtml:165
-#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/add.phtml:103
+#: Contenu/view/contenu/contenu/add.phtml:105
+#: Contenu/view/contenu/contenu/edit.phtml:169
+#: Contenu/view/contenu/contenu/edit.phtml:171
 #: Contenu/view/contenu/contenu/index.phtml:12
 #: Contenu/view/contenu/contenu/index.phtml:14
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:12
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:24
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
-#: Galerie/view/galerie/galerie/add.phtml:102
-#: Galerie/view/galerie/galerie/add.phtml:104
-#: Galerie/view/galerie/galerie/edit.phtml:161
-#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/add.phtml:106
+#: Galerie/view/galerie/galerie/add.phtml:108
+#: Galerie/view/galerie/galerie/edit.phtml:165
+#: Galerie/view/galerie/galerie/edit.phtml:167
 #: Galerie/view/galerie/galerie/index.phtml:12
 #: Galerie/view/galerie/galerie/index.phtml:14
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:131
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:131
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:68
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:70
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:80
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:82
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:12
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:138
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:140
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:135
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:12
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:114
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:255
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:118
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:120
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:259
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:261
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:12
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:12
@@ -1364,24 +1420,27 @@ msgstr ""
 msgid "&eacute;l&eacute;ments"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:146
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:174
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:149
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:178
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:13
 #: Commentaire/view/commentaire/commentaire/index.phtml:13
-#: Contenu/view/contenu/contenu/add.phtml:98
-#: Contenu/view/contenu/contenu/edit.phtml:166
+#: Contenu/view/contenu/contenu/add.phtml:104
+#: Contenu/view/contenu/contenu/edit.phtml:170
 #: Contenu/view/contenu/contenu/index.phtml:13
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:13
 #: Fichiers/view/fichiers/fichiers/index.phtml:25
-#: Galerie/view/galerie/galerie/add.phtml:103
-#: Galerie/view/galerie/galerie/edit.phtml:162
+#: Galerie/view/galerie/galerie/add.phtml:107
+#: Galerie/view/galerie/galerie/edit.phtml:166
 #: Galerie/view/galerie/galerie/index.phtml:13
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:132
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:132
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:69
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:81
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:13
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:139
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:136
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:13
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:15
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:115
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:256
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:119
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:260
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:13
 #: Message/view/message/message/index.phtml:13
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:15
@@ -1400,24 +1459,27 @@ msgid ""
 "l&eacute;ments"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:150
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:179
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
 #: Commentaire/view/commentaire/commentaire/index.phtml:14
-#: Contenu/view/contenu/contenu/add.phtml:99
-#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/add.phtml:105
+#: Contenu/view/contenu/contenu/edit.phtml:171
 #: Contenu/view/contenu/contenu/index.phtml:14
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
-#: Galerie/view/galerie/galerie/add.phtml:104
-#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/add.phtml:108
+#: Galerie/view/galerie/galerie/edit.phtml:167
 #: Galerie/view/galerie/galerie/index.phtml:14
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:70
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:82
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:140
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:120
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:261
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:14
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
@@ -1434,24 +1496,27 @@ msgstr ""
 msgid "Affichage de l'&eacute;lement"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:147
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:175
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:150
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:179
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:14
 #: Commentaire/view/commentaire/commentaire/index.phtml:14
-#: Contenu/view/contenu/contenu/add.phtml:99
-#: Contenu/view/contenu/contenu/edit.phtml:167
+#: Contenu/view/contenu/contenu/add.phtml:105
+#: Contenu/view/contenu/contenu/edit.phtml:171
 #: Contenu/view/contenu/contenu/index.phtml:14
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:14
 #: Fichiers/view/fichiers/fichiers/index.phtml:26
-#: Galerie/view/galerie/galerie/add.phtml:104
-#: Galerie/view/galerie/galerie/edit.phtml:163
+#: Galerie/view/galerie/galerie/add.phtml:108
+#: Galerie/view/galerie/galerie/edit.phtml:167
 #: Galerie/view/galerie/galerie/index.phtml:14
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:133
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:133
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:70
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:82
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:14
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:140
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:14
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:16
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:116
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:257
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:120
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:261
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:14
 #: Message/view/message/message/index.phtml:14
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:16
@@ -1468,21 +1533,24 @@ msgstr ""
 msgid "sur"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:151
 #: Commentaire/view/commentaire/commentaire/index.phtml:15
-#: Contenu/view/contenu/contenu/add.phtml:100
-#: Contenu/view/contenu/contenu/edit.phtml:168
+#: Contenu/view/contenu/contenu/add.phtml:106
+#: Contenu/view/contenu/contenu/edit.phtml:172
 #: Contenu/view/contenu/contenu/index.phtml:15
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:15
 #: Fichiers/view/fichiers/fichiers/index.phtml:27
-#: Galerie/view/galerie/galerie/add.phtml:105
-#: Galerie/view/galerie/galerie/edit.phtml:164
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:134
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
+#: Galerie/view/galerie/galerie/add.phtml:109
+#: Galerie/view/galerie/galerie/edit.phtml:168
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:71
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:83
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:15
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:141
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:138
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:117
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:258
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:121
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:262
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:15
 #: Message/view/message/message/index.phtml:15
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
@@ -1498,21 +1566,24 @@ msgstr ""
 msgid "filtr&eacute; de "
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:148
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:151
 #: Commentaire/view/commentaire/commentaire/index.phtml:15
-#: Contenu/view/contenu/contenu/add.phtml:100
-#: Contenu/view/contenu/contenu/edit.phtml:168
+#: Contenu/view/contenu/contenu/add.phtml:106
+#: Contenu/view/contenu/contenu/edit.phtml:172
 #: Contenu/view/contenu/contenu/index.phtml:15
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:15
 #: Fichiers/view/fichiers/fichiers/index.phtml:27
-#: Galerie/view/galerie/galerie/add.phtml:105
-#: Galerie/view/galerie/galerie/edit.phtml:164
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:134
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:134
+#: Galerie/view/galerie/galerie/add.phtml:109
+#: Galerie/view/galerie/galerie/edit.phtml:168
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:71
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:83
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:15
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:141
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:138
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:15
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:17
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:117
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:258
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:121
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:262
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:15
 #: Message/view/message/message/index.phtml:15
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:17
@@ -1528,24 +1599,27 @@ msgstr ""
 msgid "&eacute;l&eacute;ments au total"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:150
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:178
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:153
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:182
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:17
 #: Commentaire/view/commentaire/commentaire/index.phtml:17
-#: Contenu/view/contenu/contenu/add.phtml:102
-#: Contenu/view/contenu/contenu/edit.phtml:170
+#: Contenu/view/contenu/contenu/add.phtml:108
+#: Contenu/view/contenu/contenu/edit.phtml:174
 #: Contenu/view/contenu/contenu/index.phtml:17
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:17
 #: Fichiers/view/fichiers/fichiers/index.phtml:29
-#: Galerie/view/galerie/galerie/add.phtml:107
-#: Galerie/view/galerie/galerie/edit.phtml:166
+#: Galerie/view/galerie/galerie/add.phtml:111
+#: Galerie/view/galerie/galerie/edit.phtml:170
 #: Galerie/view/galerie/galerie/index.phtml:17
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:136
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:136
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:73
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:85
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:17
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:143
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:140
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:17
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:19
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:119
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:260
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:123
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:264
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:17
 #: Message/view/message/message/index.phtml:17
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:19
@@ -1562,24 +1636,27 @@ msgstr ""
 msgid "Chargement en cours"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:151
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:179
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:154
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:183
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:18
 #: Commentaire/view/commentaire/commentaire/index.phtml:18
-#: Contenu/view/contenu/contenu/add.phtml:103
-#: Contenu/view/contenu/contenu/edit.phtml:171
+#: Contenu/view/contenu/contenu/add.phtml:109
+#: Contenu/view/contenu/contenu/edit.phtml:175
 #: Contenu/view/contenu/contenu/index.phtml:18
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:18
 #: Fichiers/view/fichiers/fichiers/index.phtml:30
-#: Galerie/view/galerie/galerie/add.phtml:108
-#: Galerie/view/galerie/galerie/edit.phtml:167
+#: Galerie/view/galerie/galerie/add.phtml:112
+#: Galerie/view/galerie/galerie/edit.phtml:171
 #: Galerie/view/galerie/galerie/index.phtml:18
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:137
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:137
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:74
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:86
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:18
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:144
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:141
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:18
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:20
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:120
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:261
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:124
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:265
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:18
 #: Message/view/message/message/index.phtml:18
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:20
@@ -1596,24 +1673,27 @@ msgstr ""
 msgid "Aucun &eacute;l&eacute;ment &agrave; afficher"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:152
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:180
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:155
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:184
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:19
 #: Commentaire/view/commentaire/commentaire/index.phtml:19
-#: Contenu/view/contenu/contenu/add.phtml:104
-#: Contenu/view/contenu/contenu/edit.phtml:172
+#: Contenu/view/contenu/contenu/add.phtml:110
+#: Contenu/view/contenu/contenu/edit.phtml:176
 #: Contenu/view/contenu/contenu/index.phtml:19
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:19
 #: Fichiers/view/fichiers/fichiers/index.phtml:31
-#: Galerie/view/galerie/galerie/add.phtml:109
-#: Galerie/view/galerie/galerie/edit.phtml:168
+#: Galerie/view/galerie/galerie/add.phtml:113
+#: Galerie/view/galerie/galerie/edit.phtml:172
 #: Galerie/view/galerie/galerie/index.phtml:19
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:138
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:138
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:75
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:87
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:19
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:145
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:142
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:19
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:21
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:121
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:262
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:125
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:266
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:19
 #: Message/view/message/message/index.phtml:19
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:21
@@ -1630,24 +1710,27 @@ msgstr ""
 msgid "Aucune donnée disponible dans le tableau"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:154
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:182
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:157
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:186
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:21
 #: Commentaire/view/commentaire/commentaire/index.phtml:21
-#: Contenu/view/contenu/contenu/add.phtml:106
-#: Contenu/view/contenu/contenu/edit.phtml:174
+#: Contenu/view/contenu/contenu/add.phtml:112
+#: Contenu/view/contenu/contenu/edit.phtml:178
 #: Contenu/view/contenu/contenu/index.phtml:21
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:21
 #: Fichiers/view/fichiers/fichiers/index.phtml:33
-#: Galerie/view/galerie/galerie/add.phtml:111
-#: Galerie/view/galerie/galerie/edit.phtml:170
+#: Galerie/view/galerie/galerie/add.phtml:115
+#: Galerie/view/galerie/galerie/edit.phtml:174
 #: Galerie/view/galerie/galerie/index.phtml:21
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:140
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:140
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:77
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:89
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:21
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:147
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:144
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:21
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:23
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:123
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:264
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:127
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:268
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:21
 #: Message/view/message/message/index.phtml:21
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:23
@@ -1664,24 +1747,27 @@ msgstr ""
 msgid "Premier"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:155
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:183
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:158
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:187
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:22
 #: Commentaire/view/commentaire/commentaire/index.phtml:22
-#: Contenu/view/contenu/contenu/add.phtml:107
-#: Contenu/view/contenu/contenu/edit.phtml:175
+#: Contenu/view/contenu/contenu/add.phtml:113
+#: Contenu/view/contenu/contenu/edit.phtml:179
 #: Contenu/view/contenu/contenu/index.phtml:22
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:22
 #: Fichiers/view/fichiers/fichiers/index.phtml:34
-#: Galerie/view/galerie/galerie/add.phtml:112
-#: Galerie/view/galerie/galerie/edit.phtml:171
+#: Galerie/view/galerie/galerie/add.phtml:116
+#: Galerie/view/galerie/galerie/edit.phtml:175
 #: Galerie/view/galerie/galerie/index.phtml:22
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:141
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:141
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:78
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:90
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:22
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:148
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:145
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:22
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:24
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:124
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:265
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:128
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:269
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:22
 #: Message/view/message/message/index.phtml:22
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:24
@@ -1698,24 +1784,27 @@ msgstr ""
 msgid "Pr&eacute;c&eacute;dent"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:156
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:184
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:159
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:188
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:23
 #: Commentaire/view/commentaire/commentaire/index.phtml:23
-#: Contenu/view/contenu/contenu/add.phtml:108
-#: Contenu/view/contenu/contenu/edit.phtml:176
+#: Contenu/view/contenu/contenu/add.phtml:114
+#: Contenu/view/contenu/contenu/edit.phtml:180
 #: Contenu/view/contenu/contenu/index.phtml:23
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:23
 #: Fichiers/view/fichiers/fichiers/index.phtml:35
-#: Galerie/view/galerie/galerie/add.phtml:113
-#: Galerie/view/galerie/galerie/edit.phtml:172
+#: Galerie/view/galerie/galerie/add.phtml:117
+#: Galerie/view/galerie/galerie/edit.phtml:176
 #: Galerie/view/galerie/galerie/index.phtml:23
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:142
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:142
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:79
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:91
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:23
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:149
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:146
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:23
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:25
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:125
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:266
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:129
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:270
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:23
 #: Message/view/message/message/index.phtml:23
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:25
@@ -1732,24 +1821,27 @@ msgstr ""
 msgid "Suivant"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:157
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:185
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:160
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:189
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:24
 #: Commentaire/view/commentaire/commentaire/index.phtml:24
-#: Contenu/view/contenu/contenu/add.phtml:109
-#: Contenu/view/contenu/contenu/edit.phtml:177
+#: Contenu/view/contenu/contenu/add.phtml:115
+#: Contenu/view/contenu/contenu/edit.phtml:181
 #: Contenu/view/contenu/contenu/index.phtml:24
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:24
 #: Fichiers/view/fichiers/fichiers/index.phtml:36
-#: Galerie/view/galerie/galerie/add.phtml:114
-#: Galerie/view/galerie/galerie/edit.phtml:173
+#: Galerie/view/galerie/galerie/add.phtml:118
+#: Galerie/view/galerie/galerie/edit.phtml:177
 #: Galerie/view/galerie/galerie/index.phtml:24
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:143
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:143
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:80
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:92
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:24
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:150
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:147
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:24
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:26
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:126
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:267
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:130
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:271
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:24
 #: Message/view/message/message/index.phtml:24
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:26
@@ -1766,24 +1858,27 @@ msgstr ""
 msgid "Dernier"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:160
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:188
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:163
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:192
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:27
 #: Commentaire/view/commentaire/commentaire/index.phtml:27
-#: Contenu/view/contenu/contenu/add.phtml:112
-#: Contenu/view/contenu/contenu/edit.phtml:180
+#: Contenu/view/contenu/contenu/add.phtml:118
+#: Contenu/view/contenu/contenu/edit.phtml:184
 #: Contenu/view/contenu/contenu/index.phtml:27
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:27
 #: Fichiers/view/fichiers/fichiers/index.phtml:39
-#: Galerie/view/galerie/galerie/add.phtml:117
-#: Galerie/view/galerie/galerie/edit.phtml:176
+#: Galerie/view/galerie/galerie/add.phtml:121
+#: Galerie/view/galerie/galerie/edit.phtml:180
 #: Galerie/view/galerie/galerie/index.phtml:27
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:146
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:146
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:83
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:95
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:27
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:153
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:150
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:27
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:29
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:129
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:270
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:133
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:274
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:27
 #: Message/view/message/message/index.phtml:27
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:29
@@ -1800,24 +1895,27 @@ msgstr ""
 msgid "activer pour trier la colonne par ordre croissant"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:161
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:189
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:164
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:193
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:28
 #: Commentaire/view/commentaire/commentaire/index.phtml:28
-#: Contenu/view/contenu/contenu/add.phtml:113
-#: Contenu/view/contenu/contenu/edit.phtml:181
+#: Contenu/view/contenu/contenu/add.phtml:119
+#: Contenu/view/contenu/contenu/edit.phtml:185
 #: Contenu/view/contenu/contenu/index.phtml:28
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:28
 #: Fichiers/view/fichiers/fichiers/index.phtml:40
-#: Galerie/view/galerie/galerie/add.phtml:118
-#: Galerie/view/galerie/galerie/edit.phtml:177
+#: Galerie/view/galerie/galerie/add.phtml:122
+#: Galerie/view/galerie/galerie/edit.phtml:181
 #: Galerie/view/galerie/galerie/index.phtml:28
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:147
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:147
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:84
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:96
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:28
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:154
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:151
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:28
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:30
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:130
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:271
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:134
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:275
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:28
 #: Message/view/message/message/index.phtml:28
 #: Pagearrangement/view/pagearrangement/pagearrangement/index.phtml:30
@@ -1834,142 +1932,166 @@ msgstr ""
 msgid "activer pour trier la colonne par ordre décroissant"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:260
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:101
-#: Contenu/view/contenu/contenu/add.phtml:194
-#: Contenu/view/contenu/contenu/edit.phtml:95
-#: Galerie/view/galerie/galerie/add.phtml:200
-#: Galerie/view/galerie/galerie/edit.phtml:89
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:273
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:273
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:242
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:135
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:253
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:278
+#: Contenu/view/contenu/contenu/add.phtml:189
+#: Contenu/view/contenu/contenu/edit.phtml:257
+#: Galerie/view/galerie/galerie/add.phtml:194
+#: Galerie/view/galerie/galerie/edit.phtml:253
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:239
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:236
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:355
+msgid "&Ecirc;tes vous sûr de coller ce modèle html ?"
+msgstr ""
+
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:305
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:105
+#: Contenu/view/contenu/contenu/add.phtml:241
+#: Contenu/view/contenu/contenu/edit.phtml:99
+#: Galerie/view/galerie/galerie/add.phtml:246
+#: Galerie/view/galerie/galerie/edit.phtml:93
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:320
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:320
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:290
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:139
 msgid "La position doit être vide ou être un nombre"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:310
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:293
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:355
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:340
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:45
-#: Contenu/view/contenu/contenu/add.phtml:226
-#: Contenu/view/contenu/contenu/edit.phtml:255
+#: Contenu/view/contenu/contenu/add.phtml:273
+#: Contenu/view/contenu/contenu/edit.phtml:302
 #: Contenu/view/contenu/contenu/index.phtml:47
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:46
-#: Galerie/view/galerie/galerie/add.phtml:234
-#: Galerie/view/galerie/galerie/edit.phtml:254
+#: Galerie/view/galerie/galerie/add.phtml:280
+#: Galerie/view/galerie/galerie/edit.phtml:300
 #: Galerie/view/galerie/galerie/index.phtml:45
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:302
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:302
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:298
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:352
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:349
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:349
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:346
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:399
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:47
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:45
 msgid "Rubrique"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:311
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:294
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:356
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:341
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:46
-#: Contenu/view/contenu/contenu/add.phtml:227
-#: Contenu/view/contenu/contenu/edit.phtml:256
+#: Contenu/view/contenu/contenu/add.phtml:274
+#: Contenu/view/contenu/contenu/edit.phtml:303
 #: Contenu/view/contenu/contenu/index.phtml:48
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:47
-#: Galerie/view/galerie/galerie/add.phtml:235
-#: Galerie/view/galerie/galerie/edit.phtml:255
+#: Galerie/view/galerie/galerie/add.phtml:281
+#: Galerie/view/galerie/galerie/edit.phtml:301
 #: Galerie/view/galerie/galerie/index.phtml:46
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:303
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:303
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:299
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:353
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:350
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:350
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:347
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:400
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:48
 #: Sousrubrique/view/sousrubrique/sousrubrique/index.phtml:46
 msgid "Sous-Rubrique"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:313
-msgid "Modèle de blog"
-msgstr ""
-
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:321
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:305
-#: Contenu/view/contenu/contenu/add.phtml:236
-#: Contenu/view/contenu/contenu/edit.phtml:268
-#: Galerie/view/galerie/galerie/add.phtml:244
-#: Galerie/view/galerie/galerie/edit.phtml:266
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:321
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:321
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:314
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:369
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:368
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:353
+#: Contenu/view/contenu/contenu/add.phtml:285
+#: Contenu/view/contenu/contenu/edit.phtml:316
+#: Galerie/view/galerie/galerie/add.phtml:292
+#: Galerie/view/galerie/galerie/edit.phtml:314
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:160
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:171
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:370
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:370
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:365
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:418
 msgid "Vignette"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:322
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:306
-#: Contenu/view/contenu/contenu/add.phtml:237
-#: Contenu/view/contenu/contenu/edit.phtml:269
-#: Galerie/view/galerie/galerie/add.phtml:245
-#: Galerie/view/galerie/galerie/edit.phtml:267
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:322
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:322
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:315
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:370
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:369
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:354
+#: Contenu/view/contenu/contenu/add.phtml:286
+#: Contenu/view/contenu/contenu/edit.phtml:317
+#: Galerie/view/galerie/galerie/add.phtml:293
+#: Galerie/view/galerie/galerie/edit.phtml:315
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:161
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:172
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:371
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:371
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:366
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:419
 msgid "Chemin image"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:323
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:307
-#: Contenu/view/contenu/contenu/add.phtml:238
-#: Contenu/view/contenu/contenu/edit.phtml:270
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:370
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:355
+#: Contenu/view/contenu/contenu/add.phtml:287
+#: Contenu/view/contenu/contenu/edit.phtml:318
 #: Fichiers/view/fichiers/fichiers/index.phtml:107
-#: Galerie/view/galerie/galerie/add.phtml:246
-#: Galerie/view/galerie/galerie/edit.phtml:268
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:323
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:323
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:316
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:371
+#: Galerie/view/galerie/galerie/add.phtml:294
+#: Galerie/view/galerie/galerie/edit.phtml:316
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:162
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:173
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:372
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:372
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:367
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:420
 msgid "Description"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:324
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:308
-#: Contenu/view/contenu/contenu/add.phtml:239
-#: Contenu/view/contenu/contenu/edit.phtml:271
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:371
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:356
+#: Contenu/view/contenu/contenu/add.phtml:288
+#: Contenu/view/contenu/contenu/edit.phtml:319
 #: Fichiers/view/fichiers/fichiers/index.phtml:108
-#: Galerie/view/galerie/galerie/add.phtml:247
-#: Galerie/view/galerie/galerie/edit.phtml:269
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:324
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:324
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:317
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:372
+#: Galerie/view/galerie/galerie/add.phtml:295
+#: Galerie/view/galerie/galerie/edit.phtml:317
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:163
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:174
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:373
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:373
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:368
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:421
 msgid "Meta Donn&eacute;es"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:325
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:309
-#: Contenu/view/contenu/contenu/edit.phtml:272
-#: Galerie/view/galerie/galerie/add.phtml:248
-#: Galerie/view/galerie/galerie/edit.phtml:270
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:325
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:325
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:373
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:372
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:357
+#: Contenu/view/contenu/contenu/edit.phtml:320
+#: Galerie/view/galerie/galerie/add.phtml:296
+#: Galerie/view/galerie/galerie/edit.phtml:318
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:175
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:422
 msgid "type de fichier"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:326
-#: Blogcontent/view/blogcontent/blogcontent/add.phtml:345
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:310
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:333
-#: Contenu/view/contenu/contenu/add.phtml:241
-#: Contenu/view/contenu/contenu/add.phtml:261
-#: Contenu/view/contenu/contenu/edit.phtml:273
-#: Contenu/view/contenu/contenu/edit.phtml:296
-#: Galerie/view/galerie/galerie/add.phtml:249
-#: Galerie/view/galerie/galerie/add.phtml:272
-#: Galerie/view/galerie/galerie/edit.phtml:271
-#: Galerie/view/galerie/galerie/edit.phtml:294
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:319
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:343
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:374
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:397
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:373
+#: Blogcontent/view/blogcontent/blogcontent/add.phtml:392
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:358
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:381
+#: Contenu/view/contenu/contenu/add.phtml:290
+#: Contenu/view/contenu/contenu/add.phtml:315
+#: Contenu/view/contenu/contenu/edit.phtml:321
+#: Contenu/view/contenu/contenu/edit.phtml:344
+#: Galerie/view/galerie/galerie/add.phtml:297
+#: Galerie/view/galerie/galerie/add.phtml:320
+#: Galerie/view/galerie/galerie/edit.phtml:319
+#: Galerie/view/galerie/galerie/edit.phtml:342
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:165
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:185
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:176
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:199
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:375
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:400
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:375
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:400
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:370
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:394
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:423
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:446
 msgid "Copier le lien"
 msgstr ""
 
@@ -1985,18 +2107,18 @@ msgstr ""
 msgid "Modifier le contenu de type blog"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:126
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:130
 msgid "Sélectionner une sous-rubrique</option>"
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:176
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:180
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:15
 #: Galerie/view/galerie/galerie/index.phtml:15
 #: Rubrique/view/rubrique/rubrique/edit.phtml:281
 msgid "(filtr&eacute; de "
 msgstr ""
 
-#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:176
+#: Blogcontent/view/blogcontent/blogcontent/edit.phtml:180
 #: Blogcontent/view/blogcontent/blogcontent/index.phtml:15
 #: Galerie/view/galerie/galerie/index.phtml:15
 #: Rubrique/view/rubrique/rubrique/edit.phtml:281
@@ -2016,6 +2138,7 @@ msgstr ""
 #: Contenu/view/contenu/contenu/index.phtml:51
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:50
 #: Galerie/view/galerie/galerie/index.phtml:49
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:48
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:51
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:51
 #: Message/view/message/message/index.phtml:52
@@ -2028,12 +2151,13 @@ msgstr ""
 #: Contenu/view/contenu/contenu/indexalltypes.phtml:82
 #: Fichiers/view/fichiers/fichiers/index.phtml:133
 #: Galerie/view/galerie/galerie/index.phtml:63
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:59
 #: Linktocontenu/view/linktocontenu/linktocontenu/index.phtml:69
 #: Loginmgmt/view/loginmgmt/loginmgmt/index.phtml:82
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:153
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:83
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:210
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:283
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:157
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:87
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:214
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:287
 #: Mapcontent/view/mapcontent/mapcontent/index.phtml:65
 #: Message/view/message/message/index.phtml:67
 #: Privatespace/view/privatespace/privatespace/index.phtml:66
@@ -2105,8 +2229,11 @@ msgstr ""
 msgid "Ajouter un contenu"
 msgstr ""
 
-#: Contenu/view/contenu/contenu/add.phtml:240
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:318
+#: Contenu/view/contenu/contenu/add.phtml:289
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:164
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:374
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:374
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:369
 msgid "Type de fichier"
 msgstr ""
 
@@ -2216,47 +2343,68 @@ msgstr ""
 msgid "Mes contenus de type galerie"
 msgstr ""
 
+#: HtmlTemplate/view/htmltemplate/htmltemplate/add.phtml:2
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:41
+msgid "Ajouter un modèle html"
+msgstr ""
+
+#: HtmlTemplate/view/htmltemplate/htmltemplate/delete.phtml:3
+msgid "Supprimer un modèle html"
+msgstr ""
+
+#: HtmlTemplate/view/htmltemplate/htmltemplate/delete.phtml:8
+msgid "&Ecirc;tes-vous s&ucirc;r de vouloir supprimer ce modèle html"
+msgstr ""
+
+#: HtmlTemplate/view/htmltemplate/htmltemplate/edit.phtml:3
+msgid "Modifier le modèle html"
+msgstr ""
+
+#: HtmlTemplate/view/htmltemplate/htmltemplate/index.phtml:2
+msgid "Mes modèles html"
+msgstr ""
+
 #: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:2
 msgid "Ajouter un lien vers un contenu"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:253
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:253
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:301
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:300
 msgid "Vous devez choisir le contenu"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:259
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:259
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:307
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:306
 msgid "Vous devez choisir la rubrique de destination"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:266
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:266
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:313
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:313
 msgid "Vous devez choisir la sous-rubrique de destination"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:301
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:301
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:348
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:348
 msgid "Choisir un contenu"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:304
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:304
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:351
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:351
 msgid "Contenu"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:305
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:305
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:352
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:352
 msgid "Choisir la sous-rubrique où apparaîtra le lien"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:306
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:306
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:353
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:353
 msgid "Lien vers la rubrique"
 msgstr ""
 
-#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:307
-#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:307
+#: Linktocontenu/view/linktocontenu/linktocontenu/add.phtml:354
+#: Linktocontenu/view/linktocontenu/linktocontenu/edit.phtml:354
 msgid "Lien vers la sous-Rubrique"
 msgstr ""
 
@@ -2390,7 +2538,7 @@ msgstr ""
 
 #: Login/view/login/layout/layout.phtml:7
 #: Siteprivate/view/siteprivate/layout/layout.phtml:7
-#: Sitepublic/view/sitepublic/layout/layout.phtml:7
+#: Sitepublic/view/sitepublic/layout/layout.phtml:12
 msgid "At night and in transportation"
 msgstr ""
 
@@ -2442,18 +2590,18 @@ msgstr ""
 msgid "Ajouter un contenu de type carte GPS"
 msgstr ""
 
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:207
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:104
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:255
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:108
 msgid "une longitude GPS n'est pas correcte"
 msgstr ""
 
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:214
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:111
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:262
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:115
 msgid "une latitude GPS n'est pas correcte"
 msgstr ""
 
-#: Mapcontent/view/mapcontent/mapcontent/add.phtml:304
-#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:358
+#: Mapcontent/view/mapcontent/mapcontent/add.phtml:355
+#: Mapcontent/view/mapcontent/mapcontent/edit.phtml:407
 msgid "Ajouter un point gps"
 msgstr ""
 

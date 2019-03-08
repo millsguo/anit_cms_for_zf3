@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="robots" content="noindex">
-        <?php echo $this->headTitle(' ' . $this->translate('CMS - at night & in transportation'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle(' ' . $this->translate('Anit CMS'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
@@ -63,7 +63,7 @@
                             <li><a href="<?php echo $this->url('Sousrubrique') ?>"><?php echo $this->translate('Sous-Rubriques'); ?></a></li>
                             <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <?php echo $this->translate('Type de Contenus'); ?>
+                                        <?php echo $this->translate('Contenus html'); ?>
                                         <b class="caret"></b>
                                     </a>
                                 <ul class="dropdown-menu">
@@ -73,6 +73,7 @@
                                     <li><a href="<?php echo $this->url('Blogcontent') ?>"><?php echo $this->translate('Blog'); ?></a></li>
                                     <li><a href="<?php echo $this->url('mapcontent') ?>"><?php echo $this->translate('Carte GPS'); ?></a></li>
                                     <li><a href="<?php echo $this->url('Linktocontenu') ?>"><?php echo $this->translate('Liens'); ?></a></li>
+                                    <li><a href="<?php echo $this->url('htmltemplate') ?>"><?php echo $this->translate('Modèles html'); ?></a></li>
                                 </ul>
                             </li>
                             <li><a href="<?php echo $this->url('Pagearrangement') ?>"><?php echo $this->translate('Disposition'); ?></a></li>
