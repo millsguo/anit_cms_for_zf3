@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: atnightandintransportation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-03-08 18:25+0100\n"
-"PO-Revision-Date: 2019-03-08 18:29+0100\n"
+"PO-Revision-Date: 2019-03-12 18:43+0100\n"
 "Last-Translator: Romuald GEBLEUX\n"
 "Language-Team: Me & myself\n"
 "Language: en_US\n"
@@ -1216,7 +1216,7 @@ msgstr "Search results"
 
 #: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:68
 msgid "Editer le contenu"
-msgstr "Eidt a content"
+msgstr "Edit a content"
 
 #: Backofficesearch/view/backofficesearch/backofficesearch/search.phtml:70
 msgid "Editer le lien"
