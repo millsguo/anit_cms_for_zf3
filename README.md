@@ -67,8 +67,19 @@ I have divided content in three types :
 
 It's up to you to create a new content type or just to modify an existing one.
 
-For each content type in add or edit pages you have the list of the files uploaded.
-You have the ability to copy to clipboard the path and add it easily in your htlm editor.
+In the add or edit forms you have the list of the files uploaded.
+You can to copy to the clipboard the path of an image and add it in your htlm editor.
+
+- Links (Module: Linktocontenu): A content is related to a page but if you want to share the same content into another page,
+it allows to create a new content. it could be the perfect copy of the targeted content or you can customize it.
+In fact it's more than a link, you can customize the appearance of your link by adding an image, html, title... 
+A use case could be that you want to create a shortcut to an article of your blog in your index page, you can easily 
+customize the content in order to fit the design of your page.
+
+- Html templates: Probably you use the same html code to represent the same type of content. 
+For instance, when you display a gallery of images, the html template is the same for all images.
+Instead of repeating manually the code in the html editor, you create once the template and it will be available in the forms that manage the contents.
+You just have to select the template and it will be pasted in the html editor.
 
 - Message (Module: Message): It's a message sent by visitors through a form
 
@@ -101,12 +112,6 @@ You can change the position of sections and contents.
 By clicking on a button you can go to the form that you allow to update the selected element.
 It is very useful to have an overview of your page
 That's the object sent by the controller to the view.
-
-- Links (Module: Linktocontenu): A content is related to a page but if you want to share the same content into another page,
-it allows to create a new content. it could be the perfect copy of the targeted content or you can customize it.
-In fact it's more than a link, you can customize the appearance of your link by adding an image, html, title... 
-A use case could be that you want to create a shortcut to an article of your blog in your index page, you can easily 
-customize the content in order to fit the design of your page.
 
 - Privatespace (Module: Privatespace): It allows to declare an extranet in addition to your public web site.
 
