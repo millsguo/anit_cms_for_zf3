@@ -63,6 +63,11 @@ class ContenuInputFilter extends InputFilter {
         ));
 
         $this->add(array(
+            'name' => 'htmltemplateList',
+            'required' => false
+        ));
+
+        $this->add(array(
             'name' => 'soustitre',
             'required' => false,
             'filters' => array(
