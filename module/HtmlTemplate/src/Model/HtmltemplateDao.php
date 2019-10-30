@@ -62,7 +62,7 @@ class HtmltemplateDao extends ParentDao
      * @param $id
      * @return Htmltemplate
      */
-    public function getHtmltemplate($id)
+    public function getHtmltemplate($id, $dataType)
     {
         $id = (int)$id;
         // print_r($id);
@@ -78,9 +78,17 @@ class HtmltemplateDao extends ParentDao
         ));
 
         $result = $requete->fetch(\PDO::FETCH_ASSOC);
-        // print_r($htmltemplate);
-        // exit;
-        return $result;
+
+        if (strcasecmp($dataType, "object") == 0) {
+            $htmltemplate = new Htmltemplate();
+            $htmltemplate->setId($result['id']);
+            $htmltemplate->setLabel($result['label']);
+            $htmltemplate->setHtml($result['template']);
+        } else if (strcasecmp($dataType, "array") == 0) {
+            return $result;
+        }
+
+        return $htmltemplate;
     }
 
     /**

@@ -149,7 +149,8 @@ class ContenuForm extends Form {
                 //'label' => 'Choisir la rubrique',
                 'empty_option' => $this->utils->translate('Utiliser un modèle html - Optionnel'),
                 //'class' => 'input-medium',
-                'value_options' => $this->getHtmltemplates()
+                'value_options' => $this->getHtmltemplates(),
+                'disable_inarray_validator' => true
             ),
         ));
 

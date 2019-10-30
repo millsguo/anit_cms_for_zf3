@@ -17,7 +17,7 @@ class RubriqueMapper
     public function exchangeArray($data)
     {
         $rubrique = new Rubrique();
-
+        // print_r($data);
         if (isset($data['id'])) {
             $rubrique->setId($data['id']);
         }
@@ -51,7 +51,6 @@ class RubriqueMapper
         if (isset($data['publishing'])) {
             $rubrique->setPublishing($data['publishing']);
         }
-
         return $rubrique;
     }
 }

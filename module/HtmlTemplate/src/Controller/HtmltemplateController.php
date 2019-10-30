@@ -144,7 +144,7 @@ class HtmltemplateController extends AbstractActionController
             ));
         }
 
-        $htmltemplate = $htmltemplateDao->getHtmltemplate($id);
+        $htmltemplate = $htmltemplateDao->getHtmltemplate($id, 'object');
 
         $htmltemplateId = $htmltemplate->getId();
 
@@ -237,7 +237,10 @@ class HtmltemplateController extends AbstractActionController
             return $this->redirect()->toRoute('htmltemplate');
         }
 
-        $htmltemplate = $htmltemplateDao->getHtmltemplate($id);
+        $htmltemplate = $htmltemplateDao->getHtmltemplate($id, 'object');
+
+        // print_r($htmltemplate);
+        // exit;
 
         return array(
             'id' => $id,
@@ -251,7 +254,7 @@ class HtmltemplateController extends AbstractActionController
         if ($request->isPost()) {
             $id = $request->getPost('id');
             $htmltemplateDao = new HtmltemplateDao();
-            $result = $htmltemplateDao->getHtmltemplate($id);
+            $result = $htmltemplateDao->getHtmltemplate($id, 'array');
             //return $this->getResponse()->setContent(json_encode(array('template'=>$result)));
             return new JsonModel(array('template'=>$result));
         }

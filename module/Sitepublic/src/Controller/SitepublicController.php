@@ -70,18 +70,20 @@ class SitepublicController extends AbstractActionController
         $phtmlFile = "";
         $viewModel = null;
 
-        //if no rubrique filename (without extension) is in the url, the first page will be displayed
-        if (empty($page) || strcasecmp($page, 'index') == 0) {
-            $firtRubrique = $rubriqueDao->getFirstRubriqueBySpace(SitepublicController::$publicSpace, "object");
-            $page = str_replace(".phtml", "", $firtRubrique->getFilename());
-        }
-
         $loginaccess = new \Zend\Session\Container('myacl');
         //get cache only for anonymous or extranet user ('guest')
         if ((strcasecmp($loginaccess->role, MyAclRoles::$USER) != 0 || strcasecmp($loginaccess->role, MyAclRoles::$ADMIN) != 0)
         ) {
             //get cache
             $result = $this->cache->getCacheDataItem($this->getEvent()->getRouteMatch());
+        }
+
+        //if no rubrique filename (without extension) is in the url, the first page will be displayed
+        if (!$result && empty($page)) {
+            $firstRubrique = $rubriqueDao->getFirstRubriqueBySpaceId(SitepublicController::$publicSpace, "object");
+            $page = str_replace(".phtml", "", $firstRubrique->getFilename());
+            // print_r($firstRubrique);
+            //exit;
         }
 
         if (!$result) {
@@ -149,7 +151,7 @@ class SitepublicController extends AbstractActionController
                 'pageContentsJSON' => $pageContentsJSON,
                 'comments' => $comments
             ));
-        }//if the cache exists 
+        } //if the cache exists
         else {
             $this->layout()->setVariable('navigation', $result['navigation']);
             $this->layout()->setVariable('navigationJSON', $result['navigationJSON']);

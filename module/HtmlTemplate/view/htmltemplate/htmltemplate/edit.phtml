@@ -46,32 +46,37 @@ $this->headTitle($title);
     <script type="text/javascript" src="<?php echo $this->basePath() . '/js/tinymce/tinymce.min.js'; ?>"></script>
     <script type="text/javascript">
 
-        tinymce.init({
-            selector: "textarea",
-            verify_html: false,
-            cleanup: false,
-            clean_up_on_startup: false,
-            forced_rooted_block: "",
-            language: '<?php echo $this->plugin('translate')->getTranslator()->getLocale(); ?>',
-            plugins: [
-                "advlist autolink lists link image charmap print preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table contextmenu paste",
-                "importcss"
-            ],
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright",
-            content_css: ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
-                "<?php echo $this->basePath() . '/assets/css/app.css';?>",
-                "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
-                "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
-                "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
-        });
-
         function soumettreajout() {
             document.htmltemplateform.submit();
         }
 
         $(document).ready(function () {
+
+            var timyMceOptions = {
+                verify_html:false,
+                fix_table_elements:false,
+                invalid_elements:'',
+                valid_elements:'*[*]',
+                force_br_newlines: false,
+                force_p_newlines: false,
+                forced_root_block: '',
+                selector: "textarea",
+                language: '<?php echo $this->plugin('translate')->getTranslator()->getLocale(); ?>',
+                plugins: [
+                    "advlist lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste",
+                    "importcss"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright",
+                content_css: ["<?php echo $this->basePath() . '/assets/css/blocks.css';?>",
+                    "<?php echo $this->basePath() . '/assets/css/app.css';?>",
+                    "<?php echo $this->basePath() . '/assets/css/custom.css';?>",
+                    "<?php echo $this->basePath() . '/assets/plugins/bootstrap/css/bootstrap.min.css';?>",
+                    "<?php echo $this->basePath() . '/assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css';?>"]
+            };
+
+            tinymce.init(timyMceOptions);
 
             $("#tableSort").dataTable({
                 language: {

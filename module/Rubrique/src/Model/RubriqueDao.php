@@ -21,6 +21,39 @@ class RubriqueDao extends ParentDao {
 
     /**
      * @param $spaceId
+     * @param $dataType
+     * @return mixed|\Rubrique\Model\Rubrique
+     */
+    public function getFirstRubriqueBySpaceId($spaceId, $dataType) {
+
+        $requete = $this->dbGateway->prepare("
+		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm, publishing
+                FROM rubrique 
+                WHERE spaceId = :spaceid AND rang > -1
+		        ORDER BY rang
+                LIMIT 1
+		")or die(print_r($this->dbGateway->error_info()));
+
+        $requete->execute(array(
+            'spaceid' => $spaceId
+        ));
+
+        $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
+        // print_r($requete2);
+
+        if (strcasecmp($dataType,"object") == 0) {
+            //print_r($dataType);
+            $mapper = new RubriqueMapper();
+            $rubriqueObj = $mapper->exchangeArray($requete2);
+            return $rubriqueObj;
+        } elseif (strcasecmp($dataType,"array") == 0) {
+            return $requete2;
+        }
+    }
+
+
+    /**
+     * @param $spaceId
      * @param $dataType: array|object
      * @return mixed|\Rubrique\Model\Rubrique
      */
@@ -30,9 +63,9 @@ class RubriqueDao extends ParentDao {
 
         $requete = $this->dbGateway->prepare("
 		SELECT id, libelle, rang, scope, spaceId, filename, contactForm, messageForm, updateForm, fileuploadForm, publishing
-                FROM rubrique
+                FROM rubrique 
                 WHERE spaceId = :spaceid AND publishing = 1 AND rang > -1
-		ORDER BY rang
+		        ORDER BY rang
                 LIMIT 1
 		")or die(print_r($this->dbGateway->error_info()));
 
@@ -41,11 +74,10 @@ class RubriqueDao extends ParentDao {
         ));
 
         $requete2 = $requete->fetch(\PDO::FETCH_ASSOC);
-
+        // print_r($requete2);
         if (strcasecmp($dataType,"object") == 0) {
-
+            //print_r($dataType);
             $rubriqueObj = $mapper->exchangeArray($requete2);
-
             return $rubriqueObj;
         } elseif (strcasecmp($dataType,"array") == 0) {
             return $requete2;
